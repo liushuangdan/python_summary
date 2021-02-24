@@ -1,0 +1,781 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>DQL操作：数据查询 | Introduction</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../../home/part1/6.数据导入和导出.html" />
+    
+    
+    <link rel="prev" href="../../home/part1/4.DML操作：增,删,改.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="2.5"
+        data-chapter-title="DQL操作：数据查询"
+        data-filepath="home/part1/5.DQL操作：数据查询.md"
+        data-basepath="../.."
+        data-revision="Sun Oct 21 2018 16:32:53 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="home/MySQL介绍.html">
+            
+                
+                    <a href="../../home/MySQL介绍.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        MySQL介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="home/part1/MySQL基础.html">
+            
+                
+                    <a href="../../home/part1/MySQL基础.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Mysql基础
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="home/part1/1.MySQL基础操作.html">
+            
+                
+                    <a href="../../home/part1/1.MySQL基础操作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        MySQL基础操作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="home/part1/2.MySQL数据类型.html">
+            
+                
+                    <a href="../../home/part1/2.MySQL数据类型.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        MySQL数据类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="home/part1/3.MySQL建库建表.html">
+            
+                
+                    <a href="../../home/part1/3.MySQL建库建表.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        MySQL建库建表
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="home/part1/4.DML操作：增,删,改.html">
+            
+                
+                    <a href="../../home/part1/4.DML操作：增,删,改.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        DML操作：增,删,改
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.5" data-path="home/part1/5.DQL操作：数据查询.html">
+            
+                
+                    <a href="../../home/part1/5.DQL操作：数据查询.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        DQL操作：数据查询
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="home/part1/6.数据导入和导出.html">
+            
+                
+                    <a href="../../home/part1/6.数据导入和导出.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                        数据导入和导出
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="home/part2/MySQL高级.html">
+            
+                
+                    <a href="../../home/part2/MySQL高级.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        MySQL高级
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="home/part2/1.MySQL的多表联查.html">
+            
+                
+                    <a href="../../home/part2/1.MySQL的多表联查.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        MySQL的多表联查
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="home/part2/2.MySQL的事务处理.html">
+            
+                
+                    <a href="../../home/part2/2.MySQL的事务处理.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        MySQL的事务处理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="home/part2/3.MySQL的视图及其它.html">
+            
+                
+                    <a href="../../home/part2/3.MySQL的视图及其它.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        MySQL的视图及其它
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="home/part2/4.MySQL的触发器.html">
+            
+                
+                    <a href="../../home/part2/4.MySQL的触发器.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        MySQL的触发器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="home/part2/6.MySQL日志及数据恢复.html">
+            
+                
+                    <a href="../../home/part2/6.MySQL日志及数据恢复.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        MySQL日志及数据恢复
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="home/part2/7.慢查询及sql优化.html">
+            
+                
+                    <a href="../../home/part2/7.慢查询及sql优化.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                        慢查询及sql优化
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="home/part3/Python连接MySQL.html">
+            
+                
+                    <a href="../../home/part3/Python连接MySQL.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Python连接MySQL
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="home/part3/1.CRUD.html">
+            
+                
+                    <a href="../../home/part3/1.CRUD.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        CRUD
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../" >Introduction</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="mysql-&#x6570;&#x636E;&#x64CD;&#x4F5C;-dql">MySQL &#x6570;&#x636E;&#x64CD;&#x4F5C; DQL</h1>
+<hr>
+<blockquote>
+<p>&#x6570;&#x636E;&#x7684;DQL&#x64CD;&#x4F5C;&#xFF1A;&#x6570;&#x636E;&#x67E5;&#x8BE2;</p>
+</blockquote>
+<pre><code class="lang-sql">&#x683C;&#x5F0F;&#xFF1A;
+
+    <span class="hljs-operator"><span class="hljs-keyword">select</span> [&#x5B57;&#x6BB5;&#x5217;&#x8868;]  |  *  <span class="hljs-keyword">from</span> &#x8868;&#x540D;
+
+    [<span class="hljs-keyword">where</span> &#x641C;&#x7D22;&#x6761;&#x4EF6;]
+
+    [<span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> &#x5206;&#x7EC4;&#x5B57;&#x6BB5; [<span class="hljs-keyword">having</span> &#x5B50;&#x6761;&#x4EF6;]]
+
+    [<span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> &#x6392;&#x5E8F; <span class="hljs-keyword">asc</span>|<span class="hljs-keyword">desc</span>]
+
+    [<span class="hljs-keyword">limit</span> &#x5206;&#x9875;&#x53C2;&#x6570;]
+</span></code></pre>
+<ul>
+<li><h3 id="&#x57FA;&#x7840;&#x67E5;&#x8BE2;">&#x57FA;&#x7840;&#x67E5;&#x8BE2;</h3>
+<pre><code class="lang-sql">  mysql&gt; select * from stu;
+  +----+----------+-----+-----+---------+
+  | id | name     | age | sex | classid |
+  +----+----------+-----+-----+---------+
+  |  1 | zhangsan |  20 | m   | lamp138 |
+  |  2 | lisi     |  20 | m   | lamp138 |
+  |  3 | wangwu   |  21 | w   | lamp138 |
+  |  4 | zhaoliu  |  25 | w   | lamp94  |
+  |  5 | uu01     |  26 | m   | lamp94  |
+  |  6 | uu02     |  28 | w   | lamp92  |
+  |  7 | qq02     |  24 | m   | lamp92  |
+  |  8 | uu03     |  32 | m   | lamp138 |
+  |  9 | qq03     |  23 | w   | lamp94  |
+  | 10 | aa       |  19 | m   | lamp138 |
+  | 11 | sad      |  35 | m   | lamp94  |
+  | 12 | tt       |  25 | m   | lamp92  |
+  | 13 | wer      |  25 | w   | lamp94  |
+  | 14 | xx       |  25 | m   | lamp92  |
+  | 15 | kk       |   0 | w   | lamp94  |
+  +----+----------+-----+-----+---------+
+  15 rows in set (0.00 sec)
+</code></pre>
+</li>
+<li><h3 id="where&#x6761;&#x4EF6;&#x67E5;&#x8BE2;">where&#x6761;&#x4EF6;&#x67E5;&#x8BE2;</h3>
+<blockquote>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x5728; WHERE &#x5B50;&#x53E5;&#x4E2D;&#x6307;&#x5B9A;&#x4EFB;&#x4F55;&#x6761;&#x4EF6;&#x3002;
+&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; AND &#x6216;&#x8005; OR &#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x6761;&#x4EF6;&#x3002;
+WHERE &#x5B50;&#x53E5;&#x4E5F;&#x53EF;&#x4EE5;&#x8FD0;&#x7528;&#x4E8E; SQL &#x7684; DELETE &#x6216;&#x8005; UPDATE &#x547D;&#x4EE4;&#x3002;
+WHERE &#x5B50;&#x53E5;&#x7C7B;&#x4F3C;&#x4E8E;&#x7A0B;&#x5E8F;&#x8BED;&#x8A00;&#x4E2D;&#x7684; if &#x6761;&#x4EF6;&#xFF0C;&#x6839;&#x636E; MySQL &#x8868;&#x4E2D;&#x7684;&#x5B57;&#x6BB5;&#x503C;&#x6765;&#x8BFB;&#x53D6;&#x6307;&#x5B9A;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-sql">  1. &#x67E5;&#x8BE2;&#x73ED;&#x7EA7;&#x4E3A;lamp138&#x671F;&#x7684;&#x5B66;&#x751F;&#x4FE1;&#x606F;
+  mysql&gt; select * from stu where classid=&apos;lamp138&apos;;
+
+  2. &#x67E5;&#x8BE2;lamp138&#x671F;&#x7684;&#x7537;&#x751F;&#x4FE1;&#x606F;&#xFF08;sex&#x4E3A;m&#xFF09;
+  mysql&gt; select * from stu where classid=&apos;lamp138&apos; and sex=&apos;m&apos;;
+
+  3. &#x67E5;&#x8BE2;id&#x53F7;&#x503C;&#x5728;10&#x4EE5;&#x4E0A;&#x7684;&#x5B66;&#x751F;&#x4FE1;&#x606F;
+  mysql&gt; select * from  stu where id&gt;10;
+
+  4. &#x67E5;&#x8BE2;&#x5E74;&#x9F84;&#x5728;20&#x81F3;25&#x5C81;&#x7684;&#x5B66;&#x751F;&#x4FE1;&#x606F;
+  mysql&gt; select * from stu where age&gt;=20 and age&lt;=25;
+  mysql&gt; select * from stu where age between 20 and 25;
+
+  5. &#x67E5;&#x8BE2;&#x5E74;&#x9F84;&#x4E0D;&#x5728;20&#x81F3;25&#x5C81;&#x7684;&#x5B66;&#x751F;&#x4FE1;&#x606F;
+  mysql&gt; select * from stu where age not between 20 and 25;
+  mysql&gt; select * from stu where age&lt;20 or age&gt;25;
+
+  6. &#x67E5;&#x8BE2;id&#x503C;&#x4E3A;1,8,4,10,14&#x7684;&#x5B66;&#x751F;&#x4FE1;&#x606F;
+  select * from stu where id in(1,8,4,10,14);
+  mysql&gt; select * from stu where id=1 or id=8 or id=4 or id=10 or id=14;
+
+  7. &#x67E5;&#x8BE2;lamp138&#x548C;lamp94&#x671F;&#x7684;&#x5973;&#x751F;&#x4FE1;&#x606F;
+  mysql&gt; select * from stu where classid in(&apos;lamp138&apos;,&apos;lamp94&apos;) and sex=&apos;w&apos;;
+  mysql&gt; select * from stu where (classid=&apos;lamp138&apos; or classid=&apos;lamp94&apos;) and sex=&apos;w
+</code></pre>
+</li>
+<li><h3 id="like-&#x5B50;&#x53E5;">LIKE &#x5B50;&#x53E5;</h3>
+</li>
+</ul>
+<pre><code class="lang-sql">WHERE &#x5B50;&#x53E5;&#x4E2D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7B49;&#x53F7;=&#x6765;&#x8BBE;&#x5B9A;&#x83B7;&#x53D6;&#x6570;&#x636E;&#x7684;&#x6761;&#x4EF6;&#xFF0C;&#x5982; &quot;runoob_author = &apos;RUNOOB.COM&apos;&quot;&#x3002;
+
+&#x4F46;&#x662F;&#x6709;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x83B7;&#x53D6; runoob_author &#x5B57;&#x6BB5;&#x542B;&#x6709; &quot;COM&quot; &#x5B57;&#x7B26;&#x7684;&#x6240;&#x6709;&#x8BB0;&#x5F55;&#xFF0C;
+
+&#x8FD9;&#x65F6;&#x6211;&#x4EEC;&#x5C31;&#x9700;&#x8981;&#x5728; WHERE &#x5B50;&#x53E5;&#x4E2D;&#x4F7F;&#x7528; SQL LIKE &#x5B50;&#x53E5;&#x3002;
+
+LIKE &#x5B50;&#x53E5;&#x4E2D;&#x4F7F;&#x7528;&#x767E;&#x5206;&#x53F7;%&#x5B57;&#x7B26;&#x6765;&#x8868;&#x793A;&#x4EFB;&#x610F;&#x5B57;&#x7B26;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;UNIX&#x6216;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x7684;&#x661F;&#x53F7;*&#x3002;
+
+&#x5982;&#x679C;&#x6CA1;&#x6709;&#x4F7F;&#x7528;&#x767E;&#x5206;&#x53F7;%, LIKE &#x5B50;&#x53E5;&#x4E0E;&#x7B49;&#x53F7;=&#x7684;&#x6548;&#x679C;&#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;
+
+LIKE &#x901A;&#x5E38;&#x4E0E; % &#x4E00;&#x540C;&#x4F7F;&#x7528;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;&#x4E00;&#x4E2A;&#x5143;&#x5B57;&#x7B26;&#x7684;&#x641C;&#x7D22;&#x3002;
+&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; AND &#x6216;&#x8005; OR &#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x6761;&#x4EF6;&#x3002;
+&#x4F60;&#x53EF;&#x4EE5;&#x5728; DELETE &#x6216; UPDATE &#x547D;&#x4EE4;&#x4E2D;&#x4F7F;&#x7528; WHERE...LIKE &#x5B50;&#x53E5;&#x6765;&#x6307;&#x5B9A;&#x6761;&#x4EF6;&#x3002;
+&#x53EF;&#x4EE5;&#x4F7F;&#x7528;regexp&#x6B63;&#x5219;&#x6765;&#x4EE3;&#x66FF; like
+</code></pre>
+<pre><code class="lang-sql">--9. &#x67E5;&#x8BE2;name&#x5B57;&#x6BB5;&#x503C;&#x662F;&#x4EE5;zh&#x5F00;&#x5934;&#x7684;&#x6240;&#x6709;&#x4FE1;&#x606F;
+mysql&gt; select * from stu where name like &quot;zh%&quot;;
+mysql&gt; select * from stu where name regexp  &quot;^zh&quot;; --&#x6B63;&#x5219;&#x5199;&#x6CD5;
++----+----------+------+-----+---------+
+| id | name     | age  | sex | classid |
++----+----------+------+-----+---------+
+| 14 | zhangle  |   29 | m   |       5 |
+|  1 | zhangsan |   20 | w   |       1 |
+|  4 | zhaoliu  |   21 | m   |       4 |
++----+----------+------+-----+---------+
+3 rows in set (0.00 sec)
+
+--10.&#x67E5;&#x8BE2;&#x59D3;&#x540D;name&#x4E2D;&#x542B;&#x6709;ang&#x5B50;&#x4E32;&#x7684;&#x6240;&#x6709;&#x4FE1;&#x606F;
+mysql&gt; select * from stu where name like &quot;%ang%&quot;;
+mysql&gt; select * from stu where name regexp  &quot;ang&quot;;
++----+-----------+------+-----+---------+
+| id | name      | age  | sex | classid |
++----+-----------+------+-----+---------+
+|  1 | zhangsan  |   20 | w   |       1 |
+|  3 | wangwu    |   22 | w   |       5 |
+| 10 | xiaozhang |   19 | w   |       1 |
+| 13 | wangwen   |   27 | w   |       2 |
+| 14 | zhangle   |   29 | m   |       5 |
++----+-----------+------+-----+---------+
+5 rows in set (0.01 sec)
+
+
+--11. &#x67E5;&#x8BE2;&#x59D3;&#x540D;&#x662F;&#x4EFB;&#x610F;&#x56DB;&#x4F4D;&#x5B57;&#x7B26;&#x6784;&#x6210;&#x7684;&#x4FE1;&#x606F;&#x3002;
+mysql&gt; select * from stu where name like &quot;____&quot;;
+mysql&gt; select * from stu where name regexp &quot;^[a-z0-9]{4}$&quot;;
++----+------+------+-----+---------+
+| id | name | age  | sex | classid |
++----+------+------+-----+---------+
+|  2 | lisi |   25 | m   |       2 |
+|  5 | uu01 |   27 | w   |       1 |
+|  6 | uu02 |   25 | m   |       2 |
+|  7 | uu03 |   28 | w   |       2 |
+|  8 | uu05 |   22 | m   |       4 |
++----+------+------+-----+---------+
+5 rows in set (0.00 sec)
+</code></pre>
+<ul>
+<li><h3 id="mysql&#x7684;&#x7EDF;&#x8BA1;&#x51FD;&#x6570;&#xFF08;&#x805A;&#x5408;&#x51FD;&#x6570;&#xFF09;&#xFF1A;max-min-count-sum-avg">MySQL&#x7684;&#x7EDF;&#x8BA1;&#x51FD;&#x6570;&#xFF08;&#x805A;&#x5408;&#x51FD;&#x6570;&#xFF09;&#xFF1A;max() min() count() sum() avg()</h3>
+</li>
+</ul>
+<pre><code class="lang-sql">-- &#x83B7;&#x53D6;&#x5B66;&#x751F;&#x8868;&#x4E2D;&#x6700;&#x5927;&#x3001;&#x6700;&#x5C0F;&#x4EE5;&#x53CA;&#x5E73;&#x5747;&#x5E74;&#x9F84;&#x662F;&#x591A;&#x5C11;&#xFF1F;
+mysql&gt; select max(age),min(age),avg(age) from stu;
++----------+----------+----------+
+| max(age) | min(age) | avg(age) |
++----------+----------+----------+
+|       29 |       19 |  24.5714 |
++----------+----------+----------+
+1 row in set (0.00 sec)
+
+-- &#x83B7;&#x53D6;&#x5B66;&#x751F;&#x8868;&#x4E2D;&#x7537;&#x751F;m&#x7684;&#x6570;&#x91CF;
+mysql&gt; select count(*) from stu where sex=&apos;m&apos;;
+</code></pre>
+<ul>
+<li><h3 id="group-by-&#x8BED;&#x53E5;-&#x5206;&#x7EC4;">GROUP BY &#x8BED;&#x53E5; &#x5206;&#x7EC4;</h3>
+</li>
+</ul>
+<pre><code class="lang-sql">GROUP BY &#x8BED;&#x53E5;&#x6839;&#x636E;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x5217;&#x5BF9;&#x7ED3;&#x679C;&#x96C6;&#x8FDB;&#x884C;&#x5206;&#x7EC4;&#x3002;
+
+&#x5728;&#x5206;&#x7EC4;&#x7684;&#x5217;&#x4E0A;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; COUNT, SUM, AVG,&#x7B49;&#x51FD;&#x6570;&#x3002;
+
+
+-- &#x7EDF;&#x8BA1;&#x73ED;&#x7EA7;&#x4FE1;&#x606F;&#xFF0C;&#x6309;&#x6027;&#x522B;&#x5206;&#x7EC4;&#xFF0C;&#x5E76;&#x7EDF;&#x8BA1;&#x6BCF;&#x7EC4;&#x4EBA;&#x6570;&#xFF1B;
+MySQL&gt; select sex,count(*) from stu  group by sex;
+
+-- &#x7EDF;&#x8BA1;&#x6BCF;&#x4E2A;&#x73ED;&#x7EA7;&#x7684;&#x4EBA;&#x6570;
+MySQL&gt; select classid,count(*) from stu  group by classid;
+
+-- &#x7EDF;&#x8BA1;&#x6BCF;&#x4E2A;&#x73ED;&#x7EA7;&#x7684;&#xFF0C;&#x7537;&#x751F;&#x548C;&#x5973;&#x751F;&#x5404;&#x591A;&#x5C11;&#x4EBA;&#x6570;&#x3002;
+MySQL&gt; select classid,sex,count(*) from stu  group by classid,sex;
+</code></pre>
+<ul>
+<li><h3 id="order-by-&#x6392;&#x5E8F;--asc-&#x9ED8;&#x8BA4;&#x5347;&#x5E8F;-desc-&#x964D;&#x5E8F;">ORDER BY &#x6392;&#x5E8F; -- asc &#x9ED8;&#x8BA4;&#x5347;&#x5E8F; desc &#x964D;&#x5E8F;</h3>
+</li>
+</ul>
+<blockquote>
+<p>&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x4ECE; MySQL &#x8868;&#x4E2D;&#x4F7F;&#x7528; SQL SELECT &#x8BED;&#x53E5;&#x6765;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5BF9;&#x8BFB;&#x53D6;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; MySQL &#x7684;ORDER BY&#x5B50;&#x53E5;&#x6765;&#x8BBE;&#x5B9A;&#x4F60;&#x60F3;&#x6309;&#x54EA;&#x4E2A;&#x5B57;&#x6BB5;&#x54EA;&#x79CD;&#x65B9;&#x5F0F;&#x6765;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF0C;&#x518D;&#x8FD4;&#x56DE;&#x641C;&#x7D22;&#x7ED3;&#x679C;&#x3002;</p>
+<ul>
+<li>&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EFB;&#x4F55;&#x5B57;&#x6BB5;&#x6765;&#x4F5C;&#x4E3A;&#x6392;&#x5E8F;&#x7684;&#x6761;&#x4EF6;&#xFF0C;&#x4ECE;&#x800C;&#x8FD4;&#x56DE;&#x6392;&#x5E8F;&#x540E;&#x7684;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x3002;</li>
+<li>&#x4F60;&#x53EF;&#x4EE5;&#x8BBE;&#x5B9A;&#x591A;&#x4E2A;&#x5B57;&#x6BB5;&#x6765;&#x6392;&#x5E8F;&#x3002;</li>
+<li>&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; ASC &#x6216; DESC &#x5173;&#x952E;&#x5B57;&#x6765;&#x8BBE;&#x7F6E;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x662F;&#x6309;&#x5347;&#x5E8F;&#x6216;&#x964D;&#x5E8F;&#x6392;&#x5217;&#x3002; &#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5B83;&#x662F;&#x6309;&#x5347;&#x5E8F;&#x6392;&#x5217;&#x3002;</li>
+<li>&#x4F60;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0; WHERE...LIKE &#x5B50;&#x53E5;&#x6765;&#x8BBE;&#x7F6E;&#x6761;&#x4EF6;&#x3002;</li>
+</ul>
+</blockquote>
+<pre><code class="lang-sql">SELECT field1, field2,...fieldN table_name1, table_name2...
+ORDER BY field1, [field2...] [ASC [DESC]]
+
+
+-- &#x6309;&#x5E74;&#x9F84;&#x5347;&#x5E8F;&#x6392;&#x5E8F;&#x67E5;&#x8BE2;&#x5B66;&#x751F;&#x4FE1;&#x606F;
+mysql&gt; select * from stu order by age;
+mysql&gt; select * from stu order by age asc;  --&#x9ED8;&#x8BA4;asc&#x5347;&#x5E8F; &#x53EF;&#x7701;&#x7565;
++----+-----------+------+-----+---------+
+| id | name      | age  | sex | classid |
++----+-----------+------+-----+---------+
+| 10 | xiaozhang |   19 | w   |       1 |
+|  1 | zhangsan  |   20 | w   |       1 |
+|  4 | zhaoliu   |   21 | m   |       4 |
+| 11 | xiaoyan   |   22 | m   |       2 |
+|  8 | uu05      |   22 | m   |       4 |
+|  3 | wangwu    |   22 | w   |       5 |
+|  6 | uu02      |   25 | m   |       2 |
+|  2 | lisi      |   25 | m   |       2 |
+|  5 | uu01      |   27 | w   |       1 |
+| 13 | wangwen   |   27 | w   |       2 |
+|  7 | uu03      |   28 | w   |       2 |
+| 12 | xiaoxin   |   28 | w   |       4 |
+|  9 | xiaoli    |   29 | w   |       2 |
+| 14 | zhangle   |   29 | m   |       5 |
++----+-----------+------+-----+---------+
+14 rows in set (0.01 sec)
+
+-- &#x5E74;&#x9F84;&#x964D;&#x5E8F;&#x6392;&#x5E8F;
+mysql&gt; select * from stu order by age desc;
++----+-----------+------+-----+---------+
+| id | name      | age  | sex | classid |
++----+-----------+------+-----+---------+
+| 14 | zhangle   |   29 | m   |       5 |
+|  9 | xiaoli    |   29 | w   |       2 |
+| 12 | xiaoxin   |   28 | w   |       4 |
+|  7 | uu03      |   28 | w   |       2 |
+| 13 | wangwen   |   27 | w   |       2 |
+|  5 | uu01      |   27 | w   |       1 |
+|  2 | lisi      |   25 | m   |       2 |
+|  6 | uu02      |   25 | m   |       2 |
+| 11 | xiaoyan   |   22 | m   |       2 |
+|  8 | uu05      |   22 | m   |       4 |
+|  3 | wangwu    |   22 | w   |       5 |
+|  4 | zhaoliu   |   21 | m   |       4 |
+|  1 | zhangsan  |   20 | w   |       1 |
+| 10 | xiaozhang |   19 | w   |       1 |
++----+-----------+------+-----+---------+
+14 rows in set (0.00 sec)
+
+
+-- &#x67E5;&#x8BE2;&#x5B66;&#x751F;&#x4FE1;&#x606F;&#xFF0C;&#x6309;&#x73ED;&#x7EA7;&#x505A;&#x5347;&#x5E8F;&#x6392;&#x5E8F;&#xFF0C;&#x76F8;&#x540C;&#x73ED;&#x7EA7;&#x6309;&#x5E74;&#x9F84;&#x964D;&#x5E8F;&#x6392;&#x5E8F;
+mysql&gt; select * from stu order by classid asc,age desc;
+</code></pre>
+<ul>
+<li><h3 id="limit-&#x5173;&#x952E;&#x5B57;-&#x67E5;&#x8BE2;&#x90E8;&#x5206;&#x6570;&#x636E;">limit &#x5173;&#x952E;&#x5B57; &#x67E5;&#x8BE2;&#x90E8;&#x5206;&#x6570;&#x636E;</h3>
+</li>
+</ul>
+<blockquote>
+<p>-- &#x4F8B;&#x5982;&#xFF1A; .... limit m; &#x67E5;&#x8BE2;&#x6570;&#x636E;&#x53EA;&#x663E;&#x793A;&#x524D;m&#x6761;</p>
+<p>-- &#x4F8B;&#x5982;&#xFF1A; .... limit m,n; &#x6392;&#x9664;&#x524D;m&#x6761;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x67E5;&#x8BE2;&#x51FA;&#x524D;n&#x6761;</p>
+</blockquote>
+<pre><code class="lang-sql">-- &#x67E5;&#x8BE2;&#x524D;5&#x6761;&#x4FE1;&#x606F;
+mysql&gt; select * from stu limit 5;
++----+----------+------+-----+---------+
+| id | name     | age  | sex | classid |
++----+----------+------+-----+---------+
+|  1 | zhangsan |   20 | w   |       1 |
+|  2 | lisi     |   25 | m   |       2 |
+|  3 | wangwu   |   22 | w   |       5 |
+|  4 | zhaoliu  |   21 | m   |       4 |
+|  5 | uu01     |   27 | w   |       1 |
++----+----------+------+-----+---------+
+5 rows in set (0.00 sec)
+
+-- &#x6392;&#x9664;&#x524D;2&#x6761;&#x540E;&#x518D;&#x83B7;&#x53D6;4&#x6761;&#x4FE1;&#x606F;
+mysql&gt; select * from stu limit 2,4;
++----+---------+------+-----+---------+
+| id | name    | age  | sex | classid |
++----+---------+------+-----+---------+
+|  3 | wangwu  |   22 | w   |       5 |
+|  4 | zhaoliu |   21 | m   |       4 |
+|  5 | uu01    |   27 | w   |       1 |
+|  6 | uu02    |   25 | m   |       2 |
++----+---------+------+-----+---------+
+4 rows in set (0.00 sec)
+
+-- &#x4EE5;4&#x6761;&#x6570;&#x636E;&#x5206;&#x4E00;&#x9875;&#xFF0C;&#x53D6;&#x7B2C;&#x4E00;&#x9875;&#x3002;
+mysql&gt; select * from stu limit 0,4;
++----+----------+------+-----+---------+
+| id | name     | age  | sex | classid |
++----+----------+------+-----+---------+
+|  1 | zhangsan |   20 | w   |       1 |
+|  2 | lisi     |   25 | m   |       2 |
+|  3 | wangwu   |   22 | w   |       5 |
+|  4 | zhaoliu  |   21 | m   |       4 |
++----+----------+------+-----+---------+
+4 rows in set (0.00 sec)
+
+-- &#x4EE5;4&#x6761;&#x6570;&#x636E;&#x5206;&#x4E00;&#x9875;&#xFF0C;&#x53D6;&#x7B2C;&#x4E8C;&#x9875;&#x3002;
+mysql&gt; select * from stu limit 4,4;
++----+------+------+-----+---------+
+| id | name | age  | sex | classid |
++----+------+------+-----+---------+
+|  5 | uu01 |   27 | w   |       1 |
+|  6 | uu02 |   25 | m   |       2 |
+|  7 | uu03 |   28 | w   |       2 |
+|  8 | uu05 |   22 | m   |       4 |
++----+------+------+-----+---------+
+4 rows in set (0.00 sec)
+
+-- &#x4EE5;4&#x6761;&#x6570;&#x636E;&#x5206;&#x4E00;&#x9875;&#xFF0C;&#x53D6;&#x7B2C;&#x4E09;&#x9875;&#x3002;
+mysql&gt; select * from stu limit 8,4;
++----+-----------+------+-----+---------+
+| id | name      | age  | sex | classid |
++----+-----------+------+-----+---------+
+|  9 | xiaoli    |   29 | w   |       2 |
+| 10 | xiaozhang |   19 | w   |       1 |
+| 11 | xiaoyan   |   22 | m   |       2 |
+| 12 | xiaoxin   |   28 | w   |       4 |
++----+-----------+------+-----+---------+
+4 rows in set (0.00 sec)
+
+
+-- &#x4EE5;4&#x6761;&#x6570;&#x636E;&#x5206;&#x4E00;&#x9875;&#xFF0C;&#x53D6;&#x7B2C;&#x56DB;&#x9875;&#x3002;
+mysql&gt; select * from stu limit 12,4;
++----+---------+------+-----+---------+
+| id | name    | age  | sex | classid |
++----+---------+------+-----+---------+
+| 13 | wangwen |   27 | w   |       2 |
+| 14 | zhangle |   29 | m   |       5 |
++----+---------+------+-----+---------+
+2 rows in set (0.00 sec)
+
+mysql&gt; 
+&#x5206;&#x9875;&#x516C;&#x5F0F;&#xFF1A;.... (&#x9875;&#x53F7;-1)*&#x9875;&#x5927;&#x5C0F;, &#x9875;&#x5927;&#x5C0F;;
+
+&#x9875;&#x53F7;     limit&#x8BED;&#x53E5;                &#x8D77;&#x59CB;&#x5206;&#x9875;&#x7801;&#x6570;&#x503C;&#x662F;&#x9875;&#x5927;&#x5C0F;&#x7684;&#x51E0;&#x500D;&#x3002;
+---------------------------------------------------------------------
+1       ... limit 0,4;                0
+2       ... limit 4,4;                1
+3       ... limit 8,4;                2
+4       ... limit 12,4;            3
+5       ... limit 16,4;            4
+</code></pre>
+<ul>
+<li><h3 id="&#x7EC3;&#x4E60;">&#x7EC3;&#x4E60;</h3>
+<pre><code class="lang-sql">  -- &#x7EDF;&#x8BA1;&#x73ED;&#x7EA7;classid&#x503C;&#x4E3A;2&#x7684;&#x7537;&#x5973;&#x751F;&#x5404;&#x591A;&#x5C11;&#x4EBA;&#xFF1F;
+  mysql&gt; select sex,count(*) from stu where classid=2 group by sex;
+
+  -- &#x83B7;&#x53D6;&#x5E74;&#x9F84;&#x6700;&#x5927;&#x7684;5&#x4F4D;&#x5B66;&#x751F;&#x4FE1;&#x606F;&#xFF1F;
+  mysql&gt; select * from stu order by age desc limit 5;
+
+  -- &#x83B7;&#x53D6;&#x6BCF;&#x4E2A;&#x73ED;&#x7EA7;&#x7684;&#x5E73;&#x5747;&#x5E74;&#x9F84;&#xFF0C;&#x5E76;&#x6309;&#x5E73;&#x5747;&#x5E74;&#x9F84;&#x964D;&#x5E8F;&#xFF0C;
+  mysql&gt; select classid,avg(age) from stu group by classid order by avg(age) desc;
+  mysql&gt; select classid,avg(age) anum from stu group by classid order by anum desc;
+
+  -- &#x7EDF;&#x8BA1;&#x6BCF;&#x4E2A;&#x73ED;&#x7EA7;&#x7684;&#x4EBA;&#x6570;&#xFF0C;&#x6309;&#x4EBA;&#x6570;&#x4ECE;&#x5927;&#x5230;&#x5C0F;&#x6392;&#x5E8F;&#xFF0C;&#x53D6;&#x524D;3&#x6761;&#x3002;
+  mysql&gt; select classid,count(*) num from stu group by classid order by num desc limit 3;
+</code></pre>
+</li>
+</ul>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../home/part1/4.DML操作：增,删,改.html" class="navigation navigation-prev " aria-label="Previous page: DML操作：增,删,改"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../home/part1/6.数据导入和导出.html" class="navigation navigation-next " aria-label="Next page: 数据导入和导出"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../../gitbook/app.js"></script>
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

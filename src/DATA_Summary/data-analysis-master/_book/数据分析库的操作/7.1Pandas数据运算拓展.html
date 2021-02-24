@@ -1,0 +1,2734 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Pandas数据运算-拓展 | Python 数据分析学习目录</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../数据分析库的操作/8Pandas分组聚合1.html" />
+    
+    
+    <link rel="prev" href="../数据分析库的操作/7Pandas数据运算.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="4.4.3.1"
+        data-chapter-title="Pandas数据运算-拓展"
+        data-filepath="数据分析库的操作/7.1Pandas数据运算拓展.md"
+        data-basepath=".."
+        data-revision="Wed Oct 24 2018 21:30:49 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        数据分析
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="Python数据分析序言/内容序言.html">
+            
+                
+                    <a href="../Python数据分析序言/内容序言.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Python数据分析内容
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="python数据分析环境和工具/Python数据分析相关.html">
+            
+                
+                    <a href="../python数据分析环境和工具/Python数据分析相关.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        python数据分析环境和工具
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="python数据分析环境和工具/1Python数据课程软件和环境安装.html">
+            
+                
+                    <a href="../python数据分析环境和工具/1Python数据课程软件和环境安装.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Python数据课程 软件和环境安装
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="python数据分析环境和工具/2python发行版.html">
+            
+                
+                    <a href="../python数据分析环境和工具/2python发行版.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        python发行版
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="python数据分析环境和工具/5交互式编辑器-JupyterNotebook.html">
+            
+                
+                    <a href="../python数据分析环境和工具/5交互式编辑器-JupyterNotebook.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        交互式编辑器-JupyterNotebook
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="python数据分析环境和工具/5.1Jupyter-notebook拓展应用.html">
+            
+                
+                    <a href="../python数据分析环境和工具/5.1Jupyter-notebook拓展应用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.1.</b>
+                        
+                        Jupyter-notebook拓展应用
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="python数据分析环境和工具/包和环境管理器：conda.html">
+            
+                
+                    <a href="../python数据分析环境和工具/包和环境管理器：conda.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        包和环境管理器：conda
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="python数据分析环境和工具/pip和Virtualenv.html">
+            
+                
+                    <a href="../python数据分析环境和工具/pip和Virtualenv.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.1.</b>
+                        
+                        pip和Virtualenv
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="python数据分析环境和工具/3Markdown.html">
+            
+                
+                    <a href="../python数据分析环境和工具/3Markdown.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        标记语言：Markdown
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="python数据分析环境和工具/4Markdown语法.html">
+            
+                
+                    <a href="../python数据分析环境和工具/4Markdown语法.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.1.</b>
+                        
+                        Markdown语法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="python数据分析环境和工具/6Gitbook文档.html">
+            
+                
+                    <a href="../python数据分析环境和工具/6Gitbook文档.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.2.</b>
+                        
+                        文档管理工具-Gitbook
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="数据分析库的初步认识/index.html">
+            
+                
+                    <a href="../数据分析库的初步认识/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        数据分析库-Pandas
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="数据分析库的初步认识/Pandas创建.html">
+            
+                
+                    <a href="../数据分析库的初步认识/Pandas创建.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        pandas
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="数据分析库的初步认识/Series创建.html">
+            
+                
+                    <a href="../数据分析库的初步认识/Series创建.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        Series
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="数据分析库的初步认识/DataFrame创建.html">
+            
+                
+                    <a href="../数据分析库的初步认识/DataFrame创建.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        DataFrame对象-创建
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" >
+            
+            <span><b>4.</b> 数据分析库的操作</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="数据分析库的操作/1DataFrame查询1-整体.html">
+            
+                
+                    <a href="../数据分析库的操作/1DataFrame查询1-整体.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        DataFrame查询1-整体
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="数据分析库的操作/2DataFrame查询2-专用查询.html">
+            
+                
+                    <a href="../数据分析库的操作/2DataFrame查询2-专用查询.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        DataFrame查询2-专用查询
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="数据分析库的操作/3DataFrame查询3-专有查询：过滤查询.html">
+            
+                
+                    <a href="../数据分析库的操作/3DataFrame查询3-专有查询：过滤查询.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        DataFrame查询3-专有查询：过滤查询
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="数据分析库的操作/4Pandas对象的数据操作：增删改查.html">
+            
+                
+                    <a href="../数据分析库的操作/4Pandas对象的数据操作：增删改查.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        Pandas对象的数据操作：增删改查
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.1" data-path="数据分析库的操作/5Pandas数据操作：其他操作.html">
+            
+                
+                    <a href="../数据分析库的操作/5Pandas数据操作：其他操作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.1.</b>
+                        
+                        Pandas数据操作：其他操作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.2" data-path="数据分析库的操作/6Pandas数据存取.html">
+            
+                
+                    <a href="../数据分析库的操作/6Pandas数据存取.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.2.</b>
+                        
+                        Pandas数据存取
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.3" data-path="数据分析库的操作/7Pandas数据运算.html">
+            
+                
+                    <a href="../数据分析库的操作/7Pandas数据运算.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.3.</b>
+                        
+                        Pandas数据运算
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="4.4.3.1" data-path="数据分析库的操作/7.1Pandas数据运算拓展.html">
+            
+                
+                    <a href="../数据分析库的操作/7.1Pandas数据运算拓展.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.3.1.</b>
+                        
+                        Pandas数据运算-拓展
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.4" data-path="数据分析库的操作/8Pandas分组聚合1.html">
+            
+                
+                    <a href="../数据分析库的操作/8Pandas分组聚合1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.4.</b>
+                        
+                        Pandas分组聚合1
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.5" data-path="数据分析库的操作/9Pandas分组聚合2.html">
+            
+                
+                    <a href="../数据分析库的操作/9Pandas分组聚合2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.5.</b>
+                        
+                        Pandas分组聚合2
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.6" data-path="数据分析库的操作/10Pandas数据规整-清理.html">
+            
+                
+                    <a href="../数据分析库的操作/10Pandas数据规整-清理.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.6.</b>
+                        
+                        Pandas数据规整-清理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.7" data-path="数据分析库的操作/11Pandas数据规整-转换.html">
+            
+                
+                    <a href="../数据分析库的操作/11Pandas数据规整-转换.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.7.</b>
+                        
+                        Pandas数据规整-转换
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.7.1" data-path="数据分析库的操作/14Pandas数据规整-转换-离散化和面元划分.html">
+            
+                
+                    <a href="../数据分析库的操作/14Pandas数据规整-转换-离散化和面元划分.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.7.1.</b>
+                        
+                        离散化和面元划分
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.8" data-path="数据分析库的操作/16Pandas数据规整-合并.html">
+            
+                
+                    <a href="../数据分析库的操作/16Pandas数据规整-合并.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.8.</b>
+                        
+                        Pandas数据规整-合并
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="数据分析库的操作/13Pandas数据规整-重塑和轴向旋转.html">
+            
+                
+                    <a href="../数据分析库的操作/13Pandas数据规整-重塑和轴向旋转.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        Pandas数据规整-重塑和轴向旋转
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.5.1" data-path="数据分析库的操作/13.1透视表和交叉表.html">
+            
+                
+                    <a href="../数据分析库的操作/13.1透视表和交叉表.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.1.</b>
+                        
+                        透视表和交叉表
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="Python可视化/绘图库-Matplotlib.html">
+            
+                
+                    <a href="../Python可视化/绘图库-Matplotlib.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Python可视化
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="Python可视化/绘图库-Matplotlib/Matplotlib常见图表.html">
+            
+                
+                    <a href="../Python可视化/绘图库-Matplotlib/Matplotlib常见图表.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        基础：Matplotlib常见图表
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="Python可视化/绘图库-Matplotlib/Matplotlib常见设置和操作.html">
+            
+                
+                    <a href="../Python可视化/绘图库-Matplotlib/Matplotlib常见设置和操作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.1.</b>
+                        
+                        Matplotlib常见设置和操作
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="Python可视化/绘图库-Matplotlib/1Matplotlib-绘图区域.html">
+            
+                
+                    <a href="../Python可视化/绘图库-Matplotlib/1Matplotlib-绘图区域.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        提升：绘图区域
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="Python可视化/绘图库-Matplotlib/2Matplotlib-图像组件.html">
+            
+                
+                    <a href="../Python可视化/绘图库-Matplotlib/2Matplotlib-图像组件.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        提升：绘图组件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="Python可视化/绘图库-Matplotlib/3Matplotlib-高级绘图.html">
+            
+                
+                    <a href="../Python可视化/绘图库-Matplotlib/3Matplotlib-高级绘图.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                        拓展：高级绘图
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="Python可视化/绘图库-Matplotlib/4数学计算展示图像.html">
+            
+                
+                    <a href="../Python可视化/绘图库-Matplotlib/4数学计算展示图像.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.</b>
+                        
+                        拓展：数学计算展示图像
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="Python可视化/绘图库-Matplotlib/5注意事项.html">
+            
+                
+                    <a href="../Python可视化/绘图库-Matplotlib/5注意事项.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.</b>
+                        
+                        拓展：注意事项
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="Python可视化/绘图库-Matplotlib/6pylab.html">
+            
+                
+                    <a href="../Python可视化/绘图库-Matplotlib/6pylab.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.</b>
+                        
+                        拓展：pylab
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="数据分析必备知识点/数据分析必备知识点汇集.html">
+            
+                
+                    <a href="../数据分析必备知识点/数据分析必备知识点汇集.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        数据分析必备知识点
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="数据分析必备知识点/数据分析流程.html">
+            
+                
+                    <a href="../数据分析必备知识点/数据分析流程.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        数据分析流程
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Python 数据分析学习目录</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <hr>
+<h1 id="pandas&#x6570;&#x636E;&#x8FD0;&#x7B97;-&#x62D3;&#x5C55;">Pandas&#x6570;&#x636E;&#x8FD0;&#x7B97;_ &#x62D3;&#x5C55;</h1>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+<span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+</code></pre>
+<hr>
+<h1 id="&#x7B97;&#x6570;&#x8FD0;&#x7B97;&#x6CD5;&#x5219;">&#x7B97;&#x6570;&#x8FD0;&#x7B97;&#x6CD5;&#x5219;</h1>
+<p>&#x6839;&#x636E;&#x884C;&#x5217;&#x7D22;&#x5F15;,&#x8865;&#x9F50;&#x8FD0;&#x7B97;(&#x4E0D;&#x540C;&#x7D22;&#x5F15;&#x4E0D;&#x8FD0;&#x7B97;,&#x884C;&#x5217;&#x7D22;&#x5F15;&#x76F8;&#x540C;&#x624D;&#x8FD0;&#x7B97;)</p>
+<p>&#x8865;&#x9F50;&#x65F6;&#x9ED8;&#x8BA4;&#x586B;&#x5145;NaN&#x7A7A;&#x503C;</p>
+<p>&#x4E8C;&#x7EF4;&#x548C;&#x4E00;&#x7EF4;,&#x4E00;&#x7EF4;&#x548C;0&#x7EF4;&#x4E4B;&#x95F4;&#x91C7;&#x7528;&#x5E7F;&#x64AD;&#x8FD0;&#x7B97;(&#x4F4E;&#x7EF4;&#x5143;&#x7D20;&#x4E0E;&#x6BCF;&#x4E00;&#x4E2A;&#x9AD8;&#x7EF4;&#x5143;&#x7D20;&#x8FD0;&#x7B97;)</p>
+<p>&#x91C7;&#x7528; +-*/&#x7B26;&#x53F7;&#x7684;&#x4E8C;&#x5143;&#x8FD0;&#x7B97;&#x4F1A;&#x4EA7;&#x751F;&#x65B0;&#x7684;&#x5BF9;&#x8C61;</p>
+<pre><code class="lang-python">
+a = pd.DataFrame(np.arange(<span class="hljs-number">12</span>).reshape(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>))
+a
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>8</td>
+      <td>9</td>
+      <td>10</td>
+      <td>11</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">b = pd.DataFrame(np.arange(<span class="hljs-number">20</span>).reshape(<span class="hljs-number">4</span>, <span class="hljs-number">5</span>))
+b
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>10</td>
+      <td>11</td>
+      <td>12</td>
+      <td>13</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>15</td>
+      <td>16</td>
+      <td>17</td>
+      <td>18</td>
+      <td>19</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python"><span class="hljs-comment"># &#x7EF4;&#x5EA6;&#x76F8;&#x540C;,&#x884C;&#x5217;&#x5185;&#x5143;&#x7D20;&#x4E2A;&#x6570;&#x4E0D;&#x540C;&#x7684;&#x8FD0;&#x7B97;,&#x81EA;&#x52A8;&#x8865;&#x9F50;,&#x7F3A;&#x9879;NaN</span>
+
+a + b
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>4.0</td>
+      <td>6.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>9.0</td>
+      <td>11.0</td>
+      <td>13.0</td>
+      <td>15.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>18.0</td>
+      <td>20.0</td>
+      <td>22.0</td>
+      <td>24.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">a * b
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>4.0</td>
+      <td>9.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>20.0</td>
+      <td>30.0</td>
+      <td>42.0</td>
+      <td>56.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>80.0</td>
+      <td>99.0</td>
+      <td>120.0</td>
+      <td>143.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h2 id="&#x9664;&#x4E86;&#x4F7F;&#x7528;&#x4E5F;&#x53EF;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x5F62;&#x5F0F;&#x597D;&#x5904;&#x662F;&#x53EF;&#x4EE5;&#x589E;&#x52A0;&#x53EF;&#x9009;&#x53C2;&#x6570;">&#x9664;&#x4E86;&#x4F7F;&#x7528;+-*/,&#x4E5F;&#x53EF;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x5F62;&#x5F0F;,&#x597D;&#x5904;&#x662F;&#x53EF;&#x4EE5;&#x589E;&#x52A0;&#x53EF;&#x9009;&#x53C2;&#x6570;</h2>
+<ul>
+<li>.add(d,**argws) &#x7C7B;&#x578B;&#x95F4;&#x52A0;&#x6CD5;&#x8FD0;&#x7B97;,&#x53EF;&#x9009;&#x53C2;&#x6570;</li>
+<li>.sub(d,**argws) &#x7C7B;&#x578B;&#x95F4;&#x51CF;&#x6CD5;&#x8FD0;&#x7B97;,&#x53EF;&#x9009;&#x53C2;&#x6570;</li>
+<li>.mul(d,**argws) &#x7C7B;&#x578B;&#x95F4;&#x4E58;&#x6CD5;&#x8FD0;&#x7B97;,&#x53EF;&#x9009;&#x53C2;&#x6570;</li>
+<li>.div(d,**argws) &#x7C7B;&#x578B;&#x95F4;&#x9664;&#x6CD5;&#x8FD0;&#x7B97;,&#x53EF;&#x9009;&#x53C2;&#x6570;</li>
+</ul>
+<pre><code class="lang-python">a.add(b)
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>4.0</td>
+      <td>6.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>9.0</td>
+      <td>11.0</td>
+      <td>13.0</td>
+      <td>15.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>18.0</td>
+      <td>20.0</td>
+      <td>22.0</td>
+      <td>24.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">b.add(a, fill_value = <span class="hljs-number">100</span>) <span class="hljs-comment">#&#x5C06;a&#x548C;b&#x4E4B;&#x95F4;&#x7684;&#x7F3A;&#x5931;&#x5143;&#x7D20;&#x7528;100&#x8865;&#x9F50;&#x5E76;&#x53C2;&#x52A0;&#x4E0E;&#x8FD0;&#x7B97;</span>
+
+<span class="hljs-comment"># &#x8865;&#x9F50;&#x7F3A;&#x5931;&#x503C;&#x540E;&#xFF0C;&#x518D;&#x6B21;&#x53C2;&#x52A0;&#x8FD0;&#x7B97;</span>
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>4.0</td>
+      <td>6.0</td>
+      <td>104.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>9.0</td>
+      <td>11.0</td>
+      <td>13.0</td>
+      <td>15.0</td>
+      <td>109.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>18.0</td>
+      <td>20.0</td>
+      <td>22.0</td>
+      <td>24.0</td>
+      <td>114.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>115.0</td>
+      <td>116.0</td>
+      <td>117.0</td>
+      <td>118.0</td>
+      <td>119.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">a.mul(b, fill_value = <span class="hljs-number">0</span>)
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>4.0</td>
+      <td>9.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>20.0</td>
+      <td>30.0</td>
+      <td>42.0</td>
+      <td>56.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>80.0</td>
+      <td>99.0</td>
+      <td>120.0</td>
+      <td>143.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h1 id="&#x4E0D;&#x540C;&#x7EF4;&#x5EA6;&#x8FD0;&#x7B97;">&#x4E0D;&#x540C;&#x7EF4;&#x5EA6;&#x8FD0;&#x7B97;</h1>
+<pre><code class="lang-python">b
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>10</td>
+      <td>11</td>
+      <td>12</td>
+      <td>13</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>15</td>
+      <td>16</td>
+      <td>17</td>
+      <td>18</td>
+      <td>19</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">c = pd.Series(np.arange(<span class="hljs-number">4</span>))
+c
+</code></pre>
+<pre><code>0    0
+1    1
+2    2
+3    3
+dtype: int32
+</code></pre><pre><code class="lang-python">c + <span class="hljs-number">100</span>  <span class="hljs-comment"># 1&#x7EF4;&#x548C; 0 &#x7EF4; &#x6570;&#x636E;&#x8FD0;&#x7B97;</span>
+</code></pre>
+<pre><code>0    100
+1    101
+2    102
+3    103
+dtype: int32
+</code></pre><pre><code class="lang-python">b + c
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>4.0</td>
+      <td>6.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5.0</td>
+      <td>7.0</td>
+      <td>9.0</td>
+      <td>11.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>10.0</td>
+      <td>12.0</td>
+      <td>14.0</td>
+      <td>16.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>15.0</td>
+      <td>17.0</td>
+      <td>19.0</td>
+      <td>21.0</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">b.add(c)
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>4.0</td>
+      <td>6.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5.0</td>
+      <td>7.0</td>
+      <td>9.0</td>
+      <td>11.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>10.0</td>
+      <td>12.0</td>
+      <td>14.0</td>
+      <td>16.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>15.0</td>
+      <td>17.0</td>
+      <td>19.0</td>
+      <td>21.0</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<p>&#x9ED8;&#x8BA4;&#x6309;&#x6BCF;&#x884C;&#x7684;&#x5217;&#x8FD0;&#x7B97;&#xFF0C;axis=0&#x6309;&#x6BCF;&#x5217;&#x7684;&#x884C;&#x8FD0;&#x7B97;</p>
+<pre><code class="lang-python">b.add(c,axis=<span class="hljs-number">0</span>)   <span class="hljs-comment">#&#x9ED8;&#x8BA4;&#x6309;&#x6BCF;&#x884C;&#x7684;&#x5217;&#x8FD0;&#x7B97;&#xFF0C;axis=0&#x6309;&#x6BCF;&#x5217;&#x7684;&#x884C;&#x8FD0;&#x7B97;</span>
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>12</td>
+      <td>13</td>
+      <td>14</td>
+      <td>15</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>18</td>
+      <td>19</td>
+      <td>20</td>
+      <td>21</td>
+      <td>22</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<hr>
+<h1 id="&#x6BD4;&#x8F83;&#x8FD0;&#x7B97;&#x6CD5;&#x5219;">&#x6BD4;&#x8F83;&#x8FD0;&#x7B97;&#x6CD5;&#x5219;</h1>
+<p>&#x6BD4;&#x8F83;&#x8FD0;&#x7B97;&#x53EA;&#x80FD;&#x6BD4;&#x8F83;&#x76F8;&#x540C;&#x7D22;&#x5F15;&#x7684;&#x5143;&#x7D20;,&#x4E0D;&#x8FDB;&#x884C;&#x8865;&#x9F50;(&#x5C3A;&#x5BF8;&#x4E0D;&#x540C;&#x4F1A;&#x62A5;&#x9519;)</p>
+<p>&#x4E8C;&#x7EF4;&#x548C;&#x4E00;&#x7EF4;/&#x4E00;&#x7EF4;&#x548C;&#x96F6;&#x7EF4;&#x95F4;&#x4E3A;&#x5E7F;&#x64AD;&#x8FD0;&#x7B97;</p>
+<p>&#x91C7;&#x7528;&gt;&lt; &gt;= &lt;= == !=&#x7B49;&#x7B26;&#x53F7;&#x8FDB;&#x884C;&#x7684;&#x4E8C;&#x5143;&#x8FD0;&#x7B97;&#x4EA7;&#x751F;&#x5E03;&#x5C14;&#x5BF9;&#x8C61;</p>
+<pre><code class="lang-python">a
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>8</td>
+      <td>9</td>
+      <td>10</td>
+      <td>11</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">d = pd.DataFrame(np.arange(<span class="hljs-number">12</span>, <span class="hljs-number">0</span>, -<span class="hljs-number">1</span>).reshape(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>))
+d
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>12</td>
+      <td>11</td>
+      <td>10</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>8</td>
+      <td>7</td>
+      <td>6</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4</td>
+      <td>3</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">a &gt; d
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">a == d
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">a &lt; c
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+
+<hr>
+<h1 id="&#x6839;&#x636E;&#x7D22;&#x5F15;&#x5BF9;&#x9F50;&#x64CD;&#x4F5C;">&#x6839;&#x636E;&#x7D22;&#x5F15;&#x5BF9;&#x9F50;&#x64CD;&#x4F5C;</h1>
+<p>Series&#x7C7B;&#x578B;&#x5728;&#x8FD0;&#x7B97;&#x4E2D;&#x4F1A;&#x81EA;&#x52A8;&#x5BF9;&#x9F50;&#x4E0D;&#x540C;&#x7D22;&#x5F15;&#x7684;&#x6570;&#x636E;</p>
+<p>ndarray&#x57FA;&#x4E8E;&#x7EF4;&#x5EA6;&#x8FD0;&#x7B97;&#xFF0C;Series&#x57FA;&#x4E8E;&#x7D22;&#x5F15;&#x8FD0;&#x7B97;&#xFF0C;&#x66F4;&#x7CBE;&#x786E;&#x4E0D;&#x6613;&#x51FA;&#x9519;</p>
+<pre><code class="lang-python">e = pd.Series([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>], [<span class="hljs-string">&apos;c&apos;</span>,<span class="hljs-string">&apos;d&apos;</span>,<span class="hljs-string">&apos;e&apos;</span>])
+e
+</code></pre>
+<pre><code>c    1
+d    2
+e    3
+dtype: int64
+</code></pre><pre><code class="lang-python">f = pd.Series([<span class="hljs-number">9</span>,<span class="hljs-number">8</span>,<span class="hljs-number">7</span>,<span class="hljs-number">6</span>], [<span class="hljs-string">&apos;a&apos;</span>,<span class="hljs-string">&apos;b&apos;</span>,<span class="hljs-string">&apos;c&apos;</span>,<span class="hljs-string">&apos;d&apos;</span>])
+f
+</code></pre>
+<pre><code>a    9
+b    8
+c    7
+d    6
+dtype: int64
+</code></pre><h4 id="&#x7ED3;&#x679C;&#x4E3A;&#x4E24;&#x4E2A;&#x503C;&#x7684;&#x5E76;&#x96C6;&#x76F8;&#x52A0;&#x65F6;&#x7D22;&#x5F15;&#x5BF9;&#x9F50;&#x52A0;&#x503C;&#x7D22;&#x5F15;&#x4E0D;&#x5BF9;&#x9F50;&#x7684;&#x6CA1;&#x503C;&#x52A0;&#x5B8C;&#x4E5F;&#x6CA1;&#x503C;">&#x7ED3;&#x679C;&#x4E3A;&#x4E24;&#x4E2A;&#x503C;&#x7684;&#x5E76;&#x96C6;,&#x76F8;&#x52A0;&#x65F6;&#x7D22;&#x5F15;&#x5BF9;&#x9F50;&#x52A0;&#x503C;,&#x7D22;&#x5F15;&#x4E0D;&#x5BF9;&#x9F50;&#x7684;&#x6CA1;&#x503C;,&#x52A0;&#x5B8C;&#x4E5F;&#x6CA1;&#x503C;</h4>
+<pre><code class="lang-python">e + f   <span class="hljs-comment">#</span>
+</code></pre>
+<pre><code>a    NaN
+b    NaN
+c    8.0
+d    8.0
+e    NaN
+dtype: float64
+</code></pre><hr>
+<h1 id="&#x5BF9;&#x9F50;">&#x5BF9;&#x9F50;</h1>
+<p>&#x64CD;&#x4F5C;&#x4E0D;&#x540C;&#x7684;&#x7EF4;&#x5EA6;&#x9700;&#x8981;&#x5148;&#x5BF9;&#x9F50;,Pandas&#x4F1A;&#x6CBF;&#x7740;&#x6307;&#x5B9A;&#x7EF4;&#x5EA6;&#x6267;&#x884C;:</p>
+<ul>
+<li>&#x8FD9;&#x91CC;&#x5BF9;&#x9F50;&#x7EF4;&#x5EA6;&#x6307;&#x7684;&#x662F;&#x5BF9;&#x9F50;index</li>
+<li>shift(2)&#x6307;&#x6CBF;&#x7740;&#x65F6;&#x95F4;&#x8F74;&#x5C06;&#x6570;&#x636E;&#x987A;&#x79FB;&#x4E24;&#x4F4D;</li>
+<li>&#x53EF;&#x7528;&#x4E8E;&#x91D1;&#x878D;&#x6570;&#x636E;&#x5206;&#x6790;&#x4E2D;&#x8BA1;&#x7B97;&#x4EA4;&#x6613;&#x76C8;&#x4E8F;</li>
+</ul>
+<pre><code class="lang-python">dates = pd.date_range(<span class="hljs-string">&apos;20130101&apos;</span>, periods = <span class="hljs-number">10</span>)
+g = pd.Series([<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">5</span>,np.nan,<span class="hljs-number">6</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">10</span>,<span class="hljs-number">11</span>,<span class="hljs-number">12</span>], index = dates)
+g
+</code></pre>
+<pre><code>2013-01-01     1.0
+2013-01-02     3.0
+2013-01-03     5.0
+2013-01-04     NaN
+2013-01-05     6.0
+2013-01-06     8.0
+2013-01-07     9.0
+2013-01-08    10.0
+2013-01-09    11.0
+2013-01-10    12.0
+Freq: D, dtype: float64
+</code></pre><pre><code class="lang-python">g.shift(<span class="hljs-number">2</span>)
+</code></pre>
+<pre><code>2013-01-01     NaN
+2013-01-02     NaN
+2013-01-03     1.0
+2013-01-04     3.0
+2013-01-05     5.0
+2013-01-06     NaN
+2013-01-07     6.0
+2013-01-08     8.0
+2013-01-09     9.0
+2013-01-10    10.0
+Freq: D, dtype: float64
+</code></pre><p>&#x6A21;&#x62DF;&#x8BA1;&#x7B97;&#x5355;&#x7B14;&#x4EA4;&#x6613;&#x76C8;&#x5229;&#x70B9;&#x6570;</p>
+<p>2&#x5217;&#xFF0C;0&#x5217;&#x5356;&#x51FA;&#x4EF7;&#x683C;&#xFF0C;1&#x5217;&#x4E70;&#x5165;&#x4EF7;&#x683C;</p>
+<pre><code class="lang-python">b2 = b.loc[:,:<span class="hljs-number">1</span>]
+b2
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>10</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>15</td>
+      <td>16</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">b2[<span class="hljs-number">0</span>] - b2[<span class="hljs-number">1</span>]
+</code></pre>
+<pre><code>0   -1
+1   -1
+2   -1
+3   -1
+dtype: int32
+</code></pre><p>&#x5BF9;&#x5E94;&#x5356;&#x51FA;&#x548C;&#x4E70;&#x5165;&#x4EF7;&#x683C;&#xFF0C;&#x8BA1;&#x7B97;&#x6BCF;&#x7B14;&#x4EA4;&#x6613;&#x76C8;&#x5229;</p>
+<pre><code class="lang-python">b2[<span class="hljs-number">0</span>] - b2[<span class="hljs-number">1</span>].shift(<span class="hljs-number">1</span>)
+</code></pre>
+<pre><code>0    NaN
+1    4.0
+2    4.0
+3    4.0
+dtype: float64
+</code></pre><hr>
+<h1 id="&#x7D2F;&#x8BA1;&#x8FD0;&#x7B97;">&#x7D2F;&#x8BA1;&#x8FD0;&#x7B97;</h1>
+<ul>
+<li>&#x5BF9;&#x5E8F;&#x5217;&#x7684;&#x524D;1-n&#x4E2A;&#x6570;&#x7D2F;&#x8BA1;&#x8FD0;&#x7B97;</li>
+<li><p>&#x53EF;&#x51CF;&#x5C11;for&#x5FAA;&#x73AF;&#x7684;&#x4F7F;&#x7528;</p>
+</li>
+<li><p>&#x53EF;&#x7528;&#x4E8E;&#x91D1;&#x878D;&#x6570;&#x636E;&#x5206;&#x6790;&#x4E2D;&#x7684;&#x8BA1;&#x7B97;&#x7D2F;&#x8BA1;&#x76C8;&#x4E8F;</p>
+</li>
+</ul>
+<p>&#x51FD;&#x6570;  &#x89E3;&#x91CA;</p>
+<p>.cumsum()   &#x4F9D;&#x6B21;&#x7ED9;&#x51FA;&#x524D;1/2/.../n&#x4E2A;&#x6570;&#x7684;&#x548C;</p>
+<p>.cumprod()  &#x4F9D;&#x6B21;&#x7ED9;&#x51FA;&#x524D;1/2/.../n&#x4E2A;&#x6570;&#x7684;&#x79EF;</p>
+<p>.cummax()   &#x4F9D;&#x6B21;&#x7ED9;&#x51FA;&#x524D;1/2/.../n&#x4E2A;&#x6570;&#x7684;&#x6700;&#x5927;&#x503C;</p>
+<p>.cummin()   &#x4F9D;&#x6B21;&#x7ED9;&#x51FA;&#x524D;1/2/.../n&#x4E2A;&#x6570;&#x7684;&#x6700;&#x5C0F;&#x503C;</p>
+<pre><code class="lang-python">h = pd.DataFrame(np.arange(<span class="hljs-number">20</span>).reshape(<span class="hljs-number">4</span>,<span class="hljs-number">5</span>),index=[<span class="hljs-string">&apos;c&apos;</span>,<span class="hljs-string">&apos;a&apos;</span>,<span class="hljs-string">&apos;d&apos;</span>,<span class="hljs-string">&apos;b&apos;</span>])
+h
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>c</th>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>a</th>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>d</th>
+      <td>10</td>
+      <td>11</td>
+      <td>12</td>
+      <td>13</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>b</th>
+      <td>15</td>
+      <td>16</td>
+      <td>17</td>
+      <td>18</td>
+      <td>19</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">h.sum()  <span class="hljs-comment"># &#x6C42;&#x548C;&#xFF0C;&#x9ED8;&#x8BA4;&#x6309;&#x884C;&#xFF08;&#x6BCF;&#x4E00;&#x5217;&#x7684;&#x6BCF;&#x884C;&#x6570;&#x636E;&#xFF09;&#x8BA1;&#x7B97;</span>
+</code></pre>
+<pre><code>0    30
+1    34
+2    38
+3    42
+4    46
+dtype: int64
+</code></pre><pre><code class="lang-python">h.sum(axis=<span class="hljs-number">1</span>)  <span class="hljs-comment">#&#x6309;&#x5217;&#x8FD0;&#x7B97;&#xFF0C;&#x4E00;&#x884C;&#x7684;&#x6BCF;&#x4E00;&#x5217;</span>
+</code></pre>
+<pre><code>c    10
+a    35
+d    60
+b    85
+dtype: int64
+</code></pre><pre><code class="lang-python">h.cumsum()  <span class="hljs-comment">#&#x7D2F;&#x52A0;</span>
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>c</th>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>a</th>
+      <td>5</td>
+      <td>7</td>
+      <td>9</td>
+      <td>11</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>d</th>
+      <td>15</td>
+      <td>18</td>
+      <td>21</td>
+      <td>24</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>b</th>
+      <td>30</td>
+      <td>34</td>
+      <td>38</td>
+      <td>42</td>
+      <td>46</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">h.cummin()
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>c</th>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>a</th>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>d</th>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>b</th>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">h.cummax()
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>c</th>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>a</th>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>d</th>
+      <td>10</td>
+      <td>11</td>
+      <td>12</td>
+      <td>13</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>b</th>
+      <td>15</td>
+      <td>16</td>
+      <td>17</td>
+      <td>18</td>
+      <td>19</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">h.cumprod()
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>c</th>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>a</th>
+      <td>0</td>
+      <td>6</td>
+      <td>14</td>
+      <td>24</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <th>d</th>
+      <td>0</td>
+      <td>66</td>
+      <td>168</td>
+      <td>312</td>
+      <td>504</td>
+    </tr>
+    <tr>
+      <th>b</th>
+      <td>0</td>
+      <td>1056</td>
+      <td>2856</td>
+      <td>5616</td>
+      <td>9576</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<p><strong>&#x91D1;&#x878D;&#x65B9;&#x5411;&#x5E94;&#x7528;&#xFF1A;&#x8BA1;&#x7B97;&#x7D2F;&#x8BA1;&#x76C8;&#x4E8F;</strong></p>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x6BCF;&#x7B14;&#x4EA4;&#x6613;&#x76C8;&#x4E8F;</span>
+
+x = pd.Series([<span class="hljs-number">3</span>, -<span class="hljs-number">5</span>, <span class="hljs-number">100</span>, -<span class="hljs-number">20</span>, -<span class="hljs-number">50</span>, -<span class="hljs-number">55</span>, <span class="hljs-number">3</span>, -<span class="hljs-number">5</span>, <span class="hljs-number">100</span>, -<span class="hljs-number">20</span>, -<span class="hljs-number">50</span>, -<span class="hljs-number">55</span>,<span class="hljs-number">3</span>, -<span class="hljs-number">5</span>, <span class="hljs-number">100</span>, -<span class="hljs-number">20</span>, -<span class="hljs-number">50</span>, -<span class="hljs-number">55</span>,<span class="hljs-number">3</span>, -<span class="hljs-number">5</span>, <span class="hljs-number">100</span>, -<span class="hljs-number">20</span>, -<span class="hljs-number">50</span>, -<span class="hljs-number">55</span>,<span class="hljs-number">3</span>, -<span class="hljs-number">5</span>, <span class="hljs-number">100</span>, -<span class="hljs-number">20</span>, -<span class="hljs-number">50</span>, -<span class="hljs-number">55</span>,])
+x
+</code></pre>
+<pre><code>0       3
+1      -5
+2     100
+3     -20
+4     -50
+5     -55
+6       3
+7      -5
+8     100
+9     -20
+10    -50
+11    -55
+12      3
+13     -5
+14    100
+15    -20
+16    -50
+17    -55
+18      3
+19     -5
+20    100
+21    -20
+22    -50
+23    -55
+24      3
+25     -5
+26    100
+27    -20
+28    -50
+29    -55
+dtype: int64
+</code></pre><p>&#x6C42;&#x603B;&#x76C8;&#x4E8F;</p>
+<pre><code class="lang-python">x.sum()
+</code></pre>
+<pre><code>-135
+</code></pre><p>&#x67E5;&#x770B;&#x76C8;&#x4E8F;&#x7684;&#x8D8B;&#x52BF;</p>
+<pre><code class="lang-python">x.plot.bar()
+x.plot()  <span class="hljs-comment">#&#x8FD9;&#x662F;&#x6BCF;&#x7B14;&#x76C8;&#x4E8F;&#x56FE;&#xFF0C;&#x4E0D;&#x662F;&#x5386;&#x53F2;&#x603B;&#x76C8;&#x4E8F;&#x8D8B;&#x52BF;&#x56FE;</span>
+</code></pre>
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x66665f8&gt;
+</code></pre><p><img src="images/output_53_1.png" alt="png"></p>
+<pre><code class="lang-python">x.cumsum() + <span class="hljs-number">200</span>  <span class="hljs-comment">#&#x6210;&#x672C;&#x4EF7; 200</span>
+</code></pre>
+<pre><code>0     203
+1     198
+2     298
+3     278
+4     228
+5     173
+6     176
+7     171
+8     271
+9     251
+10    201
+11    146
+12    149
+13    144
+14    244
+15    224
+16    174
+17    119
+18    122
+19    117
+20    217
+21    197
+22    147
+23     92
+24     95
+25     90
+26    190
+27    170
+28    120
+29     65
+dtype: int64
+</code></pre><pre><code class="lang-python">(x.cumsum() + <span class="hljs-number">200</span>).plot()
+</code></pre>
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x91ac908&gt;
+</code></pre><p><img src="images/output_55_1.png" alt="png"></p>
+<h1 id="&#x6EDA;&#x52A8;&#x8BA1;&#x7B97;&#x7A97;&#x53E3;&#x8BA1;&#x7B97;">&#x6EDA;&#x52A8;&#x8BA1;&#x7B97;(&#x7A97;&#x53E3;&#x8BA1;&#x7B97;)</h1>
+<p>&#x53EF;&#x7528;&#x4E8E;&#x91D1;&#x878D;&#x6570;&#x636E;&#x5206;&#x6790;&#x4E2D;&#x968F;&#x65F6;&#x95F4;&#x79FB;&#x52A8;&#x6307;&#x6807;&#x8BA1;&#x7B97;</p>
+<pre><code class="lang-python">h
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>c</th>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>a</th>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>d</th>
+      <td>10</td>
+      <td>11</td>
+      <td>12</td>
+      <td>13</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>b</th>
+      <td>15</td>
+      <td>16</td>
+      <td>17</td>
+      <td>18</td>
+      <td>19</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">h.sum()
+</code></pre>
+<pre><code>0    30
+1    34
+2    38
+3    42
+4    46
+dtype: int64
+</code></pre><pre><code class="lang-python">h.rolling(<span class="hljs-number">2</span>).sum()
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>c</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>a</th>
+      <td>5.0</td>
+      <td>7.0</td>
+      <td>9.0</td>
+      <td>11.0</td>
+      <td>13.0</td>
+    </tr>
+    <tr>
+      <th>d</th>
+      <td>15.0</td>
+      <td>17.0</td>
+      <td>19.0</td>
+      <td>21.0</td>
+      <td>23.0</td>
+    </tr>
+    <tr>
+      <th>b</th>
+      <td>25.0</td>
+      <td>27.0</td>
+      <td>29.0</td>
+      <td>31.0</td>
+      <td>33.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">h.rolling(<span class="hljs-number">3</span>).sum()
+<span class="hljs-comment"># &#x6BCF; 3 &#x9879; &#x6C42;&#x548C;&#xFF0C; &#x90A3;&#x4E48;&#x524D;&#x4E24;&#x9879; &#x7684;&#x524D;&#x9762;&#x4E0D;&#x591F; 3 &#x9879; &#x6C42;&#x548C;&#xFF0C;&#x90A3;&#x4E48;&#x4ED6;&#x4EEC;&#x5C31;&#x4E3A; NaN&#x3002;</span>
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>c</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>a</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>d</th>
+      <td>15.0</td>
+      <td>18.0</td>
+      <td>21.0</td>
+      <td>24.0</td>
+      <td>27.0</td>
+    </tr>
+    <tr>
+      <th>b</th>
+      <td>30.0</td>
+      <td>33.0</td>
+      <td>36.0</td>
+      <td>39.0</td>
+      <td>42.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h3 id="macd&#x79FB;&#x52A8;&#x5E73;&#x5747;&#x7EBF;">MACD&#x79FB;&#x52A8;&#x5E73;&#x5747;&#x7EBF;</h3>
+<pre><code class="lang-python">h[<span class="hljs-number">4</span>]
+</code></pre>
+<pre><code>c     4
+a     9
+d    14
+b    19
+Name: 4, dtype: int32
+</code></pre><pre><code class="lang-python">h[<span class="hljs-number">4</span>].rolling(<span class="hljs-number">2</span>).mean()
+</code></pre>
+<pre><code>c     NaN
+a     6.5
+d    11.5
+b    16.5
+Name: 4, dtype: float64
+</code></pre><pre><code class="lang-python">h[<span class="hljs-number">4</span>].plot()  <span class="hljs-comment">#&#x539F;&#x59CB;&#x4EF7;&#x683C;&#x7EBF;</span>
+h[<span class="hljs-number">4</span>].rolling(<span class="hljs-number">2</span>).mean().plot()  <span class="hljs-comment">#&#x79FB;&#x52A8;&#x5E73;&#x5747;&#x7EBF;</span>
+</code></pre>
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x9491dd8&gt;
+</code></pre><p><img src="images/output_64_1.png" alt="png"></p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../数据分析库的操作/7Pandas数据运算.html" class="navigation navigation-prev " aria-label="Previous page: Pandas数据运算"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../数据分析库的操作/8Pandas分组聚合1.html" class="navigation navigation-next " aria-label="Next page: Pandas分组聚合1"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

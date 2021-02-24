@@ -1,0 +1,4067 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>透视表和交叉表 | Python 数据分析学习目录</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../Python可视化/绘图库-Matplotlib.html" />
+    
+    
+    <link rel="prev" href="../数据分析库的操作/13Pandas数据规整-重塑和轴向旋转.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="4.5.1"
+        data-chapter-title="透视表和交叉表"
+        data-filepath="数据分析库的操作/13.1透视表和交叉表.md"
+        data-basepath=".."
+        data-revision="Wed Oct 24 2018 21:30:49 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        数据分析
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="Python数据分析序言/内容序言.html">
+            
+                
+                    <a href="../Python数据分析序言/内容序言.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Python数据分析内容
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="python数据分析环境和工具/Python数据分析相关.html">
+            
+                
+                    <a href="../python数据分析环境和工具/Python数据分析相关.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        python数据分析环境和工具
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="python数据分析环境和工具/1Python数据课程软件和环境安装.html">
+            
+                
+                    <a href="../python数据分析环境和工具/1Python数据课程软件和环境安装.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Python数据课程 软件和环境安装
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="python数据分析环境和工具/2python发行版.html">
+            
+                
+                    <a href="../python数据分析环境和工具/2python发行版.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        python发行版
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="python数据分析环境和工具/5交互式编辑器-JupyterNotebook.html">
+            
+                
+                    <a href="../python数据分析环境和工具/5交互式编辑器-JupyterNotebook.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        交互式编辑器-JupyterNotebook
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="python数据分析环境和工具/5.1Jupyter-notebook拓展应用.html">
+            
+                
+                    <a href="../python数据分析环境和工具/5.1Jupyter-notebook拓展应用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.1.</b>
+                        
+                        Jupyter-notebook拓展应用
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="python数据分析环境和工具/包和环境管理器：conda.html">
+            
+                
+                    <a href="../python数据分析环境和工具/包和环境管理器：conda.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        包和环境管理器：conda
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="python数据分析环境和工具/pip和Virtualenv.html">
+            
+                
+                    <a href="../python数据分析环境和工具/pip和Virtualenv.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.1.</b>
+                        
+                        pip和Virtualenv
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="python数据分析环境和工具/3Markdown.html">
+            
+                
+                    <a href="../python数据分析环境和工具/3Markdown.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        标记语言：Markdown
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="python数据分析环境和工具/4Markdown语法.html">
+            
+                
+                    <a href="../python数据分析环境和工具/4Markdown语法.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.1.</b>
+                        
+                        Markdown语法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="python数据分析环境和工具/6Gitbook文档.html">
+            
+                
+                    <a href="../python数据分析环境和工具/6Gitbook文档.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.2.</b>
+                        
+                        文档管理工具-Gitbook
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="数据分析库的初步认识/index.html">
+            
+                
+                    <a href="../数据分析库的初步认识/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        数据分析库-Pandas
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="数据分析库的初步认识/Pandas创建.html">
+            
+                
+                    <a href="../数据分析库的初步认识/Pandas创建.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        pandas
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="数据分析库的初步认识/Series创建.html">
+            
+                
+                    <a href="../数据分析库的初步认识/Series创建.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        Series
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="数据分析库的初步认识/DataFrame创建.html">
+            
+                
+                    <a href="../数据分析库的初步认识/DataFrame创建.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        DataFrame对象-创建
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" >
+            
+            <span><b>4.</b> 数据分析库的操作</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="数据分析库的操作/1DataFrame查询1-整体.html">
+            
+                
+                    <a href="../数据分析库的操作/1DataFrame查询1-整体.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        DataFrame查询1-整体
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="数据分析库的操作/2DataFrame查询2-专用查询.html">
+            
+                
+                    <a href="../数据分析库的操作/2DataFrame查询2-专用查询.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        DataFrame查询2-专用查询
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="数据分析库的操作/3DataFrame查询3-专有查询：过滤查询.html">
+            
+                
+                    <a href="../数据分析库的操作/3DataFrame查询3-专有查询：过滤查询.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        DataFrame查询3-专有查询：过滤查询
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="数据分析库的操作/4Pandas对象的数据操作：增删改查.html">
+            
+                
+                    <a href="../数据分析库的操作/4Pandas对象的数据操作：增删改查.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        Pandas对象的数据操作：增删改查
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.1" data-path="数据分析库的操作/5Pandas数据操作：其他操作.html">
+            
+                
+                    <a href="../数据分析库的操作/5Pandas数据操作：其他操作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.1.</b>
+                        
+                        Pandas数据操作：其他操作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.2" data-path="数据分析库的操作/6Pandas数据存取.html">
+            
+                
+                    <a href="../数据分析库的操作/6Pandas数据存取.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.2.</b>
+                        
+                        Pandas数据存取
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.3" data-path="数据分析库的操作/7Pandas数据运算.html">
+            
+                
+                    <a href="../数据分析库的操作/7Pandas数据运算.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.3.</b>
+                        
+                        Pandas数据运算
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.3.1" data-path="数据分析库的操作/7.1Pandas数据运算拓展.html">
+            
+                
+                    <a href="../数据分析库的操作/7.1Pandas数据运算拓展.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.3.1.</b>
+                        
+                        Pandas数据运算-拓展
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.4" data-path="数据分析库的操作/8Pandas分组聚合1.html">
+            
+                
+                    <a href="../数据分析库的操作/8Pandas分组聚合1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.4.</b>
+                        
+                        Pandas分组聚合1
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.5" data-path="数据分析库的操作/9Pandas分组聚合2.html">
+            
+                
+                    <a href="../数据分析库的操作/9Pandas分组聚合2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.5.</b>
+                        
+                        Pandas分组聚合2
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.6" data-path="数据分析库的操作/10Pandas数据规整-清理.html">
+            
+                
+                    <a href="../数据分析库的操作/10Pandas数据规整-清理.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.6.</b>
+                        
+                        Pandas数据规整-清理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.7" data-path="数据分析库的操作/11Pandas数据规整-转换.html">
+            
+                
+                    <a href="../数据分析库的操作/11Pandas数据规整-转换.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.7.</b>
+                        
+                        Pandas数据规整-转换
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.7.1" data-path="数据分析库的操作/14Pandas数据规整-转换-离散化和面元划分.html">
+            
+                
+                    <a href="../数据分析库的操作/14Pandas数据规整-转换-离散化和面元划分.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.7.1.</b>
+                        
+                        离散化和面元划分
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.8" data-path="数据分析库的操作/16Pandas数据规整-合并.html">
+            
+                
+                    <a href="../数据分析库的操作/16Pandas数据规整-合并.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.8.</b>
+                        
+                        Pandas数据规整-合并
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="数据分析库的操作/13Pandas数据规整-重塑和轴向旋转.html">
+            
+                
+                    <a href="../数据分析库的操作/13Pandas数据规整-重塑和轴向旋转.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        Pandas数据规整-重塑和轴向旋转
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="4.5.1" data-path="数据分析库的操作/13.1透视表和交叉表.html">
+            
+                
+                    <a href="../数据分析库的操作/13.1透视表和交叉表.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.1.</b>
+                        
+                        透视表和交叉表
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="Python可视化/绘图库-Matplotlib.html">
+            
+                
+                    <a href="../Python可视化/绘图库-Matplotlib.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Python可视化
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="Python可视化/绘图库-Matplotlib/Matplotlib常见图表.html">
+            
+                
+                    <a href="../Python可视化/绘图库-Matplotlib/Matplotlib常见图表.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        基础：Matplotlib常见图表
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="Python可视化/绘图库-Matplotlib/Matplotlib常见设置和操作.html">
+            
+                
+                    <a href="../Python可视化/绘图库-Matplotlib/Matplotlib常见设置和操作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.1.</b>
+                        
+                        Matplotlib常见设置和操作
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="Python可视化/绘图库-Matplotlib/1Matplotlib-绘图区域.html">
+            
+                
+                    <a href="../Python可视化/绘图库-Matplotlib/1Matplotlib-绘图区域.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        提升：绘图区域
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="Python可视化/绘图库-Matplotlib/2Matplotlib-图像组件.html">
+            
+                
+                    <a href="../Python可视化/绘图库-Matplotlib/2Matplotlib-图像组件.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        提升：绘图组件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="Python可视化/绘图库-Matplotlib/3Matplotlib-高级绘图.html">
+            
+                
+                    <a href="../Python可视化/绘图库-Matplotlib/3Matplotlib-高级绘图.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                        拓展：高级绘图
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="Python可视化/绘图库-Matplotlib/4数学计算展示图像.html">
+            
+                
+                    <a href="../Python可视化/绘图库-Matplotlib/4数学计算展示图像.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.</b>
+                        
+                        拓展：数学计算展示图像
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="Python可视化/绘图库-Matplotlib/5注意事项.html">
+            
+                
+                    <a href="../Python可视化/绘图库-Matplotlib/5注意事项.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.</b>
+                        
+                        拓展：注意事项
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="Python可视化/绘图库-Matplotlib/6pylab.html">
+            
+                
+                    <a href="../Python可视化/绘图库-Matplotlib/6pylab.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.</b>
+                        
+                        拓展：pylab
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="数据分析必备知识点/数据分析必备知识点汇集.html">
+            
+                
+                    <a href="../数据分析必备知识点/数据分析必备知识点汇集.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        数据分析必备知识点
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="数据分析必备知识点/数据分析流程.html">
+            
+                
+                    <a href="../数据分析必备知识点/数据分析流程.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        数据分析流程
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Python 数据分析学习目录</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <hr>
+<h1 id="&#x900F;&#x89C6;&#x8868;&#x548C;&#x4EA4;&#x53C9;&#x8868;">&#x900F;&#x89C6;&#x8868;&#x548C;&#x4EA4;&#x53C9;&#x8868;</h1>
+<ul>
+<li><p>&#x900F;&#x89C6;&#x8868;&#xFF08;pivot table&#xFF09;&#x662F;&#x5404;&#x79CD;&#x7535;&#x5B50;&#x8868;&#x683C;&#x7A0B;&#x5E8F;&#x548C;&#x6570;&#x636E;&#x5206;&#x6790;&#x8F6F;&#x4EF6;&#x4E2D;&#x4E00;&#x79CD;&#x9AD8;&#x7EA7;&#x6570;&#x636E;&#x6C47;&#x603B;&#x8868;&#x683C;&#x5F62;&#x5F0F;</p>
+</li>
+<li><p>&#x5B83;&#x6839;&#x636E;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x952E;&#x5BF9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x805A;&#x5408;&#xFF0C;&#x5E76;&#x6839;&#x636E;&#x884C;&#x548C;&#x5217;&#x4E0A;&#x7684;&#x5206;&#x7EC4;&#x952E;&#x5C06;&#x6570;&#x636E;&#x5206;&#x914D;&#x5230;&#x5404;&#x4E2A;&#x77E9;&#x5F62;&#x533A;&#x57DF;&#x4E2D;</p>
+</li>
+</ul>
+<hr>
+<p>&#x4F1A;&#x4E0D;&#x4F1A;&#x64CD;&#x4F5C;&#x900F;&#x89C6;&#x8868;&#xFF0C;&#x662F;&#x8861;&#x91CF;&#x4E00;&#x4E2A;&#x4EBA;&#x80FD;&#x5426;&#x505A;&#x6570;&#x636E;&#x5206;&#x6790;&#x9879;&#x76EE;&#x7684;&#x57FA;&#x51C6;</p>
+<ul>
+<li>&#x5165;&#x95E8;&#xFF1A; &#x7528;pandas&#x539F;&#x751F;&#x7684;pivot_table &#x65B9;&#x6CD5;&#x751F;&#x6210;&#x900F;&#x89C6;&#x8868;</li>
+<li>&#x8FDB;&#x9636;&#xFF1A;&#x4F7F;&#x7528;groupby &#x548C; unstack &#x914D;&#x5408;&#x624B;&#x52A8;&#x6784;&#x9020;&#x900F;&#x89C6;&#x8868;</li>
+</ul>
+<h2 id="&#x5E38;&#x7528;&#x7684;crosstab&#x4EA4;&#x53C9;&#x8868;&#x51FD;&#x6570;&#x7ED3;&#x6784;">&#x5E38;&#x7528;&#x7684;crosstab&#x4EA4;&#x53C9;&#x8868;&#x51FD;&#x6570;&#x7ED3;&#x6784;</h2>
+<h1 id="&#x5E38;&#x89C1;&#x53C2;&#x6570;&#xFF1A;&#x884C;&#x7D22;&#x5F15;&#xFF0C;&#x5217;&#x7D22;&#x5F15;&#xFF0C;&#x5206;&#x9879;&#x5C0F;&#x8BA1;">&#x5E38;&#x89C1;&#x53C2;&#x6570;&#xFF1A;&#x884C;&#x7D22;&#x5F15;&#xFF0C;&#x5217;&#x7D22;&#x5F15;&#xFF0C;&#x5206;&#x9879;&#x5C0F;&#x8BA1;</h1>
+<p>pd.crosstab(tips.time, [tips.smoker, tips.day], margins=True)</p>
+<h1 id="&#x5E38;&#x7528;&#x7684;pivottable-&#x900F;&#x89C6;&#x8868;&#x51FD;&#x6570;&#x7ED3;&#x6784;">&#x5E38;&#x7528;&#x7684;Pivot_table &#x900F;&#x89C6;&#x8868;&#x51FD;&#x6570;&#x7ED3;&#x6784;</h1>
+<h1 id="&#x5E38;&#x89C1;&#x53C2;&#x6570;&#xFF1A;&#x9700;&#x8981;&#x8BA1;&#x7B97;&#x7684;&#x5217;&#xFF0C;&#x884C;&#x7D22;&#x5F15;&#xFF0C;&#x5217;&#x7D22;&#x5F15;&#xFF0C;&#x5206;&#x9879;&#x5C0F;&#x8BA1;&#x9ED8;&#x8BA4;false&#xFF0C;&#x81EA;&#x5B9A;&#x4E49;&#x8BA1;&#x7B97;&#x51FD;&#x6570;&#x9ED8;&#x8BA4;&#x662F;mean&#xFF0C;&#x7F3A;&#x5931;&#x503C;&#x586B;&#x5145;">&#x5E38;&#x89C1;&#x53C2;&#x6570;&#xFF1A;&#x9700;&#x8981;&#x8BA1;&#x7B97;&#x7684;&#x5217;&#xFF0C;&#x884C;&#x7D22;&#x5F15;&#xFF0C;&#x5217;&#x7D22;&#x5F15;&#xFF0C;&#x5206;&#x9879;&#x5C0F;&#x8BA1;(&#x9ED8;&#x8BA4;False)&#xFF0C;&#x81EA;&#x5B9A;&#x4E49;&#x8BA1;&#x7B97;&#x51FD;&#x6570;(&#x9ED8;&#x8BA4;&#x662F;mean)&#xFF0C;&#x7F3A;&#x5931;&#x503C;&#x586B;&#x5145;</h1>
+<p>tips.pivot_table([&apos;tip_pct&apos;, &apos;size&apos;], index=[&apos;time&apos;, &apos;day&apos;], columns=&apos;smoker&apos;, margins=True, aggfunc=len, fill_value=0)</p>
+<h1 id="&#x5E95;&#x5C42;&#xFF1A;&#x4F7F;&#x7528;&#x5206;&#x7EC4;&#x805A;&#x5408;&#x548C;&#x8F74;&#x5411;&#x65CB;&#x8F6C;&#x5B9E;&#x73B0;&#x900F;&#x89C6;&#x8868;">&#x5E95;&#x5C42;&#xFF1A;&#x4F7F;&#x7528;&#x5206;&#x7EC4;&#x805A;&#x5408;&#x548C;&#x8F74;&#x5411;&#x65CB;&#x8F6C;&#x5B9E;&#x73B0;&#x900F;&#x89C6;&#x8868;</h1>
+<h1 id="&#x5206;&#x7EC4;&#xFF1A;&#x884C;&#x7D22;&#x5F15;&#xFF0C;&#x5217;&#x7D22;&#x5F15;&#xFF1B;&#x5747;&#x503C;&#x805A;&#x5408;&#xFF1B;&#x884C;&#x7D22;&#x5F15;&#x8F6C;&#x5217;&#x7D22;&#x5F15;&#xFF1B;&#x586B;&#x5145;&#x7F3A;&#x5931;&#x503C;&#x4E3A;0">&#x5206;&#x7EC4;&#xFF1A;&#x884C;&#x7D22;&#x5F15;&#xFF0C;&#x5217;&#x7D22;&#x5F15;&#xFF1B;&#x5747;&#x503C;&#x805A;&#x5408;&#xFF1B;&#x884C;&#x7D22;&#x5F15;&#x8F6C;&#x5217;&#x7D22;&#x5F15;&#xFF1B;&#x586B;&#x5145;&#x7F3A;&#x5931;&#x503C;&#x4E3A;0</h1>
+<p>tips.groupby([&apos;time&apos;, &apos;day&apos;, &apos;smoker&apos;])[&apos;size&apos;, &apos;tip_pct&apos;].mean().unstack().fillna(0)</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x5C0F;&#x8D39;&#x6570;&#x636E;&#x96C6;</span>
+tips = pd.read_csv(<span class="hljs-string">&apos;examples/tips.csv&apos;</span>)
+
+tips
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>total_bill</th>
+      <th>tip</th>
+      <th>smoker</th>
+      <th>day</th>
+      <th>time</th>
+      <th>size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>16.99</td>
+      <td>1.01</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10.34</td>
+      <td>1.66</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>21.01</td>
+      <td>3.50</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>23.68</td>
+      <td>3.31</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>24.59</td>
+      <td>3.61</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>25.29</td>
+      <td>4.71</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>8.77</td>
+      <td>2.00</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>26.88</td>
+      <td>3.12</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>15.04</td>
+      <td>1.96</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>14.78</td>
+      <td>3.23</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>10.27</td>
+      <td>1.71</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>35.26</td>
+      <td>5.00</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>15.42</td>
+      <td>1.57</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>18.43</td>
+      <td>3.00</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>14.83</td>
+      <td>3.02</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>21.58</td>
+      <td>3.92</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>10.33</td>
+      <td>1.67</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>16.29</td>
+      <td>3.71</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>16.97</td>
+      <td>3.50</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>20.65</td>
+      <td>3.35</td>
+      <td>No</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>17.92</td>
+      <td>4.08</td>
+      <td>No</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>20.29</td>
+      <td>2.75</td>
+      <td>No</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>15.77</td>
+      <td>2.23</td>
+      <td>No</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>39.42</td>
+      <td>7.58</td>
+      <td>No</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>19.82</td>
+      <td>3.18</td>
+      <td>No</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>17.81</td>
+      <td>2.34</td>
+      <td>No</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>13.37</td>
+      <td>2.00</td>
+      <td>No</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>12.69</td>
+      <td>2.00</td>
+      <td>No</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>21.70</td>
+      <td>4.30</td>
+      <td>No</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>19.65</td>
+      <td>3.00</td>
+      <td>No</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>214</th>
+      <td>28.17</td>
+      <td>6.50</td>
+      <td>Yes</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>215</th>
+      <td>12.90</td>
+      <td>1.10</td>
+      <td>Yes</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>216</th>
+      <td>28.15</td>
+      <td>3.00</td>
+      <td>Yes</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>217</th>
+      <td>11.59</td>
+      <td>1.50</td>
+      <td>Yes</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>218</th>
+      <td>7.74</td>
+      <td>1.44</td>
+      <td>Yes</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>219</th>
+      <td>30.14</td>
+      <td>3.09</td>
+      <td>Yes</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>220</th>
+      <td>12.16</td>
+      <td>2.20</td>
+      <td>Yes</td>
+      <td>Fri</td>
+      <td>Lunch</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>221</th>
+      <td>13.42</td>
+      <td>3.48</td>
+      <td>Yes</td>
+      <td>Fri</td>
+      <td>Lunch</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>222</th>
+      <td>8.58</td>
+      <td>1.92</td>
+      <td>Yes</td>
+      <td>Fri</td>
+      <td>Lunch</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>223</th>
+      <td>15.98</td>
+      <td>3.00</td>
+      <td>No</td>
+      <td>Fri</td>
+      <td>Lunch</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>224</th>
+      <td>13.42</td>
+      <td>1.58</td>
+      <td>Yes</td>
+      <td>Fri</td>
+      <td>Lunch</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>225</th>
+      <td>16.27</td>
+      <td>2.50</td>
+      <td>Yes</td>
+      <td>Fri</td>
+      <td>Lunch</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>226</th>
+      <td>10.09</td>
+      <td>2.00</td>
+      <td>Yes</td>
+      <td>Fri</td>
+      <td>Lunch</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>227</th>
+      <td>20.45</td>
+      <td>3.00</td>
+      <td>No</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>228</th>
+      <td>13.28</td>
+      <td>2.72</td>
+      <td>No</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>229</th>
+      <td>22.12</td>
+      <td>2.88</td>
+      <td>Yes</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>230</th>
+      <td>24.01</td>
+      <td>2.00</td>
+      <td>Yes</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>231</th>
+      <td>15.69</td>
+      <td>3.00</td>
+      <td>Yes</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>232</th>
+      <td>11.61</td>
+      <td>3.39</td>
+      <td>No</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>233</th>
+      <td>10.77</td>
+      <td>1.47</td>
+      <td>No</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>234</th>
+      <td>15.53</td>
+      <td>3.00</td>
+      <td>Yes</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>235</th>
+      <td>10.07</td>
+      <td>1.25</td>
+      <td>No</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>236</th>
+      <td>12.60</td>
+      <td>1.00</td>
+      <td>Yes</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>237</th>
+      <td>32.83</td>
+      <td>1.17</td>
+      <td>Yes</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>238</th>
+      <td>35.83</td>
+      <td>4.67</td>
+      <td>No</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>239</th>
+      <td>29.03</td>
+      <td>5.92</td>
+      <td>No</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>240</th>
+      <td>27.18</td>
+      <td>2.00</td>
+      <td>Yes</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>241</th>
+      <td>22.67</td>
+      <td>2.00</td>
+      <td>Yes</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>242</th>
+      <td>17.82</td>
+      <td>1.75</td>
+      <td>No</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>243</th>
+      <td>18.78</td>
+      <td>3.00</td>
+      <td>No</td>
+      <td>Thur</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+<p>244 rows &#xD7; 6 columns</p>
+</div>
+
+
+
+
+<pre><code class="lang-python"><span class="hljs-comment">#&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x65B0;&#x6307;&#x6807;&#xFF0C;&#x5C0F;&#x8D39;&#x5360;&#x603B;&#x989D;&#x7684;&#x767E;&#x5206;&#x6BD4;</span>
+tips[<span class="hljs-string">&apos;tip_pct&apos;</span>] = tips[<span class="hljs-string">&apos;tip&apos;</span>] / tips[<span class="hljs-string">&apos;total_bill&apos;</span>]  <span class="hljs-comment"># &#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x5C0F;&#x8D39;&#x767E;&#x5206;&#x6BD4;&#x5217;</span>
+
+tips[:<span class="hljs-number">10</span>]
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>total_bill</th>
+      <th>tip</th>
+      <th>smoker</th>
+      <th>day</th>
+      <th>time</th>
+      <th>size</th>
+      <th>tip_pct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>16.99</td>
+      <td>1.01</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>2</td>
+      <td>0.059447</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10.34</td>
+      <td>1.66</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>3</td>
+      <td>0.160542</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>21.01</td>
+      <td>3.50</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>3</td>
+      <td>0.166587</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>23.68</td>
+      <td>3.31</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>2</td>
+      <td>0.139780</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>24.59</td>
+      <td>3.61</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>4</td>
+      <td>0.146808</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>25.29</td>
+      <td>4.71</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>4</td>
+      <td>0.186240</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>8.77</td>
+      <td>2.00</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>2</td>
+      <td>0.228050</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>26.88</td>
+      <td>3.12</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>4</td>
+      <td>0.116071</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>15.04</td>
+      <td>1.96</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>2</td>
+      <td>0.130319</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>14.78</td>
+      <td>3.23</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>2</td>
+      <td>0.218539</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">tips.head()
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>total_bill</th>
+      <th>tip</th>
+      <th>smoker</th>
+      <th>day</th>
+      <th>time</th>
+      <th>size</th>
+      <th>tip_pct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>16.99</td>
+      <td>1.01</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>2</td>
+      <td>0.059447</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10.34</td>
+      <td>1.66</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>3</td>
+      <td>0.160542</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>21.01</td>
+      <td>3.50</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>3</td>
+      <td>0.166587</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>23.68</td>
+      <td>3.31</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>2</td>
+      <td>0.139780</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>24.59</td>
+      <td>3.61</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>4</td>
+      <td>0.146808</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<p>&#x62BD;&#x53D6;&#x4E00;&#x4E2A;&#x5C0F;&#x8868;&#x8BA1;&#x7B97;&#xFF1A;</p>
+<p>&#x6BCF;&#x5468;&#x5404;&#x5929;&#xFF08;day&#xFF09;&#x7684;&#x5348;&#x9910;&#x665A;&#x9910;&#xFF08;time&#xFF09;&#x5C0F;&#x8D39;&#x5E73;&#x5747;&#x503C;&#xFF08;pivot_table&#x7684;&#x9ED8;&#x8BA4;&#x805A;&#x5408;&#x7C7B;&#x578B;&#xFF09;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x62BD;&#x53D6;&#x4E00;&#x4E2A;&#x5C0F;&#x8868;&#x8BA1;&#x7B97;&#xFF1A;</span>
+t2 = tips[[<span class="hljs-string">&apos;day&apos;</span>,<span class="hljs-string">&apos;time&apos;</span>,<span class="hljs-string">&apos;tip&apos;</span>]]
+t2.head()
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>day</th>
+      <th>time</th>
+      <th>tip</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>1.01</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>1.66</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>3.50</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>3.31</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>3.61</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h3 id="&#x4F8B;&#x5B50;&#xFF1A;-&#x6BCF;&#x5468;&#x5404;&#x5929;&#xFF08;day&#xFF09;&#x7684;&#x5348;&#x9910;&#x665A;&#x9910;&#xFF08;time&#xFF09;&#x5C0F;&#x8D39;&#x5E73;&#x5747;&#x503C;&#xFF08;pivottable&#x7684;&#x9ED8;&#x8BA4;&#x805A;&#x5408;&#x7C7B;&#x578B;&#xFF09;">&#x4F8B;&#x5B50;&#xFF1A; &#x6BCF;&#x5468;&#x5404;&#x5929;&#xFF08;day&#xFF09;&#x7684;&#x5348;&#x9910;&#x665A;&#x9910;&#xFF08;time&#xFF09;&#x5C0F;&#x8D39;&#x5E73;&#x5747;&#x503C;&#xFF08;pivot_table&#x7684;&#x9ED8;&#x8BA4;&#x805A;&#x5408;&#x7C7B;&#x578B;&#xFF09;</h3>
+<h3 id="&#x4F7F;&#x7528;&#x539F;&#x751F;&#x5206;&#x7EC4;&#x805A;&#x5408;groupby&#x548C;&#x91CD;&#x5851;unstack&#x529F;&#x80FD;&#x5B9E;&#x73B0;">&#x4F7F;&#x7528;&#x539F;&#x751F;&#x5206;&#x7EC4;&#x805A;&#x5408;(groupby)&#x548C;&#x91CD;&#x5851;(unstack)&#x529F;&#x80FD;&#x5B9E;&#x73B0;</h3>
+<pre><code class="lang-python">t2.groupby([<span class="hljs-string">&apos;day&apos;</span>,<span class="hljs-string">&apos;time&apos;</span>])[<span class="hljs-string">&apos;tip&apos;</span>].mean().unstack().fillna(<span class="hljs-number">0</span>)  <span class="hljs-comment">#&#x900F;&#x89C6;&#x8868;</span>
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>time</th>
+      <th>Dinner</th>
+      <th>Lunch</th>
+    </tr>
+    <tr>
+      <th>day</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Fri</th>
+      <td>2.940000</td>
+      <td>2.382857</td>
+    </tr>
+    <tr>
+      <th>Sat</th>
+      <td>2.993103</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Sun</th>
+      <td>3.255132</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Thur</th>
+      <td>3.000000</td>
+      <td>2.767705</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h3 id="&#x4F7F;&#x7528;pandas&#x81EA;&#x5E26;&#x900F;&#x89C6;&#x8868;&#x51FD;&#x6570;pivottable&#x5B9E;&#x73B0;">&#x4F7F;&#x7528;pandas&#x81EA;&#x5E26;&#x900F;&#x89C6;&#x8868;&#x51FD;&#x6570;pivot_table&#x5B9E;&#x73B0;</h3>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x805A;&#x5408;&#x5217;  &#xFF0C;&#x884C;&#x7D22;&#x5F15;&#xFF0C;&#x5217;&#x7D22;&#x5F15;&#xFF0C;&#x586B;&#x5145;&#x7F3A;&#x5931;&#x503C;</span>
+t2.pivot_table(<span class="hljs-string">&apos;tip&apos;</span>,index=<span class="hljs-string">&apos;day&apos;</span>,columns=<span class="hljs-string">&apos;time&apos;</span>,fill_value=<span class="hljs-number">0</span>)
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>time</th>
+      <th>Dinner</th>
+      <th>Lunch</th>
+    </tr>
+    <tr>
+      <th>day</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Fri</th>
+      <td>2.940000</td>
+      <td>2.382857</td>
+    </tr>
+    <tr>
+      <th>Sat</th>
+      <td>2.993103</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Sun</th>
+      <td>3.255132</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Thur</th>
+      <td>3.000000</td>
+      <td>2.767705</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h3 id="&#x6839;&#x636E;day&#x548C;smoker&#x8BA1;&#x7B97;&#x5206;&#x7EC4;&#x5E73;&#x5747;&#x6570;&#xFF0C;&#x5E76;&#x5C06;day&#x548C;smoker&#x653E;&#x5230;&#x884C;&#x7D22;&#x5F15;&#x4E0A;">&#x6839;&#x636E;day&#x548C;smoker&#x8BA1;&#x7B97;&#x5206;&#x7EC4;&#x5E73;&#x5747;&#x6570;&#xFF0C;&#x5E76;&#x5C06;day&#x548C;smoker&#x653E;&#x5230;&#x884C;&#x7D22;&#x5F15;&#x4E0A;</h3>
+<pre><code class="lang-python">tips.head()
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>total_bill</th>
+      <th>tip</th>
+      <th>smoker</th>
+      <th>day</th>
+      <th>time</th>
+      <th>size</th>
+      <th>tip_pct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>16.99</td>
+      <td>1.01</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>2</td>
+      <td>0.059447</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10.34</td>
+      <td>1.66</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>3</td>
+      <td>0.160542</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>21.01</td>
+      <td>3.50</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>3</td>
+      <td>0.166587</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>23.68</td>
+      <td>3.31</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>2</td>
+      <td>0.139780</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>24.59</td>
+      <td>3.61</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>4</td>
+      <td>0.146808</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python"><span class="hljs-comment"># &#x539F;&#x751F;&#x5B9E;&#x73B0;</span>
+tips.groupby([<span class="hljs-string">&apos;day&apos;</span>,<span class="hljs-string">&apos;smoker&apos;</span>]).mean().sort_index(axis=<span class="hljs-number">1</span>)  <span class="hljs-comment"># sort_index &#x7ED9;&#x7D22;&#x5F15;&#x6392;&#x5E8F; &#x9ED8;&#x8BA4;&#x662F;&#x884C;&#x6392;&#x5E8F;&#xFF0C;axis=1 &#x662F;&#x7ED9;&#x5217;&#x6392;&#x5E8F;</span>
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>size</th>
+      <th>tip</th>
+      <th>tip_pct</th>
+      <th>total_bill</th>
+    </tr>
+    <tr>
+      <th>day</th>
+      <th>smoker</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">Fri</th>
+      <th>No</th>
+      <td>2.250000</td>
+      <td>2.812500</td>
+      <td>0.151650</td>
+      <td>18.420000</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>2.066667</td>
+      <td>2.714000</td>
+      <td>0.174783</td>
+      <td>16.813333</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Sat</th>
+      <th>No</th>
+      <td>2.555556</td>
+      <td>3.102889</td>
+      <td>0.158048</td>
+      <td>19.661778</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>2.476190</td>
+      <td>2.875476</td>
+      <td>0.147906</td>
+      <td>21.276667</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Sun</th>
+      <th>No</th>
+      <td>2.929825</td>
+      <td>3.167895</td>
+      <td>0.160113</td>
+      <td>20.506667</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>2.578947</td>
+      <td>3.516842</td>
+      <td>0.187250</td>
+      <td>24.120000</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Thur</th>
+      <th>No</th>
+      <td>2.488889</td>
+      <td>2.673778</td>
+      <td>0.160298</td>
+      <td>17.113111</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>2.352941</td>
+      <td>3.030000</td>
+      <td>0.163863</td>
+      <td>19.190588</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python"><span class="hljs-comment">#&#x900F;&#x89C6;&#x8868;&#x51FD;&#x6570;&#x5B9E;&#x73B0;</span>
+tips.pivot_table(index = [<span class="hljs-string">&apos;day&apos;</span>,<span class="hljs-string">&apos;smoker&apos;</span>])
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>size</th>
+      <th>tip</th>
+      <th>tip_pct</th>
+      <th>total_bill</th>
+    </tr>
+    <tr>
+      <th>day</th>
+      <th>smoker</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">Fri</th>
+      <th>No</th>
+      <td>2.250000</td>
+      <td>2.812500</td>
+      <td>0.151650</td>
+      <td>18.420000</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>2.066667</td>
+      <td>2.714000</td>
+      <td>0.174783</td>
+      <td>16.813333</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Sat</th>
+      <th>No</th>
+      <td>2.555556</td>
+      <td>3.102889</td>
+      <td>0.158048</td>
+      <td>19.661778</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>2.476190</td>
+      <td>2.875476</td>
+      <td>0.147906</td>
+      <td>21.276667</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Sun</th>
+      <th>No</th>
+      <td>2.929825</td>
+      <td>3.167895</td>
+      <td>0.160113</td>
+      <td>20.506667</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>2.578947</td>
+      <td>3.516842</td>
+      <td>0.187250</td>
+      <td>24.120000</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Thur</th>
+      <th>No</th>
+      <td>2.488889</td>
+      <td>2.673778</td>
+      <td>0.160298</td>
+      <td>17.113111</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>2.352941</td>
+      <td>3.030000</td>
+      <td>0.163863</td>
+      <td>19.190588</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h3 id="&#x5982;&#x679C;&#x53EA;&#x60F3;&#x805A;&#x5408;tippct&#x548C;size&#xFF0C;&#x800C;&#x4E14;&#x60F3;&#x6839;&#x636E;time&#x8FDB;&#x884C;&#x5206;&#x7EC4;&#x3002;&#x518D;&#x5C06;smoker&#x653E;&#x5230;&#x5217;&#x7D22;&#x5F15;&#x4E0A;&#xFF0C;&#x628A;day&#x653E;&#x5230;&#x884C;&#x4E0A;">&#x5982;&#x679C;&#x53EA;&#x60F3;&#x805A;&#x5408;tip_pct&#x548C;size&#xFF0C;&#x800C;&#x4E14;&#x60F3;&#x6839;&#x636E;time&#x8FDB;&#x884C;&#x5206;&#x7EC4;&#x3002;&#x518D;&#x5C06;smoker&#x653E;&#x5230;&#x5217;&#x7D22;&#x5F15;&#x4E0A;&#xFF0C;&#x628A;day&#x653E;&#x5230;&#x884C;&#x4E0A;</h3>
+<pre><code class="lang-python">tips.head()
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>total_bill</th>
+      <th>tip</th>
+      <th>smoker</th>
+      <th>day</th>
+      <th>time</th>
+      <th>size</th>
+      <th>tip_pct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>16.99</td>
+      <td>1.01</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>2</td>
+      <td>0.059447</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10.34</td>
+      <td>1.66</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>3</td>
+      <td>0.160542</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>21.01</td>
+      <td>3.50</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>3</td>
+      <td>0.166587</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>23.68</td>
+      <td>3.31</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>2</td>
+      <td>0.139780</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>24.59</td>
+      <td>3.61</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>4</td>
+      <td>0.146808</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python"><span class="hljs-comment"># &#x900F;&#x89C6;&#x8868;&#x51FD;&#x6570;&#x5B9E;&#x73B0;</span>
+<span class="hljs-comment">#&#x5982;&#x679C;&#x53EA;&#x60F3;&#x805A;&#x5408;tip_pct&#x548C;size&#xFF0C;&#x800C;&#x4E14;&#x60F3;&#x6839;&#x636E;time&#x8FDB;&#x884C;&#x5206;&#x7EC4;&#x3002;&#x518D;&#x5C06;smoker&#x653E;&#x5230;&#x5217;&#x7D22;&#x5F15;&#x4E0A;&#xFF0C;&#x628A;day&#x653E;&#x5230;&#x884C;&#x4E0A;</span>
+tips.pivot_table([<span class="hljs-string">&apos;tip_pct&apos;</span>, <span class="hljs-string">&apos;size&apos;</span>],index = [<span class="hljs-string">&apos;time&apos;</span>,<span class="hljs-string">&apos;day&apos;</span>], columns = <span class="hljs-string">&apos;smoker&apos;</span>)
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th colspan="2" halign="left">size</th>
+      <th colspan="2" halign="left">tip_pct</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>smoker</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+    <tr>
+      <th>time</th>
+      <th>day</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="4" valign="top">Dinner</th>
+      <th>Fri</th>
+      <td>2.000000</td>
+      <td>2.222222</td>
+      <td>0.139622</td>
+      <td>0.165347</td>
+    </tr>
+    <tr>
+      <th>Sat</th>
+      <td>2.555556</td>
+      <td>2.476190</td>
+      <td>0.158048</td>
+      <td>0.147906</td>
+    </tr>
+    <tr>
+      <th>Sun</th>
+      <td>2.929825</td>
+      <td>2.578947</td>
+      <td>0.160113</td>
+      <td>0.187250</td>
+    </tr>
+    <tr>
+      <th>Thur</th>
+      <td>2.000000</td>
+      <td>NaN</td>
+      <td>0.159744</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Lunch</th>
+      <th>Fri</th>
+      <td>3.000000</td>
+      <td>1.833333</td>
+      <td>0.187735</td>
+      <td>0.188937</td>
+    </tr>
+    <tr>
+      <th>Thur</th>
+      <td>2.500000</td>
+      <td>2.352941</td>
+      <td>0.160311</td>
+      <td>0.163863</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python"><span class="hljs-comment"># &#x4F7F;&#x7528;&#x539F;&#x751F;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;</span>
+<span class="hljs-comment"># &#x4F7F;&#x7528;groupby&#x548C;unstack&#x5B9E;&#x73B0;</span>
+<span class="hljs-comment"># &#x66F4;&#x5E95;&#x5C42;&#x3001;&#x66F4;&#x57FA;&#x7840;&#x7684;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#xFF0C;&#x900F;&#x89C6;&#x8868;&#x6784;&#x9020;&#x7684;&#x539F;&#x7406;&#x548C;&#x8FC7;&#x7A0B;&#x4E00;&#x6B65;&#x4E00;&#x6B65;&#x7684;&#x5C55;&#x73B0;</span>
+
+<span class="hljs-comment"># groupby &#x53C2;&#x6570;&#x662F;&#x884C;&#x7D22;&#x5F15;&#xFF0C;&#x540E;&#x9762;&#x7684;&#x53C2;&#x6570;&#x662F;&#x5217;&#x7D22;&#x5F15;&#x3002;</span>
+tips.groupby([<span class="hljs-string">&apos;time&apos;</span>,<span class="hljs-string">&apos;day&apos;</span>,<span class="hljs-string">&apos;smoker&apos;</span>])[<span class="hljs-string">&apos;tip_pct&apos;</span>,<span class="hljs-string">&apos;size&apos;</span>].mean()
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>tip_pct</th>
+      <th>size</th>
+    </tr>
+    <tr>
+      <th>time</th>
+      <th>day</th>
+      <th>smoker</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="7" valign="top">Dinner</th>
+      <th rowspan="2" valign="top">Fri</th>
+      <th>No</th>
+      <td>0.139622</td>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>0.165347</td>
+      <td>2.222222</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Sat</th>
+      <th>No</th>
+      <td>0.158048</td>
+      <td>2.555556</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>0.147906</td>
+      <td>2.476190</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Sun</th>
+      <th>No</th>
+      <td>0.160113</td>
+      <td>2.929825</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>0.187250</td>
+      <td>2.578947</td>
+    </tr>
+    <tr>
+      <th>Thur</th>
+      <th>No</th>
+      <td>0.159744</td>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">Lunch</th>
+      <th rowspan="2" valign="top">Fri</th>
+      <th>No</th>
+      <td>0.187735</td>
+      <td>3.000000</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>0.188937</td>
+      <td>1.833333</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Thur</th>
+      <th>No</th>
+      <td>0.160311</td>
+      <td>2.500000</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>0.163863</td>
+      <td>2.352941</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">tips.groupby([<span class="hljs-string">&apos;time&apos;</span>,<span class="hljs-string">&apos;day&apos;</span>,<span class="hljs-string">&apos;smoker&apos;</span>])[<span class="hljs-string">&apos;tip_pct&apos;</span>,<span class="hljs-string">&apos;size&apos;</span>].mean().unstack().sort_index(axis=<span class="hljs-number">1</span>)
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th colspan="2" halign="left">size</th>
+      <th colspan="2" halign="left">tip_pct</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>smoker</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+    <tr>
+      <th>time</th>
+      <th>day</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="4" valign="top">Dinner</th>
+      <th>Fri</th>
+      <td>2.000000</td>
+      <td>2.222222</td>
+      <td>0.139622</td>
+      <td>0.165347</td>
+    </tr>
+    <tr>
+      <th>Sat</th>
+      <td>2.555556</td>
+      <td>2.476190</td>
+      <td>0.158048</td>
+      <td>0.147906</td>
+    </tr>
+    <tr>
+      <th>Sun</th>
+      <td>2.929825</td>
+      <td>2.578947</td>
+      <td>0.160113</td>
+      <td>0.187250</td>
+    </tr>
+    <tr>
+      <th>Thur</th>
+      <td>2.000000</td>
+      <td>NaN</td>
+      <td>0.159744</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Lunch</th>
+      <th>Fri</th>
+      <td>3.000000</td>
+      <td>1.833333</td>
+      <td>0.187735</td>
+      <td>0.188937</td>
+    </tr>
+    <tr>
+      <th>Thur</th>
+      <td>2.500000</td>
+      <td>2.352941</td>
+      <td>0.160311</td>
+      <td>0.163863</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">tips.groupby([<span class="hljs-string">&apos;time&apos;</span>,<span class="hljs-string">&apos;day&apos;</span>,<span class="hljs-string">&apos;smoker&apos;</span>])[<span class="hljs-string">&apos;size&apos;</span>, <span class="hljs-string">&apos;tip_pct&apos;</span>].mean().unstack()
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th colspan="2" halign="left">size</th>
+      <th colspan="2" halign="left">tip_pct</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>smoker</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+    <tr>
+      <th>time</th>
+      <th>day</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="4" valign="top">Dinner</th>
+      <th>Fri</th>
+      <td>2.000000</td>
+      <td>2.222222</td>
+      <td>0.139622</td>
+      <td>0.165347</td>
+    </tr>
+    <tr>
+      <th>Sat</th>
+      <td>2.555556</td>
+      <td>2.476190</td>
+      <td>0.158048</td>
+      <td>0.147906</td>
+    </tr>
+    <tr>
+      <th>Sun</th>
+      <td>2.929825</td>
+      <td>2.578947</td>
+      <td>0.160113</td>
+      <td>0.187250</td>
+    </tr>
+    <tr>
+      <th>Thur</th>
+      <td>2.000000</td>
+      <td>NaN</td>
+      <td>0.159744</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Lunch</th>
+      <th>Fri</th>
+      <td>3.000000</td>
+      <td>1.833333</td>
+      <td>0.187735</td>
+      <td>0.188937</td>
+    </tr>
+    <tr>
+      <th>Thur</th>
+      <td>2.500000</td>
+      <td>2.352941</td>
+      <td>0.160311</td>
+      <td>0.163863</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<hr>
+<h2 id="pivottable-&#x5176;&#x4ED6;&#x53C2;&#x6570;&#x5176;&#x4ED6;&#x53C2;&#x6570;">pivot_table &#x5176;&#x4ED6;&#x53C2;&#x6570;&#x5176;&#x4ED6;&#x53C2;&#x6570;</h2>
+<h3 id="&#x4F20;&#x5165;marginstrue&#x6DFB;&#x52A0;&#x5206;&#x9879;&#x5C0F;&#x8BA1;">&#x4F20;&#x5165;margins=True&#x6DFB;&#x52A0;&#x5206;&#x9879;&#x5C0F;&#x8BA1;</h3>
+<p> &#x8FD9;&#x5C06;&#x4F1A;&#x6DFB;&#x52A0;&#x6807;&#x7B7E;&#x4E3A;All&#x7684;&#x884C;&#x548C;&#x5217;&#xFF0C;&#x5176;&#x503C;&#x5BF9;&#x5E94;&#x4E8E;&#x5355;&#x4E2A;&#x7B49;&#x7EA7;&#x4E2D;&#x6240;&#x6709;&#x6570;&#x636E;&#x7684;&#x5206;&#x7EC4;&#x7EDF;&#x8BA1;</p>
+<p> All&#x503C;&#x4E3A;&#x5E73;&#x5747;&#x6570;&#xFF1A;&#x4E0D;&#x5355;&#x72EC;&#x8003;&#x8651;&#x70DF;&#x6C11;&#x4E0E;&#x975E;&#x70DF;&#x6C11;&#xFF08;All&#x5217;&#xFF09;&#xFF0C;&#x4E0D;&#x5355;&#x72EC;&#x8003;&#x8651;&#x884C;&#x5206;&#x7EC4;&#x4E24;&#x4E2A;&#x7EA7;&#x522B;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x5355;&#x9879;&#xFF08;All&#x884C;&#xFF09;</p>
+<pre><code class="lang-python">tips.pivot_table([<span class="hljs-string">&apos;tip&apos;</span>], index=[<span class="hljs-string">&apos;day&apos;</span>], columns=<span class="hljs-string">&apos;time&apos;</span>, margins=<span class="hljs-keyword">True</span>) <span class="hljs-comment">#&#x5206;&#x9879;&#x5C0F;&#x8BA1;&#xFF0C;&#x5E73;&#x5747;&#x503C;</span>
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="3" halign="left">tip</th>
+    </tr>
+    <tr>
+      <th>time</th>
+      <th>Dinner</th>
+      <th>Lunch</th>
+      <th>All</th>
+    </tr>
+    <tr>
+      <th>day</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Fri</th>
+      <td>2.940000</td>
+      <td>2.382857</td>
+      <td>2.734737</td>
+    </tr>
+    <tr>
+      <th>Sat</th>
+      <td>2.993103</td>
+      <td>NaN</td>
+      <td>2.993103</td>
+    </tr>
+    <tr>
+      <th>Sun</th>
+      <td>3.255132</td>
+      <td>NaN</td>
+      <td>3.255132</td>
+    </tr>
+    <tr>
+      <th>Thur</th>
+      <td>3.000000</td>
+      <td>2.767705</td>
+      <td>2.771452</td>
+    </tr>
+    <tr>
+      <th>All</th>
+      <td>3.102670</td>
+      <td>2.728088</td>
+      <td>2.998279</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">(<span class="hljs-number">2.940000</span> + <span class="hljs-number">2.382857</span>)/<span class="hljs-number">2</span>
+</code></pre>
+<pre><code>2.6614285
+</code></pre><p>&#x5206;&#x9879;&#x5C0F;&#x8BA1;&#x7684;&#x5E73;&#x5747;&#x503C;&#x662F;&#x6574;&#x4E2A;&#x884C;&#xFF0C;&#x5217;&#x7684;&#x5E73;&#x5747;&#x503C;</p>
+<p>&#x4F7F;&#x7528;&#x975E;&#x9ED8;&#x8BA4;mean&#x7684;&#x5176;&#x4ED6;&#x7684;&#x805A;&#x5408;&#x51FD;&#x6570;&#xFF0C;&#x4F20;&#x7ED9;aggfunc&#x5373;&#x53EF;&#xFF08;&#x4F20;&#x5165;&#x51FD;&#x6570;&#x540D;&#x79F0;&#x6216;&#x51FD;&#x6570;&#x5B57;&#x7B26;&#x4E32;&#xFF09;</p>
+<p>&#x5982;&#x4F7F;&#x7528;count&#x6216;len&#x53EF;&#x5F97;&#x5230;&#x6709;&#x5173;&#x5206;&#x7EC4;&#x5927;&#x5C0F;&#x7684;&#x4EA4;&#x53C9;&#x8868;&#xFF08;&#x8BA1;&#x6570;&#x6216;&#x9891;&#x7387;&#xFF09;</p>
+<p>&#x4F20;&#x5165;&#x503C;&#x7C7B;&#x578B;&#xFF0C;&#x4E00;&#x822C;&#x4E3A; &#x51FD;&#x6570;&#x540D;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x51FD;&#x6570;&#x540D;&#xFF0C;numpy&#x51FD;&#x6570;&#x540D;&#xFF1A;</p>
+<pre><code>len
+
+&apos;count&apos;
+
+np.max
+</code></pre><pre><code class="lang-python">tips.pivot_table([<span class="hljs-string">&apos;tip_pct&apos;</span>, <span class="hljs-string">&apos;size&apos;</span>], index=[<span class="hljs-string">&apos;time&apos;</span>, <span class="hljs-string">&apos;day&apos;</span>], columns=<span class="hljs-string">&apos;smoker&apos;</span>, margins=<span class="hljs-keyword">True</span>,aggfunc = len)
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th colspan="3" halign="left">size</th>
+      <th colspan="3" halign="left">tip_pct</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>smoker</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>All</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>All</th>
+    </tr>
+    <tr>
+      <th>time</th>
+      <th>day</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="4" valign="top">Dinner</th>
+      <th>Fri</th>
+      <td>3.0</td>
+      <td>9.0</td>
+      <td>12</td>
+      <td>3.0</td>
+      <td>9.0</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>Sat</th>
+      <td>45.0</td>
+      <td>42.0</td>
+      <td>87</td>
+      <td>45.0</td>
+      <td>42.0</td>
+      <td>87.0</td>
+    </tr>
+    <tr>
+      <th>Sun</th>
+      <td>57.0</td>
+      <td>19.0</td>
+      <td>76</td>
+      <td>57.0</td>
+      <td>19.0</td>
+      <td>76.0</td>
+    </tr>
+    <tr>
+      <th>Thur</th>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Lunch</th>
+      <th>Fri</th>
+      <td>1.0</td>
+      <td>6.0</td>
+      <td>7</td>
+      <td>1.0</td>
+      <td>6.0</td>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <th>Thur</th>
+      <td>44.0</td>
+      <td>17.0</td>
+      <td>61</td>
+      <td>44.0</td>
+      <td>17.0</td>
+      <td>61.0</td>
+    </tr>
+    <tr>
+      <th>All</th>
+      <th></th>
+      <td>151.0</td>
+      <td>93.0</td>
+      <td>244</td>
+      <td>151.0</td>
+      <td>93.0</td>
+      <td>244.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<p>fill_value&#x53C2;&#x6570;&#x586B;&#x5145;&#x7F3A;&#x5931;&#x503C;&#xFF08;NA&#xFF09;</p>
+<pre><code class="lang-python">tips.pivot_table([<span class="hljs-string">&apos;tip_pct&apos;</span>, <span class="hljs-string">&apos;size&apos;</span>], index=[<span class="hljs-string">&apos;time&apos;</span>, <span class="hljs-string">&apos;day&apos;</span>], columns=<span class="hljs-string">&apos;smoker&apos;</span>, margins=<span class="hljs-keyword">True</span>, aggfunc=len, fill_value=<span class="hljs-number">0</span>)
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th colspan="3" halign="left">size</th>
+      <th colspan="3" halign="left">tip_pct</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>smoker</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>All</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>All</th>
+    </tr>
+    <tr>
+      <th>time</th>
+      <th>day</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="4" valign="top">Dinner</th>
+      <th>Fri</th>
+      <td>3</td>
+      <td>9</td>
+      <td>12</td>
+      <td>3</td>
+      <td>9</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>Sat</th>
+      <td>45</td>
+      <td>42</td>
+      <td>87</td>
+      <td>45</td>
+      <td>42</td>
+      <td>87.0</td>
+    </tr>
+    <tr>
+      <th>Sun</th>
+      <td>57</td>
+      <td>19</td>
+      <td>76</td>
+      <td>57</td>
+      <td>19</td>
+      <td>76.0</td>
+    </tr>
+    <tr>
+      <th>Thur</th>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Lunch</th>
+      <th>Fri</th>
+      <td>1</td>
+      <td>6</td>
+      <td>7</td>
+      <td>1</td>
+      <td>6</td>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <th>Thur</th>
+      <td>44</td>
+      <td>17</td>
+      <td>61</td>
+      <td>44</td>
+      <td>17</td>
+      <td>61.0</td>
+    </tr>
+    <tr>
+      <th>All</th>
+      <th></th>
+      <td>151</td>
+      <td>93</td>
+      <td>244</td>
+      <td>151</td>
+      <td>93</td>
+      <td>244.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<hr>
+<h1 id="&#x4EA4;&#x53C9;&#x8868;&#xFF1A;crosstab">&#x4EA4;&#x53C9;&#x8868;&#xFF1A;crosstab</h1>
+<p>&#x4EA4;&#x53C9;&#x8868;&#xFF08;cross-tabulation&#xFF0C;&#x7B80;&#x79F0;crosstab&#xFF09;&#x662F;&#x4E00;&#x79CD;&#x7528;&#x4E8E;&#x8BA1;&#x7B97;&#x5206;&#x7EC4;&#x9891;&#x7387;&#x7684;&#x7279;&#x6B8A;&#x900F;&#x89C6;&#x8868;</p>
+<pre><code class="lang-python">data = pd.DataFrame(
+    {
+        <span class="hljs-string">&apos;Sample&apos;</span>: np.arange(<span class="hljs-number">1</span>,<span class="hljs-number">11</span>),
+        <span class="hljs-string">&apos;Nationality&apos;</span>: [<span class="hljs-string">&quot;USA&quot;</span>, <span class="hljs-string">&quot;Japan&quot;</span>, <span class="hljs-string">&quot;USA&quot;</span>, <span class="hljs-string">&quot;Japan&quot;</span>, <span class="hljs-string">&quot;Japan&quot;</span>, <span class="hljs-string">&quot;Japan&quot;</span>, <span class="hljs-string">&quot;USA&quot;</span>, <span class="hljs-string">&quot;USA&quot;</span>, <span class="hljs-string">&quot;Japan&quot;</span>, <span class="hljs-string">&quot;USA&quot;</span>],
+        <span class="hljs-string">&apos;Handedness&apos;</span>: [<span class="hljs-string">&quot;Right-handed&quot;</span>, <span class="hljs-string">&quot;Left-handed&quot;</span>, <span class="hljs-string">&quot;Right-handed&quot;</span>, <span class="hljs-string">&quot;Right-handed&quot;</span>, <span class="hljs-string">&quot;Left-handed&quot;</span>, <span class="hljs-string">&quot;Right-handed&quot;</span>, <span class="hljs-string">&quot;Right-handed&quot;</span>, <span class="hljs-string">&quot;Left-handed&quot;</span>, <span class="hljs-string">&quot;Right-handed&quot;</span>, <span class="hljs-string">&quot;Right-handed&quot;</span>],
+    },
+    columns=[<span class="hljs-string">&apos;Sample&apos;</span>, <span class="hljs-string">&apos;Nationality&apos;</span>, <span class="hljs-string">&apos;Handedness&apos;</span>]
+)
+data
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Sample</th>
+      <th>Nationality</th>
+      <th>Handedness</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>USA</td>
+      <td>Right-handed</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Japan</td>
+      <td>Left-handed</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>USA</td>
+      <td>Right-handed</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Japan</td>
+      <td>Right-handed</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>Japan</td>
+      <td>Left-handed</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>Japan</td>
+      <td>Right-handed</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>USA</td>
+      <td>Right-handed</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>USA</td>
+      <td>Left-handed</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>Japan</td>
+      <td>Right-handed</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>10</td>
+      <td>USA</td>
+      <td>Right-handed</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">data.Nationality
+</code></pre>
+<pre><code>0      USA
+1    Japan
+2      USA
+3    Japan
+4    Japan
+5    Japan
+6      USA
+7      USA
+8    Japan
+9      USA
+Name: Nationality, dtype: object
+</code></pre><pre><code class="lang-python">data[<span class="hljs-string">&apos;Nationality&apos;</span>]
+</code></pre>
+<pre><code>0      USA
+1    Japan
+2      USA
+3    Japan
+4    Japan
+5    Japan
+6      USA
+7      USA
+8    Japan
+9      USA
+Name: Nationality, dtype: object
+</code></pre><pre><code class="lang-python">data.loc[:,<span class="hljs-string">&apos;Nationality&apos;</span>]
+</code></pre>
+<pre><code>0      USA
+1    Japan
+2      USA
+3    Japan
+4    Japan
+5    Japan
+6      USA
+7      USA
+8    Japan
+9      USA
+Name: Nationality, dtype: object
+</code></pre><pre><code class="lang-python"><span class="hljs-comment">#&#x4EA4;&#x53C9;&#x8868;</span>
+pd.crosstab(data.Nationality,data.Handedness)
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Handedness</th>
+      <th>Left-handed</th>
+      <th>Right-handed</th>
+    </tr>
+    <tr>
+      <th>Nationality</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Japan</th>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>USA</th>
+      <td>1</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">pd.crosstab(data.Nationality,data.Handedness,margins=<span class="hljs-keyword">True</span>)
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Handedness</th>
+      <th>Left-handed</th>
+      <th>Right-handed</th>
+      <th>All</th>
+    </tr>
+    <tr>
+      <th>Nationality</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Japan</th>
+      <td>2</td>
+      <td>3</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>USA</th>
+      <td>1</td>
+      <td>4</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>All</th>
+      <td>3</td>
+      <td>7</td>
+      <td>10</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<p>&#x900F;&#x89C6;&#x8868;&#x5B9E;&#x73B0;&#x4EA4;&#x53C9;&#x8868;&#x6548;&#x679C;</p>
+<pre><code class="lang-python">pd.pivot_table(data, index=<span class="hljs-string">&apos;Nationality&apos;</span>, columns=<span class="hljs-string">&apos;Handedness&apos;</span>, aggfunc=len, margins=<span class="hljs-keyword">True</span>)[<span class="hljs-string">&apos;Sample&apos;</span>].astype(np.int)  <span class="hljs-comment"># astype&#x4FEE;&#x6539;&#x6570;&#x636E;&#x7C7B;&#x578B;</span>
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Handedness</th>
+      <th>Left-handed</th>
+      <th>Right-handed</th>
+      <th>All</th>
+    </tr>
+    <tr>
+      <th>Nationality</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Japan</th>
+      <td>2</td>
+      <td>3</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>USA</th>
+      <td>1</td>
+      <td>4</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>All</th>
+      <td>3</td>
+      <td>7</td>
+      <td>10</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<p>&#x5E95;&#x5C42;&#x5B9E;&#x73B0;&#xFF1A;&#x5206;&#x7EC4;&#x548C;&#x8F74;&#x65CB;&#x8F6C;&#x5B9E;&#x73B0;&#x4EA4;&#x53C9;&#x8868;&#x6548;&#x679C;</p>
+<pre><code class="lang-python">data
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Sample</th>
+      <th>Nationality</th>
+      <th>Handedness</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>USA</td>
+      <td>Right-handed</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Japan</td>
+      <td>Left-handed</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>USA</td>
+      <td>Right-handed</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Japan</td>
+      <td>Right-handed</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>Japan</td>
+      <td>Left-handed</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>Japan</td>
+      <td>Right-handed</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>USA</td>
+      <td>Right-handed</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>USA</td>
+      <td>Left-handed</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>Japan</td>
+      <td>Right-handed</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>10</td>
+      <td>USA</td>
+      <td>Right-handed</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">x = data.groupby([<span class="hljs-string">&apos;Nationality&apos;</span>, <span class="hljs-string">&apos;Handedness&apos;</span>]).size()
+x = data.groupby([<span class="hljs-string">&apos;Nationality&apos;</span>, <span class="hljs-string">&apos;Handedness&apos;</span>]).size().unstack()
+x
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Handedness</th>
+      <th>Left-handed</th>
+      <th>Right-handed</th>
+    </tr>
+    <tr>
+      <th>Nationality</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Japan</th>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>USA</th>
+      <td>1</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python"><span class="hljs-comment"># &#x589E;&#x52A0;&#x5206;&#x9879;&#x5C0F;&#x8BA1;&#x884C;</span>
+x.sum()
+x.loc[<span class="hljs-string">&apos;All&apos;</span>] = x.sum()
+x
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Handedness</th>
+      <th>Left-handed</th>
+      <th>Right-handed</th>
+    </tr>
+    <tr>
+      <th>Nationality</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Japan</th>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>USA</th>
+      <td>1</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>All</th>
+      <td>3</td>
+      <td>7</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python"><span class="hljs-comment"># &#x589E;&#x52A0;&#x5206;&#x9879;&#x5C0F;&#x8BA1;&#x5217;</span>
+x.sum(axis=<span class="hljs-number">1</span>)
+x[<span class="hljs-string">&apos;All&apos;</span>] = x.sum(axis=<span class="hljs-number">1</span>)
+x
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Handedness</th>
+      <th>Left-handed</th>
+      <th>Right-handed</th>
+      <th>All</th>
+    </tr>
+    <tr>
+      <th>Nationality</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Japan</th>
+      <td>2</td>
+      <td>3</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>USA</th>
+      <td>1</td>
+      <td>4</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>All</th>
+      <td>3</td>
+      <td>7</td>
+      <td>10</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h3 id="&#x4F8B;&#x5B50;&#xFF1A;&#x5C0F;&#x8D39;&#x6570;&#x636E;-&#x4EA4;&#x53C9;&#x8868;&#x5B66;&#x4E60;">&#x4F8B;&#x5B50;&#xFF1A;&#x5C0F;&#x8D39;&#x6570;&#x636E; &#x4EA4;&#x53C9;&#x8868;&#x5B66;&#x4E60;</h3>
+<pre><code class="lang-python">tips.head()
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>total_bill</th>
+      <th>tip</th>
+      <th>smoker</th>
+      <th>day</th>
+      <th>time</th>
+      <th>size</th>
+      <th>tip_pct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>16.99</td>
+      <td>1.01</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>2</td>
+      <td>0.059447</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10.34</td>
+      <td>1.66</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>3</td>
+      <td>0.160542</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>21.01</td>
+      <td>3.50</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>3</td>
+      <td>0.166587</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>23.68</td>
+      <td>3.31</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>2</td>
+      <td>0.139780</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>24.59</td>
+      <td>3.61</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>4</td>
+      <td>0.146808</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h2 id="&#x7EDF;&#x8BA1;&#x987E;&#x5BA2;&#x5728;-&#x6BCF;&#x79CD;&#x7528;&#x9910;&#x65F6;&#x95F4;&#x3001;&#x6BCF;&#x4E2A;&#x661F;&#x671F;&#x4E0B;-&#x7684;-&#x5438;&#x70DF;&#x6570;&#x91CF;&#x60C5;&#x51B5;">&#x7EDF;&#x8BA1;&#x987E;&#x5BA2;&#x5728; &#x6BCF;&#x79CD;&#x7528;&#x9910;&#x65F6;&#x95F4;&#x3001;&#x6BCF;&#x4E2A;&#x661F;&#x671F;&#x4E0B; &#x7684; &#x5438;&#x70DF;&#x6570;&#x91CF;&#x60C5;&#x51B5;</h2>
+<p>&#x884C;&#x7D22;&#x5F15;&#xFF1A;time,day</p>
+<p>&#x5217;&#x7D22;&#x5F15;&#xFF1A;smoker</p>
+<p>&#x4F7F;&#x7528;&#x4EA4;&#x53C9;&#x8868;&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;</p>
+<pre><code class="lang-python">pd.crosstab([tips.time, tips.day], tips.smoker, margins=<span class="hljs-keyword">True</span>)
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>smoker</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>All</th>
+    </tr>
+    <tr>
+      <th>time</th>
+      <th>day</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="4" valign="top">Dinner</th>
+      <th>Fri</th>
+      <td>3</td>
+      <td>9</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>Sat</th>
+      <td>45</td>
+      <td>42</td>
+      <td>87</td>
+    </tr>
+    <tr>
+      <th>Sun</th>
+      <td>57</td>
+      <td>19</td>
+      <td>76</td>
+    </tr>
+    <tr>
+      <th>Thur</th>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Lunch</th>
+      <th>Fri</th>
+      <td>1</td>
+      <td>6</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>Thur</th>
+      <td>44</td>
+      <td>17</td>
+      <td>61</td>
+    </tr>
+    <tr>
+      <th>All</th>
+      <th></th>
+      <td>151</td>
+      <td>93</td>
+      <td>244</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">pd.crosstab(tips.time, [tips.smoker, tips.day], margins=<span class="hljs-keyword">True</span>)
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>smoker</th>
+      <th colspan="4" halign="left">No</th>
+      <th colspan="4" halign="left">Yes</th>
+      <th>All</th>
+    </tr>
+    <tr>
+      <th>day</th>
+      <th>Fri</th>
+      <th>Sat</th>
+      <th>Sun</th>
+      <th>Thur</th>
+      <th>Fri</th>
+      <th>Sat</th>
+      <th>Sun</th>
+      <th>Thur</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Dinner</th>
+      <td>3</td>
+      <td>45</td>
+      <td>57</td>
+      <td>1</td>
+      <td>9</td>
+      <td>42</td>
+      <td>19</td>
+      <td>0</td>
+      <td>176</td>
+    </tr>
+    <tr>
+      <th>Lunch</th>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>44</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>17</td>
+      <td>68</td>
+    </tr>
+    <tr>
+      <th>All</th>
+      <td>4</td>
+      <td>45</td>
+      <td>57</td>
+      <td>45</td>
+      <td>15</td>
+      <td>42</td>
+      <td>19</td>
+      <td>17</td>
+      <td>244</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<p>&#x4F7F;&#x7528;&#x900F;&#x89C6;&#x8868;&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;</p>
+<pre><code class="lang-python">pd.pivot_table(tips, index=[<span class="hljs-string">&apos;time&apos;</span>, <span class="hljs-string">&apos;day&apos;</span>], columns=<span class="hljs-string">&apos;smoker&apos;</span>, aggfunc=len, margins=<span class="hljs-keyword">True</span>, fill_value=<span class="hljs-number">0</span>)[<span class="hljs-string">&apos;size&apos;</span>].astype(np.int)
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>smoker</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>All</th>
+    </tr>
+    <tr>
+      <th>time</th>
+      <th>day</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="4" valign="top">Dinner</th>
+      <th>Fri</th>
+      <td>3</td>
+      <td>9</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>Sat</th>
+      <td>45</td>
+      <td>42</td>
+      <td>87</td>
+    </tr>
+    <tr>
+      <th>Sun</th>
+      <td>57</td>
+      <td>19</td>
+      <td>76</td>
+    </tr>
+    <tr>
+      <th>Thur</th>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Lunch</th>
+      <th>Fri</th>
+      <td>1</td>
+      <td>6</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>Thur</th>
+      <td>44</td>
+      <td>17</td>
+      <td>61</td>
+    </tr>
+    <tr>
+      <th>All</th>
+      <th></th>
+      <td>151</td>
+      <td>93</td>
+      <td>244</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<p>&#x4F7F;&#x7528;&#x5206;&#x7EC4;&#x805A;&#x5408;&#x8F74;&#x65CB;&#x8F6C;&#x5B9E;&#x73B0;</p>
+<pre><code class="lang-python">tips.head(<span class="hljs-number">2</span>)
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>total_bill</th>
+      <th>tip</th>
+      <th>smoker</th>
+      <th>day</th>
+      <th>time</th>
+      <th>size</th>
+      <th>tip_pct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>16.99</td>
+      <td>1.01</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>2</td>
+      <td>0.059447</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10.34</td>
+      <td>1.66</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>3</td>
+      <td>0.160542</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">tips.groupby([<span class="hljs-string">&apos;time&apos;</span>, <span class="hljs-string">&apos;day&apos;</span>, <span class="hljs-string">&apos;smoker&apos;</span>]).size().unstack()
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>smoker</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+    <tr>
+      <th>time</th>
+      <th>day</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="4" valign="top">Dinner</th>
+      <th>Fri</th>
+      <td>3.0</td>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <th>Sat</th>
+      <td>45.0</td>
+      <td>42.0</td>
+    </tr>
+    <tr>
+      <th>Sun</th>
+      <td>57.0</td>
+      <td>19.0</td>
+    </tr>
+    <tr>
+      <th>Thur</th>
+      <td>1.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Lunch</th>
+      <th>Fri</th>
+      <td>1.0</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>Thur</th>
+      <td>44.0</td>
+      <td>17.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../数据分析库的操作/13Pandas数据规整-重塑和轴向旋转.html" class="navigation navigation-prev " aria-label="Previous page: Pandas数据规整-重塑和轴向旋转"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../Python可视化/绘图库-Matplotlib.html" class="navigation navigation-next " aria-label="Next page: Python可视化"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

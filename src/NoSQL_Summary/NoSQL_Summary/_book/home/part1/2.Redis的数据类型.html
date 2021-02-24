@@ -1,0 +1,609 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Redis的数据类型 | Introduction</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../../home/part1/3.Redis高级.html" />
+    
+    
+    <link rel="prev" href="../../home/part1/1.常用命令.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="2.2"
+        data-chapter-title="Redis的数据类型"
+        data-filepath="home/part1/2.Redis的数据类型.md"
+        data-basepath="../.."
+        data-revision="Sun Oct 21 2018 20:49:12 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="home/NoSQL简介.html">
+            
+                
+                    <a href="../../home/NoSQL简介.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        NoSQL介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="home/part1/Redis.html">
+            
+                
+                    <a href="../../home/part1/Redis.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Redis
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="home/part1/1.常用命令.html">
+            
+                
+                    <a href="../../home/part1/1.常用命令.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        常用命令
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.2" data-path="home/part1/2.Redis的数据类型.html">
+            
+                
+                    <a href="../../home/part1/2.Redis的数据类型.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Redis的数据类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="home/part1/3.Redis高级.html">
+            
+                
+                    <a href="../../home/part1/3.Redis高级.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        Redis高级
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="home/part1/4.python操作redis.html">
+            
+                
+                    <a href="../../home/part1/4.python操作redis.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        python操作redis
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="home/part2/MongoDB.html">
+            
+                
+                    <a href="../../home/part2/MongoDB.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        MongoDB
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="home/part2/1.MongoDB基础操作.html">
+            
+                
+                    <a href="../../home/part2/1.MongoDB基础操作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        MongoDB基础操作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="home/part2/2.MongoDBDBS.html">
+            
+                
+                    <a href="../../home/part2/2.MongoDBDBS.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        MongoDB DBS
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="home/part2/3.MongoDBCreate.html">
+            
+                
+                    <a href="../../home/part2/3.MongoDBCreate.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        MongoDB Create
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="home/part2/4.MongoDBUpdate.html">
+            
+                
+                    <a href="../../home/part2/4.MongoDBUpdate.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        MongoDB Update
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="home/part2/5.MongoDBDelete.html">
+            
+                
+                    <a href="../../home/part2/5.MongoDBDelete.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        MongoDB Delete
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="home/part2/6.MongoDBRetrieve.html">
+            
+                
+                    <a href="../../home/part2/6.MongoDBRetrieve.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                        MongoDB Retrieve
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="home/part2/7.MongoDB查询条件.html">
+            
+                
+                    <a href="../../home/part2/7.MongoDB查询条件.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.7.</b>
+                        
+                        MongoDB 查询条件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="home/part2/8.MongoDBIndex.html">
+            
+                
+                    <a href="../../home/part2/8.MongoDBIndex.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.8.</b>
+                        
+                        MongoDB Index
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="home/part2/9.MongoDBDump.html">
+            
+                
+                    <a href="../../home/part2/9.MongoDBDump.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.9.</b>
+                        
+                        MongoDB Dump
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="home/part2/10.Python操作MongoDB.html">
+            
+                
+                    <a href="../../home/part2/10.Python操作MongoDB.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.10.</b>
+                        
+                        Python操作MongoDB
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../" >Introduction</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="redis&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;">Redis&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;</h1>
+<hr>
+<blockquote>
+<p>Redis&#x901A;&#x5E38;&#x88AB;&#x79F0;&#x4E3A;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x56E0;&#x4E3A;&#x503C;&#xFF08;value&#xFF09;&#x53EF;&#x4EE5;&#x662F; &#x5B57;&#x7B26;&#x4E32;(String), &#x54C8;&#x5E0C;(Hash), &#x5217;&#x8868;(list), &#x96C6;&#x5408;(sets) &#x548C; &#x6709;&#x5E8F;&#x96C6;&#x5408;(sorted sets)&#x7B49;&#x7C7B;&#x578B;&#x3002;</p>
+</blockquote>
+<ul>
+<li><h2 id="string&#xFF08;&#x5B50;&#x4E32;&#x7C7B;&#x578B;&#xFF09;">String&#xFF08;&#x5B50;&#x4E32;&#x7C7B;&#x578B;&#xFF09;</h2>
+<pre><code class="lang-sql">  <span class="hljs-operator"><span class="hljs-keyword">set</span> &#x547D;&#x4EE4;&#xFF1A;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x952E;&#x548C;&#x503C;&#xFF0C;&#x952E;&#x5B58;&#x5728;&#x5219;&#x53EA;&#x8986;&#x76D6;&#xFF0C;&#x8FD4;&#x56DE;ok
+  &gt; <span class="hljs-keyword">set</span> &#x952E;  &#x503C;    &#x4F8B;&#x5982;&#xFF1A; &gt;<span class="hljs-keyword">set</span> <span class="hljs-keyword">name</span> zhangsan
+
+  <span class="hljs-keyword">get</span> &#x547D;&#x4EE4;&#xFF1A;&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x952E;&#x7684;&#x503C;&#xFF0C;&#x8FD4;&#x56DE;&#x503C;
+  &gt; <span class="hljs-keyword">get</span> &#x952E;        &#x4F8B;&#x5982;&#xFF1A;&gt;<span class="hljs-keyword">get</span> <span class="hljs-keyword">name</span>
+
+  setnx&#x547D;&#x4EE4;&#xFF1A;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x952E;&#x548C;&#x503C;&#xFF08;&#x9632;&#x6B62;&#x8986;&#x76D6;&#xFF09;&#xFF0C;
+  &gt; setnx &#x952E; &#x503C;      &#x82E5;&#x952E;&#x5DF2;&#x5B58;&#x5728;&#x5219;&#x8FD4;&#x56DE;<span class="hljs-number">0</span>&#x8868;&#x793A;&#x5931;&#x8D25;
+
+  setex&#x547D;&#x4EE4;&#xFF1A;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x6307;&#x5B9A;&#x6709;&#x6548;&#x671F;&#x7684;&#x952E;&#x548C;&#x503C;&#xFF08;&#x5355;&#x4F4D;&#x79D2;&#xFF09;
+  &gt; setex &#x952E; [&#x6709;&#x6548;&#x65F6;&#x95F4;] &#x503C;  &#x4F8B;&#x5982;: &gt;setex color <span class="hljs-number">10</span> red
+  &#x4E0D;&#x5199;&#x6709;&#x6548;&#x65F6;&#x95F4;&#x5219;&#x8868;&#x793A;&#x6C38;&#x4E45;&#x6709;&#x6548;&#xFF0C;&#x7B49;&#x4EF7;&#x4E8E;<span class="hljs-keyword">set</span>
+
+  setrange&#x547D;&#x4EE4;&#xFF1A;&#x66FF;&#x6362;&#x5B50;&#x5B57;&#x7B26;&#x4E32; (&#x66FF;&#x6362;&#x957F;&#x5EA6;&#x7531;&#x5B50;&#x5B50;&#x4E32;&#x957F;&#x5EA6;&#x51B3;&#x5B9A;)
+  &gt; setrange &#x952E; &#x4F4D;&#x7F6E; &#x5B50;&#x5B57;&#x4E32;
+  &gt; setrange <span class="hljs-keyword">name</span> <span class="hljs-number">4</span> aa  &#x5C06;<span class="hljs-keyword">name</span>&#x952E;&#x5BF9;&#x5E94;&#x503C;&#x7684;&#x7B2C;<span class="hljs-number">4</span>&#x4E2A;&#x4F4D;&#x7F6E;&#x5F00;&#x59CB;&#x66FF;&#x6362;
+
+  mset&#x547D;&#x4EE4;&#xFF1A;&#x6279;&#x91CF;&#x8BBE;&#x7F6E;&#x952E;&#x548C;&#x503C;,&#x6210;&#x529F;&#x5219;&#x8FD4;&#x56DE;ok
+  &gt; mset &#x952E;<span class="hljs-number">1</span> &#x503C;<span class="hljs-number">1</span> &#x952E;<span class="hljs-number">2</span> &#x503C;<span class="hljs-number">2</span> &#x952E;<span class="hljs-number">3</span> &#x503C;<span class="hljs-number">3</span> ....
+
+  msetnx&#x547D;&#x4EE4;&#xFF1A;&#x6279;&#x91CF;&#x8BBE;&#x7F6E;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x952E;&#x548C;&#x503C;,&#x6210;&#x529F;&#x5219;&#x8FD4;&#x56DE;ok
+  &gt; msetnx &#x952E;<span class="hljs-number">1</span> &#x503C;<span class="hljs-number">1</span> &#x952E;<span class="hljs-number">2</span> &#x503C;<span class="hljs-number">2</span> &#x952E;<span class="hljs-number">3</span> &#x503C;<span class="hljs-number">3</span> ....
+
+  getset&#x547D;&#x4EE4;&#xFF1A;&#x83B7;&#x53D6;&#x539F;&#x503C;&#xFF0C;&#x5E76;&#x8BBE;&#x7F6E;&#x65B0;&#x503C;
+
+  getrange&#x547D;&#x4EE4;&#xFF1A;&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x8303;&#x56F4;&#x7684;&#x503C;
+  &gt;getrange &#x952E; <span class="hljs-number">0</span> <span class="hljs-number">4</span>     //&#x83B7;&#x53D6;&#x6307;&#x5B9A;<span class="hljs-number">0</span>&#x5230;<span class="hljs-number">4</span>&#x4F4D;&#x7F6E;&#x4E0A;&#x7684;&#x503C;
+
+  mget&#x547D;&#x4EE4;&#xFF1A; &#x6279;&#x91CF;&#x83B7;&#x53D6;&#x503C;
+  &gt;mget &#x952E;<span class="hljs-number">1</span> &#x952E;<span class="hljs-number">2</span> &#x952E;<span class="hljs-number">3.</span>...
+
+  incr&#x547D;&#x4EE4;&#xFF1A; &#x6307;&#x5B9A;&#x952E;&#x7684;&#x503C;&#x505A;&#x52A0;&#x52A0;&#x64CD;&#x4F5C;&#xFF0C;&#x8FD4;&#x56DE;&#x52A0;&#x540E;&#x7684;&#x7ED3;&#x679C;&#x3002;
+  &gt;  &#x952E;        &#x4F8B;&#x5982;&#xFF1A; &gt;incr kid
+  incrby&#x547D;&#x4EE4;&#xFF1A; &#x8BBE;&#x7F6E;&#x67D0;&#x4E2A;&#x952E;&#x52A0;&#x4E0A;&#x6307;&#x5B9A;&#x503C;
+  &gt; incrby &#x952E; <span class="hljs-keyword">m</span>    //&#x5176;&#x4E2D;<span class="hljs-keyword">m</span>&#x53EF;&#x4EE5;&#x662F;&#x6B63;&#x6574;&#x6570;&#x6216;&#x8D1F;&#x6574;&#x6570;
+
+  decr&#x547D;&#x4EE4;&#xFF1A; &#x6307;&#x5B9A;&#x952E;&#x7684;&#x503C;&#x505A;&#x51CF;&#x51CF;&#x64CD;&#x4F5C;&#xFF0C;&#x8FD4;&#x56DE;&#x51CF;&#x540E;&#x7684;&#x7ED3;&#x679C;&#x3002;
+  &gt; decr &#x952E;        &#x4F8B;&#x5982;&#xFF1A; &gt;decr kid
+  decrby&#x547D;&#x4EE4;&#xFF1A; &#x8BBE;&#x7F6E;&#x67D0;&#x4E2A;&#x952E;&#x51CF;&#x4E0A;&#x6307;&#x5B9A;&#x503C;
+  &gt; decrby &#x952E; <span class="hljs-keyword">m</span>    //&#x5176;&#x4E2D;<span class="hljs-keyword">m</span>&#x53EF;&#x4EE5;&#x662F;&#x6B63;&#x6574;&#x6570;&#x6216;&#x8D1F;&#x6574;&#x6570;
+
+  append&#x547D;&#x4EE4;&#xFF1A;&#x7ED9;&#x6307;&#x5B9A;<span class="hljs-keyword">key</span>&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x8FFD;&#x52A0;<span class="hljs-keyword">value</span>&#xFF0C;&#x8FD4;&#x56DE;&#x65B0;&#x5B57;&#x7B26;&#x4E32;&#x503C;&#x7684;&#x957F;&#x5EA6;
+  &gt;append &#x952E; &#x8FFD;&#x52A0;&#x5B57;&#x4E32;
+
+  strlen&#x6C42;&#x957F;&#x5EA6; &gt;strlen &#x952E;&#x540D;   //&#x8FD4;&#x56DE;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x3002;
+</span></code></pre>
+</li>
+</ul>
+<ul>
+<li><h2 id="hash&#x7C7B;&#x578B;">Hash&#x7C7B;&#x578B;</h2>
+<blockquote>
+<p>Redis hash &#x662F;&#x4E00;&#x4E2A;string&#x7C7B;&#x578B;&#x7684;field&#x548C;value&#x7684;&#x6620;&#x5C04;&#x8868;&#xFF0C;hash&#x7279;&#x522B;&#x9002;&#x5408;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x5BF9;&#x8C61;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-sql">  hset&#x547D;&#x4EE4;&#xFF1A;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x54C8;&#x5E0C;&#x8868;&#x7684;&#x952E;&#x548C;&#x503C;
+  &gt;hset hash&#x540D; &#x952E;  &#x503C;
+  &#x5982;&#xFF1A;&gt;hset user:001 name zhangsan
+  hget&#x547D;&#x4EE4;&#xFF1A; &#x83B7;&#x53D6;&#x6267;&#x884C;&#x54C8;&#x5E0C;&#x540D;&#x4E2D;&#x7684;&#x952E;&#x5BF9;&#x5E94;&#x503C;
+
+  hsetnx&#x547D;&#x4EE4;&#xFF1A;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x54C8;&#x5E0C;&#x8868;&#x4E2D;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x952E;&#x548C;&#x503C;
+  &gt;hsetnx hash&#x540D; &#x952E;  &#x503C;  //&#x6210;&#x529F;&#x8FD4;&#x56DE;1&#xFF0C;&#x5931;&#x8D25;&#x8FD4;&#x56DE;0
+  &#x5982;&#xFF1A;&gt;hsetnx user:001 name zhangsan
+
+  hmset&#x547D;&#x4EE4;:hmset user:001 username zhangsan age 20 sex 1 &#x6279;&#x91CF;&#x8BBE;&#x7F6E;
+  hmget user:001 username age sex:&#x6279;&#x91CF;&#x83B7;&#x53D6;&#x503C;
+
+  &gt;hexists user:001 name //&#x662F;&#x5426;&#x5B58;&#x5728;&#xFF0C; &#x82E5;&#x5B58;&#x5728;&#x8FD4;&#x56DE;1
+
+  &gt;hlen user:001  //&#x83B7;&#x53D6;&#x67D0;&#x54C8;&#x5E0C;user001&#x540D;&#x4E2D;&#x952E;&#x7684;&#x6570;&#x91CF;
+
+  &gt;hdel user:001 name //&#x5220;&#x9664;&#x54C8;&#x5E0C;user:001 &#x4E2D;name&#x952E;
+
+  &gt;hkeys user:002   //&#x8FD4;&#x56DE;&#x54C8;&#x5E0C;&#x540D;&#x4E3A;user:002&#x4E2D;&#x7684;&#x6240;&#x6709;&#x952E;&#x3002;
+  &gt;hvals user:002   //&#x8FD4;&#x56DE;&#x54C8;&#x5E0C;&#x540D;&#x4E3A;user:002&#x4E2D;&#x7684;&#x6240;&#x6709;&#x503C;&#x3002;
+  &gt;hgetall user:002 //&#x8FD4;&#x56DE;&#x54C8;&#x5E0C;&#x540D;&#x4E3A;user:002&#x4E2D;&#x7684;&#x6240;&#x6709;&#x952E;&#x548C;&#x503C;&#x3002;
+</code></pre>
+</li>
+</ul>
+<ul>
+<li><h2 id="list&#x5217;&#x8868;&#xFF08;&#x53CC;&#x5411;&#x94FE;&#x8868;&#x7ED3;&#x6784;&#xFF09;">List&#x5217;&#x8868;&#xFF08;&#x53CC;&#x5411;&#x94FE;&#x8868;&#x7ED3;&#x6784;&#xFF09;</h2>
+<blockquote>
+<p>Redis&#x5217;&#x8868;&#x662F;&#x7B80;&#x5355;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x5217;&#x8868;&#xFF0C;&#x6309;&#x7167;&#x63D2;&#x5165;&#x987A;&#x5E8F;&#x6392;&#x5E8F;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x5230;&#x5217;&#x8868;&#x7684;&#x5934;&#x90E8;&#xFF08;&#x5DE6;&#x8FB9;&#xFF09;&#x6216;&#x8005;&#x5C3E;&#x90E8;&#xFF08;&#x53F3;&#x8FB9;&#xFF09;</p>
+</blockquote>
+<pre><code class="lang-sql">  list&#x5373;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x201C;&#x6808;&#x201D;&#x4E5F;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&quot;&#x961F;&#x5217;&quot;&#x3002;
+  &#x64CD;&#x4F5C;&#xFF1A;
+  &gt;lpush list1 &quot;world&quot;  //&#x5728;list1&#x5934;&#x90E8;&#x538B;&#x5165;&#x4E00;&#x4E2A;&#x5B57;&#x4E32;
+  &gt;lpush list1 &quot;hello&quot;  // &#x5728;list1&#x5934;&#x90E8;&#x538B;&#x5165;&#x4E00;&#x4E2A;&#x5B57;&#x4E32;
+  &gt;lrange list1 0 -1  //&#x83B7;&#x53D6;list1&#x4E2D;&#x5185;&#x5BB9;
+      0:&#x8868;&#x793A;&#x5F00;&#x5934;  -1&#x8868;&#x793A;&#x7ED3;&#x5C3E;&#x3002;
+
+  &gt;rpush list2 &quot;world&quot;  //&#x5728;list2&#x5C3E;&#x90E8;&#x538B;&#x5165;&#x4E00;&#x4E2A;&#x5B57;&#x4E32;
+  &gt;rpush list2 &quot;hello&quot;  // &#x5728;list2&#x5C3E;&#x90E8;&#x538B;&#x5165;&#x4E00;&#x4E2A;&#x5B57;&#x4E32;
+  &gt;lrange list2 0 -1  //&#x83B7;&#x53D6;list2&#x4E2D;&#x5185;&#x5BB9;
+      0:&#x8868;&#x793A;&#x5F00;&#x5934;  -1&#x8868;&#x793A;&#x7ED3;&#x5C3E;&#x3002;
+
+  &gt;linsert list2 before hello there
+  &#x5728;key&#x5BF9;&#x5E94;list&#x7684;&#x7279;&#x5B9A;&#x4F4D;&#x7F6E;&#x524D;&#x6216;&#x540E;&#x6DFB;&#x52A0;&#x5B57;&#x7B26;&#x4E32;
+
+  &gt;lset list2 1 &quot;four&quot;
+  &#x4FEE;&#x6539;&#x6307;&#x5B9A;&#x7D22;&#x5F15;&#x4F4D;&#x7F6E;&#x4E0A;&#x7684;&#x503C;
+
+  &gt;lrem list2 2 &quot;hello&quot;  //&#x5220;&#x9664;&#x524D;&#x4E24;&#x4E2A;hello&#x503C;
+  &gt;lrem list2 -2 &quot;hello&quot; //&#x5220;&#x9664;&#x540E;&#x4E24;&#x4E2A;hello&#x503C;
+  &gt;lrem list2 0 &quot;hello&quot;  //&#x5220;&#x9664;&#x6240;&#x6709;hello&#x503C;
+
+  &gt;ltrim mylist8 1 3    //&#x5220;&#x9664;&#x6B64;&#x8303;&#x56F4;&#x5916;&#x7684;&#x503C;
+
+  &gt;lpop list2   //&#x4ECE;list2&#x7684;&#x5934;&#x90E8;&#x5220;&#x9664;&#x5143;&#x7D20;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x5220;&#x9664;&#x5143;&#x7D20;
+  &gt;rpop list2   //&#x4ECE;list2&#x7684;&#x5C3E;&#x90E8;&#x5220;&#x9664;&#x5143;&#x7D20;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x5220;&#x9664;&#x5143;&#x7D20;
+  &gt;rpoplpush list1 list2    //&#x5C06;list1&#x7684;&#x5C3E;&#x90E8;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x79FB;&#x51FA;&#x5230;list2&#x5934;&#x90E8;&#x3002;&#x5E76;&#x8FD4;&#x56DE;
+
+  &gt;lindex list2 1 //&#x8FD4;&#x56DE;list2&#x4E2D;&#x7D22;&#x5F15;&#x4F4D;&#x7F6E;&#x4E0A;&#x7684;&#x5143;&#x7D20;
+  &gt;llen list2 //&#x8FD4;&#x56DE;list2&#x4E0A;&#x957F;&#x5EA6;
+</code></pre>
+</li>
+<li><h2 id="redis-&#x96C6;&#x5408;set">Redis &#x96C6;&#x5408;(Set)</h2>
+<blockquote>
+<p>Redis&#x7684;Set&#x662F;string&#x7C7B;&#x578B;&#x7684;&#x65E0;&#x5E8F;&#x96C6;&#x5408;&#x3002;&#x96C6;&#x5408;&#x6210;&#x5458;&#x662F;&#x552F;&#x4E00;&#x7684;&#xFF0C;&#x8FD9;&#x5C31;&#x610F;&#x5473;&#x7740;&#x96C6;&#x5408;&#x4E2D;&#x4E0D;&#x80FD;&#x51FA;&#x73B0;&#x91CD;&#x590D;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-sql">  &gt;sadd myset &quot;hello&quot; //&#x5411;myset&#x4E2D;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x5143;&#x7D20;
+  &#x6210;&#x529F;&#x8FD4;&#x56DE;1&#xFF0C;&#x5931;&#x8D25;(&#x91CD;&#x590D;)&#x8FD4;&#x56DE;0
+
+  &gt;smembers myset //&#x83B7;&#x53D6;myset&#x4E2D;&#x7684;&#x6240;&#x6709;&#x5143;&#x7D20;(&#x7ED3;&#x679C;&#x662F;&#x65E0;&#x5E8F;&#x7684;)
+
+  &gt;srem myset &quot;one&quot; //&#x4ECE;myset&#x4E2D;&#x5220;&#x9664;&#x4E00;&#x4E2A;one
+  &#x6210;&#x529F;&#x8FD4;&#x56DE;1&#xFF0C;&#x5931;&#x8D25;(&#x4E0D;&#x5B58;&#x5728;)&#x8FD4;&#x56DE;0
+
+  &gt;spop myset //&#x968F;&#x673A;&#x8FD4;&#x56DE;&#x5E76;&#x5220;&#x9664;myset&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x5143;&#x7D20;
+  &gt;srandmember myset //&#x968F;&#x673A;&#x83B7;&#x53D6;myset&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x5220;&#x9664;
+
+  &gt; smove myset1 myset2 zhangsan:&#x5C06;myset1&#x4E2D;zhangsan&#x79FB;&#x52A8;&#x5230;myset2&#x4E2D;
+  &gt; scard myset1 &#x8FD4;&#x56DE;myset1&#x7684;&#x4E2A;&#x6570;
+  &gt; sismember myset zhangsan:&#x5224;&#x65AD;&#x5F20;&#x4E09;&#x662F;&#x5426;&#x5728;myset&#x4E2D;
+
+  &gt;sdiff myset1 myset2 //&#x8FD4;&#x56DE;&#x4E24;&#x4E2A;&#x96C6;&#x5408;&#x7684;&#x5DEE;&#x96C6;
+  &#x4EE5;myset1&#x4E3A;&#x6807;&#x51C6;&#xFF0C;&#x83B7;&#x53D6;myset2&#x4E2D;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x3002;
+  &gt;sdiffstore dstset myset1 myset2 ...// &#x8FD4;&#x56DE;&#x6240;&#x6709;&#x96C6;&#x5408;&#x7684;&#x5DEE;&#x96C6;&#xFF0C;&#x5E76;&#x4FDD;&#x5B58;&#x5230;dstset&#x4E2D;
+
+  &gt;sinter myset1 myset2 myset3... // &#x8FD4;&#x56DE;N&#x4E2A;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x4EA4;&#x96C6;
+  &gt;sinterstore dstset myset1 myset2 ... // &#x8FD4;&#x56DE;N&#x4E2A;&#x96C6;&#x5408;&#x7684;&#x4EA4;&#x96C6;&#x5E76;&#x5B58;&#x50A8;&#x5230;dstset&#x4E2D;
+
+  &gt; sunion myset1 myset2 ...//&#x8FD4;&#x56DE;&#x6240;&#x6709;&#x96C6;&#x5408;&#x7684;&#x5E76;&#x96C6;
+  &gt; sunionstore dstset myset1 myset2// &#x8FD4;&#x56DE;&#x6240;&#x6709;&#x96C6;&#x5408;&#x7684;&#x5E76;&#x96C6;&#xFF0C;&#x5E76;&#x5B58;&#x50A8;&#x5230;dstset&#x4E2D;
+</code></pre>
+</li>
+<li><h2 id="redis-&#x6709;&#x5E8F;&#x96C6;&#x5408;sset-sorted-set">Redis &#x6709;&#x5E8F;&#x96C6;&#x5408;Sset (sorted set)</h2>
+<blockquote>
+<p>Redis &#x6709;&#x5E8F;&#x96C6;&#x5408;&#x548C;&#x96C6;&#x5408;&#x4E00;&#x6837;&#x4E5F;&#x662F;string&#x7C7B;&#x578B;&#x5143;&#x7D20;&#x7684;&#x96C6;&#x5408;,&#x4E14;&#x4E0D;&#x5141;&#x8BB8;&#x91CD;&#x590D;&#x7684;&#x6210;&#x5458;&#x3002;</p>
+<p>&#x4E0D;&#x540C;&#x7684;&#x662F;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x90FD;&#x4F1A;&#x5173;&#x8054;&#x4E00;&#x4E2A;double&#x7C7B;&#x578B;&#x7684;&#x5206;&#x6570;&#x3002;redis&#x6B63;&#x662F;&#x901A;&#x8FC7;&#x5206;&#x6570;&#x6765;&#x4E3A;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x6210;&#x5458;&#x8FDB;&#x884C;&#x4ECE;&#x5C0F;&#x5230;&#x5927;&#x7684;&#x6392;&#x5E8F;&#x3002;</p>
+<p>&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x7684;&#x6210;&#x5458;&#x662F;&#x552F;&#x4E00;&#x7684;,&#x4F46;&#x5206;&#x6570;(score)&#x5374;&#x53EF;&#x4EE5;&#x91CD;&#x590D;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-sql">  &gt; zadd zset 1 one &#x5411;zset&#x4E2D;&#x6DFB;&#x52A0;one&#xFF0C;&#x6392;&#x5E8F;&#x4E3A;1&#x6392;&#x5E8F;
+  &gt; zrem zset one:&#x5220;&#x9664;zset&#x4E2D;one
+
+  &gt; zincrby zset 2 one:&#x5982;&#x679C;one&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x987A;&#x5E8F;&#x589E;&#x52A0;2&#xFF0C;&#x5982;&#x679C;one&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x662F;2
+
+  &gt; zrank zset one:&#x8FD4;&#x56DE;one&#x5728;zset&#x4E2D;&#x6392;&#x540D;(&#x4ECE;&#x5C0F;&#x5230;&#x5927;&#x7684;&#x6392;&#x5E8F;)
+  &gt; zrevrank zset one:&#x8FD4;&#x56DE;one&#x5728;zset&#x4E2D;&#x6392;&#x540D;(&#x4ECE;&#x5927;&#x5230;&#x5C0F;&#x7684;&#x6392;&#x5E8F;)
+
+  &gt; zrange zset 0 -1 withscores:&#x6839;&#x636E;score&#x6392;&#x5E8F;&#xFF08;&#x6839;&#x636E;score&#x4ECE;&#x5C0F;&#x5230;&#x5927;&#x6392;&#x5E8F;&#xFF09;
+  &gt; zrevrange zset 0 -1 withscores:&#x6839;&#x636E;score&#x6392;&#x5E8F;&#xFF08;&#x6839;&#x636E;score&#x4ECE;&#x5927;&#x5230;&#x5C0F;&#x6392;&#x5E8F;&#xFF09;
+
+  &gt; zrangebyscore zset 2 3 withscores:&#x8FD4;&#x56DE;&#x96C6;&#x5408;&#x4E2D;score&#x5728;&#x7ED9;&#x5B9A;&#x533A;&#x95F4;&#x7684;&#x5143;&#x7D20;&#xFF08;&#x5305;&#x542B;2&#x548C;5&#xFF09;
+  &gt; zcount zset 2 3:&#x8FD4;&#x56DE;&#x96C6;&#x5408;&#x4E2D;&#x7ED9;&#x5B9A;&#x533A;&#x95F4;&#x7684;&#x6570;&#x91CF;
+  &gt; zcard zset:&#x8FD4;&#x56DE;&#x96C6;&#x5408;&#x4E2D;&#x5143;&#x7D20;&#x7684;&#x4E2A;&#x6570;
+  &gt; zscore zset one:&#x8FD4;&#x56DE;one&#x5143;&#x7D20;&#x7684;score
+  &gt; zremrangebyrank zset 3 3:&#x5220;&#x9664;&#x96C6;&#x5408;&#x4E2D;&#x6392;&#x540D;&#x5728;&#x7ED9;&#x5B9A;&#x533A;&#x95F4;&#x7684;&#x5143;&#x7D20;
+  &gt; zremrangebyscore zset 1 2:&#x5C06;zset&#x4E2D;&#x4ECE;&#x5C0F;&#x5230;&#x5927;&#x6392;&#x5E8F;&#x7ED3;&#x679C;&#x7684;score&#x5728;1-2&#x4E4B;&#x95F4;&#x7684;&#x5220;&#x9664;
+</code></pre>
+</li>
+</ul>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../home/part1/1.常用命令.html" class="navigation navigation-prev " aria-label="Previous page: 常用命令"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../home/part1/3.Redis高级.html" class="navigation navigation-next " aria-label="Next page: Redis高级"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../../gitbook/app.js"></script>
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

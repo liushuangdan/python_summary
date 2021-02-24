@@ -1,0 +1,578 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>MongoDB | Introduction</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../../home/part2/1.MongoDB基础操作.html" />
+    
+    
+    <link rel="prev" href="../../home/part1/4.python操作redis.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="3"
+        data-chapter-title="MongoDB"
+        data-filepath="home/part2/MongoDB.md"
+        data-basepath="../.."
+        data-revision="Sun Oct 21 2018 20:49:12 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="home/NoSQL简介.html">
+            
+                
+                    <a href="../../home/NoSQL简介.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        NoSQL介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="home/part1/Redis.html">
+            
+                
+                    <a href="../../home/part1/Redis.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Redis
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="home/part1/1.常用命令.html">
+            
+                
+                    <a href="../../home/part1/1.常用命令.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        常用命令
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="home/part1/2.Redis的数据类型.html">
+            
+                
+                    <a href="../../home/part1/2.Redis的数据类型.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Redis的数据类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="home/part1/3.Redis高级.html">
+            
+                
+                    <a href="../../home/part1/3.Redis高级.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        Redis高级
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="home/part1/4.python操作redis.html">
+            
+                
+                    <a href="../../home/part1/4.python操作redis.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        python操作redis
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="3" data-path="home/part2/MongoDB.html">
+            
+                
+                    <a href="../../home/part2/MongoDB.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        MongoDB
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="home/part2/1.MongoDB基础操作.html">
+            
+                
+                    <a href="../../home/part2/1.MongoDB基础操作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        MongoDB基础操作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="home/part2/2.MongoDBDBS.html">
+            
+                
+                    <a href="../../home/part2/2.MongoDBDBS.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        MongoDB DBS
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="home/part2/3.MongoDBCreate.html">
+            
+                
+                    <a href="../../home/part2/3.MongoDBCreate.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        MongoDB Create
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="home/part2/4.MongoDBUpdate.html">
+            
+                
+                    <a href="../../home/part2/4.MongoDBUpdate.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        MongoDB Update
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="home/part2/5.MongoDBDelete.html">
+            
+                
+                    <a href="../../home/part2/5.MongoDBDelete.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        MongoDB Delete
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="home/part2/6.MongoDBRetrieve.html">
+            
+                
+                    <a href="../../home/part2/6.MongoDBRetrieve.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                        MongoDB Retrieve
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="home/part2/7.MongoDB查询条件.html">
+            
+                
+                    <a href="../../home/part2/7.MongoDB查询条件.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.7.</b>
+                        
+                        MongoDB 查询条件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="home/part2/8.MongoDBIndex.html">
+            
+                
+                    <a href="../../home/part2/8.MongoDBIndex.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.8.</b>
+                        
+                        MongoDB Index
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="home/part2/9.MongoDBDump.html">
+            
+                
+                    <a href="../../home/part2/9.MongoDBDump.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.9.</b>
+                        
+                        MongoDB Dump
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="home/part2/10.Python操作MongoDB.html">
+            
+                
+                    <a href="../../home/part2/10.Python操作MongoDB.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.10.</b>
+                        
+                        Python操作MongoDB
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../" >Introduction</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="mongodb">MongoDB</h1>
+<hr>
+<p><img src="../images/mongodb.png" alt=""></p>
+<blockquote>
+<p>MongoDB &#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E;&#x5206;&#x5E03;&#x5F0F;&#x6587;&#x4EF6;&#x5B58;&#x50A8;&#x7684;&#x6570;&#x636E;&#x5E93;&#x3002;&#x7531; C++ &#x8BED;&#x8A00;&#x7F16;&#x5199;&#x3002;&#x65E8;&#x5728;&#x4E3A; WEB &#x5E94;&#x7528;&#x63D0;&#x4F9B;&#x53EF;&#x6269;&#x5C55;&#x7684;&#x9AD8;&#x6027;&#x80FD;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x3002;</p>
+<p>MongoDB &#x662F;&#x4E00;&#x4E2A;&#x4ECB;&#x4E8E;&#x5173;&#x7CFB;&#x6570;&#x636E;&#x5E93;&#x548C;&#x975E;&#x5173;&#x7CFB;&#x6570;&#x636E;&#x5E93;&#x4E4B;&#x95F4;&#x7684;&#x4EA7;&#x54C1;&#xFF0C;&#x662F;&#x975E;&#x5173;&#x7CFB;&#x6570;&#x636E;&#x5E93;&#x5F53;&#x4E2D;&#x529F;&#x80FD;&#x6700;&#x4E30;&#x5BCC;&#xFF0C;&#x6700;&#x50CF;&#x5173;&#x7CFB;&#x6570;&#x636E;&#x5E93;&#x7684;&#x3002;</p>
+</blockquote>
+<h2 id="&#x4EC0;&#x4E48;&#x662F;mongodb-">&#x4EC0;&#x4E48;&#x662F;MongoDB ?</h2>
+<blockquote>
+<p>MongoDB &#x662F;&#x7531;C++&#x8BED;&#x8A00;&#x7F16;&#x5199;&#x7684;&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E;&#x5206;&#x5E03;&#x5F0F;&#x6587;&#x4EF6;&#x5B58;&#x50A8;&#x7684;&#x5F00;&#x6E90;&#x6570;&#x636E;&#x5E93;&#x7CFB;&#x7EDF;&#x3002;</p>
+<p>&#x5728;&#x9AD8;&#x8D1F;&#x8F7D;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6DFB;&#x52A0;&#x66F4;&#x591A;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1;&#x670D;&#x52A1;&#x5668;&#x6027;&#x80FD;&#x3002;</p>
+<p>MongoDB &#x65E8;&#x5728;&#x4E3A;WEB&#x5E94;&#x7528;&#x63D0;&#x4F9B;&#x53EF;&#x6269;&#x5C55;&#x7684;&#x9AD8;&#x6027;&#x80FD;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x3002;</p>
+<p>MongoDB &#x5C06;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x4E3A;&#x4E00;&#x4E2A;&#x6587;&#x6863;&#xFF0C;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x7531;&#x952E;&#x503C;(key=&gt;value)&#x5BF9;&#x7EC4;&#x6210;&#x3002;&gt; MongoDB &#x6587;&#x6863;&#x7C7B;&#x4F3C;&#x4E8E; JSON &#x5BF9;&#x8C61;&#x3002;&#x5B57;&#x6BB5;&#x503C;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x5176;&#x4ED6;&#x6587;&#x6863;&#xFF0C;&#x6570;&#x7EC4;&#x53CA;&#x6587;&#x6863;&#x6570;&#x7EC4;&#x3002;</p>
+</blockquote>
+<h2 id="&#x4E3B;&#x8981;&#x7279;&#x70B9;">&#x4E3B;&#x8981;&#x7279;&#x70B9;</h2>
+<ul>
+<li>MongoDB&#x7684;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x9762;&#x5411;&#x6587;&#x6863;&#x5B58;&#x50A8;&#xFF0C;&#x64CD;&#x4F5C;&#x8D77;&#x6765;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#x548C;&#x5BB9;&#x6613;&#x3002;</li>
+<li>&#x4F60;&#x53EF;&#x4EE5;&#x5728;MongoDB&#x8BB0;&#x5F55;&#x4E2D;&#x8BBE;&#x7F6E;&#x4EFB;&#x4F55;&#x5C5E;&#x6027;&#x7684;&#x7D22;&#x5F15; (&#x5982;&#xFF1A;FirstName=&quot;Sameer&quot;,Address=&quot;8 Gandhi Road&quot;)&#x6765;&#x5B9E;&#x73B0;&#x66F4;&#x5FEB;&#x7684;&#x6392;&#x5E8F;&#x3002;</li>
+<li>&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x672C;&#x5730;&#x6216;&#x8005;&#x7F51;&#x7EDC;&#x521B;&#x5EFA;&#x6570;&#x636E;&#x955C;&#x50CF;&#xFF0C;&#x8FD9;&#x4F7F;&#x5F97;MongoDB&#x6709;&#x66F4;&#x5F3A;&#x7684;&#x6269;&#x5C55;&#x6027;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x8D1F;&#x8F7D;&#x7684;&#x589E;&#x52A0;&#xFF08;&#x9700;&#x8981;&#x66F4;&#x591A;&#x7684;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#x548C;&#x66F4;&#x5F3A;&#x7684;&#x5904;&#x7406;&#x80FD;&#x529B;&#xFF09; &#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x5206;&#x5E03;&#x5728;&#x8BA1;&#x7B97;&#x673A;&#x7F51;&#x7EDC;&#x4E2D;&#x7684;&#x5176;&#x4ED6;&#x8282;&#x70B9;&#x4E0A;&#x8FD9;&#x5C31;&#x662F;&#x6240;&#x8C13;&#x7684;&#x5206;&#x7247;&#x3002;</li>
+<li>Mongo&#x652F;&#x6301;&#x4E30;&#x5BCC;&#x7684;&#x67E5;&#x8BE2;&#x8868;&#x8FBE;&#x5F0F;&#x3002;&#x67E5;&#x8BE2;&#x6307;&#x4EE4;&#x4F7F;&#x7528;JSON&#x5F62;&#x5F0F;&#x7684;&#x6807;&#x8BB0;&#xFF0C;&#x53EF;&#x8F7B;&#x6613;&#x67E5;&#x8BE2;&#x6587;&#x6863;&#x4E2D;&#x5185;&#x5D4C;&#x7684;&#x5BF9;&#x8C61;&#x53CA;&#x6570;&#x7EC4;&#x3002;</li>
+<li>MongoDb &#x4F7F;&#x7528;update()&#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x66FF;&#x6362;&#x5B8C;&#x6210;&#x7684;&#x6587;&#x6863;&#xFF08;&#x6570;&#x636E;&#xFF09;&#x6216;&#x8005;&#x4E00;&#x4E9B;&#x6307;&#x5B9A;&#x7684;&#x6570;&#x636E;&#x5B57;&#x6BB5; &#x3002;</li>
+<li>Mongodb&#x4E2D;&#x7684;Map/reduce&#x4E3B;&#x8981;&#x662F;&#x7528;&#x6765;&#x5BF9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x6279;&#x91CF;&#x5904;&#x7406;&#x548C;&#x805A;&#x5408;&#x64CD;&#x4F5C;&#x3002;</li>
+<li>Map&#x548C;Reduce&#x3002;Map&#x51FD;&#x6570;&#x8C03;&#x7528;emit(key,value)&#x904D;&#x5386;&#x96C6;&#x5408;&#x4E2D;&#x6240;&#x6709;&#x7684;&#x8BB0;&#x5F55;&#xFF0C;&#x5C06;key&#x4E0E;value&#x4F20;&#x7ED9;Reduce&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x5904;&#x7406;&#x3002;</li>
+<li>Map&#x51FD;&#x6570;&#x548C;Reduce&#x51FD;&#x6570;&#x662F;&#x4F7F;&#x7528;Javascript&#x7F16;&#x5199;&#x7684;&#xFF0C;&#x5E76;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;db.runCommand&#x6216;mapreduce&#x547D;&#x4EE4;&#x6765;&#x6267;&#x884C;MapReduce&#x64CD;&#x4F5C;&#x3002;</li>
+<li>GridFS&#x662F;MongoDB&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x5185;&#x7F6E;&#x529F;&#x80FD;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x5B58;&#x653E;&#x5927;&#x91CF;&#x5C0F;&#x6587;&#x4EF6;&#x3002;</li>
+<li>MongoDB&#x5141;&#x8BB8;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x6267;&#x884C;&#x811A;&#x672C;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;Javascript&#x7F16;&#x5199;&#x67D0;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x76F4;&#x63A5;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x6267;&#x884C;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x628A;&#x51FD;&#x6570;&#x7684;&#x5B9A;&#x4E49;&#x5B58;&#x50A8;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#xFF0C;&#x4E0B;&#x6B21;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x5373;&#x53EF;&#x3002;</li>
+<li>MongoDB&#x652F;&#x6301;&#x5404;&#x79CD;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;:RUBY&#xFF0C;PYTHON&#xFF0C;JAVA&#xFF0C;C++&#xFF0C;PHP&#xFF0C;C#&#x7B49;&#x591A;&#x79CD;&#x8BED;&#x8A00;&#x3002;</li>
+<li>MongoDB&#x5B89;&#x88C5;&#x7B80;&#x5355;&#x3002;</li>
+</ul>
+<h2 id="ubuntu1604&#x901A;&#x8FC7;aptget&#x65B9;&#x5F0F;&#x5B89;&#x88C5;mongodb">ubuntu16.04&#x901A;&#x8FC7;apt-get&#x65B9;&#x5F0F;&#x5B89;&#x88C5;MongoDB</h2>
+<p>&#x867D;&#x7136;Ubuntu&#x672C;&#x8EAB;&#x4E5F;&#x63D0;&#x4F9B;MongoDB&#x5B89;&#x88C5;&#x5305;&#xFF0C;&#x4F46;&#x5F80;&#x5F80;&#x5B98;&#x7F51;&#x7684;&#x5B89;&#x88C5;&#x5305;&#x7248;&#x672C;&#x66F4;&#x65B0;&#x3002;</p>
+<pre><code class="lang-bash">~$ apt-cache show mongodb-clients
+Package: mongodb-clients
+Priority: optional
+Section: universe/database
+Installed-Size: <span class="hljs-number">160066</span>
+Maintainer: Ubuntu Developers &lt;ubuntu-devel-discuss@lists.ubuntu.com&gt;
+Original-Maintainer: Laszlo Boszormenyi (GCS) &lt;gcs@debian.org&gt;
+Architecture: amd64
+Source: mongodb
+Version: <span class="hljs-number">1</span>:<span class="hljs-number">2.6</span>.<span class="hljs-number">10</span>-<span class="hljs-number">0</span>ubuntu1   <span class="hljs-comment"># &#x7248;&#x672C;&#x53F7;</span>
+</code></pre>
+<ul>
+<li><h3 id="&#x5B89;&#x88C5;">&#x5B89;&#x88C5;</h3>
+<ul>
+<li><h4 id="1&#x5BFC;&#x5165;&#x5305;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x4F7F;&#x7528;&#x7684;&#x516C;&#x94A5;">1.&#x5BFC;&#x5165;&#x5305;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x4F7F;&#x7528;&#x7684;&#x516C;&#x94A5;</h4>
+<pre><code class="lang-bash">  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:<span class="hljs-number">80</span> --recv <span class="hljs-number">0</span>C49F3730359A14518585931BC711F9BA15703C6
+</code></pre>
+</li>
+<li><h4 id="2&#x4E3A;mongodb&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#x6587;&#x4EF6;">2.&#x4E3A;MongoDB&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#x6587;&#x4EF6;</h4>
+<p>  &#x6839;&#x636E;&#x7248;&#x672C;&#x521B;&#x5EFA;/etc/apt/sources.list.d/mongodb-org-3.4.list &#x5217;&#x8868;&#x6587;&#x4EF6;</p>
+<p>  Ubuntu 16.04</p>
+<pre><code class="lang-bash">  <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse&quot;</span> | sudo tee /etc/apt/sources.list.d/mongodb-org-<span class="hljs-number">3.4</span>.list
+</code></pre>
+</li>
+<li><h4 id="3&#x66F4;&#x65B0;&#x672C;&#x5730;&#x5305;&#x6570;&#x636E;&#x5E93;">3.&#x66F4;&#x65B0;&#x672C;&#x5730;&#x5305;&#x6570;&#x636E;&#x5E93;</h4>
+<pre><code class="lang-bash">  sudo apt-get update
+</code></pre>
+</li>
+<li><h4 id="4&#x5B89;&#x88C5;&#x6700;&#x65B0;&#x7248;&#x672C;&#x7684;mongodb">4.&#x5B89;&#x88C5;&#x6700;&#x65B0;&#x7248;&#x672C;&#x7684;MongoDB</h4>
+<pre><code class="lang-bash">  sudo apt-get install -y mongodb-org
+</code></pre>
+</li>
+<li><h4 id="5&#x67E5;&#x770B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;">5.&#x67E5;&#x770B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h4>
+<pre><code class="lang-bash">  &#x914D;&#x7F6E;&#x6587;&#x4EF6;mongod.conf&#x6240;&#x5728;&#x8DEF;&#x5F84;:
+
+  /etc/mongod.conf
+
+  &#x5185;&#x5BB9;:
+</code></pre>
+<pre><code class="lang-sql">  #mongod.conf
+
+  #for documentation of all options, see:
+  #http://docs.mongodb.org/manual/reference/configuration-options/
+
+  #Where and how to store data.
+  storage:
+  dbPath: /var/lib/mongodb   #&#x6570;&#x636E;&#x5E93;&#x5B58;&#x50A8;&#x8DEF;&#x5F84;
+  journal:
+      enabled: true
+  #engine:
+  #mmapv1:
+  #wiredTiger:
+</code></pre>
+<pre><code class="lang-sql">  # where to write logging data.
+  systemLog:
+  destination: file
+  logAppend: true     #&#x4EE5;&#x8FFD;&#x52A0;&#x7684;&#x65B9;&#x5F0F;&#x5199;&#x5165;&#x65E5;&#x5FD7;
+  path: /var/log/mongodb/mongod.log   #&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;
+
+  #network interfaces
+  net:
+  port: 27017
+  bindIp: 127.0.0.1   #&#x7ED1;&#x5B9A;&#x76D1;&#x542C;&#x7684;ip 127.0.0.1&#x53EA;&#x80FD;&#x76D1;&#x542C;&#x672C;&#x5730;&#x7684;&#x8FDE;&#x63A5;&#xFF0C;&#x53EF;&#x4EE5;&#x6539;&#x4E3A;0.0.0.0
+
+  #processManagement:
+
+  #security:
+
+  #operationProfiling:
+
+  #replication:
+
+  #sharding:
+
+  ## Enterprise-Only Options:
+
+  #auditLog:
+
+  #snmp:
+</code></pre>
+</li>
+<li><h4 id="6&#x542F;&#x52A8;&#x548C;&#x5173;&#x95ED;mongodb">6.&#x542F;&#x52A8;&#x548C;&#x5173;&#x95ED;MongoDB</h4>
+<pre><code class="lang-sql">  sudo service mongod <span class="hljs-operator"><span class="hljs-keyword">start</span>  # &#x542F;&#x52A8;
+  sudo service mongod <span class="hljs-keyword">stop</span>   # &#x5173;&#x95ED;
+</span></code></pre>
+<pre><code>  hupeng@hupeng-vm:~$ ps aux | grep mongod   # &#x67E5;&#x770B;&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;mongod&#x7684;&#x8FD0;&#x884C;&#x72B6;&#x6001;
+  mongodb   18454  9.5  1.5 292152 61952 ?        Ssl  12:27   0:00 /usr/bin/mongod --quiet --config /etc/mongod.conf
+  hupeng    18475  0.0  0.0  15964   936 pts/4    R+   12:27   0:00 grep --color=auto mongod
+</code></pre></li>
+</ul>
+</li>
+<li><h3 id="&#x5378;&#x8F7D;">&#x5378;&#x8F7D;</h3>
+<ul>
+<li><h4 id="1&#x5173;&#x95ED;&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;mongod">1.&#x5173;&#x95ED;&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;mongod</h4>
+<pre><code class="lang-bash">  sudo service mongod stop
+</code></pre>
+</li>
+<li><h4 id="2&#x5378;&#x8F7D;&#x5B89;&#x88C5;&#x7684;&#x8F6F;&#x4EF6;&#x5305;">2.&#x5378;&#x8F7D;&#x5B89;&#x88C5;&#x7684;&#x8F6F;&#x4EF6;&#x5305;</h4>
+<pre><code class="lang-bash">  sudo apt-get purge mongodb-org*
+</code></pre>
+</li>
+<li><h4 id="3&#x79FB;&#x9664;&#x6570;&#x636E;&#x5E93;&#x548C;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#xFF08;&#x6570;&#x636E;&#x5E93;&#x548C;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#x53D6;&#x51B3;&#x4E8E;etcmongodconf&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x914D;&#x7F6E;">3.&#x79FB;&#x9664;&#x6570;&#x636E;&#x5E93;&#x548C;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#xFF08;&#x6570;&#x636E;&#x5E93;&#x548C;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#x53D6;&#x51B3;&#x4E8E;/etc/mongod.conf&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x914D;&#x7F6E;)</h4>
+<pre><code class="lang-bash">  sudo rm -r /var/<span class="hljs-built_in">log</span>/
+  mongodb
+  sudo rm 
+  -r /var/lib/mongodb
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>&#x53C2;&#x8003;&#x6587;&#x6863;: <a href="https://docs.mongodb.com/master/tutorial/install-mongodb-on-ubuntu/" target="_blank">https://docs.mongodb.com/master/tutorial/install-mongodb-on-ubuntu/</a></p>
+</blockquote>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../home/part1/4.python操作redis.html" class="navigation navigation-prev " aria-label="Previous page: python操作redis"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../home/part2/1.MongoDB基础操作.html" class="navigation navigation-next " aria-label="Next page: MongoDB基础操作"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../../gitbook/app.js"></script>
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

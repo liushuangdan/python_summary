@@ -1,0 +1,488 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>MongoDB Delete | Introduction</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../../home/part2/6.MongoDBRetrieve.html" />
+    
+    
+    <link rel="prev" href="../../home/part2/4.MongoDBUpdate.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="3.5"
+        data-chapter-title="MongoDB Delete"
+        data-filepath="home/part2/5.MongoDBDelete.md"
+        data-basepath="../.."
+        data-revision="Sun Oct 21 2018 20:49:12 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="home/NoSQL简介.html">
+            
+                
+                    <a href="../../home/NoSQL简介.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        NoSQL介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="home/part1/Redis.html">
+            
+                
+                    <a href="../../home/part1/Redis.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Redis
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="home/part1/1.常用命令.html">
+            
+                
+                    <a href="../../home/part1/1.常用命令.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        常用命令
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="home/part1/2.Redis的数据类型.html">
+            
+                
+                    <a href="../../home/part1/2.Redis的数据类型.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Redis的数据类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="home/part1/3.Redis高级.html">
+            
+                
+                    <a href="../../home/part1/3.Redis高级.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        Redis高级
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="home/part1/4.python操作redis.html">
+            
+                
+                    <a href="../../home/part1/4.python操作redis.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        python操作redis
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="home/part2/MongoDB.html">
+            
+                
+                    <a href="../../home/part2/MongoDB.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        MongoDB
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="home/part2/1.MongoDB基础操作.html">
+            
+                
+                    <a href="../../home/part2/1.MongoDB基础操作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        MongoDB基础操作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="home/part2/2.MongoDBDBS.html">
+            
+                
+                    <a href="../../home/part2/2.MongoDBDBS.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        MongoDB DBS
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="home/part2/3.MongoDBCreate.html">
+            
+                
+                    <a href="../../home/part2/3.MongoDBCreate.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        MongoDB Create
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="home/part2/4.MongoDBUpdate.html">
+            
+                
+                    <a href="../../home/part2/4.MongoDBUpdate.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        MongoDB Update
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.5" data-path="home/part2/5.MongoDBDelete.html">
+            
+                
+                    <a href="../../home/part2/5.MongoDBDelete.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        MongoDB Delete
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="home/part2/6.MongoDBRetrieve.html">
+            
+                
+                    <a href="../../home/part2/6.MongoDBRetrieve.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                        MongoDB Retrieve
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="home/part2/7.MongoDB查询条件.html">
+            
+                
+                    <a href="../../home/part2/7.MongoDB查询条件.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.7.</b>
+                        
+                        MongoDB 查询条件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="home/part2/8.MongoDBIndex.html">
+            
+                
+                    <a href="../../home/part2/8.MongoDBIndex.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.8.</b>
+                        
+                        MongoDB Index
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="home/part2/9.MongoDBDump.html">
+            
+                
+                    <a href="../../home/part2/9.MongoDBDump.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.9.</b>
+                        
+                        MongoDB Dump
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="home/part2/10.Python操作MongoDB.html">
+            
+                
+                    <a href="../../home/part2/10.Python操作MongoDB.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.10.</b>
+                        
+                        Python操作MongoDB
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../" >Introduction</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="mongodb-&#x5220;&#x9664;&#x6587;&#x6863;">MongoDB &#x5220;&#x9664;&#x6587;&#x6863;</h1>
+<hr>
+<p>&#x5728;&#x524D;&#x9762;&#x7684;&#x51E0;&#x4E2A;&#x7AE0;&#x8282;&#x4E2D;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x5B66;&#x4E60;&#x4E86;MongoDB&#x4E2D;&#x5982;&#x4F55;&#x4E3A;&#x96C6;&#x5408;&#x6DFB;&#x52A0;&#x6570;&#x636E;&#x548C;&#x66F4;&#x65B0;&#x6570;&#x636E;&#x3002;&#x5728;&#x672C;&#x7AE0;&#x8282;&#x4E2D;&#x6211;&#x4EEC;&#x5C06;&#x7EE7;&#x7EED;&#x5B66;&#x4E60;MongoDB&#x96C6;&#x5408;&#x7684;&#x5220;&#x9664;&#x3002;</p>
+<p>MongoDB remove()&#x51FD;&#x6570;&#x662F;&#x7528;&#x6765;&#x79FB;&#x9664;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<p>MongoDB&#x6570;&#x636E;&#x66F4;&#x65B0;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;update()&#x51FD;&#x6570;&#x3002;&#x5728;&#x6267;&#x884C;remove()&#x51FD;&#x6570;&#x524D;&#x5148;&#x6267;&#x884C;find()&#x547D;&#x4EE4;&#x6765;&#x5224;&#x65AD;&#x6267;&#x884C;&#x7684;&#x6761;&#x4EF6;&#x662F;&#x5426;&#x6B63;&#x786E;&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x597D;&#x7684;&#x4E60;&#x60EF;&#x3002;</p>
+<h2 id="&#x8BED;&#x6CD5;">&#x8BED;&#x6CD5;</h2>
+<p>remove() &#x65B9;&#x6CD5;&#x7684;&#x57FA;&#x672C;&#x8BED;&#x6CD5;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-sql">db.collection.remove(
+   &lt;query&gt;,
+   &lt;justOne&gt;
+)
+</code></pre>
+<p>&#x5982;&#x679C;&#x4F60;&#x7684; MongoDB &#x662F; 2.6 &#x7248;&#x672C;&#x4EE5;&#x540E;&#x7684;&#xFF0C;&#x8BED;&#x6CD5;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-sql">db.collection.remove(
+   &lt;query&gt;,
+   {
+     justOne: &lt;boolean&gt;,
+     writeConcern: &lt;document&gt;
+   }
+)
+</code></pre>
+<p>&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;</p>
+<ul>
+<li><strong>query</strong> :&#xFF08;&#x53EF;&#x9009;&#xFF09;&#x5220;&#x9664;&#x7684;&#x6587;&#x6863;&#x7684;&#x6761;&#x4EF6;&#x3002;</li>
+<li><strong>justOne</strong> : &#xFF08;&#x53EF;&#x9009;&#xFF09;&#x5982;&#x679C;&#x8BBE;&#x4E3A; true &#x6216; 1&#xFF0C;&#x5219;&#x53EA;&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x6587;&#x6863;&#x3002;</li>
+<li><strong>writeConcern</strong> :&#xFF08;&#x53EF;&#x9009;&#xFF09;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x7684;&#x7EA7;&#x522B;&#x3002;</li>
+</ul>
+<h2 id="&#x5B9E;&#x4F8B;">&#x5B9E;&#x4F8B;</h2>
+<p>&#x4EE5;&#x4E0B;&#x6587;&#x6863;&#x6211;&#x4EEC;&#x6267;&#x884C;&#x4E24;&#x6B21;&#x63D2;&#x5165;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<pre><code class="lang-sql">&gt;db.col.insert({title: &apos;MongoDB &#x6559;&#x7A0B;&apos;, 
+    description: &apos;MongoDB &#x662F;&#x4E00;&#x4E2A; Nosql &#x6570;&#x636E;&#x5E93;&apos;,
+    by: &apos;&#x83DC;&#x9E1F;&#x6559;&#x7A0B;&apos;,
+    url: &apos;http://www.runoob.com&apos;,
+    tags: [&apos;mongodb&apos;, &apos;database&apos;, &apos;NoSQL&apos;],
+    likes: 100
+})
+</code></pre>
+<p>&#x4F7F;&#x7528; find() &#x51FD;&#x6570;&#x67E5;&#x8BE2;&#x6570;&#x636E;&#xFF1A;</p>
+<pre><code class="lang-sql">&gt; db.col.find()
+{ &quot;_id&quot; : ObjectId(&quot;56066169ade2f21f36b03137&quot;), &quot;title&quot; : &quot;MongoDB &#x6559;&#x7A0B;&quot;, &quot;description&quot; : &quot;MongoDB &#x662F;&#x4E00;&#x4E2A; Nosql &#x6570;&#x636E;&#x5E93;&quot;, &quot;by&quot; : &quot;&#x83DC;&#x9E1F;&#x6559;&#x7A0B;&quot;, &quot;url&quot; : &quot;http://www.runoob.com&quot;, &quot;tags&quot; : [ &quot;mongodb&quot;, &quot;database&quot;, &quot;NoSQL&quot; ], &quot;likes&quot; : 100 }
+{ &quot;_id&quot; : ObjectId(&quot;5606616dade2f21f36b03138&quot;), &quot;title&quot; : &quot;MongoDB &#x6559;&#x7A0B;&quot;, &quot;description&quot; : &quot;MongoDB &#x662F;&#x4E00;&#x4E2A; Nosql &#x6570;&#x636E;&#x5E93;&quot;, &quot;by&quot; : &quot;&#x83DC;&#x9E1F;&#x6559;&#x7A0B;&quot;, &quot;url&quot; : &quot;http://www.runoob.com&quot;, &quot;tags&quot; : [ &quot;mongodb&quot;, &quot;database&quot;, &quot;NoSQL&quot; ], &quot;likes&quot; : 100 }
+</code></pre>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x79FB;&#x9664; title &#x4E3A; &apos;MongoDB &#x6559;&#x7A0B;&apos; &#x7684;&#x6587;&#x6863;&#xFF1A;</p>
+<pre><code class="lang-sql">&gt;db.col.remove({&apos;title&apos;:&apos;MongoDB &#x6559;&#x7A0B;&apos;})
+WriteResult({ &quot;nRemoved&quot; : 2 })           # &#x5220;&#x9664;&#x4E86;&#x4E24;&#x6761;&#x6570;&#x636E;
+&gt;db.col.find()
+&#x2026;&#x2026;                                        # &#x6CA1;&#x6709;&#x6570;&#x636E;
+</code></pre>
+<p>&#x5982;&#x679C;&#x4F60;&#x53EA;&#x60F3;&#x5220;&#x9664;&#x7B2C;&#x4E00;&#x6761;&#x627E;&#x5230;&#x7684;&#x8BB0;&#x5F55;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E; justOne &#x4E3A; 1&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-sql">&gt;db.COLLECTION_NAME.remove(DELETION_CRITERIA,1)
+</code></pre>
+<p>&#x5982;&#x679C;&#x4F60;&#x60F3;&#x5220;&#x9664;&#x6240;&#x6709;&#x6570;&#x636E;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x65B9;&#x5F0F;&#xFF08;&#x7C7B;&#x4F3C;&#x5E38;&#x89C4; SQL &#x7684; truncate &#x547D;&#x4EE4;&#xFF09;&#xFF1A;</p>
+<pre><code class="lang-sql">&gt;db.col.remove({})
+&gt;db.col.find()
+&gt;
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../home/part2/4.MongoDBUpdate.html" class="navigation navigation-prev " aria-label="Previous page: MongoDB Update"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../home/part2/6.MongoDBRetrieve.html" class="navigation navigation-next " aria-label="Next page: MongoDB Retrieve"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../../gitbook/app.js"></script>
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

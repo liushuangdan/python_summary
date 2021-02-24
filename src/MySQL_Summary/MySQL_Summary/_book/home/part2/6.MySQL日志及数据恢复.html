@@ -1,0 +1,596 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>MySQL日志及数据恢复 | Introduction</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../../home/part2/7.慢查询及sql优化.html" />
+    
+    
+    <link rel="prev" href="../../home/part2/4.MySQL的触发器.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="3.5"
+        data-chapter-title="MySQL日志及数据恢复"
+        data-filepath="home/part2/6.MySQL日志及数据恢复.md"
+        data-basepath="../.."
+        data-revision="Sun Oct 21 2018 16:32:53 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="home/MySQL介绍.html">
+            
+                
+                    <a href="../../home/MySQL介绍.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        MySQL介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="home/part1/MySQL基础.html">
+            
+                
+                    <a href="../../home/part1/MySQL基础.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Mysql基础
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="home/part1/1.MySQL基础操作.html">
+            
+                
+                    <a href="../../home/part1/1.MySQL基础操作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        MySQL基础操作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="home/part1/2.MySQL数据类型.html">
+            
+                
+                    <a href="../../home/part1/2.MySQL数据类型.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        MySQL数据类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="home/part1/3.MySQL建库建表.html">
+            
+                
+                    <a href="../../home/part1/3.MySQL建库建表.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        MySQL建库建表
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="home/part1/4.DML操作：增,删,改.html">
+            
+                
+                    <a href="../../home/part1/4.DML操作：增,删,改.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        DML操作：增,删,改
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="home/part1/5.DQL操作：数据查询.html">
+            
+                
+                    <a href="../../home/part1/5.DQL操作：数据查询.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        DQL操作：数据查询
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="home/part1/6.数据导入和导出.html">
+            
+                
+                    <a href="../../home/part1/6.数据导入和导出.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                        数据导入和导出
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="home/part2/MySQL高级.html">
+            
+                
+                    <a href="../../home/part2/MySQL高级.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        MySQL高级
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="home/part2/1.MySQL的多表联查.html">
+            
+                
+                    <a href="../../home/part2/1.MySQL的多表联查.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        MySQL的多表联查
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="home/part2/2.MySQL的事务处理.html">
+            
+                
+                    <a href="../../home/part2/2.MySQL的事务处理.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        MySQL的事务处理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="home/part2/3.MySQL的视图及其它.html">
+            
+                
+                    <a href="../../home/part2/3.MySQL的视图及其它.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        MySQL的视图及其它
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="home/part2/4.MySQL的触发器.html">
+            
+                
+                    <a href="../../home/part2/4.MySQL的触发器.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        MySQL的触发器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.5" data-path="home/part2/6.MySQL日志及数据恢复.html">
+            
+                
+                    <a href="../../home/part2/6.MySQL日志及数据恢复.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        MySQL日志及数据恢复
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="home/part2/7.慢查询及sql优化.html">
+            
+                
+                    <a href="../../home/part2/7.慢查询及sql优化.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                        慢查询及sql优化
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="home/part3/Python连接MySQL.html">
+            
+                
+                    <a href="../../home/part3/Python连接MySQL.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Python连接MySQL
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="home/part3/1.CRUD.html">
+            
+                
+                    <a href="../../home/part3/1.CRUD.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        CRUD
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../" >Introduction</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="mysql&#x65E5;&#x5FD7;&#x53CA;&#x6570;&#x636E;&#x6062;&#x590D;">MySQL&#x65E5;&#x5FD7;&#x53CA;&#x6570;&#x636E;&#x6062;&#x590D;</h1>
+<hr>
+<h2 id="mysql&#x65E5;&#x5FD7;">MySQL&#x65E5;&#x5FD7;</h2>
+<pre><code class="lang-sql">&#x5F00;&#x542F;bin-log&#x65E5;&#x5FD7;
+1. &#x4F7F;&#x7528;vim&#x6216;&#x5176;&#x5B83;&#x7F16;&#x8F91;&#x5668; &#x6253;&#x5F00; mysql &#x914D;&#x7F6E;&#x6587;&#x4EF6;
+
+sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf 
+
+2. &#x627E;&#x5230; &#x4EE5;&#x4E0B;&#x4E24;&#x4E2A;&#x914D;&#x7F6E;&#x9879;
+    server-id               = 123456
+    log_bin                 = /var/log/mysql/mysql-bin
+
+3. &#x628A;&#x6CE8;&#x91CA;&#x6253;&#x5F00; &#x6539;&#x5B8C;&#x540E; &#x4FDD;&#x5B58;&#x63A8;&#x51FA;
+
+
+4. &#x91CD;&#x542F;mysql
+sudo service mysql restart
+
+
+5. &#x67E5;&#x770B;bin-log&#x65E5;&#x5FD7;:
+mysql&gt;show binary logs;
+
+6. ls &#x67E5;&#x770B;&#x662F;&#x5426;&#x5B58;&#x5728;mysql&#x65E5;&#x5FD7;&#x6587;&#x4EF6;
+cd /var/lib/mysql
+
+
+
+mysql&gt;reset master;
+7. &#x6E05;&#x7A7A;&#x6240;&#x6709;&#x7684;bin-log&#x65E5;&#x5FD7;
+
+8. -- &#x67E5;&#x770B;binlog&#x65E5;&#x5FD7;&#x6587;&#x4EF6;
+mysqlbinlog mysql-bin.000001
+
+
+&#x5907;&#x4EFD;&#x6570;&#x636E;&#x65F6; &#x5237;&#x65B0;&#x65E5;&#x5FD7;:
+mysqldump -uroot -pwei test -l -F &apos;/tmp/test.sql&apos;
+&#x5176;&#x4E2D;&#xFF1A;-F&#x5373;flush logs&#xFF0C;&#x53EF;&#x4EE5;&#x91CD;&#x65B0;&#x751F;&#x6210;&#x65B0;&#x7684;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#xFF0C;&#x5F53;&#x7136;&#x5305;&#x62EC;log-bin&#x65E5;&#x5FD7;
+</code></pre>
+<h2 id="&#x6570;&#x636E;&#x5E93;&#x7684;&#x6062;&#x590D;">&#x6570;&#x636E;&#x5E93;&#x7684;&#x6062;&#x590D;</h2>
+<blockquote>
+<p>&#x524D;&#x63D0;&#x662F;&#x5F00;&#x542F;&#x4E86;bin-log&#x65E5;&#x5FD7;,&#x5E76;&#x5B9A;&#x671F;&#x5907;&#x4EFD;</p>
+<p>&#x601D;&#x8DEF;:</p>
+<ol>
+<li><p>&#x901A;&#x8FC7;&#x5B9A;&#x671F;&#x5907;&#x4EFD;&#x7684;&#x6587;&#x4EF6;&#x6062;&#x590D;&#x5927;&#x91CF;&#x6570;&#x636E;</p>
+</li>
+<li><p>&#x901A;&#x8FC7;&#x65E5;&#x5FD7;&#x6062;&#x590D;&#x5907;&#x4EFD;&#x540E;&#x7684;&#x6570;&#x636E;&#x64CD;&#x4F5C;</p>
+</li>
+</ol>
+</blockquote>
+<pre><code class="lang-sql">-- &#x5237;&#x65B0; &#x65E5;&#x5FD7;
+mysql&gt; reset master;
+Query OK, 0 rows affected (0.39 sec)
+
+-- &#x67E5;&#x8BE2;&#x6700;&#x65B0;&#x65E5;&#x5FD7;
+show binary logs;
+
+
+-- &#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;
+mysql&gt; create database ops;
+Query OK, 1 row affected (0.28 sec)
+
+-- &#x9009;&#x62E9;&#x5E76;&#x6253;&#x5F00;&#x5E93;
+mysql&gt; use ops;
+Database changed
+
+-- &#x521B;&#x5EFA;&#x8868;
+create table user(
+    id int not null auto_increment,
+    name char(20) not null,
+    age int not null,
+    primary key(id)
+)engine=InnoDB;
+
+
+-- &#x6DFB;&#x52A0;&#x6570;&#x636E;
+insert into user values(1,&quot;wangbo&quot;,&quot;24&quot;),(2,&quot;guohui&quot;,&quot;22&quot;),(3,&quot;zhangheng&quot;,&quot;27&quot;);
+
+-- &#x67E5;&#x8BE2;
+mysql&gt; select *  from user;
++----+-----------+-----+
+| id | name      | age |
++----+-----------+-----+
+|  1 | wangbo    |  24 |
+|  2 | guohui    |  22 |
+|  3 | zhangheng |  27 |
++----+-----------+-----+
+3 rows in set (0.00 sec)
+
+-- &#x73B0;&#x5728;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x5907;&#x4EFD;
+mysqldump -uroot -p -B -F -R -x --master-data=2 ops &gt;/home/yc/py08/04-mysql/ops.sql
+
+-----------------
+&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;
+-B&#xFF1A;&#x6307;&#x5B9A;&#x6570;&#x636E;&#x5E93;
+-F&#xFF1A;&#x5237;&#x65B0;&#x65E5;&#x5FD7;
+-R&#xFF1A;&#x5907;&#x4EFD;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x7B49;
+-x&#xFF1A;&#x9501;&#x8868;
+--master-data&#xFF1A;&#x5728;&#x5907;&#x4EFD;&#x8BED;&#x53E5;&#x91CC;&#x6DFB;&#x52A0;CHANGE MASTER&#x8BED;&#x53E5;&#x4EE5;&#x53CA;binlog&#x6587;&#x4EF6;&#x53CA;&#x4F4D;&#x7F6E;&#x70B9;&#x4FE1;&#x606F;
+
+
+
+-- &#x518D;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x6570;&#x636E;
+insert into user values(4,&quot;liupeng&quot;,&quot;21&quot;),(5,&quot;xiaoda&quot;,&quot;31&quot;),(6,&quot;fuaiai&quot;,&quot;26&quot;);
+
+-- &#x67E5;&#x8BE2;&#x6570;&#x636E;
+mysql&gt; select * from user;
++----+-----------+-----+
+| id | name      | age |
++----+-----------+-----+
+|  1 | wangbo    |  24 |
+|  2 | guohui    |  22 |
+|  3 | zhangheng |  27 |
+|  4 | liupeng   |  21 |
+|  5 | xiaoda    |  31 |
+|  6 | fuaiai    |  26 |
++----+-----------+-----+
+6 rows in set (0.00 sec)
+
+
+
+-- &#x6B64;&#x65F6;&#x8BEF;&#x64CD;&#x4F5C;&#xFF0C;&#x5220;&#x9664;&#x4E86;test&#x6570;&#x636E;&#x5E93;
+drop database ops;
+
+mysql&gt; show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| python4            |
+| sys                |
+| wx                 |
++--------------------+
+6 rows in set (0.00 sec)
+
+
+
+
+1,&#x5148;&#x8BB2;binlog&#x6587;&#x4EF6;&#x5BFC;&#x51FA;
+-- &#x5C06;binlog&#x6587;&#x4EF6;&#x5BFC;&#x51FA;sql&#x6587;&#x4EF6;&#xFF0C;&#x5E76;vim&#x7F16;&#x8F91;&#x5B83;&#x5220;&#x9664;&#x5176;&#x4E2D;&#x7684;drop&#x8BED;&#x53E5;
+-- [root@vm-002 backup]# mysqlbinlog -d ops /var/lib/mysql/mysql-bin.000002&gt; /home/yc/002bin.sql
+
+sudo mysqlbinlog -d ops /var/log/mysql/mysql-bin.000002&gt; /home/yc/py08/04-mysql/002bin.sql
+
+
+2,-- &#x5220;&#x9664;&#x91CC;&#x9762;&#x7684;drop&#x8BED;&#x53E5;
+vim 002bin.sql
+
+
+
+3,-- &#x5BFC;&#x5165;&#x5907;&#x4EFD;&#x7684;&#x6570;&#x636E;&#x6587;&#x4EF6;,
+mysql -uroot -p &lt; /home/yc/py08/04-mysql/ops.sql 
+
+
+4,-- &#x518D;&#x5BFC;&#x5165;&#x5220;&#x9664; drop&#x8BED;&#x53E5;&#x540E;&#x7684; binlog&#x65E5;&#x5FD7;&#x6587;&#x4EF6;
+mysql -uroot -p ops &lt; /home/yc/py08/04-mysql/002bin.sql
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../home/part2/4.MySQL的触发器.html" class="navigation navigation-prev " aria-label="Previous page: MySQL的触发器"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../home/part2/7.慢查询及sql优化.html" class="navigation navigation-next " aria-label="Next page: 慢查询及sql优化"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../../gitbook/app.js"></script>
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

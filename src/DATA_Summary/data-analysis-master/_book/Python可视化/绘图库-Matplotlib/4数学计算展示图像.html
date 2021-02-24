@@ -1,0 +1,996 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>拓展：数学计算展示图像 | Python 数据分析学习目录</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../../Python可视化/绘图库-Matplotlib/5注意事项.html" />
+    
+    
+    <link rel="prev" href="../../Python可视化/绘图库-Matplotlib/3Matplotlib-高级绘图.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="5.5"
+        data-chapter-title="拓展：数学计算展示图像"
+        data-filepath="Python可视化/绘图库-Matplotlib/4数学计算展示图像.md"
+        data-basepath="../.."
+        data-revision="Wed Oct 24 2018 21:30:49 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        数据分析
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="Python数据分析序言/内容序言.html">
+            
+                
+                    <a href="../../Python数据分析序言/内容序言.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Python数据分析内容
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="python数据分析环境和工具/Python数据分析相关.html">
+            
+                
+                    <a href="../../python数据分析环境和工具/Python数据分析相关.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        python数据分析环境和工具
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="python数据分析环境和工具/1Python数据课程软件和环境安装.html">
+            
+                
+                    <a href="../../python数据分析环境和工具/1Python数据课程软件和环境安装.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Python数据课程 软件和环境安装
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="python数据分析环境和工具/2python发行版.html">
+            
+                
+                    <a href="../../python数据分析环境和工具/2python发行版.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        python发行版
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="python数据分析环境和工具/5交互式编辑器-JupyterNotebook.html">
+            
+                
+                    <a href="../../python数据分析环境和工具/5交互式编辑器-JupyterNotebook.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        交互式编辑器-JupyterNotebook
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="python数据分析环境和工具/5.1Jupyter-notebook拓展应用.html">
+            
+                
+                    <a href="../../python数据分析环境和工具/5.1Jupyter-notebook拓展应用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.1.</b>
+                        
+                        Jupyter-notebook拓展应用
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="python数据分析环境和工具/包和环境管理器：conda.html">
+            
+                
+                    <a href="../../python数据分析环境和工具/包和环境管理器：conda.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        包和环境管理器：conda
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="python数据分析环境和工具/pip和Virtualenv.html">
+            
+                
+                    <a href="../../python数据分析环境和工具/pip和Virtualenv.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.1.</b>
+                        
+                        pip和Virtualenv
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="python数据分析环境和工具/3Markdown.html">
+            
+                
+                    <a href="../../python数据分析环境和工具/3Markdown.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        标记语言：Markdown
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="python数据分析环境和工具/4Markdown语法.html">
+            
+                
+                    <a href="../../python数据分析环境和工具/4Markdown语法.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.1.</b>
+                        
+                        Markdown语法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="python数据分析环境和工具/6Gitbook文档.html">
+            
+                
+                    <a href="../../python数据分析环境和工具/6Gitbook文档.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.2.</b>
+                        
+                        文档管理工具-Gitbook
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="数据分析库的初步认识/index.html">
+            
+                
+                    <a href="../../数据分析库的初步认识/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        数据分析库-Pandas
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="数据分析库的初步认识/Pandas创建.html">
+            
+                
+                    <a href="../../数据分析库的初步认识/Pandas创建.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        pandas
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="数据分析库的初步认识/Series创建.html">
+            
+                
+                    <a href="../../数据分析库的初步认识/Series创建.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        Series
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="数据分析库的初步认识/DataFrame创建.html">
+            
+                
+                    <a href="../../数据分析库的初步认识/DataFrame创建.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        DataFrame对象-创建
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" >
+            
+            <span><b>4.</b> 数据分析库的操作</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="数据分析库的操作/1DataFrame查询1-整体.html">
+            
+                
+                    <a href="../../数据分析库的操作/1DataFrame查询1-整体.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        DataFrame查询1-整体
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="数据分析库的操作/2DataFrame查询2-专用查询.html">
+            
+                
+                    <a href="../../数据分析库的操作/2DataFrame查询2-专用查询.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        DataFrame查询2-专用查询
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="数据分析库的操作/3DataFrame查询3-专有查询：过滤查询.html">
+            
+                
+                    <a href="../../数据分析库的操作/3DataFrame查询3-专有查询：过滤查询.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        DataFrame查询3-专有查询：过滤查询
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="数据分析库的操作/4Pandas对象的数据操作：增删改查.html">
+            
+                
+                    <a href="../../数据分析库的操作/4Pandas对象的数据操作：增删改查.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        Pandas对象的数据操作：增删改查
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.1" data-path="数据分析库的操作/5Pandas数据操作：其他操作.html">
+            
+                
+                    <a href="../../数据分析库的操作/5Pandas数据操作：其他操作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.1.</b>
+                        
+                        Pandas数据操作：其他操作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.2" data-path="数据分析库的操作/6Pandas数据存取.html">
+            
+                
+                    <a href="../../数据分析库的操作/6Pandas数据存取.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.2.</b>
+                        
+                        Pandas数据存取
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.3" data-path="数据分析库的操作/7Pandas数据运算.html">
+            
+                
+                    <a href="../../数据分析库的操作/7Pandas数据运算.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.3.</b>
+                        
+                        Pandas数据运算
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.3.1" data-path="数据分析库的操作/7.1Pandas数据运算拓展.html">
+            
+                
+                    <a href="../../数据分析库的操作/7.1Pandas数据运算拓展.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.3.1.</b>
+                        
+                        Pandas数据运算-拓展
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.4" data-path="数据分析库的操作/8Pandas分组聚合1.html">
+            
+                
+                    <a href="../../数据分析库的操作/8Pandas分组聚合1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.4.</b>
+                        
+                        Pandas分组聚合1
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.5" data-path="数据分析库的操作/9Pandas分组聚合2.html">
+            
+                
+                    <a href="../../数据分析库的操作/9Pandas分组聚合2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.5.</b>
+                        
+                        Pandas分组聚合2
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.6" data-path="数据分析库的操作/10Pandas数据规整-清理.html">
+            
+                
+                    <a href="../../数据分析库的操作/10Pandas数据规整-清理.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.6.</b>
+                        
+                        Pandas数据规整-清理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.7" data-path="数据分析库的操作/11Pandas数据规整-转换.html">
+            
+                
+                    <a href="../../数据分析库的操作/11Pandas数据规整-转换.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.7.</b>
+                        
+                        Pandas数据规整-转换
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.7.1" data-path="数据分析库的操作/14Pandas数据规整-转换-离散化和面元划分.html">
+            
+                
+                    <a href="../../数据分析库的操作/14Pandas数据规整-转换-离散化和面元划分.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.7.1.</b>
+                        
+                        离散化和面元划分
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.8" data-path="数据分析库的操作/16Pandas数据规整-合并.html">
+            
+                
+                    <a href="../../数据分析库的操作/16Pandas数据规整-合并.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.8.</b>
+                        
+                        Pandas数据规整-合并
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="数据分析库的操作/13Pandas数据规整-重塑和轴向旋转.html">
+            
+                
+                    <a href="../../数据分析库的操作/13Pandas数据规整-重塑和轴向旋转.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        Pandas数据规整-重塑和轴向旋转
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.5.1" data-path="数据分析库的操作/13.1透视表和交叉表.html">
+            
+                
+                    <a href="../../数据分析库的操作/13.1透视表和交叉表.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.1.</b>
+                        
+                        透视表和交叉表
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="Python可视化/绘图库-Matplotlib.html">
+            
+                
+                    <a href="../../Python可视化/绘图库-Matplotlib.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Python可视化
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="Python可视化/绘图库-Matplotlib/Matplotlib常见图表.html">
+            
+                
+                    <a href="../../Python可视化/绘图库-Matplotlib/Matplotlib常见图表.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        基础：Matplotlib常见图表
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="Python可视化/绘图库-Matplotlib/Matplotlib常见设置和操作.html">
+            
+                
+                    <a href="../../Python可视化/绘图库-Matplotlib/Matplotlib常见设置和操作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.1.</b>
+                        
+                        Matplotlib常见设置和操作
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="Python可视化/绘图库-Matplotlib/1Matplotlib-绘图区域.html">
+            
+                
+                    <a href="../../Python可视化/绘图库-Matplotlib/1Matplotlib-绘图区域.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        提升：绘图区域
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="Python可视化/绘图库-Matplotlib/2Matplotlib-图像组件.html">
+            
+                
+                    <a href="../../Python可视化/绘图库-Matplotlib/2Matplotlib-图像组件.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        提升：绘图组件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="Python可视化/绘图库-Matplotlib/3Matplotlib-高级绘图.html">
+            
+                
+                    <a href="../../Python可视化/绘图库-Matplotlib/3Matplotlib-高级绘图.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                        拓展：高级绘图
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="5.5" data-path="Python可视化/绘图库-Matplotlib/4数学计算展示图像.html">
+            
+                
+                    <a href="../../Python可视化/绘图库-Matplotlib/4数学计算展示图像.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.</b>
+                        
+                        拓展：数学计算展示图像
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="Python可视化/绘图库-Matplotlib/5注意事项.html">
+            
+                
+                    <a href="../../Python可视化/绘图库-Matplotlib/5注意事项.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.</b>
+                        
+                        拓展：注意事项
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="Python可视化/绘图库-Matplotlib/6pylab.html">
+            
+                
+                    <a href="../../Python可视化/绘图库-Matplotlib/6pylab.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.</b>
+                        
+                        拓展：pylab
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="数据分析必备知识点/数据分析必备知识点汇集.html">
+            
+                
+                    <a href="../../数据分析必备知识点/数据分析必备知识点汇集.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        数据分析必备知识点
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="数据分析必备知识点/数据分析流程.html">
+            
+                
+                    <a href="../../数据分析必备知识点/数据分析流程.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        数据分析流程
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../" >Python 数据分析学习目录</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <hr>
+<h1 id="&#x6570;&#x5B66;&#x8BA1;&#x7B97;&#x5C55;&#x793A;&#x56FE;&#x50CF;">&#x6570;&#x5B66;&#x8BA1;&#x7B97;&#x5C55;&#x793A;&#x56FE;&#x50CF;</h1>
+<p>&#x7ED8;&#x5236;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7EBF;&#x6027;&#x51FD;&#x6570;&#x56FE;&#x50CF;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+<span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+plt.rcParams[<span class="hljs-string">&apos;font.family&apos;</span>] = [<span class="hljs-string">&apos;Arial Unicode MS&apos;</span>, <span class="hljs-string">&apos;Microsoft Yahei&apos;</span>, <span class="hljs-string">&apos;SimHei&apos;</span>, <span class="hljs-string">&apos;sans-serif&apos;</span>]
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-comment">#&#x6570;&#x636E;</span>
+x = np.array([-<span class="hljs-number">15</span>, -<span class="hljs-number">5</span>, <span class="hljs-number">0</span>, <span class="hljs-number">5</span>, <span class="hljs-number">8</span>, <span class="hljs-number">10</span>])
+<span class="hljs-comment"># x = [-15, -5, 0, 5, 8, 10]</span>
+a = <span class="hljs-number">2</span>
+b = <span class="hljs-number">5</span>
+
+<span class="hljs-comment"># &#x7EBF;&#x6027;&#x51FD;&#x6570; y=ax+b</span>
+<span class="hljs-comment"># y = []</span>
+<span class="hljs-comment"># for i in x:</span>
+<span class="hljs-comment">#     y.append(a * i + b )</span>
+
+
+
+y = a * x + b
+y
+
+
+
+<span class="hljs-comment"># &#x7ED8;&#x5236;</span>
+plt.plot(x,y)
+<span class="hljs-comment"># plt.show()</span>
+</code></pre>
+<pre><code>[&lt;matplotlib.lines.Line2D at 0x4fb39b0&gt;]
+</code></pre><p><img src="images/output_2_1.png" alt="png"></p>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x7ED8;&#x5236;</span>
+plt.figure(figsize=(<span class="hljs-number">10</span>,<span class="hljs-number">6</span>),dpi=<span class="hljs-number">200</span>)
+
+plt.plot(x,y)
+
+<span class="hljs-comment">#&#x7EC4;&#x4EF6;</span>
+
+<span class="hljs-comment"># &#x6807;&#x9898;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;$&#x5F15;&#x5165;&#x90E8;&#x5206;latex&#x6587;&#x672C;&#x6392;&#x7248;&#x8BED;&#x6CD5;&#x548C;&#x516C;&#x5F0F;</span>
+plt.title(<span class="hljs-string">&apos;&#x7EBF;&#x6027; $y=ax+b$&#xFF0C;&#x975E;&#x7EBF;&#x6027; $y=ax^{2}+bx+c$&apos;</span>) 
+
+<span class="hljs-comment"># &#x5750;&#x6807;&#x8F74;&#x6807;&#x6CE8;&#xFF0C;&#x5F53;&#x5B57;&#x7B26;&#x4E32;&#x91CC;&#x6709;&#x53CD;&#x659C;&#x6760;&#x7B49;&#x8F6C;&#x4E49;&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#x65F6;,&#x5B57;&#x7B26;&#x4E32;&#x524D;&#x52A0;`r`,&#x8868;&#x793A;&#x663E;&#x793A;&#x539F;&#x59CB;&#x5B57;&#x7B26;&#x4E32;</span>
+plt.xlabel(<span class="hljs-string">r&apos;X \axis&apos;</span>) 
+
+<span class="hljs-comment">###############</span>
+
+<span class="hljs-comment"># &#x64CD;&#x4F5C;&#x8F74;&#x7EBF;</span>
+
+<span class="hljs-comment"># gca&#xFF0C;get corrent axis&#xFF0C;&#x83B7;&#x53D6;&#x8F74;</span>
+ax = plt.gca()
+
+<span class="hljs-comment">#&#x4EA4;&#x6362;&#x8F74;&#x7EBF;</span>
+<span class="hljs-comment"># ax.xaxis.set_ticks_position(&apos;top&apos;)</span>
+<span class="hljs-comment"># ax.yaxis.set_ticks_position(&apos;right&apos;)</span>
+
+<span class="hljs-comment">#&#x53BB;&#x9664;&#x4E0A;&#x4FA7;&#x548C;&#x53F3;&#x4FA7;&#x7684;&#x7A7A;&#x767D;&#x8F74;&#x7EBF;</span>
+ax.spines[<span class="hljs-string">&apos;right&apos;</span>].set_color(<span class="hljs-string">&apos;none&apos;</span>)
+ax.spines[<span class="hljs-string">&apos;top&apos;</span>].set_color(<span class="hljs-string">&apos;none&apos;</span>)
+
+<span class="hljs-comment">#&#x79FB;&#x4F4D;&#x8F74;&#x7EBF;</span>
+ax.spines[<span class="hljs-string">&apos;bottom&apos;</span>].set_position([<span class="hljs-string">&apos;data&apos;</span>, -<span class="hljs-number">10</span>])
+ax.spines[<span class="hljs-string">&apos;left&apos;</span>].set_position([<span class="hljs-string">&apos;data&apos;</span>, <span class="hljs-number">0</span>])
+
+<span class="hljs-comment">###########</span>
+
+<span class="hljs-comment">#&#x6DFB;&#x52A0;&#x6CE8;&#x89E3;&#x6807;&#x8BB0;</span>
+
+<span class="hljs-comment">#&#x7F16;&#x6807;&#x8BB0;&#x70B9;</span>
+
+x0 = -<span class="hljs-number">2.5</span>
+y0 = a * x0 + b
+plt.scatter(x0,y0,color=<span class="hljs-string">&apos;red&apos;</span>)
+
+<span class="hljs-comment">#&#x6807;&#x8BB0;&#x7EBF;</span>
+plt.plot(
+    [x0,x0],
+    [y0,-<span class="hljs-number">10</span>],
+    linestyle = <span class="hljs-string">&apos;--&apos;</span>,
+    color = <span class="hljs-string">&apos;yellow&apos;</span>,
+)
+
+<span class="hljs-comment"># &#x4EFB;&#x610F;&#x4F4D;&#x7F6E;&#x589E;&#x52A0;&#x6587;&#x672C;</span>
+plt.text(
+    <span class="hljs-number">5</span>,  <span class="hljs-comment">#x&#x8F74; &#x5750;&#x6807;</span>
+    <span class="hljs-number">20</span>,  <span class="hljs-comment">#y &#x8F74;&#x5750;&#x6807;</span>
+    <span class="hljs-string">&apos;&#x6211;&#x662F;&#x56FE;&#x7247;&#x5185;&#x6587;&#x672C;&#xFF01;&apos;</span>,
+    fontsize=<span class="hljs-number">18</span>,
+    rotation=<span class="hljs-number">30</span>,
+
+)
+<span class="hljs-comment"># &#x4EFB;&#x610F;&#x4F4D;&#x7F6E;&#x589E;&#x52A0;&#x5E26;&#x7BAD;&#x5934;&#x7684;&#x6CE8;&#x91CA;&#x6587;&#x672C;</span>
+plt.annotate(
+    <span class="hljs-string">r&apos;$Linear\ function\ y=ax+b$&apos;</span>,  <span class="hljs-comment">#&#x663E;&#x793A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x7A7A;&#x683C;&#x5728;$&#x5185;&#x4E0D;&#x663E;&#x793A;&#xFF0C;&#x7528;&#x53CD;&#x659C;&#x6760;&#x8F6C;&#x4E49;</span>
+    xytext=(-<span class="hljs-number">15</span>, <span class="hljs-number">15</span>),  <span class="hljs-comment"># &#x6587;&#x672C;&#x4F4D;&#x7F6E;</span>
+    xy=(x0, y0),  <span class="hljs-comment"># &#x7BAD;&#x5934;&#x6307;&#x5411;&#x4F4D;&#x7F6E;</span>
+
+    arrowprops=dict(  <span class="hljs-comment"># &#x5B57;&#x5178;&#x7C7B;&#x578B;&#xFF0C;&#x5B9A;&#x4E49;&#x7BAD;&#x5934;&#x6837;&#x5F0F;</span>
+        arrowstyle = <span class="hljs-string">&apos;fancy&apos;</span>,  <span class="hljs-comment"># &#x7BAD;&#x5934;&#x6837;&#x5F0F;&#xFF0C;&#x4F8B;&#x5982; -&gt;,&lt;-,|-|,simple,fancy</span>
+        color = <span class="hljs-string">&apos;green&apos;</span>,  <span class="hljs-comment"># &#x7BAD;&#x5934;&#x989C;&#x8272;</span>
+        connectionstyle=<span class="hljs-string">&quot;arc3,rad=.5&quot;</span>,  <span class="hljs-comment"># &#x7BAD;&#x5934;&#x5F27;&#x5EA6;</span>
+    ),
+    <span class="hljs-comment"># &#x4E0B;&#x9762;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x5C06;&#x7EDD;&#x5BF9;&#x5750;&#x6807;&#x4F4D;&#x7F6E;&#x8BBE;&#x4E3A;&#x76F8;&#x5BF9;&#x5750;&#x6807;</span>
+
+<span class="hljs-comment">#     xycoords = &apos;data&apos;,  # &#x76F8;&#x5BF9;&#x9ED8;&#x8BA4;&#x5750;&#x6807;&#x7CFB;&#x504F;&#x79FB;   </span>
+<span class="hljs-comment">#     textcoords = &apos;offset points&apos;,  # &#x76F8;&#x5BF9;&#x5750;&#x6807;&#xFF0C;&#x76F8;&#x5BF9;&#x7BAD;&#x5934;&#x539F;&#x70B9;&#x504F;&#x79FB;</span>
+
+)
+plt.show()
+</code></pre>
+<p><img src="images/output_3_0.png" alt="png"></p>
+<hr>
+<p>&#x4F7F;&#x7528; Pycharm &#x6216;&#x5176;&#x4ED6;&#x7F16;&#x8F91;&#x5668;&#x7ED8;&#x56FE;</p>
+<hr>
+<p>pylab&#xFF0C;&#x81EA;&#x52A8;&#x8F7D;&#x5165; numpy &#x548C; Matplotlib</p>
+<pre><code class="lang-python">%pylab inline
+</code></pre>
+<pre><code>Populating the interactive namespace from numpy and matplotlib
+</code></pre><pre><code class="lang-python">plot([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>])
+</code></pre>
+<pre><code>[&lt;matplotlib.lines.Line2D at 0x7ab6320&gt;]
+</code></pre><p><img src="images/output_6_1.png" alt="png"></p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../Python可视化/绘图库-Matplotlib/3Matplotlib-高级绘图.html" class="navigation navigation-prev " aria-label="Previous page: 拓展：高级绘图"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../Python可视化/绘图库-Matplotlib/5注意事项.html" class="navigation navigation-next " aria-label="Next page: 拓展：注意事项"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../../gitbook/app.js"></script>
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

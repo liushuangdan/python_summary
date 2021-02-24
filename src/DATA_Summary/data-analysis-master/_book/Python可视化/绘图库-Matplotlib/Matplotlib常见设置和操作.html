@@ -1,0 +1,916 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Matplotlib常见设置和操作 | Python 数据分析学习目录</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../../Python可视化/绘图库-Matplotlib/1Matplotlib-绘图区域.html" />
+    
+    
+    <link rel="prev" href="../../Python可视化/绘图库-Matplotlib/Matplotlib常见图表.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="5.1.1"
+        data-chapter-title="Matplotlib常见设置和操作"
+        data-filepath="Python可视化/绘图库-Matplotlib/Matplotlib常见设置和操作.md"
+        data-basepath="../.."
+        data-revision="Wed Oct 24 2018 21:30:49 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        数据分析
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="Python数据分析序言/内容序言.html">
+            
+                
+                    <a href="../../Python数据分析序言/内容序言.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Python数据分析内容
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="python数据分析环境和工具/Python数据分析相关.html">
+            
+                
+                    <a href="../../python数据分析环境和工具/Python数据分析相关.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        python数据分析环境和工具
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="python数据分析环境和工具/1Python数据课程软件和环境安装.html">
+            
+                
+                    <a href="../../python数据分析环境和工具/1Python数据课程软件和环境安装.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Python数据课程 软件和环境安装
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="python数据分析环境和工具/2python发行版.html">
+            
+                
+                    <a href="../../python数据分析环境和工具/2python发行版.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        python发行版
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="python数据分析环境和工具/5交互式编辑器-JupyterNotebook.html">
+            
+                
+                    <a href="../../python数据分析环境和工具/5交互式编辑器-JupyterNotebook.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        交互式编辑器-JupyterNotebook
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="python数据分析环境和工具/5.1Jupyter-notebook拓展应用.html">
+            
+                
+                    <a href="../../python数据分析环境和工具/5.1Jupyter-notebook拓展应用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.1.</b>
+                        
+                        Jupyter-notebook拓展应用
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="python数据分析环境和工具/包和环境管理器：conda.html">
+            
+                
+                    <a href="../../python数据分析环境和工具/包和环境管理器：conda.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        包和环境管理器：conda
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="python数据分析环境和工具/pip和Virtualenv.html">
+            
+                
+                    <a href="../../python数据分析环境和工具/pip和Virtualenv.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.1.</b>
+                        
+                        pip和Virtualenv
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="python数据分析环境和工具/3Markdown.html">
+            
+                
+                    <a href="../../python数据分析环境和工具/3Markdown.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        标记语言：Markdown
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="python数据分析环境和工具/4Markdown语法.html">
+            
+                
+                    <a href="../../python数据分析环境和工具/4Markdown语法.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.1.</b>
+                        
+                        Markdown语法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="python数据分析环境和工具/6Gitbook文档.html">
+            
+                
+                    <a href="../../python数据分析环境和工具/6Gitbook文档.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.2.</b>
+                        
+                        文档管理工具-Gitbook
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="数据分析库的初步认识/index.html">
+            
+                
+                    <a href="../../数据分析库的初步认识/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        数据分析库-Pandas
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="数据分析库的初步认识/Pandas创建.html">
+            
+                
+                    <a href="../../数据分析库的初步认识/Pandas创建.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        pandas
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="数据分析库的初步认识/Series创建.html">
+            
+                
+                    <a href="../../数据分析库的初步认识/Series创建.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        Series
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="数据分析库的初步认识/DataFrame创建.html">
+            
+                
+                    <a href="../../数据分析库的初步认识/DataFrame创建.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        DataFrame对象-创建
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" >
+            
+            <span><b>4.</b> 数据分析库的操作</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="数据分析库的操作/1DataFrame查询1-整体.html">
+            
+                
+                    <a href="../../数据分析库的操作/1DataFrame查询1-整体.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        DataFrame查询1-整体
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="数据分析库的操作/2DataFrame查询2-专用查询.html">
+            
+                
+                    <a href="../../数据分析库的操作/2DataFrame查询2-专用查询.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        DataFrame查询2-专用查询
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="数据分析库的操作/3DataFrame查询3-专有查询：过滤查询.html">
+            
+                
+                    <a href="../../数据分析库的操作/3DataFrame查询3-专有查询：过滤查询.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        DataFrame查询3-专有查询：过滤查询
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="数据分析库的操作/4Pandas对象的数据操作：增删改查.html">
+            
+                
+                    <a href="../../数据分析库的操作/4Pandas对象的数据操作：增删改查.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        Pandas对象的数据操作：增删改查
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.1" data-path="数据分析库的操作/5Pandas数据操作：其他操作.html">
+            
+                
+                    <a href="../../数据分析库的操作/5Pandas数据操作：其他操作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.1.</b>
+                        
+                        Pandas数据操作：其他操作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.2" data-path="数据分析库的操作/6Pandas数据存取.html">
+            
+                
+                    <a href="../../数据分析库的操作/6Pandas数据存取.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.2.</b>
+                        
+                        Pandas数据存取
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.3" data-path="数据分析库的操作/7Pandas数据运算.html">
+            
+                
+                    <a href="../../数据分析库的操作/7Pandas数据运算.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.3.</b>
+                        
+                        Pandas数据运算
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.3.1" data-path="数据分析库的操作/7.1Pandas数据运算拓展.html">
+            
+                
+                    <a href="../../数据分析库的操作/7.1Pandas数据运算拓展.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.3.1.</b>
+                        
+                        Pandas数据运算-拓展
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.4" data-path="数据分析库的操作/8Pandas分组聚合1.html">
+            
+                
+                    <a href="../../数据分析库的操作/8Pandas分组聚合1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.4.</b>
+                        
+                        Pandas分组聚合1
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.5" data-path="数据分析库的操作/9Pandas分组聚合2.html">
+            
+                
+                    <a href="../../数据分析库的操作/9Pandas分组聚合2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.5.</b>
+                        
+                        Pandas分组聚合2
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.6" data-path="数据分析库的操作/10Pandas数据规整-清理.html">
+            
+                
+                    <a href="../../数据分析库的操作/10Pandas数据规整-清理.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.6.</b>
+                        
+                        Pandas数据规整-清理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.7" data-path="数据分析库的操作/11Pandas数据规整-转换.html">
+            
+                
+                    <a href="../../数据分析库的操作/11Pandas数据规整-转换.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.7.</b>
+                        
+                        Pandas数据规整-转换
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.7.1" data-path="数据分析库的操作/14Pandas数据规整-转换-离散化和面元划分.html">
+            
+                
+                    <a href="../../数据分析库的操作/14Pandas数据规整-转换-离散化和面元划分.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.7.1.</b>
+                        
+                        离散化和面元划分
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.8" data-path="数据分析库的操作/16Pandas数据规整-合并.html">
+            
+                
+                    <a href="../../数据分析库的操作/16Pandas数据规整-合并.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.8.</b>
+                        
+                        Pandas数据规整-合并
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="数据分析库的操作/13Pandas数据规整-重塑和轴向旋转.html">
+            
+                
+                    <a href="../../数据分析库的操作/13Pandas数据规整-重塑和轴向旋转.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        Pandas数据规整-重塑和轴向旋转
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.5.1" data-path="数据分析库的操作/13.1透视表和交叉表.html">
+            
+                
+                    <a href="../../数据分析库的操作/13.1透视表和交叉表.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.1.</b>
+                        
+                        透视表和交叉表
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="Python可视化/绘图库-Matplotlib.html">
+            
+                
+                    <a href="../../Python可视化/绘图库-Matplotlib.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Python可视化
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="Python可视化/绘图库-Matplotlib/Matplotlib常见图表.html">
+            
+                
+                    <a href="../../Python可视化/绘图库-Matplotlib/Matplotlib常见图表.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        基础：Matplotlib常见图表
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="5.1.1" data-path="Python可视化/绘图库-Matplotlib/Matplotlib常见设置和操作.html">
+            
+                
+                    <a href="../../Python可视化/绘图库-Matplotlib/Matplotlib常见设置和操作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.1.</b>
+                        
+                        Matplotlib常见设置和操作
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="Python可视化/绘图库-Matplotlib/1Matplotlib-绘图区域.html">
+            
+                
+                    <a href="../../Python可视化/绘图库-Matplotlib/1Matplotlib-绘图区域.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        提升：绘图区域
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="Python可视化/绘图库-Matplotlib/2Matplotlib-图像组件.html">
+            
+                
+                    <a href="../../Python可视化/绘图库-Matplotlib/2Matplotlib-图像组件.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        提升：绘图组件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="Python可视化/绘图库-Matplotlib/3Matplotlib-高级绘图.html">
+            
+                
+                    <a href="../../Python可视化/绘图库-Matplotlib/3Matplotlib-高级绘图.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                        拓展：高级绘图
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="Python可视化/绘图库-Matplotlib/4数学计算展示图像.html">
+            
+                
+                    <a href="../../Python可视化/绘图库-Matplotlib/4数学计算展示图像.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.</b>
+                        
+                        拓展：数学计算展示图像
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="Python可视化/绘图库-Matplotlib/5注意事项.html">
+            
+                
+                    <a href="../../Python可视化/绘图库-Matplotlib/5注意事项.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.</b>
+                        
+                        拓展：注意事项
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="Python可视化/绘图库-Matplotlib/6pylab.html">
+            
+                
+                    <a href="../../Python可视化/绘图库-Matplotlib/6pylab.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.</b>
+                        
+                        拓展：pylab
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="数据分析必备知识点/数据分析必备知识点汇集.html">
+            
+                
+                    <a href="../../数据分析必备知识点/数据分析必备知识点汇集.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        数据分析必备知识点
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="数据分析必备知识点/数据分析流程.html">
+            
+                
+                    <a href="../../数据分析必备知识点/数据分析流程.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        数据分析流程
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../" >Python 数据分析学习目录</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h2 id="matplotlib&#x5E38;&#x89C1;&#x8BBE;&#x7F6E;&#x548C;&#x64CD;&#x4F5C;">Matplotlib&#x5E38;&#x89C1;&#x8BBE;&#x7F6E;&#x548C;&#x64CD;&#x4F5C;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+
+plt.style.use(<span class="hljs-string">&apos;seaborn&apos;</span>)
+plt.rcParams[<span class="hljs-string">&apos;font.family&apos;</span>] = [<span class="hljs-string">&apos;Arial Unicode MS&apos;</span>, <span class="hljs-string">&apos;Microsoft Yahei&apos;</span>, <span class="hljs-string">&apos;SimHei&apos;</span>, <span class="hljs-string">&apos;sans-serif&apos;</span>]
+</code></pre>
+<h2 id="jupyter-notebook-&#x56FE;&#x50CF;&#x8F93;&#x51FA;&#x7684;&#x4E09;&#x79CD;&#x65B9;&#x5F0F;">Jupyter notebook &#x56FE;&#x50CF;&#x8F93;&#x51FA;&#x7684;&#x4E09;&#x79CD;&#x65B9;&#x5F0F;</h2>
+<ol>
+<li><p>&#x7F51;&#x9875;&#x5185;&#x663E;&#x793A;&#x56FE;&#x50CF;  (&#x9ED8;&#x8BA4;&#xFF09;</p>
+</li>
+<li><p>GUI&#x8F6F;&#x4EF6;&#x754C;&#x9762;&#x663E;&#x793A;&#x56FE;&#x50CF;&#xFF0C;&#x53EF;&#x64CD;&#x4F5C;&#x6027;&#x5F3A;</p>
+</li>
+<li><p>&#x5728;&#x7F51;&#x9875;&#x5185;&#x663E;&#x793A;GUI&#x7248;&#x56FE;&#x50CF;&#xFF0C;&#x7ED3;&#x5408;&#x4E86;&#x524D;&#x4E24;&#x79CD;&#x7684;&#x597D;&#x5904;</p>
+</li>
+</ol>
+<p>&#x5207;&#x6362;&#x8F93;&#x51FA;&#x7684;&#x65F6;&#x5019;&#x4E00;&#x822C;&#x9700;&#x8981;&#x91CD;&#x542F;&#x5185;&#x6838;</p>
+<h2 id="&#x7F51;&#x9875;&#x5185;&#x663E;&#x793A;">&#x7F51;&#x9875;&#x5185;&#x663E;&#x793A;</h2>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x9ED8;&#x8BA4;&#x7F51;&#x9875;&#x5185;&#x663E;&#x793A;</span>
+
+%matplotlib inline
+</code></pre>
+<pre><code class="lang-python">plt.title(<span class="hljs-string">&quot;&#x6D88;&#x8D39;&#x6C34;&#x5E73;&quot;</span>)
+plt.plot([<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">10</span>])
+</code></pre>
+<pre><code>[&lt;matplotlib.lines.Line2D at 0x4e94128&gt;]
+</code></pre><p><img src="images/output_5_1.png" alt="png"></p>
+<h2 id="gui-&#x663E;&#x793A;">GUI &#x663E;&#x793A;</h2>
+<pre><code class="lang-python">%matplotlib qt5
+</code></pre>
+<pre><code class="lang-python">plt.title(<span class="hljs-string">&quot;&#x6D88;&#x8D39;&#x6C34;&#x5E73;&quot;</span>)
+plt.plot([<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">10</span>])
+</code></pre>
+<pre><code>[&lt;matplotlib.lines.Line2D at 0x80a9630&gt;]
+</code></pre><h2 id="&#x7F51;&#x9875;&#x5185;&#x663E;&#x793A;gui&#x7248;&#x56FE;&#x50CF;">&#x7F51;&#x9875;&#x5185;&#x663E;&#x793A;GUI&#x7248;&#x56FE;&#x50CF;</h2>
+<pre><code class="lang-python">%matplotlib notebook
+</code></pre>
+<pre><code class="lang-python">plt.title(<span class="hljs-string">&quot;&#x6D88;&#x8D39;&#x6C34;&#x5E73;&quot;</span>)
+plt.plot([<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">10</span>])
+</code></pre>
+<pre><code>&lt;IPython.core.display.Javascript object&gt;
+</code></pre><p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAoAAAAG4CAYAAADVDFZ+AAAgAElEQVR4XuzdCXhV5bk+/DvzREKAMCZkElRARoEwiyMooNAeT22tVdFae05tj7b10yp1bGtbbc+xw/H8rXPt4ASIgooj84wIyGgmwpyBzHPyXevFpIAJ63nXWkn2u/a9r8urVp619np+69nvvll7Cmlubm4GbxSgAAUoQAEKUIACQSMQwgAYNOeajVKAAhSgAAUoQAElwADIQaAABShAAQpQgAJBJsAAGGQnnO1SgAIUoAAFKEABBkDOAAUoQAEKUIACFAgyAQbAIDvhbJcCFKAABShAAQowAHIGKEABClCAAhSgQJAJMAAG2QlnuxSgAAUoQAEKUIABkDNAAQpQgAIUoAAFgkyAATDITjjbpQAFKEABClCAAgyAnAEKUIACFKAABSgQZAIMgEF2wtkuBShAAQpQgAIUYADkDFCAAhSgAAUoQIEgE2AADLITznYpQAEKUIACFKAAAyBngAIUoAAFKEABCgSZAANgkJ1wtksBClCAAhSgAAUYADkDFKAABShAAQpQIMgEGACD7ISzXQpQgAIUoAAFKMAAyBmgAAUoQAEKUIACQSbAABhkJ5ztUoACFKAABShAAQZAzgAFKEABClCAAhQIMgEGwCA74WyXAhSgAAUoQAEKMAByBihAAQpQgAIUoECQCTAABtkJZ7sUoAAFKEABClCAAZAzQAEKUIACFKAABYJMgAEwyE4426UABShAAQpQgAIMgJwBClCAAhSgAAUoEGQCDIBBdsLZLgUoQAEKUIACFGAA5AxQgAIUoAAFKECBIBNgAAyyE852KUABClCAAhSgAAMgZ4ACFKAABShAAQoEmQADYJCdcLZLAQpQgAIUoAAFGAA5AxSgAAUoQAEKUCDIBBgAg+yEs10KUIACFKAABSjAAMgZoAAFKEABClCAAkEmwAAYZCec7VLAdIGKigr87W9/wy233IKwsDC8//77GDt2LBITE7F9+3b86Ec/wocffqjaXL9+PVJTU9G/f//T2r7mmmvw5z//GcnJybjnnntw2WWXqX/sbnv37sXtt9/eun+7ev45BShAgUAVYAAM1DPD46IABdoUqKqqwve+9z3Exsbif/7nf/Cb3/wGu3fvxvPPP489e/a0BsADBw7ga1/7Gu644w40Nzdj8eLFrfvbv38/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" width="799.9999880790713"></p>
+<pre><code>[&lt;matplotlib.lines.Line2D at 0x7b70940&gt;]
+</code></pre>
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../Python可视化/绘图库-Matplotlib/Matplotlib常见图表.html" class="navigation navigation-prev " aria-label="Previous page: 基础：Matplotlib常见图表"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../Python可视化/绘图库-Matplotlib/1Matplotlib-绘图区域.html" class="navigation navigation-next " aria-label="Next page: 提升：绘图区域"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../../gitbook/app.js"></script>
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

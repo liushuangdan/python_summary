@@ -1,0 +1,948 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>jQuery元素操作 | Introduction</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../../home/jQuery_j/3.相关尺寸.html" />
+    
+    
+    <link rel="prev" href="../../home/jQuery_j/1.jquery选择器.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="4.2"
+        data-chapter-title="jQuery元素操作"
+        data-filepath="home/jQuery_j/2.jQuery元素操作.md"
+        data-basepath="../.."
+        data-revision="Sat Nov 17 2018 12:52:35 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="home/HTML_h/html.html">
+            
+                
+                    <a href="../../home/HTML_h/html.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        HTML
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="home/HTML_h/1.HTML概述和基本结构.html">
+            
+                
+                    <a href="../../home/HTML_h/1.HTML概述和基本结构.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        HTML概述和基本结构
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="home/HTML_h/2.HTML中Head头.html">
+            
+                
+                    <a href="../../home/HTML_h/2.HTML中Head头.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        HTML中Head头
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="home/HTML_h/3.HTML标题.html">
+            
+                
+                    <a href="../../home/HTML_h/3.HTML标题.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        HTML标题
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="home/HTML_h/4.HTML段落,换行,字符实体.html">
+            
+                
+                    <a href="../../home/HTML_h/4.HTML段落,换行,字符实体.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        HTML段落,换行,字符实体
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="home/HTML_h/5.HTML块,含样式的标签.html">
+            
+                
+                    <a href="../../home/HTML_h/5.HTML块,含样式的标签.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        HTML块,含样式的标签
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="home/HTML_h/6.HTML图片.html">
+            
+                
+                    <a href="../../home/HTML_h/6.HTML图片.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        HTML图片
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="home/HTML_h/7.HTML链接.html">
+            
+                
+                    <a href="../../home/HTML_h/7.HTML链接.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                        HTML链接
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="home/HTML_h/8.HTML列表.html">
+            
+                
+                    <a href="../../home/HTML_h/8.HTML列表.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.8.</b>
+                        
+                        HTML列表
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="home/HTML_h/9.HTML表格.html">
+            
+                
+                    <a href="../../home/HTML_h/9.HTML表格.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.9.</b>
+                        
+                        HTML表格
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="home/HTML_h/10.HTML表单.html">
+            
+                
+                    <a href="../../home/HTML_h/10.HTML表单.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.10.</b>
+                        
+                        HTML表单
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="home/HTML_h/css.html">
+            
+            <span><b>2.</b> CSS</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="home/CSS_c/1.CSS基本语法.html">
+            
+                
+                    <a href="../../home/CSS_c/1.CSS基本语法.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        CSS基本语法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="home/CSS_c/2.CSS选择器.html">
+            
+                
+                    <a href="../../home/CSS_c/2.CSS选择器.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        CSS选择器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="home/CSS_c/3.CSS颜色,文本字体.html">
+            
+                
+                    <a href="../../home/CSS_c/3.CSS颜色,文本字体.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        CSS颜色,文本字体
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="home/CSS_c/4.边框,背景,边距,溢出.html">
+            
+                
+                    <a href="../../home/CSS_c/4.边框,背景,边距,溢出.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        边框,背景,边距,溢出
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="home/CSS_c/5.盒子.html">
+            
+                
+                    <a href="../../home/CSS_c/5.盒子.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        盒子
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="home/CSS_c/6.元素,内联元素,内联块元素.html">
+            
+                
+                    <a href="../../home/CSS_c/6.元素,内联元素,内联块元素.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                        元素,内联元素,内联块元素
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="home/CSS_c/7.浮动.html">
+            
+                
+                    <a href="../../home/CSS_c/7.浮动.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.7.</b>
+                        
+                        浮动
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="home/CSS_c/8.定位.html">
+            
+                
+                    <a href="../../home/CSS_c/8.定位.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.8.</b>
+                        
+                        定位
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="home/JavaScript_j/JavaScript.html">
+            
+                
+                    <a href="../../home/JavaScript_j/JavaScript.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        JavaScript
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="home/JavaScript_j/1.js使用场景.html">
+            
+                
+                    <a href="../../home/JavaScript_j/1.js使用场景.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        js使用场景
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="home/JavaScript_j/2.js变量.html">
+            
+                
+                    <a href="../../home/JavaScript_j/2.js变量.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        js变量
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="home/JavaScript_j/3.js数据类型转换.html">
+            
+                
+                    <a href="../../home/JavaScript_j/3.js数据类型转换.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        js数据类型转换
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="home/JavaScript_j/4.js运算符.html">
+            
+                
+                    <a href="../../home/JavaScript_j/4.js运算符.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        js运算符
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="home/JavaScript_j/5.js流程控制.html">
+            
+                
+                    <a href="../../home/JavaScript_j/5.js流程控制.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        js流程控制
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="home/JavaScript_j/6.js循环.html">
+            
+                
+                    <a href="../../home/JavaScript_j/6.js循环.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                        js循环
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="home/JavaScript_j/7.js元素获取与操作.html">
+            
+                
+                    <a href="../../home/JavaScript_j/7.js元素获取与操作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.7.</b>
+                        
+                        js元素获取与操作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="home/JavaScript_j/8.js定时器.html">
+            
+                
+                    <a href="../../home/JavaScript_j/8.js定时器.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.8.</b>
+                        
+                        js定时器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="home/JavaScript_j/9.js函数.html">
+            
+                
+                    <a href="../../home/JavaScript_j/9.js函数.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.9.</b>
+                        
+                        js函数
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="home/JavaScript_j/10.js对象.html">
+            
+                
+                    <a href="../../home/JavaScript_j/10.js对象.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.10.</b>
+                        
+                        js对象
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="home/JavaScript_j/11.js数组.html">
+            
+                
+                    <a href="../../home/JavaScript_j/11.js数组.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.11.</b>
+                        
+                        js数组
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="home/JavaScript_j/12.js数学对象Math.html">
+            
+                
+                    <a href="../../home/JavaScript_j/12.js数学对象Math.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.12.</b>
+                        
+                        js数学对象Math
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13" data-path="home/JavaScript_j/13.js正则.html">
+            
+                
+                    <a href="../../home/JavaScript_j/13.js正则.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.13.</b>
+                        
+                        js正则
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="home/jQuery_j/jQuery.html">
+            
+                
+                    <a href="../../home/jQuery_j/jQuery.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        jQuery
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="home/jQuery_j/1.jquery选择器.html">
+            
+                
+                    <a href="../../home/jQuery_j/1.jquery选择器.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        jquery选择器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.2" data-path="home/jQuery_j/2.jQuery元素操作.html">
+            
+                
+                    <a href="../../home/jQuery_j/2.jQuery元素操作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        jQuery元素操作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="home/jQuery_j/3.相关尺寸.html">
+            
+                
+                    <a href="../../home/jQuery_j/3.相关尺寸.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        相关尺寸
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="home/jQuery_j/4.jQuery事件.html">
+            
+                
+                    <a href="../../home/jQuery_j/4.jQuery事件.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        jQuery事件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="home/jQuery_j/5.jquery元素节点操作.html">
+            
+                
+                    <a href="../../home/jQuery_j/5.jquery元素节点操作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        jquery元素节点操作
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="home/AJAX/AJAX.html">
+            
+                
+                    <a href="../../home/AJAX/AJAX.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        AJAX
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="home/VUE/vue.html">
+            
+                
+                    <a href="../../home/VUE/vue.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        VUE
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="home/VUE/1.创建第一个vue实例.html">
+            
+                
+                    <a href="../../home/VUE/1.创建第一个vue实例.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        创建第一个vue实例
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="home/VUE/2.模版语法和基本指令.html">
+            
+                
+                    <a href="../../home/VUE/2.模版语法和基本指令.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        模版语法和基本指令
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="home/VUE/3.Vue中的计算属性和侦听器.html">
+            
+                
+                    <a href="../../home/VUE/3.Vue中的计算属性和侦听器.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                        Vue中的计算属性和侦听器
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../" >Introduction</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="jquery&#x5143;&#x7D20;&#x64CD;&#x4F5C;">jQuery&#x5143;&#x7D20;&#x64CD;&#x4F5C;</h1>
+<hr>
+<p>&#x901A;&#x8FC7;jQuery&#x53EF;&#x4EE5;&#x64CD;&#x4F5C;&#x63A7;&#x5236;&#x5143;&#x7D20;&#x7684;&#x6837;&#x5F0F;,&#x6587;&#x672C;,&#x5C5E;&#x6027;&#x7B49;</p>
+<ul>
+<li><h3 id="jquery&#x6837;&#x5F0F;&#x64CD;&#x4F5C;">jquery&#x6837;&#x5F0F;&#x64CD;&#x4F5C;</h3>
+<blockquote>
+<p>css&#x64CD;&#x4F5C;&#x884C;&#x5185;&#x6837;&#x5F0F;</p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x83B7;&#x53D6;div&#x7684;&#x6837;&#x5F0F;</span>
+$(<span class="hljs-string">&quot;div&quot;</span>).css(<span class="hljs-string">&quot;width&quot;</span>);
+$(<span class="hljs-string">&quot;div&quot;</span>).css(<span class="hljs-string">&quot;color&quot;</span>);
+
+
+<span class="hljs-comment">//&#x8BBE;&#x7F6E;div&#x7684;&#x6837;&#x5F0F;</span>
+$(<span class="hljs-string">&quot;div&quot;</span>).css(<span class="hljs-string">&quot;width&quot;</span>,<span class="hljs-string">&quot;30px&quot;</span>);
+$(<span class="hljs-string">&quot;div&quot;</span>).css(<span class="hljs-string">&quot;height&quot;</span>,<span class="hljs-string">&quot;30px&quot;</span>);
+$(<span class="hljs-string">&quot;div&quot;</span>).css({fontSize:<span class="hljs-string">&quot;30px&quot;</span>,color:<span class="hljs-string">&quot;red&quot;</span>});
+</code></pre>
+<pre><code>* &#x7279;&#x522B;&#x6CE8;&#x610F;
+    * &#x9009;&#x62E9;&#x5668;&#x83B7;&#x53D6;&#x7684;&#x591A;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x83B7;&#x53D6;&#x4FE1;&#x606F;&#x83B7;&#x53D6;&#x7684;&#x662F;&#x7B2C;&#x4E00;&#x4E2A;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;`$(&quot;div&quot;).css(&quot;width&quot;)`&#xFF0C;&#x83B7;&#x53D6;&#x7684;&#x662F;&#x7B2C;&#x4E00;&#x4E2A;div&#x7684;width&#x3002;
+</code></pre><ul>
+<li><h3 id="&#x7C7B;&#x540D;class&#x64CD;&#x4F5C;">&#x7C7B;&#x540D;class&#x64CD;&#x4F5C;</h3>
+<blockquote>
+<p>&#x64CD;&#x4F5C;&#x6837;&#x5F0F;&#x7C7B;&#x540D;</p>
+</blockquote>
+<pre><code class="lang-js">  $(<span class="hljs-string">&quot;#div1&quot;</span>).addClass(<span class="hljs-string">&quot;divClass2&quot;</span>) <span class="hljs-comment">//&#x4E3A;id&#x4E3A;div1&#x7684;&#x5BF9;&#x8C61;&#x8FFD;&#x52A0;&#x6837;&#x5F0F;divClass2</span>
+  $(<span class="hljs-string">&quot;#div1&quot;</span>).removeClass(<span class="hljs-string">&quot;divClass&quot;</span>)  <span class="hljs-comment">//&#x79FB;&#x9664;id&#x4E3A;div1&#x7684;&#x5BF9;&#x8C61;&#x7684;class&#x540D;&#x4E3A;divClass&#x7684;&#x6837;&#x5F0F;</span>
+  $(<span class="hljs-string">&quot;#div1&quot;</span>).removeClass(<span class="hljs-string">&quot;divClass divClass2&quot;</span>) <span class="hljs-comment">//&#x79FB;&#x9664;&#x591A;&#x4E2A;&#x6837;&#x5F0F;</span>
+  $(<span class="hljs-string">&quot;#div1&quot;</span>).toggleClass(<span class="hljs-string">&quot;anotherClass&quot;</span>) <span class="hljs-comment">//&#x91CD;&#x590D;&#x5207;&#x6362;anotherClass&#x6837;&#x5F0F;</span>
+</code></pre>
+</li>
+</ul>
+<ul>
+<li><h3 id="&#x6587;&#x672C;&#x64CD;&#x4F5C;">&#x6587;&#x672C;&#x64CD;&#x4F5C;</h3>
+<ul>
+<li><h5 id="1&#x3001;html-&#x53D6;&#x51FA;&#x6216;&#x8BBE;&#x7F6E;html&#x5185;&#x5BB9;">1&#x3001;html() &#x53D6;&#x51FA;&#x6216;&#x8BBE;&#x7F6E;html&#x5185;&#x5BB9;</h5>
+<pre><code class="lang-js">  <span class="hljs-comment">// &#x53D6;&#x51FA;html&#x5185;&#x5BB9;</span>
+
+  <span class="hljs-keyword">var</span> $htm = $(<span class="hljs-string">&apos;#div1&apos;</span>).html();
+
+  <span class="hljs-comment">// &#x8BBE;&#x7F6E;html&#x5185;&#x5BB9;</span>
+
+  $(<span class="hljs-string">&apos;#div1&apos;</span>).html(<span class="hljs-string">&apos;&lt;span&gt;&#x6DFB;&#x52A0;&#x6587;&#x5B57;&lt;/span&gt;&apos;</span>);
+</code></pre>
+</li>
+<li><h5 id="2&#x3001;text-&#x53D6;&#x51FA;&#x6216;&#x8BBE;&#x7F6E;text&#x5185;&#x5BB9;">2&#x3001;text() &#x53D6;&#x51FA;&#x6216;&#x8BBE;&#x7F6E;text&#x5185;&#x5BB9;</h5>
+<pre><code class="lang-js">  <span class="hljs-comment">// &#x53D6;&#x51FA;&#x6587;&#x672C;&#x5185;&#x5BB9;</span>
+
+  <span class="hljs-keyword">var</span> $htm = $(<span class="hljs-string">&apos;#div1&apos;</span>).text();
+
+  <span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x6587;&#x672C;&#x5185;&#x5BB9;</span>
+
+  $(<span class="hljs-string">&apos;#div1&apos;</span>).text(<span class="hljs-string">&apos;&lt;span&gt;&#x6DFB;&#x52A0;&#x6587;&#x5B57;&lt;/span&gt;&apos;</span>);
+</code></pre>
+</li>
+</ul>
+</li>
+<li><h3 id="&#x5C5E;&#x6027;&#x64CD;&#x4F5C;">&#x5C5E;&#x6027;&#x64CD;&#x4F5C;</h3>
+<ul>
+<li><h5 id="1&#x3001;attr-&#x53D6;&#x51FA;&#x6216;&#x8BBE;&#x7F6E;&#x67D0;&#x4E2A;&#x5C5E;&#x6027;&#x7684;&#x503C;">1&#x3001;attr() &#x53D6;&#x51FA;&#x6216;&#x8BBE;&#x7F6E;&#x67D0;&#x4E2A;&#x5C5E;&#x6027;&#x7684;&#x503C;</h5>
+<pre><code class="lang-js">  <span class="hljs-comment">// &#x53D6;&#x51FA;&#x56FE;&#x7247;&#x7684;&#x5730;&#x5740;</span>
+
+  <span class="hljs-keyword">var</span> $src = $(<span class="hljs-string">&apos;#img1&apos;</span>).attr(<span class="hljs-string">&apos;src&apos;</span>);
+
+  <span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x56FE;&#x7247;&#x7684;&#x5730;&#x5740;&#x548C;alt&#x5C5E;&#x6027;</span>
+
+  $(<span class="hljs-string">&apos;#img1&apos;</span>).attr({ src: <span class="hljs-string">&quot;test.jpg&quot;</span>, alt: <span class="hljs-string">&quot;Test Image&quot;</span> });
+
+  <span class="hljs-comment">//&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x6237;&#x8BBE;&#x7F6E;class&#x5C5E;&#x6027;</span>
+  $(<span class="hljs-string">&apos;#abc&apos;</span>).attr(<span class="hljs-string">&apos;class&apos;</span>,<span class="hljs-string">&apos;all&apos;</span>)
+
+  <span class="hljs-comment">//&#x4E5F;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49; &#x5C5E;&#x6027;</span>
+  $(<span class="hljs-string">&apos;#abc&apos;</span>).attr(<span class="hljs-string">&apos;love&apos;</span>,<span class="hljs-string">&apos;iloveyou&apos;</span>)
+</code></pre>
+</li>
+<li><h5 id="2&#x3001;removeattr&#x5220;&#x9664;&#x5C5E;&#x6027;">2&#x3001;removeattr()&#x5220;&#x9664;&#x5C5E;&#x6027;</h5>
+<pre><code class="lang-js">  $(<span class="hljs-string">&apos;#abc&apos;</span>).removeattr(<span class="hljs-string">&apos;class&apos;</span>)
+
+  $(<span class="hljs-string">&apos;#abc&apos;</span>).removeattr(<span class="hljs-string">&apos;love&apos;</span>)
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../home/jQuery_j/1.jquery选择器.html" class="navigation navigation-prev " aria-label="Previous page: jquery选择器"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../home/jQuery_j/3.相关尺寸.html" class="navigation navigation-next " aria-label="Next page: 相关尺寸"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../../gitbook/app.js"></script>
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

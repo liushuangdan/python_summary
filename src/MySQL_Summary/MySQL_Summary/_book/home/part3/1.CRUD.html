@@ -1,0 +1,558 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>CRUD | Introduction</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    
+    <link rel="prev" href="../../home/part3/Python连接MySQL.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="4.1"
+        data-chapter-title="CRUD"
+        data-filepath="home/part3/1.CRUD.md"
+        data-basepath="../.."
+        data-revision="Sun Oct 21 2018 16:32:53 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="home/MySQL介绍.html">
+            
+                
+                    <a href="../../home/MySQL介绍.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        MySQL介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="home/part1/MySQL基础.html">
+            
+                
+                    <a href="../../home/part1/MySQL基础.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Mysql基础
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="home/part1/1.MySQL基础操作.html">
+            
+                
+                    <a href="../../home/part1/1.MySQL基础操作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        MySQL基础操作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="home/part1/2.MySQL数据类型.html">
+            
+                
+                    <a href="../../home/part1/2.MySQL数据类型.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        MySQL数据类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="home/part1/3.MySQL建库建表.html">
+            
+                
+                    <a href="../../home/part1/3.MySQL建库建表.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        MySQL建库建表
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="home/part1/4.DML操作：增,删,改.html">
+            
+                
+                    <a href="../../home/part1/4.DML操作：增,删,改.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        DML操作：增,删,改
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="home/part1/5.DQL操作：数据查询.html">
+            
+                
+                    <a href="../../home/part1/5.DQL操作：数据查询.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        DQL操作：数据查询
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="home/part1/6.数据导入和导出.html">
+            
+                
+                    <a href="../../home/part1/6.数据导入和导出.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                        数据导入和导出
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="home/part2/MySQL高级.html">
+            
+                
+                    <a href="../../home/part2/MySQL高级.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        MySQL高级
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="home/part2/1.MySQL的多表联查.html">
+            
+                
+                    <a href="../../home/part2/1.MySQL的多表联查.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        MySQL的多表联查
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="home/part2/2.MySQL的事务处理.html">
+            
+                
+                    <a href="../../home/part2/2.MySQL的事务处理.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        MySQL的事务处理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="home/part2/3.MySQL的视图及其它.html">
+            
+                
+                    <a href="../../home/part2/3.MySQL的视图及其它.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        MySQL的视图及其它
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="home/part2/4.MySQL的触发器.html">
+            
+                
+                    <a href="../../home/part2/4.MySQL的触发器.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        MySQL的触发器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="home/part2/6.MySQL日志及数据恢复.html">
+            
+                
+                    <a href="../../home/part2/6.MySQL日志及数据恢复.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        MySQL日志及数据恢复
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="home/part2/7.慢查询及sql优化.html">
+            
+                
+                    <a href="../../home/part2/7.慢查询及sql优化.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                        慢查询及sql优化
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="home/part3/Python连接MySQL.html">
+            
+                
+                    <a href="../../home/part3/Python连接MySQL.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Python连接MySQL
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="4.1" data-path="home/part3/1.CRUD.html">
+            
+                
+                    <a href="../../home/part3/1.CRUD.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        CRUD
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../" >Introduction</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="python&#x64CD;&#x4F5C;mysql&#x8FDB;&#x884C;-crud">Python&#x64CD;&#x4F5C;MySQL&#x8FDB;&#x884C; CRUD</h1>
+<hr>
+<h2 id="&#x6267;&#x884C;&#x6570;&#x636E;&#x6DFB;&#x52A0;">&#x6267;&#x884C;&#x6570;&#x636E;&#x6DFB;&#x52A0;</h2>
+<pre><code class="lang-python"><span class="hljs-comment">#!/usr/bin/python3</span>
+
+<span class="hljs-keyword">import</span> pymysql
+
+<span class="hljs-comment"># &#x6253;&#x5F00;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;</span>
+db = pymysql.connect(<span class="hljs-string">&quot;localhost&quot;</span>,<span class="hljs-string">&quot;root&quot;</span>,<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-string">&quot;mydemo&quot;</span> )
+
+<span class="hljs-comment"># &#x4F7F;&#x7528; cursor() &#x65B9;&#x6CD5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6E38;&#x6807;&#x5BF9;&#x8C61; cursor</span>
+cursor = db.cursor()
+
+<span class="hljs-comment"># SQL &#x63D2;&#x5165;&#x8BED;&#x53E5;</span>
+sql = <span class="hljs-string">&quot;INSERT INTO stu(name,sex,age,classid) values(&apos;%s&apos;,&apos;%c&apos;,&apos;%d&apos;,&apos;%s&apos;)&quot;</span> % (<span class="hljs-string">&apos;uu142&apos;</span>,<span class="hljs-string">&apos;m&apos;</span>,<span class="hljs-number">22</span>,<span class="hljs-string">&apos;lamp180&apos;</span>) 
+
+<span class="hljs-keyword">try</span>:
+   <span class="hljs-comment"># &#x6267;&#x884C;sql&#x8BED;&#x53E5;</span>
+   cursor.execute(sql)
+   <span class="hljs-comment"># &#x6267;&#x884C;sql&#x8BED;&#x53E5;</span>
+   db.commit()
+   print(<span class="hljs-string">&quot;ok: %d &quot;</span> % (cursor.rowcount))
+<span class="hljs-keyword">except</span>:
+   <span class="hljs-comment"># &#x53D1;&#x751F;&#x9519;&#x8BEF;&#x65F6;&#x56DE;&#x6EDA;</span>
+   db.rollback()
+
+<span class="hljs-comment"># &#x5173;&#x95ED;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;</span>
+db.close()
+</code></pre>
+<h2 id="&#x6267;&#x884C;&#x5220;&#x9664;&#x64CD;&#x4F5C;">&#x6267;&#x884C;&#x5220;&#x9664;&#x64CD;&#x4F5C;</h2>
+<pre><code class="lang-python"><span class="hljs-comment">#!/usr/bin/python3</span>
+
+<span class="hljs-keyword">import</span> pymysql
+
+<span class="hljs-comment"># &#x6253;&#x5F00;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;</span>
+db = pymysql.connect(<span class="hljs-string">&quot;localhost&quot;</span>,<span class="hljs-string">&quot;root&quot;</span>,<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-string">&quot;mydemo&quot;</span> )
+
+<span class="hljs-comment"># &#x4F7F;&#x7528; cursor() &#x65B9;&#x6CD5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6E38;&#x6807;&#x5BF9;&#x8C61; cursor</span>
+cursor = db.cursor()
+
+<span class="hljs-comment"># SQL &#x5220;&#x9664;&#x8BED;&#x53E5;</span>
+sql = <span class="hljs-string">&quot;delete from stu where id = &apos;%d&apos;&quot;</span> % (<span class="hljs-number">13</span>)
+<span class="hljs-keyword">try</span>:
+<span class="hljs-comment"># &#x6267;&#x884C;SQL&#x8BED;&#x53E5;</span>
+cursor.execute(sql)
+<span class="hljs-comment"># &#x63D0;&#x4EA4;&#x4FEE;&#x6539;</span>
+db.commit()
+<span class="hljs-keyword">except</span>:
+<span class="hljs-comment"># &#x53D1;&#x751F;&#x9519;&#x8BEF;&#x65F6;&#x56DE;&#x6EDA;</span>
+db.rollback()
+
+<span class="hljs-comment"># &#x5173;&#x95ED;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;</span>
+db.close()
+</code></pre>
+<h2 id="&#x6267;&#x884C;&#x6570;&#x636E;&#x4FEE;&#x6539;&#x66F4;&#x65B0;">&#x6267;&#x884C;&#x6570;&#x636E;&#x4FEE;&#x6539;|&#x66F4;&#x65B0;</h2>
+<pre><code class="lang-python">#!/usr/bin/python3
+
+import pymysql
+
+# &#x6253;&#x5F00;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;
+db = pymysql.connect(&quot;localhost&quot;,&quot;testuser&quot;,&quot;test123&quot;,&quot;TESTDB&quot; )
+
+# &#x4F7F;&#x7528;cursor()&#x65B9;&#x6CD5;&#x83B7;&#x53D6;&#x64CD;&#x4F5C;&#x6E38;&#x6807; 
+cursor = db.cursor()
+
+# SQL &#x66F4;&#x65B0;&#x8BED;&#x53E5;
+sql = &quot;UPDATE EMPLOYEE SET AGE = AGE + 1
+                          WHERE SEX = &apos;%c&apos;&quot; % (&apos;M&apos;)
+try:
+   # &#x6267;&#x884C;SQL&#x8BED;&#x53E5;
+   cursor.execute(sql)
+   # &#x63D0;&#x4EA4;&#x5230;&#x6570;&#x636E;&#x5E93;&#x6267;&#x884C;
+   db.commit()
+except:
+   # &#x53D1;&#x751F;&#x9519;&#x8BEF;&#x65F6;&#x56DE;&#x6EDA;
+   db.rollback()
+
+# &#x5173;&#x95ED;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;
+db.close()
+</code></pre>
+<h2 id="&#x6267;&#x884C;&#x6570;&#x636E;&#x67E5;&#x8BE2;">&#x6267;&#x884C;&#x6570;&#x636E;&#x67E5;&#x8BE2;</h2>
+<pre><code class="lang-python">&#x6570;&#x636E;&#x5E93;&#x67E5;&#x8BE2;&#x64CD;&#x4F5C;&#xFF1A;
+
+Python&#x67E5;&#x8BE2;Mysql&#x4F7F;&#x7528; fetchone() &#x65B9;&#x6CD5;&#x83B7;&#x53D6;&#x5355;&#x6761;&#x6570;&#x636E;, &#x4F7F;&#x7528;fetchall() &#x65B9;&#x6CD5;&#x83B7;&#x53D6;&#x591A;&#x6761;&#x6570;&#x636E;&#x3002;
+
+    fetchone(): &#x8BE5;&#x65B9;&#x6CD5;&#x83B7;&#x53D6;&#x4E0B;&#x4E00;&#x4E2A;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x96C6;&#x3002;&#x7ED3;&#x679C;&#x96C6;&#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;
+
+    fetchall(): &#x63A5;&#x6536;&#x5168;&#x90E8;&#x7684;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x884C;.
+
+    rowcount: &#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x53EA;&#x8BFB;&#x5C5E;&#x6027;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x6267;&#x884C;execute()&#x65B9;&#x6CD5;&#x540E;&#x5F71;&#x54CD;&#x7684;&#x884C;&#x6570;&#x3002;
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-comment">#!/usr/bin/python3</span>
+
+<span class="hljs-keyword">import</span> pymysql
+
+<span class="hljs-comment"># &#x6253;&#x5F00;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;</span>
+db = pymysql.connect(<span class="hljs-string">&quot;localhost&quot;</span>,<span class="hljs-string">&quot;root&quot;</span>,<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-string">&quot;mydemo&quot;</span> )
+
+<span class="hljs-comment"># &#x4F7F;&#x7528; cursor() &#x65B9;&#x6CD5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6E38;&#x6807;&#x5BF9;&#x8C61; cursor</span>
+cursor = db.cursor()
+
+<span class="hljs-comment"># SQL &#x67E5;&#x8BE2;&#x8BED;&#x53E5;</span>
+sql = <span class="hljs-string">&quot;select * from stu limit %d&quot;</span> % (<span class="hljs-number">3</span>)
+<span class="hljs-comment">#sql = &quot;select * from stu&quot;</span>
+
+<span class="hljs-keyword">try</span>:
+<span class="hljs-comment"># &#x6267;&#x884C;SQL&#x8BED;&#x53E5;</span>
+cursor.execute(sql)
+<span class="hljs-comment"># &#x83B7;&#x53D6;&#x6240;&#x6709;&#x8BB0;&#x5F55;&#x5217;&#x8868;</span>
+results = cursor.fetchall()
+<span class="hljs-keyword">for</span> row <span class="hljs-keyword">in</span> results:
+    id = row[<span class="hljs-number">0</span>]
+    name = row[<span class="hljs-number">1</span>]
+    sex = row[<span class="hljs-number">2</span>]
+    age = row[<span class="hljs-number">3</span>]
+    classid = row[<span class="hljs-number">4</span>]
+    <span class="hljs-comment"># &#x6253;&#x5370;&#x7ED3;&#x679C;</span>
+    <span class="hljs-keyword">print</span> (<span class="hljs-string">&quot;id=%d,name=%s,sex=%s,age=%d,classid=%s&quot;</span> % (id,name,sex,age,classid))
+<span class="hljs-keyword">except</span>:
+<span class="hljs-keyword">print</span> (<span class="hljs-string">&quot;Error: unable to fetch data&quot;</span>)
+
+<span class="hljs-comment"># &#x5173;&#x95ED;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;</span>
+db.close()
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../home/part3/Python连接MySQL.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Python连接MySQL"><i class="fa fa-angle-left"></i></a>
+        
+        
+    </div>
+</div>
+
+        
+<script src="../../gitbook/app.js"></script>
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

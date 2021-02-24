@@ -1,0 +1,5512 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Pandas数据存取 | Python 数据分析学习目录</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../数据分析库的操作/7Pandas数据运算.html" />
+    
+    
+    <link rel="prev" href="../数据分析库的操作/5Pandas数据操作：其他操作.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="4.4.2"
+        data-chapter-title="Pandas数据存取"
+        data-filepath="数据分析库的操作/6Pandas数据存取.md"
+        data-basepath=".."
+        data-revision="Wed Oct 24 2018 21:30:49 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        数据分析
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="Python数据分析序言/内容序言.html">
+            
+                
+                    <a href="../Python数据分析序言/内容序言.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Python数据分析内容
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="python数据分析环境和工具/Python数据分析相关.html">
+            
+                
+                    <a href="../python数据分析环境和工具/Python数据分析相关.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        python数据分析环境和工具
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="python数据分析环境和工具/1Python数据课程软件和环境安装.html">
+            
+                
+                    <a href="../python数据分析环境和工具/1Python数据课程软件和环境安装.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Python数据课程 软件和环境安装
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="python数据分析环境和工具/2python发行版.html">
+            
+                
+                    <a href="../python数据分析环境和工具/2python发行版.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        python发行版
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="python数据分析环境和工具/5交互式编辑器-JupyterNotebook.html">
+            
+                
+                    <a href="../python数据分析环境和工具/5交互式编辑器-JupyterNotebook.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        交互式编辑器-JupyterNotebook
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="python数据分析环境和工具/5.1Jupyter-notebook拓展应用.html">
+            
+                
+                    <a href="../python数据分析环境和工具/5.1Jupyter-notebook拓展应用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.1.</b>
+                        
+                        Jupyter-notebook拓展应用
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="python数据分析环境和工具/包和环境管理器：conda.html">
+            
+                
+                    <a href="../python数据分析环境和工具/包和环境管理器：conda.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        包和环境管理器：conda
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="python数据分析环境和工具/pip和Virtualenv.html">
+            
+                
+                    <a href="../python数据分析环境和工具/pip和Virtualenv.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.1.</b>
+                        
+                        pip和Virtualenv
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="python数据分析环境和工具/3Markdown.html">
+            
+                
+                    <a href="../python数据分析环境和工具/3Markdown.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        标记语言：Markdown
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="python数据分析环境和工具/4Markdown语法.html">
+            
+                
+                    <a href="../python数据分析环境和工具/4Markdown语法.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.1.</b>
+                        
+                        Markdown语法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="python数据分析环境和工具/6Gitbook文档.html">
+            
+                
+                    <a href="../python数据分析环境和工具/6Gitbook文档.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.2.</b>
+                        
+                        文档管理工具-Gitbook
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="数据分析库的初步认识/index.html">
+            
+                
+                    <a href="../数据分析库的初步认识/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        数据分析库-Pandas
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="数据分析库的初步认识/Pandas创建.html">
+            
+                
+                    <a href="../数据分析库的初步认识/Pandas创建.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        pandas
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="数据分析库的初步认识/Series创建.html">
+            
+                
+                    <a href="../数据分析库的初步认识/Series创建.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        Series
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="数据分析库的初步认识/DataFrame创建.html">
+            
+                
+                    <a href="../数据分析库的初步认识/DataFrame创建.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        DataFrame对象-创建
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" >
+            
+            <span><b>4.</b> 数据分析库的操作</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="数据分析库的操作/1DataFrame查询1-整体.html">
+            
+                
+                    <a href="../数据分析库的操作/1DataFrame查询1-整体.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        DataFrame查询1-整体
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="数据分析库的操作/2DataFrame查询2-专用查询.html">
+            
+                
+                    <a href="../数据分析库的操作/2DataFrame查询2-专用查询.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        DataFrame查询2-专用查询
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="数据分析库的操作/3DataFrame查询3-专有查询：过滤查询.html">
+            
+                
+                    <a href="../数据分析库的操作/3DataFrame查询3-专有查询：过滤查询.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        DataFrame查询3-专有查询：过滤查询
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="数据分析库的操作/4Pandas对象的数据操作：增删改查.html">
+            
+                
+                    <a href="../数据分析库的操作/4Pandas对象的数据操作：增删改查.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        Pandas对象的数据操作：增删改查
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.1" data-path="数据分析库的操作/5Pandas数据操作：其他操作.html">
+            
+                
+                    <a href="../数据分析库的操作/5Pandas数据操作：其他操作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.1.</b>
+                        
+                        Pandas数据操作：其他操作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.4.2" data-path="数据分析库的操作/6Pandas数据存取.html">
+            
+                
+                    <a href="../数据分析库的操作/6Pandas数据存取.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.2.</b>
+                        
+                        Pandas数据存取
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.3" data-path="数据分析库的操作/7Pandas数据运算.html">
+            
+                
+                    <a href="../数据分析库的操作/7Pandas数据运算.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.3.</b>
+                        
+                        Pandas数据运算
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.3.1" data-path="数据分析库的操作/7.1Pandas数据运算拓展.html">
+            
+                
+                    <a href="../数据分析库的操作/7.1Pandas数据运算拓展.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.3.1.</b>
+                        
+                        Pandas数据运算-拓展
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.4" data-path="数据分析库的操作/8Pandas分组聚合1.html">
+            
+                
+                    <a href="../数据分析库的操作/8Pandas分组聚合1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.4.</b>
+                        
+                        Pandas分组聚合1
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.5" data-path="数据分析库的操作/9Pandas分组聚合2.html">
+            
+                
+                    <a href="../数据分析库的操作/9Pandas分组聚合2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.5.</b>
+                        
+                        Pandas分组聚合2
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.6" data-path="数据分析库的操作/10Pandas数据规整-清理.html">
+            
+                
+                    <a href="../数据分析库的操作/10Pandas数据规整-清理.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.6.</b>
+                        
+                        Pandas数据规整-清理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.7" data-path="数据分析库的操作/11Pandas数据规整-转换.html">
+            
+                
+                    <a href="../数据分析库的操作/11Pandas数据规整-转换.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.7.</b>
+                        
+                        Pandas数据规整-转换
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.7.1" data-path="数据分析库的操作/14Pandas数据规整-转换-离散化和面元划分.html">
+            
+                
+                    <a href="../数据分析库的操作/14Pandas数据规整-转换-离散化和面元划分.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.7.1.</b>
+                        
+                        离散化和面元划分
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.8" data-path="数据分析库的操作/16Pandas数据规整-合并.html">
+            
+                
+                    <a href="../数据分析库的操作/16Pandas数据规整-合并.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.8.</b>
+                        
+                        Pandas数据规整-合并
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="数据分析库的操作/13Pandas数据规整-重塑和轴向旋转.html">
+            
+                
+                    <a href="../数据分析库的操作/13Pandas数据规整-重塑和轴向旋转.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        Pandas数据规整-重塑和轴向旋转
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.5.1" data-path="数据分析库的操作/13.1透视表和交叉表.html">
+            
+                
+                    <a href="../数据分析库的操作/13.1透视表和交叉表.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.1.</b>
+                        
+                        透视表和交叉表
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="Python可视化/绘图库-Matplotlib.html">
+            
+                
+                    <a href="../Python可视化/绘图库-Matplotlib.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Python可视化
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="Python可视化/绘图库-Matplotlib/Matplotlib常见图表.html">
+            
+                
+                    <a href="../Python可视化/绘图库-Matplotlib/Matplotlib常见图表.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        基础：Matplotlib常见图表
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="Python可视化/绘图库-Matplotlib/Matplotlib常见设置和操作.html">
+            
+                
+                    <a href="../Python可视化/绘图库-Matplotlib/Matplotlib常见设置和操作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.1.</b>
+                        
+                        Matplotlib常见设置和操作
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="Python可视化/绘图库-Matplotlib/1Matplotlib-绘图区域.html">
+            
+                
+                    <a href="../Python可视化/绘图库-Matplotlib/1Matplotlib-绘图区域.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        提升：绘图区域
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="Python可视化/绘图库-Matplotlib/2Matplotlib-图像组件.html">
+            
+                
+                    <a href="../Python可视化/绘图库-Matplotlib/2Matplotlib-图像组件.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        提升：绘图组件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="Python可视化/绘图库-Matplotlib/3Matplotlib-高级绘图.html">
+            
+                
+                    <a href="../Python可视化/绘图库-Matplotlib/3Matplotlib-高级绘图.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                        拓展：高级绘图
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="Python可视化/绘图库-Matplotlib/4数学计算展示图像.html">
+            
+                
+                    <a href="../Python可视化/绘图库-Matplotlib/4数学计算展示图像.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.</b>
+                        
+                        拓展：数学计算展示图像
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="Python可视化/绘图库-Matplotlib/5注意事项.html">
+            
+                
+                    <a href="../Python可视化/绘图库-Matplotlib/5注意事项.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.</b>
+                        
+                        拓展：注意事项
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="Python可视化/绘图库-Matplotlib/6pylab.html">
+            
+                
+                    <a href="../Python可视化/绘图库-Matplotlib/6pylab.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.</b>
+                        
+                        拓展：pylab
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="数据分析必备知识点/数据分析必备知识点汇集.html">
+            
+                
+                    <a href="../数据分析必备知识点/数据分析必备知识点汇集.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        数据分析必备知识点
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="数据分析必备知识点/数据分析流程.html">
+            
+                
+                    <a href="../数据分析必备知识点/数据分析流程.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        数据分析流程
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Python 数据分析学习目录</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="pandas&#x6570;&#x636E;&#x5B58;&#x53D6;">Pandas&#x6570;&#x636E;&#x5B58;&#x53D6;</h1>
+<hr>
+<p>&#x6570;&#x636E;&#x7684;&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;&#x662F;Pandas&#x7684;&#x57FA;&#x7840;&#x64CD;&#x4F5C;</p>
+<p>Pandas&#x53EF;&#x4EE5;&#x5B58;&#x53D6;&#x591A;&#x79CD;&#x4ECB;&#x8D28;&#x7C7B;&#x578B;&#x6570;&#x636E;&#xFF1A;&#x5E38;&#x89C1;&#x7684;&#x6709;&#xFF1A;</p>
+<ul>
+<li>&#x6587;&#x672C;&#x7C7B;&#x6570;&#x636E;<ul>
+<li>csv</li>
+<li>JSON</li>
+</ul>
+</li>
+<li>&#x4E8C;&#x8FDB;&#x5236;&#x78C1;&#x76D8;&#x6570;&#x636E;<ul>
+<li>Excel</li>
+<li>pkl</li>
+<li>HDF5</li>
+</ul>
+</li>
+<li>&#x6570;&#x636E;&#x5E93;<ul>
+<li>SQL&#xFF08;&#x7565;&#xFF09;</li>
+</ul>
+</li>
+<li>Web API&#x6570;&#x636E;<ul>
+<li>HTML</li>
+</ul>
+</li>
+<li>&#x5176;&#x4ED6;<ul>
+<li>&#x5185;&#x5B58;</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>&#x6587;&#x672C;&#x7C7B;&#x6570;&#x636E;&#x6587;&#x4EF6;&#x8BFB;&#x5165;Pandas&#x65F6;&#x4F1A;&#x81EA;&#x52A8;&#x63A8;&#x65AD;&#x6BCF;&#x5217;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF08;&#x7C7B;&#x578B;&#x63A8;&#x65AD;&#xFF09;&#x5E76;&#x8F6C;&#x5316;&#x3002;</p>
+<p>&#x4E8C;&#x8FDB;&#x5236;&#x7C7B;&#x6570;&#x636E;&#x6587;&#x4EF6;&#x4F1A;&#x5728;&#x683C;&#x5F0F;&#x4E2D;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x7C7B;&#x578B;</p>
+<p>&#x5BF9;Pandas&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x652F;&#x6301;&#x6216;&#x4E0D;&#x65B9;&#x4FBF;&#x4F7F;&#x7528;&#x7684;&#x6570;&#x636E;&#x683C;&#x5F0F;&#xFF0C;</p>
+<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x652F;&#x6301;&#x8F6F;&#x4EF6;&#x5C06;&#x5176;&#x8F6C;&#x4E3A;csv&#x6216;xlsx&#x683C;&#x5F0F;&#x540E;&#x4F7F;&#x7528;Pandas&#x8BFB;&#x5199;&#xFF0C;&#x5982;SPSS&#x6587;&#x4EF6;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+</code></pre>
+<pre><code class="lang-python">av = [
+    [<span class="hljs-string">&apos;&#x5C0F;&#x660E;&apos;</span>,<span class="hljs-string">&apos;male&apos;</span>,<span class="hljs-number">18</span>,<span class="hljs-number">170</span>,<span class="hljs-number">60</span>,<span class="hljs-string">&apos;&#x5317;&#x4EAC;&#x6D77;&#x6DC0;&apos;</span>,<span class="hljs-number">61</span>],
+    [<span class="hljs-string">&apos;&#x5C0F;&#x534E;&apos;</span>,<span class="hljs-string">&apos;female&apos;</span>,<span class="hljs-number">28</span>,<span class="hljs-number">160</span>,<span class="hljs-number">50</span>,<span class="hljs-string">&apos;&#x4E0A;&#x6D77;&#x9759;&#x5B89;&apos;</span>,<span class="hljs-number">74</span>],
+    [<span class="hljs-string">&apos;&#x5C0F;&#x7EA2;&apos;</span>,<span class="hljs-string">&apos;female&apos;</span>,<span class="hljs-number">22</span>,<span class="hljs-number">175</span>,<span class="hljs-number">64</span>,<span class="hljs-string">&apos;&#x5E7F;&#x5DDE;&#x5929;&#x6CB3;&apos;</span>,<span class="hljs-number">59</span>],
+    [<span class="hljs-string">&apos;&#x5C0F;&#x9751;&apos;</span>,<span class="hljs-string">&apos;male&apos;</span>,<span class="hljs-number">31</span>,<span class="hljs-number">182</span>,<span class="hljs-number">80</span>,<span class="hljs-string">&apos;&#x6DF1;&#x5733;&#x5357;&#x5C71;&apos;</span>,<span class="hljs-number">82</span>],
+    [<span class="hljs-string">&apos;&#x5C0F;&#x5170;&apos;</span>,<span class="hljs-string">&apos;female&apos;</span>,<span class="hljs-number">25</span>,<span class="hljs-number">165</span>,<span class="hljs-number">55</span>,<span class="hljs-string">&apos;&#x676D;&#x5DDE;&#x897F;&#x6E56;&apos;</span>,<span class="hljs-number">98</span>],
+]
+a = pd.DataFrame(
+    av,
+    index=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>],
+    columns=[<span class="hljs-string">&apos;name&apos;</span>,<span class="hljs-string">&apos;sex&apos;</span>,<span class="hljs-string">&apos;age&apos;</span>,<span class="hljs-string">&apos;heigh&apos;</span>,<span class="hljs-string">&apos;weight&apos;</span>,<span class="hljs-string">&apos;address&apos;</span>,<span class="hljs-string">&apos;grade&apos;</span>]
+)
+a
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>sex</th>
+      <th>age</th>
+      <th>heigh</th>
+      <th>weight</th>
+      <th>address</th>
+      <th>grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>&#x5C0F;&#x660E;</td>
+      <td>male</td>
+      <td>18</td>
+      <td>170</td>
+      <td>60</td>
+      <td>&#x5317;&#x4EAC;&#x6D77;&#x6DC0;</td>
+      <td>61</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>&#x5C0F;&#x534E;</td>
+      <td>female</td>
+      <td>28</td>
+      <td>160</td>
+      <td>50</td>
+      <td>&#x4E0A;&#x6D77;&#x9759;&#x5B89;</td>
+      <td>74</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>&#x5C0F;&#x7EA2;</td>
+      <td>female</td>
+      <td>22</td>
+      <td>175</td>
+      <td>64</td>
+      <td>&#x5E7F;&#x5DDE;&#x5929;&#x6CB3;</td>
+      <td>59</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>&#x5C0F;&#x9751;</td>
+      <td>male</td>
+      <td>31</td>
+      <td>182</td>
+      <td>80</td>
+      <td>&#x6DF1;&#x5733;&#x5357;&#x5C71;</td>
+      <td>82</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>&#x5C0F;&#x5170;</td>
+      <td>female</td>
+      <td>25</td>
+      <td>165</td>
+      <td>55</td>
+      <td>&#x676D;&#x5DDE;&#x897F;&#x6E56;</td>
+      <td>98</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">a.info()
+</code></pre>
+<pre><code>&lt;class &apos;pandas.core.frame.DataFrame&apos;&gt;
+Int64Index: 5 entries, 1 to 5
+Data columns (total 7 columns):
+name       5 non-null object
+sex        5 non-null object
+age        5 non-null int64
+heigh      5 non-null int64
+weight     5 non-null int64
+address    5 non-null object
+grade      5 non-null int64
+dtypes: int64(4), object(3)
+memory usage: 320.0+ bytes
+</code></pre><pre><code class="lang-python">df = pd.DataFrame(np.random.randn(<span class="hljs-number">1000</span>, <span class="hljs-number">4</span>),columns=[<span class="hljs-string">&apos;A&apos;</span>, <span class="hljs-string">&apos;B&apos;</span>, <span class="hljs-string">&apos;C&apos;</span>, <span class="hljs-string">&apos;D&apos;</span>])
+df
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.971470</td>
+      <td>-0.910323</td>
+      <td>0.559249</td>
+      <td>1.075287</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-1.354050</td>
+      <td>-0.557734</td>
+      <td>-1.302378</td>
+      <td>1.464031</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.181755</td>
+      <td>0.838199</td>
+      <td>-0.103647</td>
+      <td>-0.239950</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-0.797444</td>
+      <td>-0.784848</td>
+      <td>-0.878766</td>
+      <td>1.070386</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.393892</td>
+      <td>-0.894993</td>
+      <td>1.104146</td>
+      <td>-0.550882</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>-0.991452</td>
+      <td>-0.571119</td>
+      <td>-0.225624</td>
+      <td>-0.898736</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1.213550</td>
+      <td>0.765152</td>
+      <td>-0.328068</td>
+      <td>0.715214</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>-2.738036</td>
+      <td>-0.073490</td>
+      <td>-0.054538</td>
+      <td>-0.589355</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>-1.739574</td>
+      <td>0.265254</td>
+      <td>-0.516565</td>
+      <td>-0.944410</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>-0.116646</td>
+      <td>0.318442</td>
+      <td>0.899953</td>
+      <td>-0.672622</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>-0.406266</td>
+      <td>0.139849</td>
+      <td>-0.146476</td>
+      <td>-0.332747</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>-0.688098</td>
+      <td>0.912993</td>
+      <td>0.889713</td>
+      <td>-0.272609</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>-0.734708</td>
+      <td>-0.509685</td>
+      <td>1.374228</td>
+      <td>0.487075</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>-0.620682</td>
+      <td>-0.425317</td>
+      <td>1.334744</td>
+      <td>-0.339170</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>-1.272188</td>
+      <td>-2.378728</td>
+      <td>-0.451680</td>
+      <td>0.674662</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>0.308439</td>
+      <td>-1.242873</td>
+      <td>1.985861</td>
+      <td>-1.760328</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>-0.326332</td>
+      <td>-0.308578</td>
+      <td>0.022306</td>
+      <td>0.905072</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>-1.250010</td>
+      <td>-0.773064</td>
+      <td>0.284679</td>
+      <td>0.910661</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>-0.187829</td>
+      <td>-1.038055</td>
+      <td>1.337365</td>
+      <td>1.416580</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>0.724382</td>
+      <td>3.070201</td>
+      <td>-0.678422</td>
+      <td>-0.600846</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>0.229085</td>
+      <td>-0.513108</td>
+      <td>0.643235</td>
+      <td>-0.164983</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>-0.496122</td>
+      <td>2.355930</td>
+      <td>0.872267</td>
+      <td>-1.342849</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>0.025463</td>
+      <td>1.008532</td>
+      <td>-1.297462</td>
+      <td>1.878374</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>1.491304</td>
+      <td>-0.303352</td>
+      <td>0.203386</td>
+      <td>1.531170</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>0.086712</td>
+      <td>-1.054256</td>
+      <td>0.916509</td>
+      <td>0.150382</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>-0.367296</td>
+      <td>-0.250115</td>
+      <td>0.607016</td>
+      <td>-1.941563</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>-0.346743</td>
+      <td>0.059370</td>
+      <td>-1.414952</td>
+      <td>-1.172916</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>-0.081799</td>
+      <td>-0.498255</td>
+      <td>-1.550495</td>
+      <td>-0.949339</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>0.593236</td>
+      <td>1.344904</td>
+      <td>1.152445</td>
+      <td>0.566880</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>2.321404</td>
+      <td>-0.298681</td>
+      <td>-0.481925</td>
+      <td>0.912140</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>970</th>
+      <td>-0.143725</td>
+      <td>0.183996</td>
+      <td>0.453441</td>
+      <td>-1.440529</td>
+    </tr>
+    <tr>
+      <th>971</th>
+      <td>0.045530</td>
+      <td>0.104548</td>
+      <td>-0.721135</td>
+      <td>1.640193</td>
+    </tr>
+    <tr>
+      <th>972</th>
+      <td>-0.725313</td>
+      <td>-0.302477</td>
+      <td>0.103637</td>
+      <td>0.299864</td>
+    </tr>
+    <tr>
+      <th>973</th>
+      <td>1.643769</td>
+      <td>0.673424</td>
+      <td>1.785893</td>
+      <td>1.061021</td>
+    </tr>
+    <tr>
+      <th>974</th>
+      <td>2.206223</td>
+      <td>-2.170208</td>
+      <td>-0.402996</td>
+      <td>-0.890067</td>
+    </tr>
+    <tr>
+      <th>975</th>
+      <td>1.451025</td>
+      <td>-0.065624</td>
+      <td>0.166981</td>
+      <td>-0.309620</td>
+    </tr>
+    <tr>
+      <th>976</th>
+      <td>-0.122171</td>
+      <td>-1.778694</td>
+      <td>-3.048161</td>
+      <td>-1.799536</td>
+    </tr>
+    <tr>
+      <th>977</th>
+      <td>-0.605187</td>
+      <td>0.509859</td>
+      <td>-0.378514</td>
+      <td>0.252206</td>
+    </tr>
+    <tr>
+      <th>978</th>
+      <td>0.780935</td>
+      <td>0.351821</td>
+      <td>0.938628</td>
+      <td>1.076653</td>
+    </tr>
+    <tr>
+      <th>979</th>
+      <td>0.470542</td>
+      <td>1.353116</td>
+      <td>-0.432134</td>
+      <td>1.287247</td>
+    </tr>
+    <tr>
+      <th>980</th>
+      <td>-1.488928</td>
+      <td>1.260615</td>
+      <td>-1.211009</td>
+      <td>1.523660</td>
+    </tr>
+    <tr>
+      <th>981</th>
+      <td>-0.031728</td>
+      <td>0.392340</td>
+      <td>0.910436</td>
+      <td>-1.383338</td>
+    </tr>
+    <tr>
+      <th>982</th>
+      <td>-0.995186</td>
+      <td>-1.093517</td>
+      <td>-0.300063</td>
+      <td>0.493835</td>
+    </tr>
+    <tr>
+      <th>983</th>
+      <td>0.792182</td>
+      <td>-0.267352</td>
+      <td>1.390696</td>
+      <td>1.498959</td>
+    </tr>
+    <tr>
+      <th>984</th>
+      <td>-0.794723</td>
+      <td>1.052508</td>
+      <td>-1.113050</td>
+      <td>0.101865</td>
+    </tr>
+    <tr>
+      <th>985</th>
+      <td>-1.027141</td>
+      <td>-1.199244</td>
+      <td>-0.990809</td>
+      <td>-1.395599</td>
+    </tr>
+    <tr>
+      <th>986</th>
+      <td>-0.969678</td>
+      <td>-1.167831</td>
+      <td>-0.854208</td>
+      <td>-1.183604</td>
+    </tr>
+    <tr>
+      <th>987</th>
+      <td>1.609280</td>
+      <td>0.767694</td>
+      <td>0.506747</td>
+      <td>0.041865</td>
+    </tr>
+    <tr>
+      <th>988</th>
+      <td>1.367448</td>
+      <td>2.697807</td>
+      <td>-1.199477</td>
+      <td>-0.086055</td>
+    </tr>
+    <tr>
+      <th>989</th>
+      <td>-0.390024</td>
+      <td>-2.051293</td>
+      <td>0.910944</td>
+      <td>-0.460113</td>
+    </tr>
+    <tr>
+      <th>990</th>
+      <td>-0.821939</td>
+      <td>-1.416562</td>
+      <td>-0.685051</td>
+      <td>-0.521237</td>
+    </tr>
+    <tr>
+      <th>991</th>
+      <td>-0.287810</td>
+      <td>0.808191</td>
+      <td>0.293922</td>
+      <td>-0.085264</td>
+    </tr>
+    <tr>
+      <th>992</th>
+      <td>0.466382</td>
+      <td>2.880704</td>
+      <td>2.343967</td>
+      <td>-0.243972</td>
+    </tr>
+    <tr>
+      <th>993</th>
+      <td>0.175811</td>
+      <td>-0.547227</td>
+      <td>0.242304</td>
+      <td>-1.290218</td>
+    </tr>
+    <tr>
+      <th>994</th>
+      <td>0.225000</td>
+      <td>-0.321088</td>
+      <td>-0.074606</td>
+      <td>-0.336083</td>
+    </tr>
+    <tr>
+      <th>995</th>
+      <td>-1.198251</td>
+      <td>0.777643</td>
+      <td>-1.145068</td>
+      <td>0.721212</td>
+    </tr>
+    <tr>
+      <th>996</th>
+      <td>1.061066</td>
+      <td>-0.883506</td>
+      <td>0.780252</td>
+      <td>0.657456</td>
+    </tr>
+    <tr>
+      <th>997</th>
+      <td>-0.423743</td>
+      <td>-0.674806</td>
+      <td>1.540011</td>
+      <td>0.863288</td>
+    </tr>
+    <tr>
+      <th>998</th>
+      <td>-0.482636</td>
+      <td>0.732125</td>
+      <td>0.428839</td>
+      <td>0.038669</td>
+    </tr>
+    <tr>
+      <th>999</th>
+      <td>1.576860</td>
+      <td>0.727269</td>
+      <td>1.560673</td>
+      <td>0.291709</td>
+    </tr>
+  </tbody>
+</table>
+<p>1000 rows &#xD7; 4 columns</p>
+</div>
+
+
+
+<hr>
+<h2 id="pandas&#x5B58;&#x53D6;csv">Pandas&#x5B58;&#x53D6;CSV</h2>
+<ul>
+<li><p>CSV</p>
+<ul>
+<li><p>Comma-Separated Values&#xFF0C;&#x9017;&#x53F7;&#x5206;&#x9694;&#x503C;</p>
+</li>
+<li><p>&#x4EE5;&#x7EAF;&#x6587;&#x672C;&#x5F62;&#x5F0F;&#x5B58;&#x50A8;&#x8868;&#x683C;&#x6570;&#x636E;&#x7684;&#x4E00;&#x79CD;&#x683C;&#x5F0F;</p>
+</li>
+<li><p>&#x4E8C;&#x7EF4;&#x8868;&#x683C;&#x6570;&#x636E;&#x7ED3;&#x6784;</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>CSV&#x662F;&#x4E00;&#x79CD;&#x7B80;&#x5355;&#x3001;&#x901A;&#x7528;&#x7684;&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#xFF0C;&#x5E38;&#x7528;&#x4E8E;&#x5728;&#x4E0D;&#x540C;&#x7A0B;&#x5E8F;&#x548C;&#x73AF;&#x5883;&#x4E4B;&#x95F4;&#x4E2D;&#x8F6C;&#x8868;&#x683C;&#x6570;&#x636E;&#xFF0C;</p>
+<p>&#x8FD9;&#x4E9B;&#x7A0B;&#x5E8F;&#x672C;&#x8EAB;&#x662F;&#x5728;&#x4E0D;&#x517C;&#x5BB9;&#x7684;&#x683C;&#x5F0F;&#x4E0A;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x7684;&#xFF08;&#x5F80;&#x5F80;&#x662F;&#x79C1;&#x6709;&#x7684;&#x548C;/&#x6216;&#x65E0;&#x89C4;&#x8303;&#x7684;&#x683C;&#x5F0F;&#xFF09;&#xFF0C;</p>
+<p>&#x57FA;&#x672C;&#x6240;&#x6709;&#x6570;&#x636E;&#x7C7B;&#x8F6F;&#x4EF6;&#x548C;&#x73AF;&#x5883;&#x90FD;&#x652F;&#x6301;&#x8BFB;&#x5199;CSV&#x6587;&#x4EF6;</p>
+<hr>
+<p>CSV&#x8868;&#x683C;&#xFF1A;ceshi.csv</p>
+<p>name,age,address,grade</p>
+<p>&#x5F20;&#x4E09;,18,&quot;aaa,bbb&quot;,60</p>
+<p>&#x5F20;&#x4E09;,18,&quot;&#x5317;,&#x4EAC;&quot;,60</p>
+<p>&#x5F20;&#x4E09;,18,&#x5317;&#x4EAC;,60</p>
+<pre><code class="lang-python">pd.read_csv(<span class="hljs-string">&apos;ceshi.csv&apos;</span>,encoding=<span class="hljs-string">&apos;GBK&apos;</span>)
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>age</th>
+      <th>address</th>
+      <th>grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>&#x5F20;&#x4E09;</td>
+      <td>18</td>
+      <td>aaa,bbb</td>
+      <td>60</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>&#x5F20;&#x4E09;</td>
+      <td>18</td>
+      <td>&#x5317;,&#x4EAC;</td>
+      <td>60</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>&#x5F20;&#x4E09;</td>
+      <td>18</td>
+      <td>&#x5317;&#x4EAC;</td>
+      <td>60</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h2 id="&#x5199;&#x5165;csv">&#x5199;&#x5165;CSV</h2>
+<ul>
+<li>&#x9ED8;&#x8BA4;&#x662F;utf-8&#x683C;&#x5F0F;</li>
+<li>&#x4FDD;&#x5B58;&#x5176;&#x4ED6;&#x683C;&#x5F0F;</li>
+</ul>
+<p>&#x6CE8;&#x610F;&#xFF1A;Excel&#x6253;&#x5F00;utf-8&#x7684;csv&#x6587;&#x4EF6;&#xFF0C;&#x4E2D;&#x6587;&#x4F1A;&#x4E71;&#x7801;&#xFF0C;&#x5EFA;&#x8BAE;&#x4FDD;&#x5B58;&#x4E3A;gbk</p>
+<pre><code class="lang-python">a
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>sex</th>
+      <th>age</th>
+      <th>heigh</th>
+      <th>weight</th>
+      <th>address</th>
+      <th>grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>&#x5C0F;&#x660E;</td>
+      <td>male</td>
+      <td>18</td>
+      <td>170</td>
+      <td>60</td>
+      <td>&#x5317;&#x4EAC;&#x6D77;&#x6DC0;</td>
+      <td>61</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>&#x5C0F;&#x534E;</td>
+      <td>female</td>
+      <td>28</td>
+      <td>160</td>
+      <td>50</td>
+      <td>&#x4E0A;&#x6D77;&#x9759;&#x5B89;</td>
+      <td>74</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>&#x5C0F;&#x7EA2;</td>
+      <td>female</td>
+      <td>22</td>
+      <td>175</td>
+      <td>64</td>
+      <td>&#x5E7F;&#x5DDE;&#x5929;&#x6CB3;</td>
+      <td>59</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>&#x5C0F;&#x9751;</td>
+      <td>male</td>
+      <td>31</td>
+      <td>182</td>
+      <td>80</td>
+      <td>&#x6DF1;&#x5733;&#x5357;&#x5C71;</td>
+      <td>82</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>&#x5C0F;&#x5170;</td>
+      <td>female</td>
+      <td>25</td>
+      <td>165</td>
+      <td>55</td>
+      <td>&#x676D;&#x5DDE;&#x897F;&#x6E56;</td>
+      <td>98</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">a.to_csv(<span class="hljs-string">&apos;foo.csv&apos;</span>)  <span class="hljs-comment">#&#x9ED8;&#x8BA4;&#x662F;utf-8&#x7684;&#x7F16;&#x7801;&#x683C;&#x5F0F;&#x3002;</span>
+</code></pre>
+<pre><code class="lang-python">a.to_csv(<span class="hljs-string">&apos;foo2.csv&apos;</span>,encoding=<span class="hljs-string">&apos;GBK&apos;</span>)
+</code></pre>
+<h2 id="&#x8BFB;&#x53D6;csv">&#x8BFB;&#x53D6;CSV</h2>
+<p>&#x6CE8;&#x610F;&#x6587;&#x672C;&#x6587;&#x4EF6;&#x7F16;&#x7801;&#x683C;&#x5F0F;&#x95EE;&#x9898;</p>
+<ul>
+<li>UTF-8&#xFF0C;&#x9ED8;&#x8BA4;&#x652F;&#x6301;</li>
+<li>&#x5176;&#x4ED6;&#x7F16;&#x7801;&#xFF0C;&#x9700;&#x8981;&#x624B;&#x52A8;&#x8BBE;&#x7F6E;&#x53C2;&#x6570; encoding</li>
+</ul>
+<pre><code class="lang-python">pd.read_csv(<span class="hljs-string">&apos;foo.csv&apos;</span>)   <span class="hljs-comment">#utf-8 &#x683C;&#x5F0F;&#xFF0C;&#x9ED8;&#x8BA4;&#x6253;&#x5F00;</span>
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>name</th>
+      <th>sex</th>
+      <th>age</th>
+      <th>heigh</th>
+      <th>weight</th>
+      <th>address</th>
+      <th>grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>&#x5C0F;&#x660E;</td>
+      <td>male</td>
+      <td>18</td>
+      <td>170</td>
+      <td>60</td>
+      <td>&#x5317;&#x4EAC;&#x6D77;&#x6DC0;</td>
+      <td>61</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>&#x5C0F;&#x534E;</td>
+      <td>female</td>
+      <td>28</td>
+      <td>160</td>
+      <td>50</td>
+      <td>&#x4E0A;&#x6D77;&#x9759;&#x5B89;</td>
+      <td>74</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>&#x5C0F;&#x7EA2;</td>
+      <td>female</td>
+      <td>22</td>
+      <td>175</td>
+      <td>64</td>
+      <td>&#x5E7F;&#x5DDE;&#x5929;&#x6CB3;</td>
+      <td>59</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>&#x5C0F;&#x9751;</td>
+      <td>male</td>
+      <td>31</td>
+      <td>182</td>
+      <td>80</td>
+      <td>&#x6DF1;&#x5733;&#x5357;&#x5C71;</td>
+      <td>82</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>&#x5C0F;&#x5170;</td>
+      <td>female</td>
+      <td>25</td>
+      <td>165</td>
+      <td>55</td>
+      <td>&#x676D;&#x5DDE;&#x897F;&#x6E56;</td>
+      <td>98</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">pd.read_csv(<span class="hljs-string">&apos;foo2.csv&apos;</span>,encoding=<span class="hljs-string">&apos;GBK&apos;</span>)  <span class="hljs-comment">#&#x9664;&#x9ED8;&#x8BA4;utf-8&#x7F16;&#x7801;&#x6587;&#x4EF6;&#x5916;&#xFF0C;&#x5176;&#x4ED6;&#x7F16;&#x7801;&#x683C;&#x5F0F;&#x9700;&#x8981;&#x624B;&#x52A8;&#x6307;&#x5B9A;&#x7F16;&#x7801;&#x3002;</span>
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>name</th>
+      <th>sex</th>
+      <th>age</th>
+      <th>heigh</th>
+      <th>weight</th>
+      <th>address</th>
+      <th>grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>&#x5C0F;&#x660E;</td>
+      <td>male</td>
+      <td>18</td>
+      <td>170</td>
+      <td>60</td>
+      <td>&#x5317;&#x4EAC;&#x6D77;&#x6DC0;</td>
+      <td>61</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>&#x5C0F;&#x534E;</td>
+      <td>female</td>
+      <td>28</td>
+      <td>160</td>
+      <td>50</td>
+      <td>&#x4E0A;&#x6D77;&#x9759;&#x5B89;</td>
+      <td>74</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>&#x5C0F;&#x7EA2;</td>
+      <td>female</td>
+      <td>22</td>
+      <td>175</td>
+      <td>64</td>
+      <td>&#x5E7F;&#x5DDE;&#x5929;&#x6CB3;</td>
+      <td>59</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>&#x5C0F;&#x9751;</td>
+      <td>male</td>
+      <td>31</td>
+      <td>182</td>
+      <td>80</td>
+      <td>&#x6DF1;&#x5733;&#x5357;&#x5C71;</td>
+      <td>82</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>&#x5C0F;&#x5170;</td>
+      <td>female</td>
+      <td>25</td>
+      <td>165</td>
+      <td>55</td>
+      <td>&#x676D;&#x5DDE;&#x897F;&#x6E56;</td>
+      <td>98</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h2 id="&#x8FDB;&#x9636;&#xFF1A;csv&#x5199;&#x5165;&#x5F88;&#x70ED;&#x8BFB;&#x53D6;&#x7684;&#x5E38;&#x89C1;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;">&#x8FDB;&#x9636;&#xFF1A;csv&#x5199;&#x5165;&#x5F88;&#x70ED;&#x8BFB;&#x53D6;&#x7684;&#x5E38;&#x89C1;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;</h2>
+<p>&#x5199;&#x5165;csv&#x8BBE;&#x7F6E;</p>
+<pre><code class="lang-python">a.to_csv(
+    <span class="hljs-string">&apos;foo3.csv&apos;</span>,
+    index = <span class="hljs-keyword">False</span>,  <span class="hljs-comment">#&#x4E0D;&#x4FDD;&#x5B58;&#x884C;&#x7D22;&#x5F15;</span>
+    header= <span class="hljs-keyword">False</span>,  <span class="hljs-comment">#&#x4E0D;&#x4FDD;&#x5B58;&#x5217;&#x7D22;&#x5F15;&#x3002;</span>
+    columns = [<span class="hljs-string">&apos;name&apos;</span>,<span class="hljs-string">&apos;address&apos;</span>,<span class="hljs-string">&apos;grade&apos;</span>],  <span class="hljs-comment">#&#x53EA;&#x4FDD;&#x5B58;&#x6307;&#x5B9A;&#x5217;</span>
+
+)
+</code></pre>
+<pre><code class="lang-python">a2 = pd.read_csv(<span class="hljs-string">&apos;foo3.csv&apos;</span>)
+a2
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>&#x5C0F;&#x660E;</th>
+      <th>&#x5317;&#x4EAC;&#x6D77;&#x6DC0;</th>
+      <th>61</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>&#x5C0F;&#x534E;</td>
+      <td>&#x4E0A;&#x6D77;&#x9759;&#x5B89;</td>
+      <td>74</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>&#x5C0F;&#x7EA2;</td>
+      <td>&#x5E7F;&#x5DDE;&#x5929;&#x6CB3;</td>
+      <td>59</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>&#x5C0F;&#x9751;</td>
+      <td>&#x6DF1;&#x5733;&#x5357;&#x5C71;</td>
+      <td>82</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>&#x5C0F;&#x5170;</td>
+      <td>&#x676D;&#x5DDE;&#x897F;&#x6E56;</td>
+      <td>98</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python"><span class="hljs-comment"># &#x8BFB;&#x53D6;&#x540E;&#x5217;&#x7C7B;&#x578B;&#x6B63;&#x5E38;</span>
+a2.info()
+</code></pre>
+<pre><code>&lt;class &apos;pandas.core.frame.DataFrame&apos;&gt;
+RangeIndex: 4 entries, 0 to 3
+Data columns (total 3 columns):
+&#x5C0F;&#x660E;      4 non-null object
+&#x5317;&#x4EAC;&#x6D77;&#x6DC0;    4 non-null object
+61      4 non-null int64
+dtypes: int64(1), object(2)
+memory usage: 176.0+ bytes
+</code></pre><h3 id="&#x8BFB;&#x53D6;csv&#x5E38;&#x89C1;&#x8BBE;&#x7F6E;">&#x8BFB;&#x53D6;csv&#x5E38;&#x89C1;&#x8BBE;&#x7F6E;</h3>
+<pre><code class="lang-python">a3 = pd.read_csv(
+    <span class="hljs-string">&apos;foo.csv&apos;</span>, <span class="hljs-comment">#&#x8BFB;&#x53D6;&#x6587;&#x4EF6;&#x8DEF;&#x5F84; &#x56E0;&#x4E3A;&#x5728;&#x540C;&#x7EA7;&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x6240;&#x4EE5;&#x662F;&#x76F4;&#x63A5;&#x5199;&#x6587;&#x4EF6;&#x540D;&#x3002;</span>
+    sep=<span class="hljs-string">&apos;,&apos;</span>,<span class="hljs-comment">#&#x6307;&#x5B9A;&#x5206;&#x9694;&#x7B26;&#xFF0C;csv&#x9ED8;&#x8BA4;&#x9017;&#x53F7;&#xFF0C;&#x5982;&#x679C;&#x662F;table&#x8868;&#x683C;&#x6570;&#x636E;&#x4E00;&#x822C;&#x4E3A;\t&#x3002;</span>
+
+    <span class="hljs-comment">#&#x5217;&#x7D22;&#x5F15;</span>
+<span class="hljs-comment">#     header = 0 ,# &#x5217;&#x7D22;&#x5F15;&#xFF0C;&#x9ED8;&#x8BA4;0&#x5C06;&#x7B2C;&#x4E00;&#x884C;&#x8BBE;&#x4E3A;&#x8868;&#x5934;(&#x5176;&#x4ED6;&#x884C;&#x53F7;&#x4E5F;&#x53EF;&#x4EE5;),</span>
+    <span class="hljs-comment">#header=None,  # None&#x4E0D;&#x5C06;&#x7B2C;&#x4E00;&#x884C;&#x8BBE;&#x4E3A;&#x8868;&#x5934;&#xFF08;&#x5217;&#x7D22;&#x5F15;&#xFF09;&#xFF0C;</span>
+
+<span class="hljs-comment">#     header=[0,1,2],  # [0,1]&#x5217;&#x8868;&#x53EF;&#x5C06;&#x591A;&#x884C;&#x540C;&#x65F6;&#x8BBE;&#x4E3A;&#x8868;&#x5934;&#xFF08;&#x5C42;&#x6B21;&#x5316;&#x7D22;&#x5F15;&#xFF09;</span>
+<span class="hljs-comment">#     names=[&apos;x&apos;,&apos;&#x59D3;&#x540D;&apos;, &apos;&#x6027;&#x522B;&apos;, &apos;&#x5E74;&#x9F84;&apos;, &apos;&#x8EAB;&#x9AD8;&apos;, &apos;&#x4F53;&#x91CD;&apos;, &apos;&#x5730;&#x5740;&apos;, &apos;&#x6210;&#x7EE9;&apos;],  # &#x914D;&#x5408;header=0&#xFF0C;&#x81EA;&#x5B9A;&#x4E49;&#x5217;&#x7D22;&#x5F15;    </span>
+
+
+    <span class="hljs-comment"># &#x884C;&#x7D22;&#x5F15;</span>
+    <span class="hljs-comment">#index_col=None,  # &#x884C;&#x7D22;&#x5F15;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;None&#xFF1A;&#x4E0D;&#x4F7F;&#x7528;&#x6570;&#x636E;&#x5217;&#xFF0C;&#x800C;&#x662F;&#x4F7F;&#x7528;&#x7CFB;&#x7EDF;&#x81EA;&#x5E26;&#x7D22;&#x5F15;</span>
+
+<span class="hljs-comment">#     index_col=0,  # 1,2,3&#x4F7F;&#x7528;&#x67D0;&#x5217;&#xFF08;&#x9ED8;&#x8BA4;&#x5217;&#x7D22;&#x5F15;&#xFF09;&#x4F5C;&#x4E3A;&#x884C;&#x7D22;&#x5F15;</span>
+    index_col=[<span class="hljs-string">&apos;name&apos;</span>,<span class="hljs-string">&apos;sex&apos;</span>,<span class="hljs-string">&apos;age&apos;</span>],  <span class="hljs-comment"># &#xFF08;&#x81EA;&#x5B9A;&#x4E49;&#x591A;&#x5217; &#x4F5C;&#x4E3A;&#x5C42;&#x6B21;&#x5316;&#x7D22;&#x5F15;&#xFF09;&#xFF0C;</span>
+<span class="hljs-comment">#     index_col=[0,1,2,3],</span>
+
+    <span class="hljs-comment">#&#x8BFB;&#x53D6;&#x6307;&#x5B9A;&#x7684;&#x884C;&#x548C;&#x5217;</span>
+<span class="hljs-comment">#     usecols = [0,2,4], #&#x8BFB;&#x53D6;&#x6307;&#x5B9A;&#x5217;&#x3002;&#x9ED8;&#x8BA4;&#x7D22;&#x5F15;</span>
+<span class="hljs-comment">#     usecols=[&apos;name&apos;, &apos;address&apos;, &apos;grade&apos;],  # &#x8BFB;&#x53D6;&#x6307;&#x5B9A;&#x5217;&#xFF0C;&#x81EA;&#x5B9A;&#x4E49;&#x7D22;&#x5F15;</span>
+<span class="hljs-comment">#     nrows=3,  # &#x8BFB;&#x53D6;&#x524D;&#x51E0;&#x884C;</span>
+<span class="hljs-comment">#     skiprows=3, # &#x4ECE;&#x8868;&#x683C;&#x5F00;&#x59CB;&#x7B97;&#x8D77;&#xFF0C;&#x5FFD;&#x7565;&#x7684;&#x884C;</span>
+<span class="hljs-comment">#     skiprows=[2,4]  # [2,3,4]&#x8DF3;&#x8FC7;&#x6587;&#x4EF6;&#x7B2C;2/3/4&#x884C;</span>
+<span class="hljs-comment">#     skipfooter=2,  # &#x4ECE;&#x8868;&#x683C;&#x672B;&#x5C3E;&#x7B97;&#x8D77;&#x5FFD;&#x7565;&#x7684;&#x884C;&#xFF0C;&#x5FC5;&#x987B;&#x914D;&#x5408;engine=&apos;python&apos;&#x5426;&#x5219;&#x4F1A;&#x62A5;&#x8B66;&#x544A;</span>
+<span class="hljs-comment">#     engine=&apos;python&apos;,  # &#x5F15;&#x64CE;&#x3002;c&#x66F4;&#x5FEB;&#xFF0C;python&#x66F4;&#x5B8C;&#x5584;</span>
+
+    <span class="hljs-comment"># &#x66FF;&#x6362;&#x7A7A;&#x503C;</span>
+<span class="hljs-comment">#     na_values=[&apos;male&apos;],  # &#x5C06;csv&#x4E2D;&#x67D0;&#x4E9B;&#x5B57;&#x7B26;&#x66FF;&#x6362;&#x4E3A;&#x7A7A;&#x503C;</span>
+<span class="hljs-comment">#     keep_default_na=True,  # &#x9ED8;&#x8BA4;True&#x540C;&#x65F6;&#x4F7F;&#x7528;&#x7CFB;&#x7EDF;&#x81EA;&#x5E26;&#x7A7A;&#x503C;&#x66FF;&#x6362;&#x548C;&#x81EA;&#x5B9A;&#x4E49;&#x7A7A;&#x503C;&#xFF0C;&#x5982; NA,N/A&#x7B49;&#xFF0C;False&#x53EA;&#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x7A7A;&#x503C;</span>
+
+    encoding=<span class="hljs-string">&apos;utf-8&apos;</span>,  <span class="hljs-comment"># &#x7F16;&#x7801;&#xFF0C;&#x9ED8;&#x8BA4;utf-8,&#x5F15;&#x64CE;&#x662F;python&#x65F6;&#x9700;&#x8981;&#x624B;&#x52A8;&#x8BBE;&#x7F6E;    </span>
+
+
+    )
+a3
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>heigh</th>
+      <th>weight</th>
+      <th>address</th>
+      <th>grade</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th>sex</th>
+      <th>age</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>&#x5C0F;&#x660E;</th>
+      <th>male</th>
+      <th>18</th>
+      <td>1</td>
+      <td>170</td>
+      <td>60</td>
+      <td>&#x5317;&#x4EAC;&#x6D77;&#x6DC0;</td>
+      <td>61</td>
+    </tr>
+    <tr>
+      <th>&#x5C0F;&#x534E;</th>
+      <th>female</th>
+      <th>28</th>
+      <td>2</td>
+      <td>160</td>
+      <td>50</td>
+      <td>&#x4E0A;&#x6D77;&#x9759;&#x5B89;</td>
+      <td>74</td>
+    </tr>
+    <tr>
+      <th>&#x5C0F;&#x7EA2;</th>
+      <th>female</th>
+      <th>22</th>
+      <td>3</td>
+      <td>175</td>
+      <td>64</td>
+      <td>&#x5E7F;&#x5DDE;&#x5929;&#x6CB3;</td>
+      <td>59</td>
+    </tr>
+    <tr>
+      <th>&#x5C0F;&#x9751;</th>
+      <th>male</th>
+      <th>31</th>
+      <td>4</td>
+      <td>182</td>
+      <td>80</td>
+      <td>&#x6DF1;&#x5733;&#x5357;&#x5C71;</td>
+      <td>82</td>
+    </tr>
+    <tr>
+      <th>&#x5C0F;&#x5170;</th>
+      <th>female</th>
+      <th>25</th>
+      <td>5</td>
+      <td>165</td>
+      <td>55</td>
+      <td>&#x676D;&#x5DDE;&#x897F;&#x6E56;</td>
+      <td>98</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python"><span class="hljs-comment">#&#x5C42;&#x6B21;&#x5316;&#x7D22;&#x5F15;&#x8BFB;&#x53D6;</span>
+<span class="hljs-comment"># header=[0,1,2],  # [0,1]&#x5217;&#x8868;&#x53EF;&#x5C06;&#x591A;&#x884C;&#x540C;&#x65F6;&#x8BBE;&#x4E3A;&#x8868;&#x5934;&#xFF08;&#x5C42;&#x6B21;&#x5316;&#x7D22;&#x5F15;&#xFF09;</span>
+<span class="hljs-comment">#&#x9700;&#x8981;&#x628A;&#x7D22;&#x5F15;&#x8BBE;&#x7F6E;&#x6210;&#x8FD9;&#x79CD;&#x5C42;&#x6B21;&#x7D22;&#x5F15;</span>
+a3[<span class="hljs-string">&apos;name&apos;</span>][<span class="hljs-string">&apos;&#x5C0F;&#x660E;&apos;</span>][<span class="hljs-string">&apos;&#x5C0F;&#x534E;&apos;</span>][<span class="hljs-number">0</span>]
+</code></pre>
+<pre><code>&apos;&#x5C0F;&#x7EA2;&apos;
+</code></pre><pre><code class="lang-python">a3.loc[<span class="hljs-string">&apos;&#x5C0F;&#x660E;&apos;</span>].loc[<span class="hljs-string">&apos;male&apos;</span>].loc[<span class="hljs-number">18</span>][<span class="hljs-string">&apos;address&apos;</span>]
+</code></pre>
+<pre><code>&apos;&#x5317;&#x4EAC;&#x6D77;&#x6DC0;&apos;
+</code></pre><h2 id="&#x5408;&#x5E76;&#x65F6;&#x95F4;&#x5217;&#x53CA;&#x81EA;&#x5B9A;&#x4E49;&#x67D0;&#x5217;&#x4E3A;&#x884C;&#x7D22;&#x5F15;"> &#x5408;&#x5E76;&#x65F6;&#x95F4;&#x5217;&#x53CA;&#x81EA;&#x5B9A;&#x4E49;&#x67D0;&#x5217;&#x4E3A;&#x884C;&#x7D22;&#x5F15;</h2>
+<p>&#x591A;&#x7528;&#x4E8E;&#x65F6;&#x95F4;&#x5E8F;&#x5217;&#xFF0C;&#x91D1;&#x878D;&#x6570;&#x636E;&#x5206;&#x6790;</p>
+<p>&#x53C2;&#x6570;&#xFF1A;parse_dates</p>
+<p>&#x5C1D;&#x8BD5;&#x5C06;&#x6570;&#x636E;&#x89E3;&#x6790;&#x4E3A;&#x65E5;&#x671F;</p>
+<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5217;&#x8868;&#x6307;&#x5B9A;&#x9700;&#x8981;&#x89E3;&#x6790;&#x7684;&#x4E00;&#x7EC4;&#x5217;&#x540D;&#xFF0C;&#x5982;&#x679C;&#x5217;&#x8868;&#x5143;&#x7D20;&#x4E3A;&#x5B57;&#x5178;&#x5305;&#x542B;&#x7684;&#x5217;&#x8868;&#x6216;&#x5143;&#x7EC4;&#xFF0C;&#x4F1A;&#x5C06;&#x591A;&#x4E2A;&#x5217;&#x7EC4;&#x5408;&#x5230;&#x4E00;&#x8D77;&#x518D;&#x89E3;&#x6790;&#x65E5;&#x671F;&#x89E3;&#x6790;&#xFF08;&#x5982;&#x65E5;&#x671F;&#x548C;&#x65F6;&#x95F4;&#x5206;&#x522B;&#x5728;&#x4E24;&#x4E2A;&#x5217;&#x7684;&#x60C5;&#x51B5;&#xFF09;</p>
+<p>&#x53C2;&#x6570;&#xFF1A;keep_date_col</p>
+<p>&#x5982;&#x679C;&#x8FDE;&#x63A5;&#x591A;&#x5217;&#x89E3;&#x6790;&#x65E5;&#x671F;&#xFF0C;&#x4FDD;&#x5B58;&#x53C2;&#x4E0E;&#x8FDE;&#x63A5;&#x7684;&#x5217;&#xFF0C;&#x9ED8;&#x8BA4;False</p>
+<hr>
+<p>&#x6570;&#x636E;&#xFF1A;<strong>aaa.csv</strong></p>
+<p>data,time,time2,name,age</p>
+<p>20100101,000000,00:00:00,&quot;&#x5F20;&#x4E09;&quot;,18</p>
+<p>20100101,230000,23:00:00,&quot;&#x674E;,&#x56DB;&quot;,28</p>
+<pre><code class="lang-python">t = pd.read_csv (<span class="hljs-string">&apos;aaa.csv&apos;</span>,encoding=<span class="hljs-string">&apos;GBK&apos;</span>)
+t
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>data</th>
+      <th>time</th>
+      <th>time2</th>
+      <th>name</th>
+      <th>age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>20100101</td>
+      <td>0</td>
+      <td>00:00:00</td>
+      <td>&#x5F20;&#x4E09;</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>20100101</td>
+      <td>230000</td>
+      <td>23:00:00</td>
+      <td>&#x674E;,&#x56DB;</td>
+      <td>28</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">t.info()
+</code></pre>
+<pre><code>&lt;class &apos;pandas.core.frame.DataFrame&apos;&gt;
+RangeIndex: 2 entries, 0 to 1
+Data columns (total 5 columns):
+data     2 non-null int64
+time     2 non-null int64
+time2    2 non-null object
+name     2 non-null object
+age      2 non-null int64
+dtypes: int64(3), object(2)
+memory usage: 160.0+ bytes
+</code></pre><pre><code class="lang-python"><span class="hljs-comment"># &#x624B;&#x52A8;&#x5904;&#x7406;&#x5C06;&#x65F6;&#x95F4;&#x5217;&#x8F6C;&#x4E3A;&#x65F6;&#x95F4;&#x7C7B;&#x578B;</span>
+
+t = pd.read_csv(
+    <span class="hljs-string">&apos;aaa.csv&apos;</span>,
+<span class="hljs-comment">#     parse_dates = [&apos;data&apos;],#&#x6307;&#x5B9A;&#x67D0;&#x5217;&#x89E3;&#x6790;&#x4E3A;&#x65F6;&#x95F4;&#x683C;&#x5F0F;</span>
+<span class="hljs-comment">#     parse_dates=[&apos;data&apos;, &apos;time&apos;, &apos;time2&apos;],  # &#x6307;&#x5B9A;&#x591A;&#x5217;&#x89E3;&#x6790;&#x4E3A;&#x65F6;&#x95F4;&#xFF0C;&#x4E0D;&#x662F;&#x6240;&#x6709;&#x683C;&#x5F0F;&#x90FD;&#x80FD;&#x6B63;&#x786E;&#x89E3;&#x6790; </span>
+    parse_dates = {<span class="hljs-string">&apos;s&apos;</span>: [<span class="hljs-string">&apos;data&apos;</span>,<span class="hljs-string">&apos;time2&apos;</span>]},
+    keep_date_col=<span class="hljs-keyword">True</span>,  <span class="hljs-comment"># &#x4FDD;&#x7559;&#x5408;&#x5E76;&#x524D;&#x7684;&#x5217;</span>
+    index_col=<span class="hljs-string">&apos;s&apos;</span>,  <span class="hljs-comment"># &#x6307;&#x5B9A;&#x67D0;&#x5217;&#x4F5C;&#x4E3A;&#x884C;&#x7D22;&#x5F15;</span>
+    encoding=<span class="hljs-string">&apos;GBK&apos;</span>,
+)
+t
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>data</th>
+      <th>time</th>
+      <th>time2</th>
+      <th>name</th>
+      <th>age</th>
+    </tr>
+    <tr>
+      <th>s</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2010-01-01 00:00:00</th>
+      <td>20100101</td>
+      <td>0</td>
+      <td>00:00:00</td>
+      <td>&#x5F20;&#x4E09;</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>2010-01-01 23:00:00</th>
+      <td>20100101</td>
+      <td>230000</td>
+      <td>23:00:00</td>
+      <td>&#x674E;,&#x56DB;</td>
+      <td>28</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h1 id="pandas&#x5B58;&#x53D6;excel&#xFF08;xlsx&#xFF09;">Pandas&#x5B58;&#x53D6;Excel&#xFF08;xlsx&#xFF09;</h1>
+<p>&#x5199;&#x5165;</p>
+<pre><code class="lang-python">df.head()
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.971470</td>
+      <td>-0.910323</td>
+      <td>0.559249</td>
+      <td>1.075287</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-1.354050</td>
+      <td>-0.557734</td>
+      <td>-1.302378</td>
+      <td>1.464031</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.181755</td>
+      <td>0.838199</td>
+      <td>-0.103647</td>
+      <td>-0.239950</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-0.797444</td>
+      <td>-0.784848</td>
+      <td>-0.878766</td>
+      <td>1.070386</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.393892</td>
+      <td>-0.894993</td>
+      <td>1.104146</td>
+      <td>-0.550882</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">df.to_excel(<span class="hljs-string">&apos;foo.xlsx&apos;</span>)
+</code></pre>
+<pre><code class="lang-python">df.to_excel(<span class="hljs-string">&apos;foo1.xlsx&apos;</span>,<span class="hljs-string">&apos;abc&apos;</span>)  <span class="hljs-comment">#&#x81EA;&#x5B9A;&#x4E49;&#x5DE5;&#x4F5C;&#x8868;&#x8868;&#x540D;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;sheet1</span>
+df.to_excel(<span class="hljs-string">&apos;foo1.xlsx&apos;</span>,sheet_name=<span class="hljs-string">&apos;abc&apos;</span>) <span class="hljs-comment">#&#x540C;&#x4E0A;</span>
+</code></pre>
+<p>&#x5C06;&#x591A;&#x4E2A;&#x53D8;&#x91CF;&#x5199;&#x5165;&#x540C;&#x4E00;Excel&#x591A;&#x4E2A;&#x5DE5;&#x4F5C;&#x8868;&#x4E2D;</p>
+<pre><code class="lang-python"><span class="hljs-comment">#&#x590D;&#x6742;&#x5199;&#x6CD5;</span>
+
+<span class="hljs-comment">#&#x521B;&#x5EFA;&#x8868;&#x683C;</span>
+writer = pd.ExcelWriter(<span class="hljs-string">&apos;output.xlsx&apos;</span>)
+
+<span class="hljs-comment">#&#x589E;&#x52A0;&#x5355;&#x5143;&#x8868;</span>
+a.to_excel(
+    writer,
+    <span class="hljs-string">&apos;Sheet1&apos;</span>,
+)
+df.to_excel(
+    writer,
+    <span class="hljs-string">&apos;sheet2&apos;</span>,   <span class="hljs-comment">#&#x5DE5;&#x4F5C;&#x8868;&#x8868;&#x540D;</span>
+    index = <span class="hljs-number">0</span>,  <span class="hljs-comment">#&#x4E0D;&#x8981;&#x884C;&#x7D22;&#x5F15;</span>
+    header = <span class="hljs-keyword">None</span>,  <span class="hljs-comment">#&#x4E0D;&#x8981;&#x54A7;&#x7D22;&#x5F15;</span>
+)
+
+<span class="hljs-comment">#&#x5199;&#x5165;</span>
+writer.save()
+</code></pre>
+<p>&#x8BFB;&#x53D6;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># e = pd.read_excel(&apos;output.xlsx&apos;)   #&#x9ED8;&#x8BA4;&#x8BFB;&#x53D6;&#x7B2C;&#x4E00;&#x4E2A;&#x5DE5;&#x4F5C;&#x8868;</span>
+<span class="hljs-comment"># e = pd.read_excel(&apos;output.xlsx&apos;,&apos;Sheet1&apos;)  #&#x6307;&#x5B9A;&#x8BFB;&#x53D6;&#x67D0;&#x4E2A;&#x5DE5;&#x4F5C;&#x8868;</span>
+e = pd.read_excel(<span class="hljs-string">&apos;output.xlsx&apos;</span>,<span class="hljs-keyword">None</span>)  <span class="hljs-comment">#&#x8BFB;&#x53D6;&#x6240;&#x6709;&#x5DE5;&#x4F5C;&#x8868;</span>
+e
+e[<span class="hljs-string">&apos;Sheet1&apos;</span>]
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>sex</th>
+      <th>age</th>
+      <th>heigh</th>
+      <th>weight</th>
+      <th>address</th>
+      <th>grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>&#x5C0F;&#x660E;</td>
+      <td>male</td>
+      <td>18</td>
+      <td>170</td>
+      <td>60</td>
+      <td>&#x5317;&#x4EAC;&#x6D77;&#x6DC0;</td>
+      <td>61</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>&#x5C0F;&#x534E;</td>
+      <td>female</td>
+      <td>28</td>
+      <td>160</td>
+      <td>50</td>
+      <td>&#x4E0A;&#x6D77;&#x9759;&#x5B89;</td>
+      <td>74</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>&#x5C0F;&#x7EA2;</td>
+      <td>female</td>
+      <td>22</td>
+      <td>175</td>
+      <td>64</td>
+      <td>&#x5E7F;&#x5DDE;&#x5929;&#x6CB3;</td>
+      <td>59</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>&#x5C0F;&#x9751;</td>
+      <td>male</td>
+      <td>31</td>
+      <td>182</td>
+      <td>80</td>
+      <td>&#x6DF1;&#x5733;&#x5357;&#x5C71;</td>
+      <td>82</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>&#x5C0F;&#x5170;</td>
+      <td>female</td>
+      <td>25</td>
+      <td>165</td>
+      <td>55</td>
+      <td>&#x676D;&#x5DDE;&#x897F;&#x6E56;</td>
+      <td>98</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python"><span class="hljs-comment"># e.info()</span>
+</code></pre>
+<pre><code>---------------------------------------------------------------------------
+
+AttributeError                            Traceback (most recent call last)
+
+&lt;ipython-input-139-618380ce167a&gt; in &lt;module&gt;()
+----&gt; 1 e.info()
+
+
+AttributeError: &apos;collections.OrderedDict&apos; object has no attribute &apos;info&apos;
+</code></pre><h3 id="&#x590D;&#x6742;&#x8BFB;&#x53D6;&#x53C2;&#x6570;">&#x590D;&#x6742;&#x8BFB;&#x53D6;&#x53C2;&#x6570;</h3>
+<pre><code class="lang-python">x = pd.read_excel(
+
+    <span class="hljs-string">&apos;output.xlsx&apos;</span>,
+
+<span class="hljs-comment">#     sheet_name=1,  # &#x5DE5;&#x4F5C;&#x8868;&#x540D;&#xFF0C;&#x9ED8;&#x8BA4;&#x7B2C;&#x4E00;&#x4E2A;&#x5DE5;&#x4F5C;&#x8868;,&#x6CE8;&#x610F;&#x65B0;&#x7248;pandas&#x662F;sheet_name</span>
+<span class="hljs-comment">#     sheet_name=[0,1],  # &#x9009;&#x4E2D;&#x7684;&#x591A;&#x4E2A;&#x5DE5;&#x4F5C;&#x8868;&#xFF0C;&#x6309;&#x7167;&#x7D22;&#x5F15;&#x6765;&#x67E5;&#x770B;&#x7684;&#x3002;</span>
+    sheet_name=<span class="hljs-keyword">None</span>,  <span class="hljs-comment"># &#x6240;&#x6709;&#x7684;&#x5DE5;&#x4F5C;&#x8868;</span>
+
+<span class="hljs-comment">#     header=None,  # &#x4E0D;&#x4F7F;&#x7528;&#x884C;&#x505A;&#x5217;&#x7D22;&#x5F15;</span>
+<span class="hljs-comment">#     header=1,  # &#x4F7F;&#x7528;&#x67D0;&#x884C;&#x505A;&#x5217;&#x7D22;&#x5F15;</span>
+<span class="hljs-comment">#     header=[0,1,2],  # &#x591A;&#x884C;&#x505A;&#x5C42;&#x6B21;&#x5316;&#x7D22;&#x5F15;</span>
+
+<span class="hljs-comment">#     index_col=1,  # &#x4E0D;&#x8BBE;&#x884C;&#x7D22;&#x5F15;&#xFF0C;&#x591A;&#x4E2A;[1,2,3]&#x5C42;&#x6B21;&#x5316;&#x7D22;&#x5F15;</span>
+
+<span class="hljs-comment">#     nrows=3,  # &#x8BFB;&#x53D6;&#x524D;&#x591A;&#x5C11;&#x884C;(pandas0.23.0&#x65B0;&#x7248;&#x624D;&#x652F;&#x6301;)</span>
+<span class="hljs-comment">#     skiprows=[2,4],  # &#x8DF3;&#x8FC7;&#x7684;&#x884C;&#xFF0C;&#x4ECE;&#x8868;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#x7B97;&#xFF0C;[2,4]&#x5217;&#x8868;&#x53C2;&#x6570;&#x4E5F;&#x53EF;</span>
+<span class="hljs-comment">#     skipfooter=2,  # &#x8DF3;&#x8FC7;&#x7684;&#x884C;&#xFF0C;&#x4ECE;&#x8868;&#x7ED3;&#x675F;&#x4F4D;&#x7F6E;&#x7B97;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;0&#xFF0C;&#x4E0D;&#x80FD;&#x7528;&#x5217;&#x8868;</span>
+
+<span class="hljs-comment">#     na_values=&apos;male&apos;,# &#x8868;&#x793A;&#x4E3A;NAN,na_values&#x53EF;&#x4EE5;&#x7528;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#x6216;&#x96C6;&#x5408;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x8868;&#x793A;&#x7F3A;&#x5931;&#x503C;</span>
+<span class="hljs-comment">#     keep_default_na=True, # &#x9ED8;&#x8BA4;True&#x5728;&#x7CFB;&#x7EDF;&#x81EA;&#x5E26;&#x7A7A;&#x503C;&#x66FF;&#x6362;&#x7B26;&#x540E;&#x8FFD;&#x52A0;NA&#x503C;&#xFF0C;&#x5982; NA,N/A&#x7B49;&#xFF0C;False&#x53EA;&#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x7A7A;&#x503C;</span>
+)
+
+x
+</code></pre>
+<pre><code>OrderedDict([(&apos;Sheet1&apos;,   name     sex  age  heigh  weight address  grade
+              1   &#x5C0F;&#x660E;    male   18    170      60    &#x5317;&#x4EAC;&#x6D77;&#x6DC0;     61
+              2   &#x5C0F;&#x534E;  female   28    160      50    &#x4E0A;&#x6D77;&#x9759;&#x5B89;     74
+              3   &#x5C0F;&#x7EA2;  female   22    175      64    &#x5E7F;&#x5DDE;&#x5929;&#x6CB3;     59
+              4   &#x5C0F;&#x9751;    male   31    182      80    &#x6DF1;&#x5733;&#x5357;&#x5C71;     82
+              5   &#x5C0F;&#x5170;  female   25    165      55    &#x676D;&#x5DDE;&#x897F;&#x6E56;     98),
+             (&apos;sheet2&apos;,       0.971470  -0.910323   0.559249   1.075287
+              0    -1.354050  -0.557734  -1.302378   1.464031
+              1     1.181755   0.838199  -0.103647  -0.239950
+              2    -0.797444  -0.784848  -0.878766   1.070386
+              3     0.393892  -0.894993   1.104146  -0.550882
+              4    -0.991452  -0.571119  -0.225624  -0.898736
+              5     1.213550   0.765152  -0.328068   0.715214
+              6    -2.738036  -0.073490  -0.054538  -0.589355
+              7    -1.739574   0.265254  -0.516565  -0.944410
+              8    -0.116646   0.318442   0.899953  -0.672622
+              9    -0.406266   0.139849  -0.146476  -0.332747
+              10   -0.688098   0.912993   0.889713  -0.272609
+              11   -0.734708  -0.509685   1.374228   0.487075
+              12   -0.620682  -0.425317   1.334744  -0.339170
+              13   -1.272188  -2.378728  -0.451680   0.674662
+              14    0.308439  -1.242873   1.985861  -1.760328
+              15   -0.326332  -0.308578   0.022306   0.905072
+              16   -1.250010  -0.773064   0.284679   0.910661
+              17   -0.187829  -1.038055   1.337365   1.416580
+              18    0.724382   3.070201  -0.678422  -0.600846
+              19    0.229085  -0.513108   0.643235  -0.164983
+              20   -0.496122   2.355930   0.872267  -1.342849
+              21    0.025463   1.008532  -1.297462   1.878374
+              22    1.491304  -0.303352   0.203386   1.531170
+              23    0.086712  -1.054256   0.916509   0.150382
+              24   -0.367296  -0.250115   0.607016  -1.941563
+              25   -0.346743   0.059370  -1.414952  -1.172916
+              26   -0.081799  -0.498255  -1.550495  -0.949339
+              27    0.593236   1.344904   1.152445   0.566880
+              28    2.321404  -0.298681  -0.481925   0.912140
+              29   -0.047032  -0.731323  -0.402732  -1.129732
+              ..         ...        ...        ...        ...
+              969  -0.143725   0.183996   0.453441  -1.440529
+              970   0.045530   0.104548  -0.721135   1.640193
+              971  -0.725313  -0.302477   0.103637   0.299864
+              972   1.643769   0.673424   1.785893   1.061021
+              973   2.206223  -2.170208  -0.402996  -0.890067
+              974   1.451025  -0.065624   0.166981  -0.309620
+              975  -0.122171  -1.778694  -3.048161  -1.799536
+              976  -0.605187   0.509859  -0.378514   0.252206
+              977   0.780935   0.351821   0.938628   1.076653
+              978   0.470542   1.353116  -0.432134   1.287247
+              979  -1.488928   1.260615  -1.211009   1.523660
+              980  -0.031728   0.392340   0.910436  -1.383338
+              981  -0.995186  -1.093517  -0.300063   0.493835
+              982   0.792182  -0.267352   1.390696   1.498959
+              983  -0.794723   1.052508  -1.113050   0.101865
+              984  -1.027141  -1.199244  -0.990809  -1.395599
+              985  -0.969678  -1.167831  -0.854208  -1.183604
+              986   1.609280   0.767694   0.506747   0.041865
+              987   1.367448   2.697807  -1.199477  -0.086055
+              988  -0.390024  -2.051293   0.910944  -0.460113
+              989  -0.821939  -1.416562  -0.685051  -0.521237
+              990  -0.287810   0.808191   0.293922  -0.085264
+              991   0.466382   2.880704   2.343967  -0.243972
+              992   0.175811  -0.547227   0.242304  -1.290218
+              993   0.225000  -0.321088  -0.074606  -0.336083
+              994  -1.198251   0.777643  -1.145068   0.721212
+              995   1.061066  -0.883506   0.780252   0.657456
+              996  -0.423743  -0.674806   1.540011   0.863288
+              997  -0.482636   0.732125   0.428839   0.038669
+              998   1.576860   0.727269   1.560673   0.291709
+
+              [999 rows x 4 columns])])
+</code></pre><pre><code class="lang-python">x[<span class="hljs-string">&apos;sheet2&apos;</span>]
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0.9714695310733813</th>
+      <th>-0.9103226300144159</th>
+      <th>0.5592492516125814</th>
+      <th>1.075286593165145</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-1.354050</td>
+      <td>-0.557734</td>
+      <td>-1.302378</td>
+      <td>1.464031</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.181755</td>
+      <td>0.838199</td>
+      <td>-0.103647</td>
+      <td>-0.239950</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.797444</td>
+      <td>-0.784848</td>
+      <td>-0.878766</td>
+      <td>1.070386</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.393892</td>
+      <td>-0.894993</td>
+      <td>1.104146</td>
+      <td>-0.550882</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-0.991452</td>
+      <td>-0.571119</td>
+      <td>-0.225624</td>
+      <td>-0.898736</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1.213550</td>
+      <td>0.765152</td>
+      <td>-0.328068</td>
+      <td>0.715214</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>-2.738036</td>
+      <td>-0.073490</td>
+      <td>-0.054538</td>
+      <td>-0.589355</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>-1.739574</td>
+      <td>0.265254</td>
+      <td>-0.516565</td>
+      <td>-0.944410</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>-0.116646</td>
+      <td>0.318442</td>
+      <td>0.899953</td>
+      <td>-0.672622</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>-0.406266</td>
+      <td>0.139849</td>
+      <td>-0.146476</td>
+      <td>-0.332747</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>-0.688098</td>
+      <td>0.912993</td>
+      <td>0.889713</td>
+      <td>-0.272609</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>-0.734708</td>
+      <td>-0.509685</td>
+      <td>1.374228</td>
+      <td>0.487075</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>-0.620682</td>
+      <td>-0.425317</td>
+      <td>1.334744</td>
+      <td>-0.339170</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>-1.272188</td>
+      <td>-2.378728</td>
+      <td>-0.451680</td>
+      <td>0.674662</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>0.308439</td>
+      <td>-1.242873</td>
+      <td>1.985861</td>
+      <td>-1.760328</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>-0.326332</td>
+      <td>-0.308578</td>
+      <td>0.022306</td>
+      <td>0.905072</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>-1.250010</td>
+      <td>-0.773064</td>
+      <td>0.284679</td>
+      <td>0.910661</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>-0.187829</td>
+      <td>-1.038055</td>
+      <td>1.337365</td>
+      <td>1.416580</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>0.724382</td>
+      <td>3.070201</td>
+      <td>-0.678422</td>
+      <td>-0.600846</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>0.229085</td>
+      <td>-0.513108</td>
+      <td>0.643235</td>
+      <td>-0.164983</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>-0.496122</td>
+      <td>2.355930</td>
+      <td>0.872267</td>
+      <td>-1.342849</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>0.025463</td>
+      <td>1.008532</td>
+      <td>-1.297462</td>
+      <td>1.878374</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>1.491304</td>
+      <td>-0.303352</td>
+      <td>0.203386</td>
+      <td>1.531170</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>0.086712</td>
+      <td>-1.054256</td>
+      <td>0.916509</td>
+      <td>0.150382</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>-0.367296</td>
+      <td>-0.250115</td>
+      <td>0.607016</td>
+      <td>-1.941563</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>-0.346743</td>
+      <td>0.059370</td>
+      <td>-1.414952</td>
+      <td>-1.172916</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>-0.081799</td>
+      <td>-0.498255</td>
+      <td>-1.550495</td>
+      <td>-0.949339</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>0.593236</td>
+      <td>1.344904</td>
+      <td>1.152445</td>
+      <td>0.566880</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>2.321404</td>
+      <td>-0.298681</td>
+      <td>-0.481925</td>
+      <td>0.912140</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>-0.047032</td>
+      <td>-0.731323</td>
+      <td>-0.402732</td>
+      <td>-1.129732</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>969</th>
+      <td>-0.143725</td>
+      <td>0.183996</td>
+      <td>0.453441</td>
+      <td>-1.440529</td>
+    </tr>
+    <tr>
+      <th>970</th>
+      <td>0.045530</td>
+      <td>0.104548</td>
+      <td>-0.721135</td>
+      <td>1.640193</td>
+    </tr>
+    <tr>
+      <th>971</th>
+      <td>-0.725313</td>
+      <td>-0.302477</td>
+      <td>0.103637</td>
+      <td>0.299864</td>
+    </tr>
+    <tr>
+      <th>972</th>
+      <td>1.643769</td>
+      <td>0.673424</td>
+      <td>1.785893</td>
+      <td>1.061021</td>
+    </tr>
+    <tr>
+      <th>973</th>
+      <td>2.206223</td>
+      <td>-2.170208</td>
+      <td>-0.402996</td>
+      <td>-0.890067</td>
+    </tr>
+    <tr>
+      <th>974</th>
+      <td>1.451025</td>
+      <td>-0.065624</td>
+      <td>0.166981</td>
+      <td>-0.309620</td>
+    </tr>
+    <tr>
+      <th>975</th>
+      <td>-0.122171</td>
+      <td>-1.778694</td>
+      <td>-3.048161</td>
+      <td>-1.799536</td>
+    </tr>
+    <tr>
+      <th>976</th>
+      <td>-0.605187</td>
+      <td>0.509859</td>
+      <td>-0.378514</td>
+      <td>0.252206</td>
+    </tr>
+    <tr>
+      <th>977</th>
+      <td>0.780935</td>
+      <td>0.351821</td>
+      <td>0.938628</td>
+      <td>1.076653</td>
+    </tr>
+    <tr>
+      <th>978</th>
+      <td>0.470542</td>
+      <td>1.353116</td>
+      <td>-0.432134</td>
+      <td>1.287247</td>
+    </tr>
+    <tr>
+      <th>979</th>
+      <td>-1.488928</td>
+      <td>1.260615</td>
+      <td>-1.211009</td>
+      <td>1.523660</td>
+    </tr>
+    <tr>
+      <th>980</th>
+      <td>-0.031728</td>
+      <td>0.392340</td>
+      <td>0.910436</td>
+      <td>-1.383338</td>
+    </tr>
+    <tr>
+      <th>981</th>
+      <td>-0.995186</td>
+      <td>-1.093517</td>
+      <td>-0.300063</td>
+      <td>0.493835</td>
+    </tr>
+    <tr>
+      <th>982</th>
+      <td>0.792182</td>
+      <td>-0.267352</td>
+      <td>1.390696</td>
+      <td>1.498959</td>
+    </tr>
+    <tr>
+      <th>983</th>
+      <td>-0.794723</td>
+      <td>1.052508</td>
+      <td>-1.113050</td>
+      <td>0.101865</td>
+    </tr>
+    <tr>
+      <th>984</th>
+      <td>-1.027141</td>
+      <td>-1.199244</td>
+      <td>-0.990809</td>
+      <td>-1.395599</td>
+    </tr>
+    <tr>
+      <th>985</th>
+      <td>-0.969678</td>
+      <td>-1.167831</td>
+      <td>-0.854208</td>
+      <td>-1.183604</td>
+    </tr>
+    <tr>
+      <th>986</th>
+      <td>1.609280</td>
+      <td>0.767694</td>
+      <td>0.506747</td>
+      <td>0.041865</td>
+    </tr>
+    <tr>
+      <th>987</th>
+      <td>1.367448</td>
+      <td>2.697807</td>
+      <td>-1.199477</td>
+      <td>-0.086055</td>
+    </tr>
+    <tr>
+      <th>988</th>
+      <td>-0.390024</td>
+      <td>-2.051293</td>
+      <td>0.910944</td>
+      <td>-0.460113</td>
+    </tr>
+    <tr>
+      <th>989</th>
+      <td>-0.821939</td>
+      <td>-1.416562</td>
+      <td>-0.685051</td>
+      <td>-0.521237</td>
+    </tr>
+    <tr>
+      <th>990</th>
+      <td>-0.287810</td>
+      <td>0.808191</td>
+      <td>0.293922</td>
+      <td>-0.085264</td>
+    </tr>
+    <tr>
+      <th>991</th>
+      <td>0.466382</td>
+      <td>2.880704</td>
+      <td>2.343967</td>
+      <td>-0.243972</td>
+    </tr>
+    <tr>
+      <th>992</th>
+      <td>0.175811</td>
+      <td>-0.547227</td>
+      <td>0.242304</td>
+      <td>-1.290218</td>
+    </tr>
+    <tr>
+      <th>993</th>
+      <td>0.225000</td>
+      <td>-0.321088</td>
+      <td>-0.074606</td>
+      <td>-0.336083</td>
+    </tr>
+    <tr>
+      <th>994</th>
+      <td>-1.198251</td>
+      <td>0.777643</td>
+      <td>-1.145068</td>
+      <td>0.721212</td>
+    </tr>
+    <tr>
+      <th>995</th>
+      <td>1.061066</td>
+      <td>-0.883506</td>
+      <td>0.780252</td>
+      <td>0.657456</td>
+    </tr>
+    <tr>
+      <th>996</th>
+      <td>-0.423743</td>
+      <td>-0.674806</td>
+      <td>1.540011</td>
+      <td>0.863288</td>
+    </tr>
+    <tr>
+      <th>997</th>
+      <td>-0.482636</td>
+      <td>0.732125</td>
+      <td>0.428839</td>
+      <td>0.038669</td>
+    </tr>
+    <tr>
+      <th>998</th>
+      <td>1.576860</td>
+      <td>0.727269</td>
+      <td>1.560673</td>
+      <td>0.291709</td>
+    </tr>
+  </tbody>
+</table>
+<p>999 rows &#xD7; 4 columns</p>
+</div>
+
+
+
+
+<pre><code class="lang-python">x[<span class="hljs-string">&apos;Sheet1&apos;</span>]
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>sex</th>
+      <th>age</th>
+      <th>heigh</th>
+      <th>weight</th>
+      <th>address</th>
+      <th>grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>&#x5C0F;&#x660E;</td>
+      <td>male</td>
+      <td>18</td>
+      <td>170</td>
+      <td>60</td>
+      <td>&#x5317;&#x4EAC;&#x6D77;&#x6DC0;</td>
+      <td>61</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>&#x5C0F;&#x534E;</td>
+      <td>female</td>
+      <td>28</td>
+      <td>160</td>
+      <td>50</td>
+      <td>&#x4E0A;&#x6D77;&#x9759;&#x5B89;</td>
+      <td>74</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>&#x5C0F;&#x7EA2;</td>
+      <td>female</td>
+      <td>22</td>
+      <td>175</td>
+      <td>64</td>
+      <td>&#x5E7F;&#x5DDE;&#x5929;&#x6CB3;</td>
+      <td>59</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>&#x5C0F;&#x9751;</td>
+      <td>male</td>
+      <td>31</td>
+      <td>182</td>
+      <td>80</td>
+      <td>&#x6DF1;&#x5733;&#x5357;&#x5C71;</td>
+      <td>82</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>&#x5C0F;&#x5170;</td>
+      <td>female</td>
+      <td>25</td>
+      <td>165</td>
+      <td>55</td>
+      <td>&#x676D;&#x5DDE;&#x897F;&#x6E56;</td>
+      <td>98</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<hr>
+<h1 id="json">Json</h1>
+<h3 id="json&#xFF08;javascript-object-notation&#xFF09;&#x662F;&#x901A;&#x8FC7;http&#x8BF7;&#x6C42;&#x5728;web&#x6D4F;&#x89C8;&#x5668;&#x548C;&#x5176;&#x4ED6;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E4B;&#x95F4;&#x53D1;&#x9001;&#x6570;&#x636E;&#x7684;&#x6807;&#x51C6;&#x683C;&#x5F0F;&#x4E4B;&#x4E00;">JSON&#xFF08;JavaScript Object Notation&#xFF09;&#x662F;&#x901A;&#x8FC7;HTTP&#x8BF7;&#x6C42;&#x5728;Web&#x6D4F;&#x89C8;&#x5668;&#x548C;&#x5176;&#x4ED6;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E4B;&#x95F4;&#x53D1;&#x9001;&#x6570;&#x636E;&#x7684;&#x6807;&#x51C6;&#x683C;&#x5F0F;&#x4E4B;&#x4E00;</h3>
+<h4 id="json&#x548C;csv&#x6BD4;&#x8F83;&#xFF1A;">JSON&#x548C;CSV&#x6BD4;&#x8F83;&#xFF1A;</h4>
+<p>JSON&#x662F;&#x591A;&#x7EF4;&#x6570;&#x636E;&#x6587;&#x4EF6;&#xFF0C;CSV&#x662F;&#x4E8C;&#x7EF4;&#x6570;&#x636E;&#x6587;&#x4EF6;</p>
+<p>JSON&#x6570;&#x636E;&#x6BD4;&#x8F83;&#x5197;&#x4F59;&#xFF0C;&#x4F53;&#x79EF;&#x8F83;&#x5927;&#xFF0C;CSV&#x7CBE;&#x7B80;&#xFF0C;&#x4F53;&#x79EF;&#x5C0F;</p>
+<p>JSON&#x591A;&#x7528;&#x4E8E;WEB&#x6570;&#x636E;&#x4EA4;&#x4E92;&#xFF0C;CSV&#x591A;&#x7528;&#x4E8E;&#x8BA1;&#x7B97;&#x673A;&#x8F6F;&#x4EF6;&#x7A0B;&#x5E8F;&#x6570;&#x636E;&#x4EA4;&#x4E92;</p>
+<p>&#x5982;&#x679C;JSON&#x6570;&#x636E;&#x683C;&#x5F0F;&#x7EF4;&#x5EA6;&#x8D85;&#x8FC7;2&#x7EF4;&#xFF0C;&#x8F6C;&#x4E3A;DataFrame&#x540E;&#xFF0C;&#x53EA;&#x80FD;&#x5C06;0/1&#x7EF4;&#x8F6C;&#x4E3A;&#x8868;&#x683C;&#xFF0C;&#x5176;&#x4ED6;&#x7EF4;&#x5EA6;&#x7684;JSON&#x4F1A;&#x5B58;&#x5165;&#x8868;&#x683C;&#x5355;&#x5143;&#x683C;</p>
+<pre><code class="lang-python">a
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>sex</th>
+      <th>age</th>
+      <th>heigh</th>
+      <th>weight</th>
+      <th>address</th>
+      <th>grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>&#x5C0F;&#x660E;</td>
+      <td>male</td>
+      <td>18</td>
+      <td>170</td>
+      <td>60</td>
+      <td>&#x5317;&#x4EAC;&#x6D77;&#x6DC0;</td>
+      <td>61</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>&#x5C0F;&#x534E;</td>
+      <td>female</td>
+      <td>28</td>
+      <td>160</td>
+      <td>50</td>
+      <td>&#x4E0A;&#x6D77;&#x9759;&#x5B89;</td>
+      <td>74</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>&#x5C0F;&#x7EA2;</td>
+      <td>female</td>
+      <td>22</td>
+      <td>175</td>
+      <td>64</td>
+      <td>&#x5E7F;&#x5DDE;&#x5929;&#x6CB3;</td>
+      <td>59</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>&#x5C0F;&#x9751;</td>
+      <td>male</td>
+      <td>31</td>
+      <td>182</td>
+      <td>80</td>
+      <td>&#x6DF1;&#x5733;&#x5357;&#x5C71;</td>
+      <td>82</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>&#x5C0F;&#x5170;</td>
+      <td>female</td>
+      <td>25</td>
+      <td>165</td>
+      <td>55</td>
+      <td>&#x676D;&#x5DDE;&#x897F;&#x6E56;</td>
+      <td>98</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<p>&#x5199;&#x5165;</p>
+<pre><code class="lang-python">a.to_json(<span class="hljs-string">&apos;foo.json&apos;</span>)
+</code></pre>
+<p>&#x8BFB;&#x53D6;</p>
+<pre><code class="lang-python">pd.read_json(<span class="hljs-string">&apos;foo.json&apos;</span>)
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>sex</th>
+      <th>age</th>
+      <th>heigh</th>
+      <th>weight</th>
+      <th>address</th>
+      <th>grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>&#x5C0F;&#x660E;</td>
+      <td>male</td>
+      <td>18</td>
+      <td>170</td>
+      <td>60</td>
+      <td>&#x5317;&#x4EAC;&#x6D77;&#x6DC0;</td>
+      <td>61</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>&#x5C0F;&#x534E;</td>
+      <td>female</td>
+      <td>28</td>
+      <td>160</td>
+      <td>50</td>
+      <td>&#x4E0A;&#x6D77;&#x9759;&#x5B89;</td>
+      <td>74</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>&#x5C0F;&#x7EA2;</td>
+      <td>female</td>
+      <td>22</td>
+      <td>175</td>
+      <td>64</td>
+      <td>&#x5E7F;&#x5DDE;&#x5929;&#x6CB3;</td>
+      <td>59</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>&#x5C0F;&#x9751;</td>
+      <td>male</td>
+      <td>31</td>
+      <td>182</td>
+      <td>80</td>
+      <td>&#x6DF1;&#x5733;&#x5357;&#x5C71;</td>
+      <td>82</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>&#x5C0F;&#x5170;</td>
+      <td>female</td>
+      <td>25</td>
+      <td>165</td>
+      <td>55</td>
+      <td>&#x676D;&#x5DDE;&#x897F;&#x6E56;</td>
+      <td>98</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<hr>
+<h1 id="pandas&#x5B58;&#x53D6;pkl">Pandas&#x5B58;&#x53D6;pkl</h1>
+<p>pkl&#x662F;Python&#x4E13;&#x6709;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x683C;&#x5F0F;&#xFF0C;&#x53EF;&#x4EE5;&#x5B58;&#x50A8;&#x539F;&#x751F;&#x7684;Python&#x6570;&#x636E;&#x7C7B;&#x578B;</p>
+<pre><code class="lang-python">a
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>sex</th>
+      <th>age</th>
+      <th>heigh</th>
+      <th>weight</th>
+      <th>address</th>
+      <th>grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>&#x5C0F;&#x660E;</td>
+      <td>male</td>
+      <td>18</td>
+      <td>170</td>
+      <td>60</td>
+      <td>&#x5317;&#x4EAC;&#x6D77;&#x6DC0;</td>
+      <td>61</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>&#x5C0F;&#x534E;</td>
+      <td>female</td>
+      <td>28</td>
+      <td>160</td>
+      <td>50</td>
+      <td>&#x4E0A;&#x6D77;&#x9759;&#x5B89;</td>
+      <td>74</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>&#x5C0F;&#x7EA2;</td>
+      <td>female</td>
+      <td>22</td>
+      <td>175</td>
+      <td>64</td>
+      <td>&#x5E7F;&#x5DDE;&#x5929;&#x6CB3;</td>
+      <td>59</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>&#x5C0F;&#x9751;</td>
+      <td>male</td>
+      <td>31</td>
+      <td>182</td>
+      <td>80</td>
+      <td>&#x6DF1;&#x5733;&#x5357;&#x5C71;</td>
+      <td>82</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>&#x5C0F;&#x5170;</td>
+      <td>female</td>
+      <td>25</td>
+      <td>165</td>
+      <td>55</td>
+      <td>&#x676D;&#x5DDE;&#x897F;&#x6E56;</td>
+      <td>98</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">a.to_pickle(<span class="hljs-string">&apos;foo.pkl&apos;</span>)
+</code></pre>
+<pre><code class="lang-python">p = pd.read_pickle(<span class="hljs-string">&apos;foo.pkl&apos;</span>)
+p
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>sex</th>
+      <th>age</th>
+      <th>heigh</th>
+      <th>weight</th>
+      <th>address</th>
+      <th>grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>&#x5C0F;&#x660E;</td>
+      <td>male</td>
+      <td>18</td>
+      <td>170</td>
+      <td>60</td>
+      <td>&#x5317;&#x4EAC;&#x6D77;&#x6DC0;</td>
+      <td>61</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>&#x5C0F;&#x534E;</td>
+      <td>female</td>
+      <td>28</td>
+      <td>160</td>
+      <td>50</td>
+      <td>&#x4E0A;&#x6D77;&#x9759;&#x5B89;</td>
+      <td>74</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>&#x5C0F;&#x7EA2;</td>
+      <td>female</td>
+      <td>22</td>
+      <td>175</td>
+      <td>64</td>
+      <td>&#x5E7F;&#x5DDE;&#x5929;&#x6CB3;</td>
+      <td>59</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>&#x5C0F;&#x9751;</td>
+      <td>male</td>
+      <td>31</td>
+      <td>182</td>
+      <td>80</td>
+      <td>&#x6DF1;&#x5733;&#x5357;&#x5C71;</td>
+      <td>82</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>&#x5C0F;&#x5170;</td>
+      <td>female</td>
+      <td>25</td>
+      <td>165</td>
+      <td>55</td>
+      <td>&#x676D;&#x5DDE;&#x897F;&#x6E56;</td>
+      <td>98</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">p.info()
+</code></pre>
+<pre><code>&lt;class &apos;pandas.core.frame.DataFrame&apos;&gt;
+Int64Index: 5 entries, 1 to 5
+Data columns (total 7 columns):
+name       5 non-null object
+sex        5 non-null object
+age        5 non-null int64
+heigh      5 non-null int64
+weight     5 non-null int64
+address    5 non-null object
+grade      5 non-null int64
+dtypes: int64(4), object(3)
+memory usage: 320.0+ bytes
+</code></pre><hr>
+<h1 id="&#x4F7F;&#x7528;hdf5&#x683C;&#x5F0F;">&#x4F7F;&#x7528;HDF5&#x683C;&#x5F0F;</h1>
+<p>&#x79D1;&#x5B66;&#x9886;&#x57DF;&#x5927;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x7684;&#x901A;&#x884C;&#x6807;&#x51C6;&#xFF0C;&#x5982;&#x5929;&#x6587;&#x3001;&#x7269;&#x7406;&#x3001;&#x5730;&#x7403;&#x79D1;&#x5B66;&#x7B49;</p>
+<pre><code class="lang-python">frame = pd.DataFrame({<span class="hljs-string">&apos;a&apos;</span>: np.random.randn(<span class="hljs-number">100</span>)})
+frame.loc[:<span class="hljs-number">10</span>]
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>a</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-1.545833</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.331485</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.011306</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-0.085044</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-1.623065</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.581317</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>-0.029992</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>-0.337090</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1.907710</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>-0.884964</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>-0.453825</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<p>&#x7B80;&#x5355;&#x8BFB;&#x53D6;</p>
+<pre><code class="lang-python"><span class="hljs-comment">#&#x5B58;&#x50A8;</span>
+frame.to_hdf(<span class="hljs-string">&apos;mydata.h5&apos;</span>,<span class="hljs-string">&apos;obj1&apos;</span>)
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-comment">#&#x8BFB;&#x53D6;</span>
+x = pd.read_hdf(<span class="hljs-string">&apos;mydata.h5&apos;</span>)  <span class="hljs-comment"># &#x6587;&#x4EF6;&#x5185;&#x53EA;&#x5B58;&#x50A8;&#x4E86;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;,&#x5982;&#x679C;&#x591A;&#x4E2A;&#x53D8;&#x91CF;&#x8BFB;&#x53D6;&#x51FA;&#x9519;</span>
+x.loc[:<span class="hljs-number">10</span>]
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>a</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-1.545833</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.331485</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.011306</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-0.085044</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-1.623065</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.581317</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>-0.029992</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>-0.337090</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1.907710</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>-0.884964</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>-0.453825</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">x = pd.read_hdf(<span class="hljs-string">&apos;mydata.h5&apos;</span>,<span class="hljs-string">&apos;obj1&apos;</span>)  <span class="hljs-comment"># &#x6307;&#x5B9A;&#x53D8;&#x91CF;&#x540D;&#x8F93;&#x51FA;</span>
+x.loc[:<span class="hljs-number">10</span>]
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>a</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-1.545833</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.331485</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.011306</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-0.085044</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-1.623065</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.581317</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>-0.029992</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>-0.337090</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1.907710</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>-0.884964</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>-0.453825</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python"><span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x5B58;&#x50A8;&#x6A21;&#x5F0F;&#xFF0C;&#x9ED8;&#x8BA4;fixed</span>
+frame.to_hdf(<span class="hljs-string">&apos;mydata2.h5&apos;</span>, <span class="hljs-string">&apos;obj1&apos;</span>, format=<span class="hljs-string">&apos;table&apos;</span>)
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x9AD8;&#x7EA7;&#x67E5;&#x8BE2;&#x6A21;&#x5F0F;&#xFF0C;&#x53EA;&#x80FD;&#x5728;table&#x6A21;&#x5F0F;&#x4E0B;&#x5B9E;&#x73B0;</span>
+x = pd.read_hdf(<span class="hljs-string">&apos;mydata2.h5&apos;</span>,<span class="hljs-string">&apos;obj1&apos;</span>, where=[<span class="hljs-string">&apos;index &lt; 5 and index &gt; 1&apos;</span>])
+x
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>a</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>1.011306</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-0.085044</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-1.623065</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<p>&#x590D;&#x6742;&#x5E94;&#x7528;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x521B;&#x5EFA;&#x6216;&#x8BFB;&#x53D6;HDF5&#x6587;&#x4EF6;&#xFF08;&#x6CA1;&#x6709;&#x5C31;&#x521B;&#x5EFA;&#xFF0C;&#x6709;&#x5C31;&#x8BFB;&#x53D6;&#xFF09;</span>
+store = pd.HDFStore(<span class="hljs-string">&apos;mydata3.h5&apos;</span>)
+store
+</code></pre>
+<pre><code>&lt;class &apos;pandas.io.pytables.HDFStore&apos;&gt;
+File path: mydata3.h5
+</code></pre><pre><code class="lang-python"><span class="hljs-comment"># &#x63D2;&#x5165;&#x6570;&#x636E;&#x5230;h5</span>
+store[<span class="hljs-string">&apos;obj1&apos;</span>] = frame
+store
+</code></pre>
+<pre><code>&lt;class &apos;pandas.io.pytables.HDFStore&apos;&gt;
+File path: mydata3.h5
+</code></pre><pre><code class="lang-python"><span class="hljs-comment"># &#x7EE7;&#x7EED;&#x63D2;&#x5165;</span>
+store[<span class="hljs-string">&apos;obj1_col&apos;</span>] = frame[<span class="hljs-string">&apos;a&apos;</span>]
+store
+</code></pre>
+<pre><code>&lt;class &apos;pandas.io.pytables.HDFStore&apos;&gt;
+File path: mydata3.h5
+</code></pre><pre><code class="lang-python"><span class="hljs-comment">#&#x8BFB;&#x53D6;</span>
+store[<span class="hljs-string">&apos;obj1&apos;</span>]
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>a</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-1.545833</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.331485</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.011306</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-0.085044</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-1.623065</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.581317</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>-0.029992</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>-0.337090</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1.907710</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>-0.884964</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>-0.453825</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>-0.722596</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>-0.609966</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>0.187275</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>-0.430286</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>0.521102</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>-0.382130</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>-0.047734</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>-1.036313</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>0.666919</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>0.439724</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>1.998140</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>-0.636233</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>0.910963</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>-1.197317</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>-0.475087</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>0.629060</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>0.458871</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>-2.026899</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>-0.207946</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>70</th>
+      <td>-0.805222</td>
+    </tr>
+    <tr>
+      <th>71</th>
+      <td>-0.102193</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>-0.030742</td>
+    </tr>
+    <tr>
+      <th>73</th>
+      <td>0.973290</td>
+    </tr>
+    <tr>
+      <th>74</th>
+      <td>0.462811</td>
+    </tr>
+    <tr>
+      <th>75</th>
+      <td>2.006082</td>
+    </tr>
+    <tr>
+      <th>76</th>
+      <td>-1.640565</td>
+    </tr>
+    <tr>
+      <th>77</th>
+      <td>0.111313</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>0.523204</td>
+    </tr>
+    <tr>
+      <th>79</th>
+      <td>-0.193813</td>
+    </tr>
+    <tr>
+      <th>80</th>
+      <td>2.143838</td>
+    </tr>
+    <tr>
+      <th>81</th>
+      <td>0.765496</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <td>-1.459714</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>-0.611186</td>
+    </tr>
+    <tr>
+      <th>84</th>
+      <td>0.148676</td>
+    </tr>
+    <tr>
+      <th>85</th>
+      <td>-1.896926</td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>-2.152605</td>
+    </tr>
+    <tr>
+      <th>87</th>
+      <td>0.340162</td>
+    </tr>
+    <tr>
+      <th>88</th>
+      <td>-0.819917</td>
+    </tr>
+    <tr>
+      <th>89</th>
+      <td>-0.989251</td>
+    </tr>
+    <tr>
+      <th>90</th>
+      <td>0.901735</td>
+    </tr>
+    <tr>
+      <th>91</th>
+      <td>-0.310940</td>
+    </tr>
+    <tr>
+      <th>92</th>
+      <td>0.330087</td>
+    </tr>
+    <tr>
+      <th>93</th>
+      <td>-1.592673</td>
+    </tr>
+    <tr>
+      <th>94</th>
+      <td>1.602411</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>-0.448390</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>-0.831902</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>1.803686</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>0.704141</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>-0.497465</td>
+    </tr>
+  </tbody>
+</table>
+<p>100 rows &#xD7; 1 columns</p>
+</div>
+
+
+
+
+<pre><code class="lang-python">store[<span class="hljs-string">&apos;obj1_col&apos;</span>] = frame[<span class="hljs-string">&apos;a&apos;</span>]
+store
+</code></pre>
+<pre><code>&lt;class &apos;pandas.io.pytables.HDFStore&apos;&gt;
+File path: mydata3.h5
+</code></pre><pre><code class="lang-python"><span class="hljs-comment">#&#x8BFB;&#x53D6;</span>
+store[<span class="hljs-string">&apos;obj1_col&apos;</span>][:<span class="hljs-number">10</span>]
+</code></pre>
+<pre><code>0   -1.545833
+1   -0.331485
+2    1.011306
+3   -0.085044
+4   -1.623065
+5    0.581317
+6   -0.029992
+7   -0.337090
+8    1.907710
+9   -0.884964
+Name: a, dtype: float64
+</code></pre><p>&#x9AD8;&#x7EA7;&#x7528;&#x6CD5;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># put &#x662F;&#x76F4;&#x63A5;&#x590D;&#x5236;&#x7684;&#x663E;&#x793A;&#x7248;&#x672C;&#xFF0C;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#x683C;&#x5F0F;&#x5316;&#x683C;&#x5F0F;</span>
+
+store.put(<span class="hljs-string">&apos;obj2&apos;</span>,frame,format = <span class="hljs-string">&apos;table&apos;</span>)
+store
+</code></pre>
+<pre><code>&lt;class &apos;pandas.io.pytables.HDFStore&apos;&gt;
+File path: mydata3.h5
+</code></pre><pre><code class="lang-python"><span class="hljs-comment"># select &#x662F;&#x9AD8;&#x7EA7;&#x7248;&#x8BFB;&#x53D6;&#xFF0C;&#x53EF;&#x4EE5;&#x589E;&#x52A0;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;</span>
+store.select(<span class="hljs-string">&apos;obj2&apos;</span>,where = [<span class="hljs-string">&apos;index &gt;= 10 and index &lt;= 20&apos;</span>])
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>a</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>10</th>
+      <td>-0.453825</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>-0.722596</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>-0.609966</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>0.187275</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>-0.430286</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>0.521102</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>-0.382130</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>-0.047734</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>-1.036313</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>0.666919</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>0.439724</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<hr>
+<h1 id="xml&#x548C;html&#xFF1A;web&#x4FE1;&#x606F;&#x6536;&#x96C6;">XML&#x548C;HTML&#xFF1A;Web&#x4FE1;&#x606F;&#x6536;&#x96C6;</h1>
+<p>&#x7F51;&#x9875;&#x4E2D;&#x6709;&#x591A;&#x4E2A;&#x8868;&#x683C;&#x7684;&#xFF0C;&#x8FD4;&#x56DE;&#x5217;&#x8868;&#xFF0C;&#x53EF;&#x6309;&#x5217;&#x8868;&#x7D22;&#x5F15;&#x9010;&#x4E2A;&#x8F93;&#x51FA;</p>
+<ul>
+<li>&#x6709;&#x4E9B;&#x7F51;&#x7AD9;&#x7531;&#x4E8E;&#x7F51;&#x7EDC;&#x539F;&#x56E0;&#x3001;&#x53CD;&#x722C;&#x866B;&#x3001;&#x670D;&#x52A1;&#x5668;&#x539F;&#x56E0;&#x5BFC;&#x81F4;&#x65E0;&#x6CD5;&#x6293;&#x53D6;&#x7F51;&#x9875;&#x5185;&#x5BB9;&#xFF0C;400&#x3001;500&#x9519;&#x8BEF;&#xFF0C;&#x8FD9;&#x65F6;&#x53EF;&#x4EE5;&#x5C06;&#x7F51;&#x9875;&#x53E6;&#x5B58;&#x5230;&#x672C;&#x5730;&#x540E;&#x8BFB;&#x53D6;</li>
+<li>&#x6709;&#x4E9B;&#x7F51;&#x7AD9;&#x7684;&#x8868;&#x683C;HTML&#x7ED3;&#x6784;&#x590D;&#x6742;&#x6DF7;&#x4E71;&#xFF0C;&#x5BFC;&#x81F4;&#x89E3;&#x6790;&#x8868;&#x683C;&#x7ED3;&#x6784;&#x51FA;&#x9519;&#xFF0C;&#x53EA;&#x80FD;&#x624B;&#x52A8;&#x5904;&#x7406;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-comment">#table = pd.read_html(&apos;http://www.stats.gov.cn/tjsj/zxfb/201806/t20180630_1607071.html&apos;)  # &#x67D0;&#x4E9B;&#x7F51;&#x7EDC;&#x4E0B;&#x65E0;&#x6CD5;&#x6293;&#x53D6;</span>
+
+table = pd.read_html(<span class="hljs-string">&apos;2018&#x5E74;6&#x6708;&#x4E2D;&#x56FD;&#x91C7;&#x8D2D;&#x7ECF;&#x7406;&#x6307;&#x6570;&#x8FD0;&#x884C;&#x60C5;&#x51B5;.html&apos;</span>)  <span class="hljs-comment"># &#x4FDD;&#x5B58;&#x5230;&#x672C;&#x5730;&#x8BFB;&#x53D6;</span>
+table
+</code></pre>
+<pre><code>[           0     1       2     3        4     5     6
+ 0       &#x5355;&#x4F4D;&#xFF1A;%   NaN     NaN   NaN      NaN   NaN   NaN
+ 1        NaN   PMI     NaN   NaN      NaN   NaN   NaN
+ 2         &#x751F;&#x4EA7;   &#x65B0;&#x8BA2;&#x5355;  &#x539F;&#x6750;&#x6599; &#x5E93;&#x5B58;  &#x4ECE;&#x4E1A;&#x4EBA;&#x5458;  &#x4F9B;&#x5E94;&#x5546;&#x914D;&#x9001;&#x65F6;&#x95F4;   NaN   NaN
+ 3    2017&#x5E74;6&#x6708;  51.7    54.4  53.1     48.6  49.0  49.9
+ 4    2017&#x5E74;7&#x6708;  51.4    53.5  52.8     48.5  49.2  50.1
+ 5    2017&#x5E74;8&#x6708;  51.7    54.1  53.1     48.3  49.1  49.3
+ 6    2017&#x5E74;9&#x6708;  52.4    54.7  54.8     48.9  49.0  49.3
+ 7   2017&#x5E74;10&#x6708;  51.6    53.4  52.9     48.6  49.0  48.7
+ 8   2017&#x5E74;11&#x6708;  51.8    54.3  53.6     48.4  48.8  49.5
+ 9   2017&#x5E74;12&#x6708;  51.6    54.0  53.4     48.0  48.5  49.3
+ 10   2018&#x5E74;1&#x6708;  51.3    53.5  52.6     48.8  48.3  49.2
+ 11   2018&#x5E74;2&#x6708;  50.3    50.7  51.0     49.3  48.1  48.4
+ 12   2018&#x5E74;3&#x6708;  51.5    53.1  53.3     49.6  49.1  50.1
+ 13   2018&#x5E74;4&#x6708;  51.4    53.1  52.9     49.5  49.0  50.2
+ 14   2018&#x5E74;5&#x6708;  51.9    54.1  53.8     49.6  49.1  50.1
+ 15   2018&#x5E74;6&#x6708;  51.5    53.6  53.2     48.8  49.0  50.2,
+            0       1     2     3          4      5       6      7         8
+ 0       &#x5355;&#x4F4D;&#xFF1A;%     NaN   NaN   NaN        NaN    NaN     NaN    NaN       NaN
+ 1        NaN  &#x65B0;&#x51FA;&#x53E3; &#x8BA2;&#x5355;    &#x8FDB;&#x53E3;   &#x91C7;&#x8D2D;&#x91CF;  &#x4E3B;&#x8981;&#x539F;&#x6750;&#x6599;&#x8D2D;&#x8FDB;&#x4EF7;&#x683C;  &#x51FA;&#x5382; &#x4EF7;&#x683C;  &#x4EA7;&#x6210;&#x54C1; &#x5E93;&#x5B58;  &#x5728;&#x624B; &#x8BA2;&#x5355;  &#x751F;&#x4EA7;&#x7ECF;&#x8425;&#x6D3B;&#x52A8;&#x9884;&#x671F;
+ 2    2017&#x5E74;6&#x6708;    52.0  51.2  52.5       50.4   49.1    46.3   47.2      58.7
+ 3    2017&#x5E74;7&#x6708;    50.9  51.1  52.7       57.9   52.7    46.1   46.3      59.1
+ 4    2017&#x5E74;8&#x6708;    50.4  51.4  52.9       65.3   57.4    45.5   46.1      59.5
+ 5    2017&#x5E74;9&#x6708;    51.3  51.1  53.8       68.4   59.4    44.2   47.4      59.4
+ 6   2017&#x5E74;10&#x6708;    50.1  50.3  53.2       63.4   55.2    46.1   45.6      57.0
+ 7   2017&#x5E74;11&#x6708;    50.8  51.0  53.5       59.8   53.8    46.1   46.6      57.9
+ 8   2017&#x5E74;12&#x6708;    51.9  51.2  53.6       62.2   54.4    45.8   46.3      58.7
+ 9    2018&#x5E74;1&#x6708;    49.5  50.4  52.9       59.7   51.8    47.0   45.3      56.8
+ 10   2018&#x5E74;2&#x6708;    49.0  49.8  50.8       53.4   49.2    46.7   44.9      58.2
+ 11   2018&#x5E74;3&#x6708;    51.3  51.3  53.0       53.4   48.9    47.3   46.0      58.7
+ 12   2018&#x5E74;4&#x6708;    50.7  50.2  52.6       53.0   50.2    47.2   46.2      58.4
+ 13   2018&#x5E74;5&#x6708;    51.2  50.9  53.0       56.7   53.2    46.1   45.9      58.7
+ 14   2018&#x5E74;6&#x6708;    49.8  50.0  52.8       57.7   53.3    46.3   45.5      57.9,
+            0     1     2       3     4     5        6
+ 0       &#x5355;&#x4F4D;&#xFF1A;%   NaN   NaN     NaN   NaN   NaN      NaN
+ 1        NaN  &#x5546;&#x52A1;&#x6D3B;&#x52A8;   &#x65B0;&#x8BA2;&#x5355;  &#x6295;&#x5165;&#x54C1; &#x4EF7;&#x683C;  &#x9500;&#x552E;&#x4EF7;&#x683C;  &#x4ECE;&#x4E1A;&#x4EBA;&#x5458;  &#x4E1A;&#x52A1;&#x6D3B;&#x52A8; &#x9884;&#x671F;
+ 2    2017&#x5E74;6&#x6708;  54.9  51.4    51.2  49.3  49.6     61.1
+ 3    2017&#x5E74;7&#x6708;  54.5  51.1    53.1  50.9  49.5     61.1
+ 4    2017&#x5E74;8&#x6708;  53.4  50.9    54.4  51.5  49.5     61.0
+ 5    2017&#x5E74;9&#x6708;  55.4  52.3    56.1  51.7  49.7     61.7
+ 6   2017&#x5E74;10&#x6708;  54.3  51.1    54.3  51.6  49.4     60.6
+ 7   2017&#x5E74;11&#x6708;  54.8  51.8    56.2  52.8  49.2     61.6
+ 8   2017&#x5E74;12&#x6708;  55.0  52.0    54.8  52.6  49.3     60.9
+ 9    2018&#x5E74;1&#x6708;  55.3  51.9    53.9  52.6  49.4     61.7
+ 10   2018&#x5E74;2&#x6708;  54.4  50.5    53.2  49.9  49.6     61.2
+ 11   2018&#x5E74;3&#x6708;  54.6  50.1    49.9  49.3  49.2     61.1
+ 12   2018&#x5E74;4&#x6708;  54.8  51.1    52.7  50.6  49.0     61.5
+ 13   2018&#x5E74;5&#x6708;  54.9  51.0    54.2  50.6  49.2     61.0
+ 14   2018&#x5E74;6&#x6708;  55.0  50.6    53.5  51.1  48.9     60.8,
+            0      1     2     3        4
+ 0       &#x5355;&#x4F4D;&#xFF1A;%    NaN   NaN   NaN      NaN
+ 1        NaN  &#x65B0;&#x51FA;&#x53E3;&#x8BA2;&#x5355;  &#x5728;&#x624B;&#x8BA2;&#x5355;    &#x5B58;&#x8D27;  &#x4F9B;&#x5E94;&#x5546;&#x914D;&#x9001;&#x65F6;&#x95F4;
+ 2    2017&#x5E74;6&#x6708;   49.8  44.6  45.9     51.8
+ 3    2017&#x5E74;7&#x6708;   52.1  43.9  45.9     51.7
+ 4    2017&#x5E74;8&#x6708;   49.0  44.0  45.5     51.1
+ 5    2017&#x5E74;9&#x6708;   49.7  44.2  47.0     51.6
+ 6   2017&#x5E74;10&#x6708;   50.7  43.9  46.4     51.1
+ 7   2017&#x5E74;11&#x6708;   50.9  44.1  46.5     51.6
+ 8   2017&#x5E74;12&#x6708;   51.5  43.8  46.3     51.3
+ 9    2018&#x5E74;1&#x6708;   50.1  44.4  46.5     51.3
+ 10   2018&#x5E74;2&#x6708;   45.9  43.8  47.6     50.7
+ 11   2018&#x5E74;3&#x6708;   50.4  44.3  46.2     51.6
+ 12   2018&#x5E74;4&#x6708;   50.0  44.4  46.7     51.5
+ 13   2018&#x5E74;5&#x6708;   49.1  44.1  46.0     51.7
+ 14   2018&#x5E74;6&#x6708;   48.2  44.0  46.4     51.6,
+                                                    0  \
+ 0  document.write(unescape(&quot;%3Cspan id=&apos;_ideConac...   
+
+                                                    1   2  
+ 0  &#x7248;&#x6743;&#x6240;&#x6709;&#xFF1A;&#x4E2D;&#x534E;&#x4EBA;&#x6C11;&#x5171;&#x548C;&#x56FD;&#x56FD;&#x5BB6;&#x7EDF;&#x8BA1;&#x5C40;  &#x5730;&#x5740;&#xFF1A;&#x5317;&#x4EAC;&#x5E02;&#x897F;&#x57CE;&#x533A;&#x6708;&#x575B;&#x5357;&#x8857;57&#x53F7;&#xFF08;100826&#xFF09;  &#x4EAC;... NaN  ]
+</code></pre><pre><code class="lang-python">table[<span class="hljs-number">0</span>]
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>&#x5355;&#x4F4D;&#xFF1A;%</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NaN</td>
+      <td>PMI</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>&#x751F;&#x4EA7;</td>
+      <td>&#x65B0;&#x8BA2;&#x5355;</td>
+      <td>&#x539F;&#x6750;&#x6599; &#x5E93;&#x5B58;</td>
+      <td>&#x4ECE;&#x4E1A;&#x4EBA;&#x5458;</td>
+      <td>&#x4F9B;&#x5E94;&#x5546;&#x914D;&#x9001;&#x65F6;&#x95F4;</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2017&#x5E74;6&#x6708;</td>
+      <td>51.7</td>
+      <td>54.4</td>
+      <td>53.1</td>
+      <td>48.6</td>
+      <td>49.0</td>
+      <td>49.9</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2017&#x5E74;7&#x6708;</td>
+      <td>51.4</td>
+      <td>53.5</td>
+      <td>52.8</td>
+      <td>48.5</td>
+      <td>49.2</td>
+      <td>50.1</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2017&#x5E74;8&#x6708;</td>
+      <td>51.7</td>
+      <td>54.1</td>
+      <td>53.1</td>
+      <td>48.3</td>
+      <td>49.1</td>
+      <td>49.3</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2017&#x5E74;9&#x6708;</td>
+      <td>52.4</td>
+      <td>54.7</td>
+      <td>54.8</td>
+      <td>48.9</td>
+      <td>49.0</td>
+      <td>49.3</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2017&#x5E74;10&#x6708;</td>
+      <td>51.6</td>
+      <td>53.4</td>
+      <td>52.9</td>
+      <td>48.6</td>
+      <td>49.0</td>
+      <td>48.7</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2017&#x5E74;11&#x6708;</td>
+      <td>51.8</td>
+      <td>54.3</td>
+      <td>53.6</td>
+      <td>48.4</td>
+      <td>48.8</td>
+      <td>49.5</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2017&#x5E74;12&#x6708;</td>
+      <td>51.6</td>
+      <td>54.0</td>
+      <td>53.4</td>
+      <td>48.0</td>
+      <td>48.5</td>
+      <td>49.3</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2018&#x5E74;1&#x6708;</td>
+      <td>51.3</td>
+      <td>53.5</td>
+      <td>52.6</td>
+      <td>48.8</td>
+      <td>48.3</td>
+      <td>49.2</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>2018&#x5E74;2&#x6708;</td>
+      <td>50.3</td>
+      <td>50.7</td>
+      <td>51.0</td>
+      <td>49.3</td>
+      <td>48.1</td>
+      <td>48.4</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>2018&#x5E74;3&#x6708;</td>
+      <td>51.5</td>
+      <td>53.1</td>
+      <td>53.3</td>
+      <td>49.6</td>
+      <td>49.1</td>
+      <td>50.1</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>2018&#x5E74;4&#x6708;</td>
+      <td>51.4</td>
+      <td>53.1</td>
+      <td>52.9</td>
+      <td>49.5</td>
+      <td>49.0</td>
+      <td>50.2</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>2018&#x5E74;5&#x6708;</td>
+      <td>51.9</td>
+      <td>54.1</td>
+      <td>53.8</td>
+      <td>49.6</td>
+      <td>49.1</td>
+      <td>50.1</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>2018&#x5E74;6&#x6708;</td>
+      <td>51.5</td>
+      <td>53.6</td>
+      <td>53.2</td>
+      <td>48.8</td>
+      <td>49.0</td>
+      <td>50.2</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">table[<span class="hljs-number">1</span>]
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>&#x5355;&#x4F4D;&#xFF1A;%</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NaN</td>
+      <td>&#x65B0;&#x51FA;&#x53E3; &#x8BA2;&#x5355;</td>
+      <td>&#x8FDB;&#x53E3;</td>
+      <td>&#x91C7;&#x8D2D;&#x91CF;</td>
+      <td>&#x4E3B;&#x8981;&#x539F;&#x6750;&#x6599;&#x8D2D;&#x8FDB;&#x4EF7;&#x683C;</td>
+      <td>&#x51FA;&#x5382; &#x4EF7;&#x683C;</td>
+      <td>&#x4EA7;&#x6210;&#x54C1; &#x5E93;&#x5B58;</td>
+      <td>&#x5728;&#x624B; &#x8BA2;&#x5355;</td>
+      <td>&#x751F;&#x4EA7;&#x7ECF;&#x8425;&#x6D3B;&#x52A8;&#x9884;&#x671F;</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2017&#x5E74;6&#x6708;</td>
+      <td>52.0</td>
+      <td>51.2</td>
+      <td>52.5</td>
+      <td>50.4</td>
+      <td>49.1</td>
+      <td>46.3</td>
+      <td>47.2</td>
+      <td>58.7</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2017&#x5E74;7&#x6708;</td>
+      <td>50.9</td>
+      <td>51.1</td>
+      <td>52.7</td>
+      <td>57.9</td>
+      <td>52.7</td>
+      <td>46.1</td>
+      <td>46.3</td>
+      <td>59.1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2017&#x5E74;8&#x6708;</td>
+      <td>50.4</td>
+      <td>51.4</td>
+      <td>52.9</td>
+      <td>65.3</td>
+      <td>57.4</td>
+      <td>45.5</td>
+      <td>46.1</td>
+      <td>59.5</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2017&#x5E74;9&#x6708;</td>
+      <td>51.3</td>
+      <td>51.1</td>
+      <td>53.8</td>
+      <td>68.4</td>
+      <td>59.4</td>
+      <td>44.2</td>
+      <td>47.4</td>
+      <td>59.4</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2017&#x5E74;10&#x6708;</td>
+      <td>50.1</td>
+      <td>50.3</td>
+      <td>53.2</td>
+      <td>63.4</td>
+      <td>55.2</td>
+      <td>46.1</td>
+      <td>45.6</td>
+      <td>57.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2017&#x5E74;11&#x6708;</td>
+      <td>50.8</td>
+      <td>51.0</td>
+      <td>53.5</td>
+      <td>59.8</td>
+      <td>53.8</td>
+      <td>46.1</td>
+      <td>46.6</td>
+      <td>57.9</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2017&#x5E74;12&#x6708;</td>
+      <td>51.9</td>
+      <td>51.2</td>
+      <td>53.6</td>
+      <td>62.2</td>
+      <td>54.4</td>
+      <td>45.8</td>
+      <td>46.3</td>
+      <td>58.7</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2018&#x5E74;1&#x6708;</td>
+      <td>49.5</td>
+      <td>50.4</td>
+      <td>52.9</td>
+      <td>59.7</td>
+      <td>51.8</td>
+      <td>47.0</td>
+      <td>45.3</td>
+      <td>56.8</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2018&#x5E74;2&#x6708;</td>
+      <td>49.0</td>
+      <td>49.8</td>
+      <td>50.8</td>
+      <td>53.4</td>
+      <td>49.2</td>
+      <td>46.7</td>
+      <td>44.9</td>
+      <td>58.2</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>2018&#x5E74;3&#x6708;</td>
+      <td>51.3</td>
+      <td>51.3</td>
+      <td>53.0</td>
+      <td>53.4</td>
+      <td>48.9</td>
+      <td>47.3</td>
+      <td>46.0</td>
+      <td>58.7</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>2018&#x5E74;4&#x6708;</td>
+      <td>50.7</td>
+      <td>50.2</td>
+      <td>52.6</td>
+      <td>53.0</td>
+      <td>50.2</td>
+      <td>47.2</td>
+      <td>46.2</td>
+      <td>58.4</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>2018&#x5E74;5&#x6708;</td>
+      <td>51.2</td>
+      <td>50.9</td>
+      <td>53.0</td>
+      <td>56.7</td>
+      <td>53.2</td>
+      <td>46.1</td>
+      <td>45.9</td>
+      <td>58.7</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>2018&#x5E74;6&#x6708;</td>
+      <td>49.8</td>
+      <td>50.0</td>
+      <td>52.8</td>
+      <td>57.7</td>
+      <td>53.3</td>
+      <td>46.3</td>
+      <td>45.5</td>
+      <td>57.9</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">table[<span class="hljs-number">2</span>]
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>&#x5355;&#x4F4D;&#xFF1A;%</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NaN</td>
+      <td>&#x5546;&#x52A1;&#x6D3B;&#x52A8;</td>
+      <td>&#x65B0;&#x8BA2;&#x5355;</td>
+      <td>&#x6295;&#x5165;&#x54C1; &#x4EF7;&#x683C;</td>
+      <td>&#x9500;&#x552E;&#x4EF7;&#x683C;</td>
+      <td>&#x4ECE;&#x4E1A;&#x4EBA;&#x5458;</td>
+      <td>&#x4E1A;&#x52A1;&#x6D3B;&#x52A8; &#x9884;&#x671F;</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2017&#x5E74;6&#x6708;</td>
+      <td>54.9</td>
+      <td>51.4</td>
+      <td>51.2</td>
+      <td>49.3</td>
+      <td>49.6</td>
+      <td>61.1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2017&#x5E74;7&#x6708;</td>
+      <td>54.5</td>
+      <td>51.1</td>
+      <td>53.1</td>
+      <td>50.9</td>
+      <td>49.5</td>
+      <td>61.1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2017&#x5E74;8&#x6708;</td>
+      <td>53.4</td>
+      <td>50.9</td>
+      <td>54.4</td>
+      <td>51.5</td>
+      <td>49.5</td>
+      <td>61.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2017&#x5E74;9&#x6708;</td>
+      <td>55.4</td>
+      <td>52.3</td>
+      <td>56.1</td>
+      <td>51.7</td>
+      <td>49.7</td>
+      <td>61.7</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2017&#x5E74;10&#x6708;</td>
+      <td>54.3</td>
+      <td>51.1</td>
+      <td>54.3</td>
+      <td>51.6</td>
+      <td>49.4</td>
+      <td>60.6</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2017&#x5E74;11&#x6708;</td>
+      <td>54.8</td>
+      <td>51.8</td>
+      <td>56.2</td>
+      <td>52.8</td>
+      <td>49.2</td>
+      <td>61.6</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2017&#x5E74;12&#x6708;</td>
+      <td>55.0</td>
+      <td>52.0</td>
+      <td>54.8</td>
+      <td>52.6</td>
+      <td>49.3</td>
+      <td>60.9</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2018&#x5E74;1&#x6708;</td>
+      <td>55.3</td>
+      <td>51.9</td>
+      <td>53.9</td>
+      <td>52.6</td>
+      <td>49.4</td>
+      <td>61.7</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2018&#x5E74;2&#x6708;</td>
+      <td>54.4</td>
+      <td>50.5</td>
+      <td>53.2</td>
+      <td>49.9</td>
+      <td>49.6</td>
+      <td>61.2</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>2018&#x5E74;3&#x6708;</td>
+      <td>54.6</td>
+      <td>50.1</td>
+      <td>49.9</td>
+      <td>49.3</td>
+      <td>49.2</td>
+      <td>61.1</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>2018&#x5E74;4&#x6708;</td>
+      <td>54.8</td>
+      <td>51.1</td>
+      <td>52.7</td>
+      <td>50.6</td>
+      <td>49.0</td>
+      <td>61.5</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>2018&#x5E74;5&#x6708;</td>
+      <td>54.9</td>
+      <td>51.0</td>
+      <td>54.2</td>
+      <td>50.6</td>
+      <td>49.2</td>
+      <td>61.0</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>2018&#x5E74;6&#x6708;</td>
+      <td>55.0</td>
+      <td>50.6</td>
+      <td>53.5</td>
+      <td>51.1</td>
+      <td>48.9</td>
+      <td>60.8</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">table[<span class="hljs-number">3</span>]
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>&#x5355;&#x4F4D;&#xFF1A;%</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NaN</td>
+      <td>&#x65B0;&#x51FA;&#x53E3;&#x8BA2;&#x5355;</td>
+      <td>&#x5728;&#x624B;&#x8BA2;&#x5355;</td>
+      <td>&#x5B58;&#x8D27;</td>
+      <td>&#x4F9B;&#x5E94;&#x5546;&#x914D;&#x9001;&#x65F6;&#x95F4;</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2017&#x5E74;6&#x6708;</td>
+      <td>49.8</td>
+      <td>44.6</td>
+      <td>45.9</td>
+      <td>51.8</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2017&#x5E74;7&#x6708;</td>
+      <td>52.1</td>
+      <td>43.9</td>
+      <td>45.9</td>
+      <td>51.7</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2017&#x5E74;8&#x6708;</td>
+      <td>49.0</td>
+      <td>44.0</td>
+      <td>45.5</td>
+      <td>51.1</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2017&#x5E74;9&#x6708;</td>
+      <td>49.7</td>
+      <td>44.2</td>
+      <td>47.0</td>
+      <td>51.6</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2017&#x5E74;10&#x6708;</td>
+      <td>50.7</td>
+      <td>43.9</td>
+      <td>46.4</td>
+      <td>51.1</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2017&#x5E74;11&#x6708;</td>
+      <td>50.9</td>
+      <td>44.1</td>
+      <td>46.5</td>
+      <td>51.6</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2017&#x5E74;12&#x6708;</td>
+      <td>51.5</td>
+      <td>43.8</td>
+      <td>46.3</td>
+      <td>51.3</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2018&#x5E74;1&#x6708;</td>
+      <td>50.1</td>
+      <td>44.4</td>
+      <td>46.5</td>
+      <td>51.3</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2018&#x5E74;2&#x6708;</td>
+      <td>45.9</td>
+      <td>43.8</td>
+      <td>47.6</td>
+      <td>50.7</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>2018&#x5E74;3&#x6708;</td>
+      <td>50.4</td>
+      <td>44.3</td>
+      <td>46.2</td>
+      <td>51.6</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>2018&#x5E74;4&#x6708;</td>
+      <td>50.0</td>
+      <td>44.4</td>
+      <td>46.7</td>
+      <td>51.5</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>2018&#x5E74;5&#x6708;</td>
+      <td>49.1</td>
+      <td>44.1</td>
+      <td>46.0</td>
+      <td>51.7</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>2018&#x5E74;6&#x6708;</td>
+      <td>48.2</td>
+      <td>44.0</td>
+      <td>46.4</td>
+      <td>51.6</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h1 id="pandas&#x4ECE;&#x526A;&#x8D34;&#x677F;&#xFF08;&#x5185;&#x5B58;&#xFF09;&#x8BFB;&#x53D6;&#x6570;&#x636E;">Pandas&#x4ECE;&#x526A;&#x8D34;&#x677F;&#xFF08;&#x5185;&#x5B58;&#xFF09;&#x8BFB;&#x53D6;&#x6570;&#x636E;</h1>
+<p>&#x591A;&#x7528;&#x4E8E;&#x5C06;&#x7F51;&#x9875;&#x8868;&#x683C;&#x5185;&#x5BB9;&#x76F4;&#x63A5;&#x8F6C;&#x6362;&#x4E3A; DataFrame</p>
+<p>&#x4ECE;&#x4E0B;&#x65B9;&#x7684;html&#x5730;&#x5740;&#x4E2D;&#x8FDB;&#x5165;&#x5230;HTML&#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x9009;&#x4E2D;&#x8981;&#x590D;&#x5236;&#x7684;&#x8868;&#x683C;&#x5185;&#x5BB9;&#xFF0C;&#x7136;&#x540E;&#x53F3;&#x51FB;&#x9F20;&#x6807;&#x9009;&#x62E9;&#x590D;&#x5236;</p>
+<p>&#x6700;&#x540E;&#x5728;&#x4E0B;&#x9762;&#x7684;&#x8BFB;&#x53D6; clipboard&#x4E2D;&#x7684;&#x6570;&#x636E;&#x7684;&#x4EE3;&#x7801; &#x8FD0;&#x884C;&#x4E00;&#x4E0B;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x8BFB;&#x51FA;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x6570;&#x636E;</p>
+<pre><code class="lang-python"><span class="hljs-comment">#  https://cn.investing.com/currencies/usd-cny-historical-data</span>
+
+pd.read_clipboard(header=<span class="hljs-keyword">None</span>, engine=<span class="hljs-string">&apos;python&apos;</span>)
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2018&#x5E74;10&#x6708;15&#x65E5;</td>
+      <td>6.9194</td>
+      <td>6.9222</td>
+      <td>6.9302</td>
+      <td>6.9164</td>
+      <td>-0.04%</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2018&#x5E74;10&#x6708;14&#x65E5;</td>
+      <td>6.9222</td>
+      <td>6.9222</td>
+      <td>6.9222</td>
+      <td>6.9222</td>
+      <td>-0.00%</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2018&#x5E74;10&#x6708;12&#x65E5;</td>
+      <td>6.9225</td>
+      <td>6.8914</td>
+      <td>6.9322</td>
+      <td>6.8914</td>
+      <td>0.47%</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2018&#x5E74;10&#x6708;11&#x65E5;</td>
+      <td>6.8899</td>
+      <td>6.9243</td>
+      <td>6.9350</td>
+      <td>6.8899</td>
+      <td>-0.50%</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2018&#x5E74;10&#x6708;10&#x65E5;</td>
+      <td>6.9242</td>
+      <td>6.9227</td>
+      <td>6.9258</td>
+      <td>6.9169</td>
+      <td>0.02%</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2018&#x5E74;10&#x6708;9&#x65E5;</td>
+      <td>6.9227</td>
+      <td>6.9300</td>
+      <td>6.9300</td>
+      <td>6.9082</td>
+      <td>-0.12%</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2018&#x5E74;10&#x6708;8&#x65E5;</td>
+      <td>6.9307</td>
+      <td>6.9040</td>
+      <td>6.9338</td>
+      <td>6.8947</td>
+      <td>0.90%</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2018&#x5E74;10&#x6708;7&#x65E5;</td>
+      <td>6.8689</td>
+      <td>6.8689</td>
+      <td>6.8689</td>
+      <td>6.8689</td>
+      <td>0.00%</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2018&#x5E74;10&#x6708;5&#x65E5;</td>
+      <td>6.8689</td>
+      <td>6.8689</td>
+      <td>6.8689</td>
+      <td>6.8689</td>
+      <td>0.00%</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2018&#x5E74;10&#x6708;4&#x65E5;</td>
+      <td>6.8689</td>
+      <td>6.8689</td>
+      <td>6.8689</td>
+      <td>6.8689</td>
+      <td>0.00%</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2018&#x5E74;10&#x6708;3&#x65E5;</td>
+      <td>6.8689</td>
+      <td>6.8689</td>
+      <td>6.8689</td>
+      <td>6.8689</td>
+      <td>0.00%</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>2018&#x5E74;10&#x6708;2&#x65E5;</td>
+      <td>6.8689</td>
+      <td>6.8689</td>
+      <td>6.8689</td>
+      <td>6.8689</td>
+      <td>0.00%</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>2018&#x5E74;10&#x6708;1&#x65E5;</td>
+      <td>6.8689</td>
+      <td>6.8689</td>
+      <td>6.8689</td>
+      <td>6.8689</td>
+      <td>0.00%</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>2018&#x5E74;9&#x6708;30&#x65E5;</td>
+      <td>6.8689</td>
+      <td>6.8690</td>
+      <td>6.8690</td>
+      <td>6.8689</td>
+      <td>0.00%</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>2018&#x5E74;9&#x6708;28&#x65E5;</td>
+      <td>6.8689</td>
+      <td>6.8872</td>
+      <td>6.8905</td>
+      <td>6.8678</td>
+      <td>-0.31%</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>2018&#x5E74;9&#x6708;27&#x65E5;</td>
+      <td>6.8902</td>
+      <td>6.8788</td>
+      <td>6.8933</td>
+      <td>6.8700</td>
+      <td>0.17%</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>2018&#x5E74;9&#x6708;26&#x65E5;</td>
+      <td>6.8786</td>
+      <td>6.8748</td>
+      <td>6.8803</td>
+      <td>6.8708</td>
+      <td>0.18%</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>2018&#x5E74;9&#x6708;25&#x65E5;</td>
+      <td>6.8665</td>
+      <td>6.8608</td>
+      <td>6.8842</td>
+      <td>6.8605</td>
+      <td>0.14%</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>2018&#x5E74;9&#x6708;24&#x65E5;</td>
+      <td>6.8571</td>
+      <td>6.8571</td>
+      <td>6.8571</td>
+      <td>6.8571</td>
+      <td>-0.01%</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>2018&#x5E74;9&#x6708;23&#x65E5;</td>
+      <td>6.8578</td>
+      <td>6.8577</td>
+      <td>6.8578</td>
+      <td>6.8576</td>
+      <td>0.01%</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>2018&#x5E74;9&#x6708;21&#x65E5;</td>
+      <td>6.8571</td>
+      <td>6.8357</td>
+      <td>6.8604</td>
+      <td>6.8337</td>
+      <td>0.15%</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>2018&#x5E74;9&#x6708;20&#x65E5;</td>
+      <td>6.8468</td>
+      <td>6.8515</td>
+      <td>6.8583</td>
+      <td>6.8403</td>
+      <td>-0.02%</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>2018&#x5E74;9&#x6708;19&#x65E5;</td>
+      <td>6.8483</td>
+      <td>6.8653</td>
+      <td>6.8676</td>
+      <td>6.8473</td>
+      <td>-0.19%</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>2018&#x5E74;9&#x6708;18&#x65E5;</td>
+      <td>6.8616</td>
+      <td>6.8552</td>
+      <td>6.8807</td>
+      <td>6.8552</td>
+      <td>0.07%</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>2018&#x5E74;9&#x6708;17&#x65E5;</td>
+      <td>6.8570</td>
+      <td>6.8695</td>
+      <td>6.8781</td>
+      <td>6.8558</td>
+      <td>-0.14%</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>2018&#x5E74;9&#x6708;16&#x65E5;</td>
+      <td>6.8666</td>
+      <td>6.8709</td>
+      <td>6.8709</td>
+      <td>6.8654</td>
+      <td>-0.03%</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python"><span class="hljs-comment"># http://www.stats.gov.cn/tjsj/zxfb/201806/t20180630_1607071.html</span>
+<span class="hljs-comment"># &#x89E3;&#x6790;&#x8868;&#x683C;&#x51FA;&#x9519;&#xFF0C;&#x9700;&#x8981;&#x624B;&#x52A8;&#x5904;&#x7406;</span>
+pd.read_clipboard(header=<span class="hljs-keyword">None</span>, engine=<span class="hljs-string">&apos;python&apos;</span>)
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2017&#x5E74;6&#x6708;</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>51.7</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>54.4</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>53.1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>48.6</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>49.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>49.9</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2017&#x5E74;7&#x6708;</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>51.4</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>53.5</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>52.8</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>48.5</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>49.2</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>50.1</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>2017&#x5E74;8&#x6708;</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>51.7</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>54.1</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>53.1</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>48.3</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>49.1</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>49.3</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>2017&#x5E74;9&#x6708;</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>52.4</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>54.7</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>54.8</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>48.9</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>49.0</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>49.3</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>2017&#x5E74;10&#x6708;</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>51.6</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>48.1</td>
+    </tr>
+    <tr>
+      <th>62</th>
+      <td>48.4</td>
+    </tr>
+    <tr>
+      <th>63</th>
+      <td>2018&#x5E74;3&#x6708;</td>
+    </tr>
+    <tr>
+      <th>64</th>
+      <td>51.5</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>53.1</td>
+    </tr>
+    <tr>
+      <th>66</th>
+      <td>53.3</td>
+    </tr>
+    <tr>
+      <th>67</th>
+      <td>49.6</td>
+    </tr>
+    <tr>
+      <th>68</th>
+      <td>49.1</td>
+    </tr>
+    <tr>
+      <th>69</th>
+      <td>50.1</td>
+    </tr>
+    <tr>
+      <th>70</th>
+      <td>2018&#x5E74;4&#x6708;</td>
+    </tr>
+    <tr>
+      <th>71</th>
+      <td>51.4</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>53.1</td>
+    </tr>
+    <tr>
+      <th>73</th>
+      <td>52.9</td>
+    </tr>
+    <tr>
+      <th>74</th>
+      <td>49.5</td>
+    </tr>
+    <tr>
+      <th>75</th>
+      <td>49.0</td>
+    </tr>
+    <tr>
+      <th>76</th>
+      <td>50.2</td>
+    </tr>
+    <tr>
+      <th>77</th>
+      <td>2018&#x5E74;5&#x6708;</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>51.9</td>
+    </tr>
+    <tr>
+      <th>79</th>
+      <td>54.1</td>
+    </tr>
+    <tr>
+      <th>80</th>
+      <td>53.8</td>
+    </tr>
+    <tr>
+      <th>81</th>
+      <td>49.6</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <td>49.1</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>50.1</td>
+    </tr>
+    <tr>
+      <th>84</th>
+      <td>2018&#x5E74;6&#x6708;</td>
+    </tr>
+    <tr>
+      <th>85</th>
+      <td>51.5</td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>53.6</td>
+    </tr>
+    <tr>
+      <th>87</th>
+      <td>53.2</td>
+    </tr>
+    <tr>
+      <th>88</th>
+      <td>48.8</td>
+    </tr>
+    <tr>
+      <th>89</th>
+      <td>49.0</td>
+    </tr>
+    <tr>
+      <th>90</th>
+      <td>50.2</td>
+    </tr>
+  </tbody>
+</table>
+<p>91 rows &#xD7; 1 columns</p>
+</div>
+
+
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../数据分析库的操作/5Pandas数据操作：其他操作.html" class="navigation navigation-prev " aria-label="Previous page: Pandas数据操作：其他操作"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../数据分析库的操作/7Pandas数据运算.html" class="navigation navigation-next " aria-label="Next page: Pandas数据运算"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

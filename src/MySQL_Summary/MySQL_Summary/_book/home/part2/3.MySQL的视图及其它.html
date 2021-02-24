@@ -1,0 +1,556 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>MySQL的视图及其它 | Introduction</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../../home/part2/4.MySQL的触发器.html" />
+    
+    
+    <link rel="prev" href="../../home/part2/2.MySQL的事务处理.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="3.3"
+        data-chapter-title="MySQL的视图及其它"
+        data-filepath="home/part2/3.MySQL的视图及其它.md"
+        data-basepath="../.."
+        data-revision="Sun Oct 21 2018 16:32:53 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="home/MySQL介绍.html">
+            
+                
+                    <a href="../../home/MySQL介绍.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        MySQL介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="home/part1/MySQL基础.html">
+            
+                
+                    <a href="../../home/part1/MySQL基础.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Mysql基础
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="home/part1/1.MySQL基础操作.html">
+            
+                
+                    <a href="../../home/part1/1.MySQL基础操作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        MySQL基础操作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="home/part1/2.MySQL数据类型.html">
+            
+                
+                    <a href="../../home/part1/2.MySQL数据类型.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        MySQL数据类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="home/part1/3.MySQL建库建表.html">
+            
+                
+                    <a href="../../home/part1/3.MySQL建库建表.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        MySQL建库建表
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="home/part1/4.DML操作：增,删,改.html">
+            
+                
+                    <a href="../../home/part1/4.DML操作：增,删,改.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        DML操作：增,删,改
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="home/part1/5.DQL操作：数据查询.html">
+            
+                
+                    <a href="../../home/part1/5.DQL操作：数据查询.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        DQL操作：数据查询
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="home/part1/6.数据导入和导出.html">
+            
+                
+                    <a href="../../home/part1/6.数据导入和导出.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                        数据导入和导出
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="home/part2/MySQL高级.html">
+            
+                
+                    <a href="../../home/part2/MySQL高级.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        MySQL高级
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="home/part2/1.MySQL的多表联查.html">
+            
+                
+                    <a href="../../home/part2/1.MySQL的多表联查.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        MySQL的多表联查
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="home/part2/2.MySQL的事务处理.html">
+            
+                
+                    <a href="../../home/part2/2.MySQL的事务处理.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        MySQL的事务处理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.3" data-path="home/part2/3.MySQL的视图及其它.html">
+            
+                
+                    <a href="../../home/part2/3.MySQL的视图及其它.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        MySQL的视图及其它
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="home/part2/4.MySQL的触发器.html">
+            
+                
+                    <a href="../../home/part2/4.MySQL的触发器.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        MySQL的触发器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="home/part2/6.MySQL日志及数据恢复.html">
+            
+                
+                    <a href="../../home/part2/6.MySQL日志及数据恢复.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        MySQL日志及数据恢复
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="home/part2/7.慢查询及sql优化.html">
+            
+                
+                    <a href="../../home/part2/7.慢查询及sql优化.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                        慢查询及sql优化
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="home/part3/Python连接MySQL.html">
+            
+                
+                    <a href="../../home/part3/Python连接MySQL.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Python连接MySQL
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="home/part3/1.CRUD.html">
+            
+                
+                    <a href="../../home/part3/1.CRUD.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        CRUD
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../" >Introduction</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="mysql&#x7684;&#x89C6;&#x56FE;&#x53CA;&#x5176;&#x5B83;">MySQL&#x7684;&#x89C6;&#x56FE;&#x53CA;&#x5176;&#x5B83;</h1>
+<hr>
+<ul>
+<li><h3 id="mysql&#x7684;&#x8868;&#x590D;&#x5236;">MySQL&#x7684;&#x8868;&#x590D;&#x5236;</h3>
+</li>
+</ul>
+<pre><code class="lang-sql">&#x590D;&#x5236;&#x8868;&#x7ED3;&#x6784;
+
+mysql&gt; create table &#x76EE;&#x6807;&#x8868;&#x540D; like &#x539F;&#x8868;&#x540D;;
+
+&#x590D;&#x5236;&#x8868;&#x6570;&#x636E;
+
+mysql&gt; insert into &#x76EE;&#x6807;&#x8868;&#x540D; select * from &#x539F;&#x8868;&#x540D;;
+</code></pre>
+<ul>
+<li><h3 id="&#x6570;&#x636E;&#x8868;&#x7684;&#x7D22;&#x5F15;&#x64CD;&#x4F5C;">&#x6570;&#x636E;&#x8868;&#x7684;&#x7D22;&#x5F15;&#x64CD;&#x4F5C;</h3>
+<ul>
+<li><p>PRIMARY, INDEX, UNIQUE &#x8FD9;3&#x79CD;&#x662F;&#x4E00;&#x7C7B;</p>
+<pre><code class="lang-sql">  PRIMARY &#x4E3B;&#x952E;&#x3002; &#x5C31;&#x662F; &#x552F;&#x4E00; &#x4E14; &#x4E0D;&#x80FD;&#x4E3A;&#x7A7A;&#x3002;
+
+  INDEX &#x7D22;&#x5F15;&#xFF0C;&#x666E;&#x901A;&#x7684;
+
+  UNIQUE &#x552F;&#x4E00;&#x7D22;&#x5F15;&#x3002; &#x4E0D;&#x5141;&#x8BB8;&#x6709;&#x91CD;&#x590D;&#x3002;
+</code></pre>
+</li>
+<li><pre><code class="lang-sql">  FULLTEXT &#x662F;&#x5168;&#x6587;&#x7D22;&#x5F15;&#xFF0C;&#x7528;&#x4E8E;&#x5728;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x4E2D;&#xFF0C;&#x68C0;&#x7D22;&#x6587;&#x672C;&#x4FE1;&#x606F;&#x7684;
+
+  MySQL&#x7D22;&#x5F15;&#x7684;&#x5EFA;&#x7ACB;&#x5BF9;&#x4E8E;MySQL&#x7684;&#x9AD8;&#x6548;&#x8FD0;&#x884C;&#x662F;&#x5F88;&#x91CD;&#x8981;&#x7684;&#xFF0C;&#x7D22;&#x5F15;&#x53EF;&#x4EE5;&#x5927;&#x5927;&#x63D0;&#x9AD8;MySQL&#x7684;&#x68C0;&#x7D22;&#x901F;&#x5EA6;
+
+  &#x6253;&#x4E2A;&#x6BD4;&#x65B9;&#xFF0C;&#x5982;&#x679C;&#x5408;&#x7406;&#x7684;&#x8BBE;&#x8BA1;&#x4E14;&#x4F7F;&#x7528;&#x7D22;&#x5F15;&#x7684;MySQL&#x662F;&#x4E00;&#x8F86;&#x5170;&#x535A;&#x57FA;&#x5C3C;&#x7684;&#x8BDD;&#xFF0C;&#x90A3;&#x4E48;&#x6CA1;&#x6709;&#x8BBE;&#x8BA1;&#x548C;&#x4F7F;&#x7528;&#x7D22;&#x5F15;&#x7684;MySQL&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x4EBA;&#x529B;&#x4E09;&#x8F6E;&#x8F66;
+
+  &#x4F46;&#x8FC7;&#x591A;&#x7684;&#x4F7F;&#x7528;&#x7D22;&#x5F15;&#x5C06;&#x4F1A;&#x9020;&#x6210;&#x6EE5;&#x7528;&#x3002;&#x56E0;&#x6B64;&#x7D22;&#x5F15;&#x4E5F;&#x4F1A;&#x6709;&#x5B83;&#x7684;&#x7F3A;&#x70B9;&#xFF1A;&#x867D;&#x7136;&#x7D22;&#x5F15;&#x5927;&#x5927;&#x63D0;&#x9AD8;&#x4E86;&#x67E5;&#x8BE2;&#x901F;&#x5EA6;&#xFF0C;&#x540C;&#x65F6;&#x5374;&#x4F1A;&#x964D;&#x4F4E;&#x66F4;&#x65B0;&#x8868;&#x7684;&#x901F;&#x5EA6;&#xFF0C;&#x5982;&#x5BF9;&#x8868;&#x8FDB;&#x884C;<span class="hljs-operator"><span class="hljs-keyword">INSERT</span>&#x3001;<span class="hljs-keyword">UPDATE</span>&#x548C;<span class="hljs-keyword">DELETE</span>&#x3002;&#x56E0;&#x4E3A;&#x66F4;&#x65B0;&#x8868;&#x65F6;&#xFF0C;MySQL&#x4E0D;&#x4EC5;&#x8981;&#x4FDD;&#x5B58;&#x6570;&#x636E;&#xFF0C;&#x8FD8;&#x8981;&#x4FDD;&#x5B58;&#x4E00;&#x4E0B;&#x7D22;&#x5F15;&#x6587;&#x4EF6;
+</span></code></pre>
+</li>
+<li><pre><code class="lang-sql">   // &#x4F7F;&#x7528;<span class="hljs-operator"><span class="hljs-keyword">alter</span>&#x521B;&#x5EFA;
+  <span class="hljs-keyword">alter</span> <span class="hljs-keyword">table</span> <span class="hljs-keyword">user</span> <span class="hljs-keyword">add</span> <span class="hljs-keyword">index</span> index_name(&#x5B57;&#x6BB5;&#x503C;)
+  <span class="hljs-keyword">alter</span> <span class="hljs-keyword">table</span> <span class="hljs-keyword">user</span> <span class="hljs-keyword">add</span> <span class="hljs-keyword">unique</span> unique_name(&#x5B57;&#x6BB5;&#x503C;)
+  <span class="hljs-keyword">alter</span> <span class="hljs-keyword">table</span> <span class="hljs-keyword">user</span> <span class="hljs-keyword">add</span> primary <span class="hljs-keyword">key</span>(&#x5B57;&#x6BB5;&#x503C;)
+  // &#x4F7F;&#x7528; <span class="hljs-keyword">alter</span>&#x5220;&#x9664;&#x7D22;&#x5F15;
+  <span class="hljs-keyword">alter</span> <span class="hljs-keyword">table</span> <span class="hljs-keyword">user</span> <span class="hljs-keyword">drop</span> <span class="hljs-keyword">index</span> index_name     // &#x5220;&#x9664;&#x666E;&#x901A;&#x7D22;&#x5F15;&#x548C;&#x552F;&#x4E00;&#x7D22;&#x5F15;
+  <span class="hljs-keyword">alter</span> <span class="hljs-keyword">table</span> <span class="hljs-keyword">user</span> <span class="hljs-keyword">drop</span> primary <span class="hljs-keyword">key</span>       // &#x5220;&#x9664;&#x4E3B;&#x952E;(&#x5FC5;&#x987B;&#x5148;&#x5220;&#x9664;&#x81EA;&#x52A8;&#x9012;&#x589E;)
+
+  //  &#x4FEE;&#x6539;&#x8868;&#x7ED3;&#x6784;&#xFF1A;
+  <span class="hljs-keyword">alter</span> <span class="hljs-keyword">table</span> <span class="hljs-keyword">user</span> <span class="hljs-keyword">add</span> aaa <span class="hljs-built_in">int</span> <span class="hljs-keyword">after</span> bbbb;</span>
+  <span class="hljs-operator"><span class="hljs-keyword">alter</span> <span class="hljs-keyword">table</span> <span class="hljs-keyword">user</span> <span class="hljs-keyword">modify</span> username <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>);</span>
+
+  //&#x663E;&#x793A;&#x7D22;&#x5F15;&#x4FE1;&#x606F;
+  //&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <span class="hljs-operator"><span class="hljs-keyword">SHOW</span> <span class="hljs-keyword">INDEX</span> &#x547D;&#x4EE4;&#x6765;&#x5217;&#x51FA;&#x8868;&#x4E2D;&#x7684;&#x76F8;&#x5173;&#x7684;&#x7D22;&#x5F15;&#x4FE1;&#x606F;&#x3002;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6DFB;&#x52A0; \<span class="hljs-keyword">G</span> &#x6765;&#x683C;&#x5F0F;&#x5316;&#x8F93;&#x51FA;&#x4FE1;&#x606F;&#x3002;
+  mysql&gt; <span class="hljs-keyword">SHOW</span> <span class="hljs-keyword">INDEX</span> <span class="hljs-keyword">FROM</span> table_name;</span> \G
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><h3 id="mysql&#x89C6;&#x56FE;">MySQL&#x89C6;&#x56FE;</h3>
+<pre><code class="lang-sql">  &#x521B;&#x5EFA;&#x89C6;&#x56FE;:
+  mysql&gt; create view v_t1 as select * from t1 where id&gt;4 and id&lt;11;
+  Query OK, 0 rows affected (0.00 sec)
+
+  view&#x89C6;&#x56FE;&#x7684;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;:
+  mysql&gt; ? view
+  ALTER VIEW
+  CREATE VIEW
+  DROP VIEW
+
+  &#x67E5;&#x770B;&#x89C6;&#x56FE;:
+  mysql&gt; show tables;
+
+  &#x5220;&#x9664;&#x89C6;&#x56FE;v_t1:
+  mysql&gt; drop view v_t1;
+</code></pre>
+</li>
+<li><h3 id="mysql&#x5E38;&#x7528;&#x5185;&#x7F6E;&#x51FD;&#x6570;">MySQL&#x5E38;&#x7528;&#x5185;&#x7F6E;&#x51FD;&#x6570;</h3>
+<pre><code class="lang-sql">  &#x5B57;&#x7B26;&#x4E32;&#x5904;&#x7406;&#x51FD;&#x6570;
+
+      *concat(s1,s2,&#x2026;Sn) &#x8FDE;&#x63A5;s1,s2..Sn&#x4E3A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;
+
+      *length(str) &#x8FD4;&#x56DE;&#x503C;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;str &#x7684;&#x957F;&#x5EA6;
+
+  &#x6570;&#x503C;&#x51FD;&#x6570;
+
+      *abs(x) &#x8FD4;&#x56DE;x&#x7684;&#x7EDD;&#x5BF9;&#x503C;
+
+      *round(x,y)&#x8FD4;&#x56DE;&#x53C2;&#x6570;x&#x7684;&#x56DB;&#x820D;&#x4E94;&#x5165;&#x7684;&#x6709;y&#x4F4D;&#x5C0F;&#x6570;&#x7684;&#x503C;
+
+  &#x65E5;&#x671F;&#x548C;&#x65F6;&#x95F4;&#x51FD;&#x6570;
+
+      *now() &#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x65E5;&#x671F;&#x548C;&#x65F6;&#x95F4;,
+
+      *unix_timestamp(date) &#x8FD4;&#x56DE;date&#x65F6;&#x95F4;&#x7684;unix&#x65F6;&#x95F4;&#x6233;
+
+      *date_fomat(date,fmt) &#x8FD4;&#x56DE;&#x6309;&#x5B57;&#x7B26;&#x4E32;fmt&#x683C;&#x5F0F;&#x5316;&#x65E5;&#x671F;date&#x503C;
+
+      *datediff(expr,expr2) &#x8FD4;&#x56DE;&#x8D77;&#x59CB;&#x65F6;&#x95F4;&#x548C;&#x7ED3;&#x675F;&#x65F6;&#x95F4;&#x7684;&#x95F4;&#x9694;&#x5929;&#x6570;
+
+      //&#x7EDF;&#x8BA1;&#x65F6;&#x95F4;&#x6233;647583423&#x8DDD;&#x79BB;&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x76F8;&#x5DEE;&#x5929;&#x6570;&#xFF08;&#x751F;&#x65E5;&#x5929;&#x6570;&#xFF08;&#x4E0D;&#x8003;&#x8651;&#x5E74;&#x4EFD;&#xFF09;&#xFF09;
+
+      mysql&gt; select datediff(date_format(from_unixtime(647583423),&quot;2017-%m-%d %h:%i:%s&quot;),now());
+
+  &#x5176;&#x4ED6;&#x5E38;&#x7528;&#x51FD;&#x6570;
+
+      *database() &#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x6570;&#x636E;&#x5E93;&#x540D;
+
+      version() &#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x670D;&#x52A1;&#x5668;&#x7248;&#x672C;
+
+      user()    &#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x767B;&#x9646;&#x7528;&#x6237;&#x540D;
+
+      inet_aton &#x8FD4;&#x56DE;&#x5F53;&#x524D;IP&#x5730;&#x5740;&#x7684;&#x6570;&#x5B57;&#x8868;&#x793A; inet_aton(&quot;192.168.80.250&quot;);
+
+      inet_ntoa(num) &#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x6570;&#x5B57;&#x8868;&#x793A;&#x7684;ip inet_ntoa(3232256250);
+
+      *password(str) &#x8FD4;&#x56DE;&#x5F53;&#x524D;str&#x7684;&#x52A0;&#x5BC6;&#x7248;&#x672C;
+
+      *md5(str) &#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x4E32;str&#x7684;md5&#x503C;
+</code></pre>
+</li>
+</ul>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../home/part2/2.MySQL的事务处理.html" class="navigation navigation-prev " aria-label="Previous page: MySQL的事务处理"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../home/part2/4.MySQL的触发器.html" class="navigation navigation-next " aria-label="Next page: MySQL的触发器"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../../gitbook/app.js"></script>
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
